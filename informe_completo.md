@@ -2329,17 +2329,17 @@ Donde no interviene un sistema externo se escribió la business rule que el comm
 | IoT Monitoring | Equipment, IoTDevice, TelemetryReading, Alert | Un equipo con calibración vencida no puede asignarse a un lote. |
 | Quality & Compliance | QualityDocument, MaterialApproval, BatchReview, AnalyticalResult, Deviation, Audit, RegulatoryReport | Un lote con un resultado OOS sin desviación cerrada no puede liberarse. |
 
-Frames finales por bounded context en Miro:
+Frames en Miro por bounded context. Debajo de los frames finales, el tablero tiene la sección "DLES paso a paso por bounded context", con una fila por contexto y un frame por paso (Pasos 1 a 6); el enlace lleva al Paso 1 de cada fila:
 
-| Bounded context | Frame |
-| --- | --- |
-| Identity & Access Management | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766070 |
-| Organizations & Profiles | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766071 |
-| Subscriptions & Payments | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766072 |
-| Manufacturing & Batch Management | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766787 |
-| IoT Monitoring | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766073 |
-| Quality & Compliance (1/2) | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754975946 |
-| Quality & Compliance (2/2) | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754975947 |
+| Bounded context | Frame final | Pasos 1 a 6 |
+| --- | --- | --- |
+| Identity & Access Management | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766070 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853215191 |
+| Organizations & Profiles | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766071 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853215761 |
+| Subscriptions & Payments | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766072 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853249317 |
+| Manufacturing & Batch Management | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766787 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853302296 |
+| IoT Monitoring | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766073 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853335403 |
+| Quality & Compliance (1/2) | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754975946 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853386353 |
+| Quality & Compliance (2/2) | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754975947 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853414376 |
 
 <details>
 <summary>Ver el paso 6 en cada bounded context</summary>
