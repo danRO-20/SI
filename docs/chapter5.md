@@ -31,7 +31,8 @@ Se detallan las herramientas utilizadas en el ciclo de vida del producto:
   * **Swagger UI / Chrome DevTools / MySQL Workbench:** Prueba manual de endpoints, inspección del frontend y revisión de la persistencia.
 * **Software Documentation**
   * **OpenAPI (Swagger):** Documentación técnica y contratos de los RESTful Web Services. (Referencia: https://swagger.io)
-  * **Mermaid:** Diagram-as-Code para los diagramas C4, de clases y de base de datos. (Referencia: https://mermaid.js.org)
+  * **Structurizr (DSL):** Diagram-as-Code para los diagramas C4 de contexto, contenedores y componentes. (Referencia: https://structurizr.com)
+  * **Mermaid:** Diagram-as-Code para los diagramas de clases (UML) y de base de datos. (Referencia: https://mermaid.js.org)
   * **Miro:** Big Picture y Design-Level EventStorming. (Referencia: https://miro.com)
 * **Software Deployment**
   * **GitHub Pages / Firebase / Render / Railway:** Plataformas cloud para el despliegue de los distintos repositorios y servicios de la solución.

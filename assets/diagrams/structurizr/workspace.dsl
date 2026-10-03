@@ -268,6 +268,7 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         systemContext doofplus "C4-01-Contexto" {
             title "[System Context] DoofPlus - Diagrama de Contexto (C4 Nivel 1)"
             include *
+            include ga
             autoLayout tb
         }
         container doofplus "C4-02-Contenedores" {
@@ -334,6 +335,13 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
             element "Component" {
                 background #85BBF0
                 color #0B2545
+                width 560
+                height 340
+                fontSize 20
+            }
+            relationship "Relationship" {
+                dashed false
+                color #555555
             }
             relationship "Optional" {
                 dashed true

@@ -2395,7 +2395,7 @@ Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=34587646857
 
 ### 4.6.2. Software Architecture Context Diagram
 
-El diagrama de contexto (nivel 1 del modelo C4) muestra a DoofPlus como un único sistema rodeado por sus usuarios y los sistemas externos identificados en el EventStorming. Los usuarios son el visitante de un laboratorio (Landing Page), el Especialista QA/QC y el Jefe de Producción (segmentos objetivo) y el Administrador del laboratorio. Los sistemas externos son ThingsBoard, que envía la telemetría de los sensores; Niubiz, que autoriza los cobros de las suscripciones; y SendGrid, que entrega correos. La app autenticadora del usuario genera los códigos TOTP del segundo factor sin integración por API, por eso se muestra con línea punteada. Los diagramas se elaboraron con Mermaid (Diagram-as-Code).
+El diagrama de contexto (nivel 1 del modelo C4) muestra a DoofPlus como un único sistema rodeado por sus usuarios y los sistemas externos identificados en el EventStorming. Los usuarios son el visitante de un laboratorio (Landing Page), el Especialista QA/QC y el Jefe de Producción (segmentos objetivo) y el Administrador del laboratorio. Los sistemas externos son ThingsBoard, que envía la telemetría de los sensores; Niubiz, que autoriza los cobros de las suscripciones; y SendGrid, que entrega correos. La app autenticadora del usuario genera los códigos TOTP del segundo factor sin integración por API, por eso se muestra con línea punteada. Los diagramas C4 se elaboraron con Structurizr DSL (Diagram-as-Code) y se renderizaron con Structurizr, la herramienta de referencia del modelo C4; todas las vistas salen de un único modelo (`assets/diagrams/structurizr/workspace.dsl`).
 
 ![Context Level Diagram](assets/img/chapter4/software-architecture/c4/c4-01-context.png)
 
@@ -2535,7 +2535,7 @@ Los diagramas se elaboraron con Mermaid (Diagram-as-Code), uno por bounded conte
 
 ![Database Diagram - Quality 2](assets/img/chapter4/database/db-06b-quality.png)
 
-Las fuentes Mermaid de los diagramas C4, de clases y de base de datos se encuentran en `assets/diagrams/mermaid`.
+La fuente Structurizr DSL de los diagramas C4 se encuentra en `assets/diagrams/structurizr/workspace.dsl`, y las fuentes Mermaid de los diagramas de clases y de base de datos, en `assets/diagrams/mermaid`.
 
 
 ---
@@ -2573,7 +2573,8 @@ Se detallan las herramientas utilizadas en el ciclo de vida del producto:
   * **Swagger UI / Chrome DevTools / MySQL Workbench:** Prueba manual de endpoints, inspección del frontend y revisión de la persistencia.
 * **Software Documentation**
   * **OpenAPI (Swagger):** Documentación técnica y contratos de los RESTful Web Services. (Referencia: https://swagger.io)
-  * **Mermaid:** Diagram-as-Code para los diagramas C4, de clases y de base de datos. (Referencia: https://mermaid.js.org)
+  * **Structurizr (DSL):** Diagram-as-Code para los diagramas C4 de contexto, contenedores y componentes. (Referencia: https://structurizr.com)
+  * **Mermaid:** Diagram-as-Code para los diagramas de clases (UML) y de base de datos. (Referencia: https://mermaid.js.org)
   * **Miro:** Big Picture y Design-Level EventStorming. (Referencia: https://miro.com)
 * **Software Deployment**
   * **GitHub Pages / Firebase / Render / Railway:** Plataformas cloud para el despliegue de los distintos repositorios y servicios de la solución.
