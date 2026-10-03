@@ -1,0 +1,116 @@
+---
+title: "Class Diagram – Organizations & Profiles Bounded Context"
+---
+classDiagram
+  direction LR
+  class Organization {
+    <<Aggregate Root>>
+    -Long id
+    -String legalName
+    -Ruc ruc
+    -OrganizationStatus status
+    -List~Plant~ plants
+    +Organization(String legalName, Ruc ruc)
+    +addPlant(String name, String address) Plant
+    +suspend() void
+    +reactivate() void
+  }
+  class Plant {
+    <<Entity>>
+    -Long id
+    -String name
+    -String address
+  }
+  class Ruc {
+    <<Value Object>>
+    +String value
+    +Ruc(String value)
+  }
+  class Profile {
+    <<Aggregate Root>>
+    -Long id
+    -Long userId
+    -Long organizationId
+    -PersonName name
+    -String position
+    -Area area
+    -String preferredLanguage
+    -NotificationPreferences preferences
+    +updatePreferences(NotificationPreferences preferences) void
+    +changeLanguage(String languageTag) void
+  }
+  class PersonName {
+    <<Value Object>>
+    +String firstName
+    +String lastName
+    +getFullName() String
+  }
+  class NotificationPreferences {
+    <<Value Object>>
+    +boolean emailEnabled
+    +boolean inAppEnabled
+  }
+  class DemoRequest {
+    <<Aggregate Root>>
+    -Long id
+    -String email
+    -String laboratoryName
+    -Segment segment
+    -DemoRequestStatus status
+    -LocalDateTime requestedAt
+    +DemoRequest(String email, String laboratoryName, Segment segment)
+    +markAsContacted() void
+  }
+  class OrganizationStatus {
+    <<enumeration>>
+    ACTIVE
+    SUSPENDED
+  }
+  class Area {
+    <<enumeration>>
+    QUALITY
+    PRODUCTION
+    ADMINISTRATION
+  }
+  class Segment {
+    <<enumeration>>
+    QA_QC
+    PRODUCTION
+  }
+  class DemoRequestStatus {
+    <<enumeration>>
+    RECEIVED
+    CONTACTED
+  }
+  class OrganizationRepository {
+    <<interface>>
+    +existsByRuc(Ruc ruc) boolean
+  }
+  class ProfileRepository {
+    <<interface>>
+    +findByUserId(Long userId) Optional~Profile~
+  }
+  class OrganizationCommandService {
+    <<interface>>
+    +handle(RegisterOrganizationCommand command) Optional~Organization~
+    +handle(AddPlantCommand command) Optional~Plant~
+  }
+  class DemoRequestCommandService {
+    <<interface>>
+    +handle(RequestDemoCommand command) Optional~DemoRequest~
+  }
+  class ExternalIamService {
+    +createAdministrator(Long organizationId, String email) Optional~Long~
+  }
+  Organization "1" *-- "1..*" Plant : operates
+  Organization *-- Ruc : ruc
+  Organization --> OrganizationStatus : status
+  Profile "0..*" --> "1" Organization : belongsTo
+  Profile *-- PersonName : name
+  Profile *-- NotificationPreferences : preferences
+  Profile --> Area : area
+  DemoRequest --> Segment : segment
+  DemoRequest --> DemoRequestStatus : status
+  OrganizationRepository ..> Organization : persists
+  ProfileRepository ..> Profile : persists
+  OrganizationCommandService ..> ExternalIamService : uses

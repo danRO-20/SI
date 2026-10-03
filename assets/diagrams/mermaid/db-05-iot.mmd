@@ -1,0 +1,65 @@
+---
+title: "Database Diagram – IoT Monitoring Bounded Context (MySQL 8)"
+---
+erDiagram
+  equipment {
+    bigint id PK
+    varchar(30) code UK
+    varchar(150) name
+    varchar(60) serial_number UK
+    varchar(20) status "FIT_FOR_USE, NOT_FIT_FOR_USE, IN_MAINTENANCE"
+    date next_calibration_date
+    date next_maintenance_date
+  }
+  calibration_records {
+    bigint id PK
+    bigint equipment_id FK
+    date calibrated_at
+    date valid_until
+    varchar(500) certificate_url
+  }
+  maintenance_records {
+    bigint id PK
+    bigint equipment_id FK
+    date performed_at
+    varchar(500) description
+    date next_due_date
+  }
+  iot_devices {
+    bigint id PK
+    varchar(100) external_device_id UK "ThingsBoard"
+    varchar(20) sensor_type "TEMPERATURE, HUMIDITY, PRESSURE, PH, RFID_READER"
+    bigint equipment_id FK
+    varchar(20) status
+    bigint current_batch_id "ref manufacturing.production_batches"
+  }
+  telemetry_readings {
+    bigint id PK
+    bigint iot_device_id FK
+    bigint production_batch_id "ref manufacturing.production_batches"
+    decimal value "(12,4)"
+    varchar(10) unit
+    datetime recorded_at "indexed"
+    tinyint(1) out_of_range
+  }
+  alert_rules {
+    bigint id PK
+    varchar(20) sensor_type
+    decimal min_value "(12,4)"
+    decimal max_value "(12,4)"
+    varchar(10) level "WARNING, CRITICAL"
+  }
+  alerts {
+    bigint id PK
+    bigint telemetry_reading_id FK
+    bigint alert_rule_id FK
+    varchar(10) level
+    varchar(20) status "OPEN, ACKNOWLEDGED"
+    bigint acknowledged_by "ref iam.users"
+  }
+  equipment ||--o{ calibration_records : "calibrated"
+  equipment ||--o{ maintenance_records : "maintained"
+  equipment ||--o{ iot_devices : "monitored by"
+  iot_devices ||--o{ telemetry_readings : "emits"
+  telemetry_readings ||--o| alerts : "raises"
+  alert_rules ||--o{ alerts : "triggers"

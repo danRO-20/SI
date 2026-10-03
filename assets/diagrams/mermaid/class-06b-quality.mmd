@@ -1,0 +1,126 @@
+---
+title: "Class Diagram – Quality & Compliance (2/2): desviaciones, CAPA y auditoría Bounded Context"
+---
+classDiagram
+  direction LR
+  class Deviation {
+    <<Aggregate Root>>
+    -Long id
+    -String code
+    -Long batchId
+    -Severity severity
+    -DeviationStatus status
+    -String description
+    -RootCause rootCause
+    -List~CapaAction~ actions
+    +classify(Severity severity) void
+    +startInvestigation() void
+    +registerRootCause(RootCause rootCause) void
+    +addCapaAction(CapaAction action) void
+    +close() void
+  }
+  class CapaAction {
+    <<Entity>>
+    -Long id
+    -CapaType type
+    -String description
+    -Long responsibleId
+    -LocalDate dueDate
+    -int progress
+    -CapaStatus status
+    +updateProgress(int progress) void
+    +verify() void
+    +isOverdue() boolean
+  }
+  class RootCause {
+    <<Value Object>>
+    +String method
+    +String description
+  }
+  class Audit {
+    <<Aggregate Root>>
+    -Long id
+    -AuditType type
+    -LocalDate scheduledDate
+    -AuditStatus status
+    -List~AuditFinding~ findings
+    -String evidencePackageUrl
+    +start() void
+    +registerFinding(FindingType type, String description) AuditFinding
+    +attachEvidencePackage(String fileUrl) void
+    +close() void
+  }
+  class AuditFinding {
+    <<Entity>>
+    -Long id
+    -FindingType type
+    -String description
+  }
+  class AuditTrailEntry {
+    <<Aggregate Root>>
+    -Long id
+    -String entityType
+    -String entityId
+    -AuditAction action
+    -String oldValue
+    -String newValue
+    -Long changedBy
+    -LocalDateTime changedAt
+    -String reason
+  }
+  class RegulatoryReport {
+    <<Aggregate Root>>
+    -Long id
+    -YearMonth period
+    -String fileUrl
+    -LocalDateTime generatedAt
+  }
+  class Severity {
+    <<enumeration>>
+    MINOR
+    MAJOR
+    CRITICAL
+  }
+  class DeviationStatus {
+    <<enumeration>>
+    OPEN
+    UNDER_INVESTIGATION
+    CLOSED
+  }
+  class CapaStatus {
+    <<enumeration>>
+    OPEN
+    IMPLEMENTED
+    OVERDUE
+    VERIFIED
+  }
+  class FindingType {
+    <<enumeration>>
+    FINDING
+    OBSERVATION
+  }
+  class DeviationCommandService {
+    <<interface>>
+    +handle(RegisterDeviationCommand command) Optional~Deviation~
+    +handle(CloseDeviationCommand command) Optional~Deviation~
+  }
+  class ReportGenerationService {
+    <<interface>>
+    +generateAuditPackage(Long organizationId, LocalDate from, LocalDate to) byte[]
+    +generateMonthlyReport(Long organizationId, YearMonth period) byte[]
+  }
+  class NotificationService {
+    <<interface>>
+    +notifyCriticalDeviation(Deviation deviation) void
+  }
+  Deviation "1" *-- "0..*" CapaAction : resolvedBy
+  Deviation *-- RootCause : rootCause
+  Deviation --> Severity : severity
+  Deviation --> DeviationStatus : status
+  CapaAction --> CapaStatus : status
+  Audit "1" *-- "0..*" AuditFinding : findings
+  AuditFinding --> FindingType : type
+  DeviationCommandService ..> NotificationService : uses
+  ReportGenerationService ..> AuditTrailEntry : reads
+  ReportGenerationService ..> Audit : packages
+  ReportGenerationService ..> RegulatoryReport : creates

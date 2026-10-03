@@ -1,0 +1,46 @@
+---
+title: "[Component] RESTful API (Spring Boot) – Manufacturing & Batch Management (C4 Nivel 3)"
+---
+flowchart TB
+  webapp["<b>Web Application</b><br/><i>[Container: Angular, Angular Material]</i>"]:::container
+  subgraph API["RESTful API [Container: Spring Boot, Java 21] – Manufacturing &amp; Batch Management"]
+    direction TB
+    ctl["<b>ProductionBatchesController · IncidentsController</b><br/><i>[Component: Spring @RestController]</i><br/>Lotes, estados, consumo, parámetros,<br/>incidencias y línea de tiempo."]:::component
+    ctl2["<b>ProductsController · MasterFormulasController<br/>· RawMaterialLotsController · ProductionOrdersController</b><br/><i>[Component: Spring @RestController]</i><br/>Catálogo, fórmulas, insumos y órdenes."]:::component
+    cmd["<b>ProductionBatchCommandServiceImpl</b><br/><i>[Component: Spring @Service – Command Service]</i><br/>Crea lotes, cambia estados y registra<br/>consumos, parámetros e incidencias."]:::component
+    ocmd["<b>ProductionOrderCommandServiceImpl · RawMaterialLotCommandServiceImpl</b><br/><i>[Component: Spring @Service – Command Service]</i><br/>Órdenes de producción, recepción<br/>y ubicación de insumos."]:::component
+    qry["<b>ProductionBatchQueryServiceImpl</b><br/><i>[Component: Spring @Service – Query Service]</i><br/>Historial y trazabilidad de lotes."]:::component
+    dom["<b>Product · MasterFormula · RawMaterialLot<br/>· ProductionOrder · ProductionBatch</b><br/><i>[Component: Domain Model]</i><br/>Aggregates del contexto."]:::component
+    evt["<b>BatchReleaseDecidedEventHandler<br/>· MaterialApprovalDecidedEventHandler</b><br/><i>[Component: Spring @EventListener]</i><br/>Actualiza lotes e insumos con los<br/>veredictos de Quality &amp; Compliance."]:::component
+    ext["<b>ExternalQualityService · ExternalIotService</b><br/><i>[Component: Application – Outbound ACL]</i><br/>Solicita aprobación de insumos y<br/>cuarentena; asigna sensores al lote."]:::component
+    repo["<b>ProductionBatchRepository · ProductionOrderRepository<br/>· RawMaterialLotRepository · ProductRepository</b><br/><i>[Component: Spring Data JPA Repository]</i><br/>Persistencia en MySQL."]:::component
+    acl["<b>ManufacturingContextFacade</b><br/><i>[Component: Interfaces – ACL Facade]</i><br/>Expone lotes en curso a IoT y Quality."]:::component
+  end
+  db[("<b>Database</b><br/><i>[Container: MySQL 8]</i>")]:::db
+  qf["<b>QualityContextFacade</b><br/><i>[Quality &amp; Compliance BC]</i>"]:::container
+  iotf["<b>IotMonitoringContextFacade</b><br/><i>[IoT Monitoring BC]</i>"]:::container
+  webapp -- "JSON/HTTPS" --> ctl
+  webapp -- "JSON/HTTPS" --> ctl2
+  ctl --> cmd
+  ctl --> qry
+  ctl2 --> ocmd
+  cmd --> dom
+  ocmd --> dom
+  cmd --> ext
+  ocmd --> ext
+  ext --> qf
+  ext --> iotf
+  evt --> cmd
+  evt --> ocmd
+  cmd --> repo
+  ocmd --> repo
+  qry --> repo
+  acl --> qry
+  repo -- "JDBC" --> db
+  style API fill:#F4F8FC,stroke:#438DD5,stroke-width:2px,stroke-dasharray: 6 4,color:#2E6295
+  classDef person fill:#08427B,stroke:#052E56,color:#ffffff,stroke-width:1px
+  classDef system fill:#1168BD,stroke:#0B4884,color:#ffffff
+  classDef container fill:#438DD5,stroke:#2E6295,color:#ffffff
+  classDef component fill:#85BBF0,stroke:#5D82A8,color:#0B2545
+  classDef external fill:#8C8C8C,stroke:#6B6B6B,color:#ffffff
+  classDef db fill:#438DD5,stroke:#2E6295,color:#ffffff

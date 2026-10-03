@@ -1,0 +1,38 @@
+---
+title: "Database Diagram – Organizations & Profiles Bounded Context (MySQL 8)"
+---
+erDiagram
+  organizations {
+    bigint id PK
+    varchar(255) legal_name
+    char(11) ruc UK
+    varchar(20) status "ACTIVE, SUSPENDED"
+  }
+  plants {
+    bigint id PK
+    bigint organization_id FK
+    varchar(150) name
+    varchar(255) address
+  }
+  profiles {
+    bigint id PK
+    bigint user_id UK "ref iam.users"
+    bigint organization_id FK
+    varchar(100) first_name
+    varchar(100) last_name
+    varchar(100) position
+    varchar(20) area "QUALITY, PRODUCTION, ADMINISTRATION"
+    varchar(10) preferred_language "en-US, es-419"
+    tinyint(1) email_notifications
+    tinyint(1) in_app_notifications
+  }
+  demo_requests {
+    bigint id PK
+    varchar(255) email
+    varchar(150) laboratory_name "nullable"
+    varchar(20) segment "QA_QC, PRODUCTION"
+    varchar(20) status "RECEIVED, CONTACTED"
+    datetime requested_at
+  }
+  organizations ||--|{ plants : "operates"
+  organizations ||--o{ profiles : "employs"

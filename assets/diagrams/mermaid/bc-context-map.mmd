@@ -1,0 +1,21 @@
+---
+title: "Context Map – Bounded Contexts de DoofPlus"
+---
+flowchart LR
+  iam["<b>Identity &amp; Access Management</b><br/><i>Generic</i><br/>User · Role · ElectronicSignature"]:::generic
+  org["<b>Organizations &amp; Profiles</b><br/><i>Supporting</i><br/>Organization · Profile · DemoRequest"]:::supporting
+  sub["<b>Subscriptions &amp; Payments</b><br/><i>Generic</i><br/>Plan · Subscription"]:::generic
+  mfg["<b>Manufacturing &amp; Batch Management</b><br/><i>Core</i><br/>Product · MasterFormula · RawMaterialLot<br/>· ProductionOrder · ProductionBatch"]:::core
+  iot["<b>IoT Monitoring</b><br/><i>Supporting</i><br/>Equipment · IoTDevice · TelemetryReading · Alert"]:::supporting
+  qa["<b>Quality &amp; Compliance</b><br/><i>Core</i><br/>QualityDocument · MaterialApproval · BatchReview<br/>· AnalyticalResult · Deviation · Audit"]:::core
+  org -- "Crea el administrador<br/>[ACL: IamContextFacade]" --> iam
+  qa -- "Firma electrónica<br/>[ACL: IamContextFacade]" --> iam
+  sub -- "Organización suscriptora<br/>[ACL: OrganizationsContextFacade]" --> org
+  iot -- "Límite de dispositivos<br/>[ACL: SubscriptionsContextFacade]" --> sub
+  mfg -- "Solicita aprobación de insumos y cuarentena<br/>[ACL: QualityContextFacade]" --> qa
+  qa -. "MaterialApprovalDecided · BatchReleaseDecided<br/>[Spring domain events]" .-> mfg
+  mfg -- "Asigna sensores al lote<br/>[ACL: IotMonitoringContextFacade]" --> iot
+  iot -- "Lote en curso<br/>[ACL: ManufacturingContextFacade]" --> mfg
+  classDef core fill:#0D9488,stroke:#0F766E,color:#ffffff
+  classDef supporting fill:#E6F4F2,stroke:#0D9488,color:#0F172A
+  classDef generic fill:#F8FAFC,stroke:#64748B,color:#0F172A

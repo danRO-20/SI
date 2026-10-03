@@ -1,0 +1,129 @@
+---
+title: "Class Diagram – Quality & Compliance (1/2): documentos, insumos y liberación Bounded Context"
+---
+classDiagram
+  direction LR
+  class QualityDocument {
+    <<Aggregate Root>>
+    -Long id
+    -String code
+    -String title
+    -DocumentType type
+    -DocumentStatus status
+    -List~DocumentVersion~ versions
+    +submitForReview() void
+    +approve(Long signatureId) void
+    +reject(String reason) void
+    +publishNewVersion(String fileUrl, String changeReason, Long authorId) DocumentVersion
+  }
+  class DocumentVersion {
+    <<Entity>>
+    -Long id
+    -String versionNumber
+    -String fileUrl
+    -String changeReason
+    -Long authorId
+    -Long approvalSignatureId
+  }
+  class MaterialApproval {
+    <<Aggregate Root>>
+    -Long id
+    -Long rawMaterialLotId
+    -String sampleCode
+    -MaterialApprovalStatus status
+    -Long decidedBy
+    -String reason
+    +registerSample(String sampleCode) void
+    +approve(Long signatureId) void
+    +reject(String reason) void
+  }
+  class BatchReview {
+    <<Aggregate Root>>
+    -Long id
+    -Long batchId
+    -ReviewStatus status
+    -LocalDateTime quarantineStartedAt
+    -String sampleCode
+    -List~EvidenceAttachment~ evidences
+    -ReleaseCertificate certificate
+    +registerSample(String sampleCode) void
+    +attachEvidence(String fileUrl, String description) void
+    +evaluate(List~AnalyticalResult~ results, boolean hasOpenDeviations) void
+    +release(Long signatureId) ReleaseCertificate
+    +reject(String reason) void
+  }
+  class EvidenceAttachment {
+    <<Entity>>
+    -Long id
+    -String fileUrl
+    -String description
+  }
+  class ReleaseCertificate {
+    <<Entity>>
+    -Long id
+    -String certificateNumber
+    -ReleaseVerdict verdict
+    -Long signatureId
+    -LocalDateTime issuedAt
+  }
+  class AnalyticalResult {
+    <<Aggregate Root>>
+    -Long id
+    -Long batchId
+    -String testName
+    -BigDecimal value
+    -SpecificationRange specification
+    -boolean outOfSpecification
+    -Long analystId
+    +calculate(Map~String, BigDecimal~ variables, String formula) void
+  }
+  class SpecificationRange {
+    <<Value Object>>
+    +BigDecimal min
+    +BigDecimal max
+    +String unit
+    +contains(BigDecimal value) boolean
+  }
+  class DocumentStatus {
+    <<enumeration>>
+    DRAFT
+    IN_REVIEW
+    APPROVED
+    OBSOLETE
+  }
+  class MaterialApprovalStatus {
+    <<enumeration>>
+    PENDING
+    SAMPLED
+    APPROVED
+    REJECTED
+  }
+  class ReviewStatus {
+    <<enumeration>>
+    IN_QUARANTINE
+    UNDER_EVALUATION
+    RELEASED
+    REJECTED
+  }
+  class BatchReviewCommandService {
+    <<interface>>
+    +handle(StartQuarantineCommand command) Optional~BatchReview~
+    +handle(EvaluateBatchCommand command) Optional~BatchReview~
+    +handle(ReleaseBatchCommand command) Optional~ReleaseCertificate~
+  }
+  class ExternalIamService {
+    +signRecord(Long userId, String password, String entityType, Long entityId) Optional~Long~
+  }
+  class ExternalManufacturingService {
+    +fetchBatchStatus(Long batchId) Optional~String~
+  }
+  QualityDocument "1" *-- "1..*" DocumentVersion : versions
+  QualityDocument --> DocumentStatus : status
+  MaterialApproval --> MaterialApprovalStatus : status
+  BatchReview "1" *-- "0..*" EvidenceAttachment : evidences
+  BatchReview "1" *-- "0..1" ReleaseCertificate : issues
+  BatchReview ..> AnalyticalResult : evaluates
+  BatchReview --> ReviewStatus : status
+  AnalyticalResult *-- SpecificationRange : specification
+  BatchReviewCommandService ..> ExternalIamService : uses
+  BatchReviewCommandService ..> ExternalManufacturingService : uses

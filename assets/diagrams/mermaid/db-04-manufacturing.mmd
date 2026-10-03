@@ -1,0 +1,90 @@
+---
+title: "Database Diagram – Manufacturing & Batch Management Bounded Context (MySQL 8)"
+---
+erDiagram
+  products {
+    bigint id PK
+    varchar(30) code UK
+    varchar(150) name
+    varchar(30) dosage_form "TABLET, SYRUP, INJECTABLE, CREAM"
+  }
+  master_formulas {
+    bigint id PK
+    bigint product_id FK
+    varchar(10) version
+    varchar(20) status "DRAFT, APPROVED, OBSOLETE"
+  }
+  formula_components {
+    bigint id PK
+    bigint master_formula_id FK
+    varchar(30) raw_material_code
+    decimal quantity "(12,4)"
+    varchar(10) unit
+  }
+  raw_material_lots {
+    bigint id PK
+    varchar(30) code UK
+    varchar(150) name
+    varchar(50) supplier_lot
+    varchar(100) rfid_tag UK "nullable"
+    decimal received_quantity "(12,4)"
+    varchar(50) warehouse_location "nullable"
+    varchar(20) quality_status "QUARANTINE ... REJECTED"
+    date expiration_date
+  }
+  production_orders {
+    bigint id PK
+    bigint master_formula_id FK
+    bigint plant_id "ref organizations.plants"
+    decimal planned_quantity "(12,4)"
+    varchar(20) status "CREATED, APPROVED, REJECTED, PLANNED"
+    date planned_start_date "nullable"
+  }
+  production_batches {
+    bigint id PK
+    varchar(30) batch_number UK
+    bigint production_order_id FK
+    varchar(20) status "PLANNED ... RELEASED, REJECTED"
+    decimal manufactured_quantity "(12,4) nullable"
+    datetime started_at "nullable"
+    datetime finished_at "nullable"
+  }
+  material_consumptions {
+    bigint id PK
+    bigint production_batch_id FK
+    bigint raw_material_lot_id FK
+    decimal quantity_used "(12,4)"
+    varchar(10) unit
+  }
+  process_parameters {
+    bigint id PK
+    bigint production_batch_id FK
+    varchar(100) name
+    decimal value "(12,4)"
+    varchar(10) unit
+    datetime recorded_at
+  }
+  incidents {
+    bigint id PK
+    bigint production_batch_id FK
+    varchar(500) description
+    varchar(10) severity "MINOR, MAJOR, CRITICAL"
+    varchar(20) status "OPEN, ESCALATED, RESOLVED"
+  }
+  batch_events {
+    bigint id PK
+    bigint production_batch_id FK
+    varchar(40) type
+    varchar(500) description
+    bigint performed_by "ref iam.users"
+    datetime occurred_at
+  }
+  products ||--o{ master_formulas : "defined by"
+  master_formulas ||--|{ formula_components : "contains"
+  master_formulas ||--o{ production_orders : "followed by"
+  production_orders ||--o{ production_batches : "executed as"
+  production_batches ||--o{ material_consumptions : "consumes"
+  raw_material_lots ||--o{ material_consumptions : "consumed in"
+  production_batches ||--o{ process_parameters : "records"
+  production_batches ||--o{ incidents : "registers"
+  production_batches ||--o{ batch_events : "timeline"

@@ -1,0 +1,33 @@
+---
+title: "Database Diagram – Identity & Access Management (IAM) Bounded Context (MySQL 8)"
+---
+erDiagram
+  users {
+    bigint id PK
+    bigint organization_id "ref organizations.organizations"
+    varchar(255) email UK
+    varchar(255) password_hash
+    varchar(64) mfa_secret "cifrado"
+    varchar(20) status "INVITED, ACTIVE, LOCKED, DISABLED"
+    int failed_sign_in_attempts
+    datetime locked_until "nullable"
+  }
+  roles {
+    bigint id PK
+    varchar(40) name UK "ROLE_ADMINISTRATOR, ROLE_QA_SPECIALIST, ..."
+  }
+  user_roles {
+    bigint user_id PK, FK
+    bigint role_id PK, FK
+  }
+  electronic_signatures {
+    bigint id PK
+    bigint user_id FK
+    varchar(100) entity_type
+    bigint entity_id
+    varchar(20) meaning "AUTHORED, REVIEWED, APPROVED, RELEASED"
+    datetime signed_at
+  }
+  users ||--o{ user_roles : "has"
+  roles ||--o{ user_roles : "grants"
+  users ||--o{ electronic_signatures : "signs"

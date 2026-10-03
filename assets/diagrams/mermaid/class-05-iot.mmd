@@ -1,0 +1,131 @@
+---
+title: "Class Diagram – IoT Monitoring Bounded Context"
+---
+classDiagram
+  direction TB
+  class Equipment {
+    <<Aggregate Root>>
+    -Long id
+    -String code
+    -String name
+    -String serialNumber
+    -EquipmentStatus status
+    -LocalDate nextCalibrationDate
+    -LocalDate nextMaintenanceDate
+    -List~CalibrationRecord~ calibrations
+    -List~MaintenanceRecord~ maintenances
+    +registerCalibration(LocalDate calibratedAt, LocalDate validUntil, String certificateUrl) void
+    +registerMaintenance(String description, LocalDate nextDueDate) void
+    +markAsNotFitForUse() void
+    +isFitForUse() boolean
+  }
+  class CalibrationRecord {
+    <<Entity>>
+    -Long id
+    -LocalDate calibratedAt
+    -LocalDate validUntil
+    -String certificateUrl
+  }
+  class MaintenanceRecord {
+    <<Entity>>
+    -Long id
+    -LocalDate performedAt
+    -String description
+    -LocalDate nextDueDate
+  }
+  class IoTDevice {
+    <<Aggregate Root>>
+    -Long id
+    -String externalDeviceId
+    -SensorType sensorType
+    -Long equipmentId
+    -DeviceStatus status
+    -Long currentBatchId
+    +assignToBatch(Long batchId) void
+    +releaseFromBatch() void
+  }
+  class TelemetryReading {
+    <<Aggregate Root>>
+    -Long id
+    -Long deviceId
+    -Long batchId
+    -Measurement measurement
+    -LocalDateTime recordedAt
+    -boolean outOfRange
+  }
+  class AlertRule {
+    <<Entity>>
+    -Long id
+    -SensorType sensorType
+    -BigDecimal minValue
+    -BigDecimal maxValue
+    -AlertLevel level
+    +isViolatedBy(Measurement measurement) boolean
+  }
+  class Alert {
+    <<Aggregate Root>>
+    -Long id
+    -Long readingId
+    -AlertLevel level
+    -AlertStatus status
+    -Long acknowledgedBy
+    +acknowledge(Long userId) void
+  }
+  class Measurement {
+    <<Value Object>>
+    +BigDecimal value
+    +String unit
+  }
+  class AlertRuleEvaluator {
+    <<Domain Service>>
+    +evaluate(TelemetryReading reading, List~AlertRule~ rules) Optional~Alert~
+  }
+  class SensorType {
+    <<enumeration>>
+    TEMPERATURE
+    HUMIDITY
+    PRESSURE
+    PH
+    RFID_READER
+  }
+  class EquipmentStatus {
+    <<enumeration>>
+    FIT_FOR_USE
+    NOT_FIT_FOR_USE
+    IN_MAINTENANCE
+  }
+  class AlertLevel {
+    <<enumeration>>
+    WARNING
+    CRITICAL
+  }
+  class TelemetryCommandService {
+    <<interface>>
+    +handle(IngestTelemetryCommand command) Optional~TelemetryReading~
+  }
+  class IotDeviceRepository {
+    <<interface>>
+    +findByExternalDeviceId(String externalDeviceId) Optional~IoTDevice~
+  }
+  class ExternalManufacturingService {
+    +isBatchInProgress(Long batchId) boolean
+  }
+  class NotificationService {
+    <<interface>>
+    +publishAlert(Alert alert) void
+  }
+  Equipment "1" *-- "0..*" CalibrationRecord : calibrations
+  Equipment "1" *-- "0..*" MaintenanceRecord : maintenances
+  IoTDevice "0..*" --> "1" Equipment : installedOn
+  TelemetryReading "0..*" --> "1" IoTDevice : emittedBy
+  TelemetryReading *-- Measurement : measurement
+  Alert "0..1" --> "1" TelemetryReading : raisedBy
+  AlertRuleEvaluator ..> AlertRule : applies
+  AlertRuleEvaluator ..> Alert : creates
+  IoTDevice --> SensorType : sensorType
+  Equipment --> EquipmentStatus : status
+  Alert --> AlertLevel : level
+  TelemetryCommandService ..> AlertRuleEvaluator : uses
+  TelemetryCommandService ..> ExternalManufacturingService : uses
+  TelemetryCommandService ..> NotificationService : uses
+  IotDeviceRepository ..> IoTDevice : persists

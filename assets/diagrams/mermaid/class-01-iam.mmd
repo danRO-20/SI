@@ -1,0 +1,122 @@
+---
+title: "Class Diagram – Identity & Access Management (IAM) Bounded Context"
+---
+classDiagram
+  direction LR
+  class AuditableAbstractAggregateRoot~T~ {
+    <<abstract>>
+    #Long id
+    #Date createdAt
+    #Date updatedAt
+  }
+  class User {
+    <<Aggregate Root>>
+    -Long organizationId
+    -EmailAddress email
+    -String passwordHash
+    -String mfaSecret
+    -UserStatus status
+    -int failedSignInAttempts
+    -Set~Role~ roles
+    +User(Long organizationId, EmailAddress email, String passwordHash)
+    +activate(String passwordHash, String mfaSecret) void
+    +assignRole(Role role) User
+    +registerFailedSignIn() void
+    +resetFailedSignIns() void
+    +lock() void
+    +isLocked() boolean
+  }
+  class Role {
+    <<Entity>>
+    -Long id
+    -Roles name
+    +getStringName() String
+  }
+  class ElectronicSignature {
+    <<Aggregate Root>>
+    -Long userId
+    -String entityType
+    -Long entityId
+    -SignatureMeaning meaning
+    -LocalDateTime signedAt
+    +ElectronicSignature(Long userId, String entityType, Long entityId, SignatureMeaning meaning)
+  }
+  class EmailAddress {
+    <<Value Object>>
+    +String address
+  }
+  class Roles {
+    <<enumeration>>
+    ROLE_ADMINISTRATOR
+    ROLE_QA_SPECIALIST
+    ROLE_QUALITY_MANAGER
+    ROLE_PRODUCTION_SUPERVISOR
+    ROLE_INTERNAL_AUDITOR
+  }
+  class UserStatus {
+    <<enumeration>>
+    INVITED
+    ACTIVE
+    LOCKED
+    DISABLED
+  }
+  class SignatureMeaning {
+    <<enumeration>>
+    AUTHORED
+    REVIEWED
+    APPROVED
+    RELEASED
+  }
+  class UserRepository {
+    <<interface>>
+    +findByEmail(EmailAddress email) Optional~User~
+    +existsByEmail(EmailAddress email) boolean
+  }
+  class ElectronicSignatureRepository {
+    <<interface>>
+    +findByEntityTypeAndEntityId(String entityType, Long entityId) List~ElectronicSignature~
+  }
+  class UserCommandService {
+    <<interface>>
+    +handle(RegisterUserCommand command) Optional~User~
+    +handle(SignInCommand command) Optional~AuthenticatedUser~
+    +handle(AssignRoleCommand command) Optional~User~
+  }
+  class SignatureCommandService {
+    <<interface>>
+    +handle(SignRecordCommand command) Optional~ElectronicSignature~
+  }
+  class TokenService {
+    <<interface>>
+    +generateToken(String username) String
+    +validateToken(String token) boolean
+  }
+  class HashingService {
+    <<interface>>
+    +encode(CharSequence rawPassword) String
+    +matches(CharSequence rawPassword, String encodedPassword) boolean
+  }
+  class TotpService {
+    <<interface>>
+    +verifyCode(String secret, String code) boolean
+  }
+  class IamContextFacade {
+    +createAdministrator(Long organizationId, String email) Long
+    +signRecord(Long userId, String password, String entityType, Long entityId, String meaning) Long
+  }
+  AuditableAbstractAggregateRoot <|-- User
+  AuditableAbstractAggregateRoot <|-- ElectronicSignature
+  User "0..*" o-- "1..*" Role : has
+  User *-- EmailAddress : email
+  User --> UserStatus : status
+  Role --> Roles : name
+  ElectronicSignature "0..*" --> "1" User : signedBy
+  ElectronicSignature --> SignatureMeaning : meaning
+  UserRepository ..> User : persists
+  ElectronicSignatureRepository ..> ElectronicSignature : persists
+  UserCommandService ..> TokenService : uses
+  UserCommandService ..> HashingService : uses
+  UserCommandService ..> TotpService : uses
+  SignatureCommandService ..> HashingService : verifiesIdentity
+  IamContextFacade ..> UserCommandService : delegates
+  IamContextFacade ..> SignatureCommandService : delegates

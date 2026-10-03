@@ -1,0 +1,33 @@
+---
+title: "[Container] DoofPlus – Diagrama de Contenedores (C4 Nivel 2)"
+---
+flowchart TB
+  visitor["<b>Visitante de un laboratorio</b><br/><i>[Person]</i>"]:::person
+  users["<b>Especialista QA/QC · Jefe de Producción<br/>· Administrador del laboratorio</b><br/><i>[Person]</i>"]:::person
+  subgraph DP["DoofPlus [Software System]"]
+    direction TB
+    landing["<b>Landing Page</b><br/><i>[Container: HTML5, CSS3, JavaScript]</i><br/>Sitio estático (GitHub Pages) con la propuesta<br/>de valor, planes y equipo; i18n en-US/es-419.<br/>Sus CTA llevan a la Web Application."]:::container
+    webapp["<b>Web Application</b><br/><i>[Container: Angular, Angular Material, TypeScript]</i><br/>SPA responsive (Material Design) con un módulo<br/>por bounded context; i18n con ngx-translate y ARIA.<br/>Desplegada en Firebase Hosting."]:::container
+    api["<b>RESTful API</b><br/><i>[Container: Spring Boot, Java 21, Spring Data JPA]</i><br/>Monolito modular con los 6 bounded contexts;<br/>Spring Security (JWT + TOTP), OpenAPI (springdoc)<br/>y notificaciones WebSocket (STOMP). Render."]:::container
+    db[("<b>Database</b><br/><i>[Container: MySQL 8]</i><br/>Tablas agrupadas por bounded context<br/>(Railway).")]:::db
+  end
+  tb["<b>ThingsBoard</b><br/><i>[Software System – externo]</i>"]:::external
+  niubiz["<b>Niubiz</b><br/><i>[Software System – externo]</i>"]:::external
+  mail["<b>SendGrid</b><br/><i>[Software System – externo]</i>"]:::external
+  visitor -- "Visita [HTTPS]" --> landing
+  landing -- "Solicita demo [JSON/HTTPS]" --> api
+  landing -- "Redirige por segmento (CTA) [HTTPS]" --> webapp
+  users -- "Usa [HTTPS]" --> webapp
+  webapp -- "Consume endpoints<br/>[JSON/HTTPS, Bearer JWT]" --> api
+  api -- "Notificaciones en tiempo real<br/>[WebSocket – STOMP]" --> webapp
+  api -- "Lee y escribe<br/>[JDBC – Spring Data JPA/Hibernate]" --> db
+  tb -- "Envía telemetría [Webhook JSON/HTTPS]" --> api
+  api -- "Autoriza cobros [REST JSON/HTTPS]" --> niubiz
+  api -- "Envía correos [REST JSON/HTTPS]" --> mail
+  style DP fill:#F4F8FC,stroke:#1168BD,stroke-width:2px,stroke-dasharray: 6 4,color:#0B4884
+  classDef person fill:#08427B,stroke:#052E56,color:#ffffff,stroke-width:1px
+  classDef system fill:#1168BD,stroke:#0B4884,color:#ffffff
+  classDef container fill:#438DD5,stroke:#2E6295,color:#ffffff
+  classDef component fill:#85BBF0,stroke:#5D82A8,color:#0B2545
+  classDef external fill:#8C8C8C,stroke:#6B6B6B,color:#ffffff
+  classDef db fill:#438DD5,stroke:#2E6295,color:#ffffff

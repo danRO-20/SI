@@ -1,0 +1,64 @@
+---
+title: "Database Diagram – Quality & Compliance (1/2): documentos, insumos y liberación Bounded Context (MySQL 8)"
+---
+erDiagram
+  quality_documents {
+    bigint id PK
+    varchar(30) code UK
+    varchar(255) title
+    varchar(30) type "PROTOCOL, SOP, SPECIFICATION"
+    varchar(20) status "DRAFT, IN_REVIEW, APPROVED, OBSOLETE"
+  }
+  document_versions {
+    bigint id PK
+    bigint quality_document_id FK
+    varchar(10) version_number
+    varchar(500) file_url
+    varchar(500) change_reason
+    bigint author_id "ref iam.users"
+    bigint approval_signature_id "ref iam.electronic_signatures"
+  }
+  material_approvals {
+    bigint id PK
+    bigint raw_material_lot_id UK "ref manufacturing.raw_material_lots"
+    varchar(30) sample_code "nullable"
+    varchar(20) status "PENDING, SAMPLED, APPROVED, REJECTED"
+    bigint decided_by "ref iam.users"
+    varchar(500) reason "nullable"
+  }
+  analytical_results {
+    bigint id PK
+    bigint production_batch_id "ref manufacturing.production_batches"
+    varchar(150) test_name
+    decimal value "(12,4)"
+    decimal spec_min "(12,4)"
+    decimal spec_max "(12,4)"
+    varchar(10) unit
+    tinyint(1) out_of_specification
+    bigint analyst_id "ref iam.users"
+  }
+  batch_reviews {
+    bigint id PK
+    bigint production_batch_id UK "ref manufacturing.production_batches"
+    varchar(20) status "IN_QUARANTINE, UNDER_EVALUATION, RELEASED, REJECTED"
+    datetime quarantine_started_at
+    varchar(30) sample_code "nullable"
+    datetime evaluated_at "nullable"
+  }
+  evidence_attachments {
+    bigint id PK
+    bigint batch_review_id FK
+    varchar(500) file_url
+    varchar(255) description
+  }
+  release_certificates {
+    bigint id PK
+    bigint batch_review_id FK, UK
+    varchar(30) certificate_number UK
+    varchar(10) verdict "RELEASED, REJECTED"
+    bigint signature_id "ref iam.electronic_signatures"
+    datetime issued_at
+  }
+  quality_documents ||--|{ document_versions : "versions"
+  batch_reviews ||--o{ evidence_attachments : "attaches"
+  batch_reviews ||--o| release_certificates : "issues"

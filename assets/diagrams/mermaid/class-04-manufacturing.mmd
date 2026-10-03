@@ -1,0 +1,186 @@
+---
+title: "Class Diagram – Manufacturing & Batch Management Bounded Context"
+---
+classDiagram
+  direction TB
+  class Product {
+    <<Aggregate Root>>
+    -Long id
+    -String code
+    -String name
+    -DosageForm dosageForm
+  }
+  class MasterFormula {
+    <<Aggregate Root>>
+    -Long id
+    -Long productId
+    -String version
+    -FormulaStatus status
+    -List~FormulaComponent~ components
+    +addComponent(String rawMaterialCode, Quantity quantity) void
+    +approve() void
+  }
+  class FormulaComponent {
+    <<Entity>>
+    -Long id
+    -String rawMaterialCode
+    -Quantity quantity
+  }
+  class RawMaterialLot {
+    <<Aggregate Root>>
+    -Long id
+    -String code
+    -String name
+    -String supplierLot
+    -String rfidTag
+    -Quantity receivedQuantity
+    -String warehouseLocation
+    -MaterialQualityStatus qualityStatus
+    -LocalDate expirationDate
+    +requestQualityApproval() void
+    +assignLocation(String location) void
+    +markAsApproved() void
+    +markAsRejected() void
+    +isApprovedForUse() boolean
+  }
+  class ProductionOrder {
+    <<Aggregate Root>>
+    -Long id
+    -Long productId
+    -Long masterFormulaId
+    -Long plantId
+    -Quantity plannedQuantity
+    -ProductionOrderStatus status
+    -LocalDate plannedStartDate
+    +approve() void
+    +reject(String reason) void
+    +plan(LocalDate startDate) void
+  }
+  class ProductionBatch {
+    <<Aggregate Root>>
+    -Long id
+    -BatchNumber number
+    -Long productionOrderId
+    -BatchStatus status
+    -Quantity plannedQuantity
+    -Quantity manufacturedQuantity
+    -LocalDateTime startedAt
+    -LocalDateTime finishedAt
+    -List~MaterialConsumption~ consumptions
+    -List~ProcessParameter~ parameters
+    -List~Incident~ incidents
+    -List~BatchEvent~ events
+    +start() void
+    +consumeMaterial(Long rawMaterialLotId, Quantity quantity) void
+    +recordParameter(String name, BigDecimal value, String unit) void
+    +registerIncident(String description, IncidentSeverity severity) Incident
+    +hold(String reason) void
+    +finish() void
+    +label() void
+    +close(Quantity manufactured) void
+    +requestRelease() void
+    +markAsReleased(Long certificateId) void
+    +markAsRejected(String reason) void
+  }
+  class MaterialConsumption {
+    <<Entity>>
+    -Long id
+    -Long rawMaterialLotId
+    -Quantity quantityUsed
+  }
+  class ProcessParameter {
+    <<Entity>>
+    -Long id
+    -String name
+    -BigDecimal value
+    -String unit
+    -LocalDateTime recordedAt
+  }
+  class Incident {
+    <<Entity>>
+    -Long id
+    -String description
+    -IncidentSeverity severity
+    -IncidentStatus status
+    +escalate() void
+    +resolve(String resolution) void
+  }
+  class BatchEvent {
+    <<Entity>>
+    -Long id
+    -String type
+    -String description
+    -Long performedBy
+    -LocalDateTime occurredAt
+  }
+  class BatchNumber {
+    <<Value Object>>
+    +String value
+  }
+  class Quantity {
+    <<Value Object>>
+    +BigDecimal value
+    +String unit
+  }
+  class BatchStatus {
+    <<enumeration>>
+    PLANNED
+    IN_PROGRESS
+    ON_HOLD
+    FINISHED
+    CLOSED
+    RELEASE_REQUESTED
+    RELEASED
+    REJECTED
+  }
+  class MaterialQualityStatus {
+    <<enumeration>>
+    QUARANTINE
+    APPROVAL_REQUESTED
+    APPROVED
+    REJECTED
+  }
+  class ProductionOrderStatus {
+    <<enumeration>>
+    CREATED
+    APPROVED
+    REJECTED
+    PLANNED
+  }
+  class IncidentSeverity {
+    <<enumeration>>
+    MINOR
+    MAJOR
+    CRITICAL
+  }
+  class ProductionBatchRepository {
+    <<interface>>
+    +findByNumber(BatchNumber number) Optional~ProductionBatch~
+    +existsByNumber(BatchNumber number) boolean
+  }
+  class ProductionBatchCommandService {
+    <<interface>>
+    +handle(CreateBatchCommand command) Optional~ProductionBatch~
+    +handle(RegisterIncidentCommand command) Optional~Incident~
+    +handle(CloseBatchCommand command) Optional~ProductionBatch~
+  }
+  class ExternalQualityService {
+    +requestMaterialApproval(Long rawMaterialLotId) Long
+    +startQuarantine(Long batchId) Long
+  }
+  MasterFormula "0..*" --> "1" Product : defines
+  MasterFormula "1" *-- "1..*" FormulaComponent : contains
+  ProductionOrder "0..*" --> "1" MasterFormula : follows
+  ProductionBatch "0..*" --> "1" ProductionOrder : executes
+  ProductionBatch "1" *-- "0..*" MaterialConsumption : consumes
+  ProductionBatch "1" *-- "0..*" ProcessParameter : records
+  ProductionBatch "1" *-- "0..*" Incident : registers
+  ProductionBatch "1" *-- "0..*" BatchEvent : timeline
+  MaterialConsumption "0..*" --> "1" RawMaterialLot : uses
+  ProductionBatch *-- BatchNumber : number
+  ProductionBatch --> BatchStatus : status
+  RawMaterialLot --> MaterialQualityStatus : qualityStatus
+  ProductionOrder --> ProductionOrderStatus : status
+  Incident --> IncidentSeverity : severity
+  ProductionBatchRepository ..> ProductionBatch : persists
+  ProductionBatchCommandService ..> ExternalQualityService : uses
