@@ -1,4 +1,4 @@
-# Capítulo I: Introducción
+# Capítulo 1: Introducción
 
 La presente introducción tiene como finalidad contextualizar el proyecto desarrollado, proporcionando una visión general de los antecedentes, objetivos y fundamentos que sustentan su planteamiento. Asimismo, delimita el alcance de la propuesta y establece el marco de referencia necesario para comprender su desarrollo, destacando su relevancia, los retos que busca abordar y los beneficios esperados de su implementación. De esta manera, se ofrece una base conceptual que orienta al lector y facilita la comprensión de los contenidos expuestos en las secciones posteriores del documento.
 
@@ -22,15 +22,15 @@ Diseñar soluciones tecnológicas abiertas que permitan digitalizar y optimizar 
 
 Convertirnos en una referencia en soluciones digitales de aseguramiento de calidad para la industria farmacéutica latinoamericana, facilitando la adopción de tecnologías abiertas que mejoren la trazabilidad, la integridad de los datos y la gestión del cumplimiento regulatorio.
 
-### 1.1.2. Perfiles de integrantes del equipo
+### 1.1.2 Perfiles de Integrantes del Equipo
 
 | Foto | **Nombres, código y carrera** | **Resumen de conocimientos y habilidades** |
 | --- | --- | --- |
-| <img src="../assets/img/photo/Marcelo.jpg" width="120"> | **Angulo Ramírez, Marcelo Martín**<br>Código: U202321425<br>Carrera: Ingeniería de Software<br>GitHub: Zock2005 | Tengo 21 años y soy una persona puntual, responsable y comunicativa. Me interesé por la carrera gracias a los cursos de programación del colegio y a los que llevé por mi cuenta. Manejo C++ y Python; en el proyecto aporto en investigación de usuarios (diseño y análisis de entrevistas), diseño UX/UI de la Web Application y en la integración de los capítulos del informe con GitFlow. |
-| <img src="../assets/img/photo/Yhoshua.jpg" width="120"> | **Cobades Zamora, Yhoshua Hebert**<br>Código: U20231H117<br>Carrera: Ingeniería de Software<br>GitHub: YhoshuaCZ | Tengo 19 años, me apasiona la tecnología y trabajo bien bajo presión. Uso Linux (Arch) como entorno principal, lo que me ha dado experiencia con la terminal, Git y la configuración de entornos. En el proyecto aporto en la gestión del Product Backlog en Jira, la configuración de repositorios y despliegues (GitHub Pages) y la documentación de Software Configuration Management. |
-| <img src="../assets/img/photo/Ricardo.jpg" width="120"> | **Flores Martinez, Ricardo Andres**<br>Código: U202423162<br>Carrera: Ingeniería de Software<br>GitHub: Nitoryu2801 | Tengo 19 años y soy una persona responsable, organizada y comprometida. Mi interés por la programación nació en mi familia, lo que me llevó a elegir Ingeniería de Software. Cuento con conocimientos de programación, bases de datos y maquetación web (HTML y CSS); en el proyecto aporto en las fichas de User Persona, los Empathy Maps y la implementación de la Landing Page. |
-| <img src="../assets/img/photo/Daniel.jpg" width="120"> | **Rojas Ambicho, Nestor Daniel**<br>Código: U20241F397<br>Carrera: Ingeniería de Software<br>GitHub: danRO-20 | Tengo 20 años y me apasiona el desarrollo de aplicaciones. Tengo experiencia en proyectos académicos de software y bases de datos, y en modelado con UML y C4. En el proyecto aporto en los User Journey Maps, el Impact Mapping, la arquitectura de software (C4), el diseño orientado a objetos y la internacionalización de la Landing Page. |
-| <img src="../assets/img/photo/Rodolfo.jpg" width="120"> | **Zavaleta Gutierrez, Rodolfo Martin**<br>Código: U20241F733<br>Carrera: Ingeniería de Software<br>GitHub: gutierrezrodolfo360-bit | Tengo 19 años y soy una persona puntual y responsable. Me interesé por la carrera gracias a los cursos de programación del colegio y a los que llevé por mi cuenta. Manejo HTML, CSS y JavaScript; en el proyecto aporto en la redacción de User Stories, el diseño de base de datos, el Design-Level EventStorming y los estilos e internacionalización de la Landing Page. |
+| <img src="../assets/img/photo/Marcelo.jpg" width="120"> | **Angulo Ramírez, Marcelo Martín**<br>Código: U202321425<br>Carrera: Ingeniería de Software<br>GitHub: Zock2005 | Tengo 21 años y soy una persona puntual, responsable y comunicativa. Me interesé por la carrera gracias a cursos de programación del colegio y a los que tomé por mi cuenta; actualmente manejo C++ y Python, y busco ampliar mis conocimientos en otros lenguajes para optimizar mi trabajo en equipo y resolver problemas. |
+| <img src="../assets/img/photo/Yhoshua.jpg" width="120"> | **Cobades Zamora, Yhoshua Hebert**<br>Código: U20231H117<br>Carrera: Ingeniería de Software<br>GitHub: YhoshuaCZ | Tengo 19 años, me interesa mucho aprender sobre tecnología y soy bastante resistente al estrés. En mis tiempos libres me gusta aprender e informarme sobre la situación actual de varias tecnologías. Me divierto surfeando en las olas de internet. I use Arch btw. |
+| <img src="../assets/img/photo/Ricardo.jpg" width="120"> | **Flores Martinez, Ricardo Andres**<br>Código: U202423162<br>Carrera: Ingeniería de Software<br>GitHub: Nitoryu2801 | Tengo 19 años y soy una persona responsable, organizada y comprometida. Me interesa mucho la tecnología, especialmente el desarrollo de software y la creación de aplicaciones. Mi interés por la programación fue gracias a mi familia, lo que me llevó a elegir Ingeniería de Software. Actualmente cuento con conocimientos en programación, bases de datos y desarrollo de proyectos, y busco constantemente aprender nuevas herramientas y tecnologías |
+| <img src="../assets/img/photo/Daniel.jpg" width="120"> | **Rojas Ambicho, Nestor Daniel**<br>Código: U20241F397<br>Carrera: Ingeniería de Software<br>GitHub: danRO-20 | Tengo 20 años, apasionado por la tecnología, el desarrollo de aplicaciones y la programación. Con experiencia en proyectos académicos de software, bases de datos y metodologías de desarrollo, busco constantemente aprender y dominar nuevas herramientas técnicas. Me interesé por la carrera debido a que desde el colegio me gustaban cursos relacionados a la tecnologia, y después empecé a aprender por mi cuenta. |
+| <img src="../assets/img/photo/Rodolfo.jpg" width="120"> | **Zavaleta Gutierrez, Rodolfo Martin**<br>Código: U20241F733<br>Carrera: Ingeniería de Software<br>GitHub: gutierrezrodolfo360-bit | Tengo 19 años y soy una persona puntual y responsable. Me interesé por la carrera debido a mis gustos adquiridos por la programación gracias a cursos del colegio y que tomé por mi parte. |
 
 ## 1.2. Solution Profile
 
@@ -66,54 +66,31 @@ Las tecnologías basadas en Internet de las Cosas (IoT) permiten capturar inform
 
 - **What (¿Qué?):** *¿Qué es lo que se busca resolver?*
 
-- Se busca resolver las limitaciones relacionadas con la gestión de documentación de calidad, la trazabilidad de los lotes farmacéuticos y la disponibilidad de información confiable para actividades de aseguramiento de calidad y cumplimiento regulatorio.
+  Se busca resolver las limitaciones relacionadas con la gestión de documentación de calidad, la trazabilidad de los lotes farmacéuticos y la disponibilidad de información confiable para actividades de aseguramiento de calidad y cumplimiento regulatorio.
 
 - **Why (¿Por qué?):** *¿Por qué es importante resolverlo?*
 
-- Porque la calidad de los medicamentos depende de procesos adecuadamente controlados, documentados y respaldados por información íntegra y trazable. Además, una gestión eficiente de los registros facilita las auditorías, fortalece la toma de decisiones y contribuye al cumplimiento de las BPM y de los requisitos regulatorios aplicables.
+  Porque la calidad de los medicamentos depende de procesos adecuadamente controlados, documentados y respaldados por información íntegra y trazable. Además, una gestión eficiente de los registros facilita las auditorías, fortalece la toma de decisiones y contribuye al cumplimiento de las BPM y de los requisitos regulatorios aplicables.
 
 - **Who (¿Quién?):** *¿A quién afecta?*
 
-- Afecta principalmente a especialistas de aseguramiento y control de calidad (QA/QC), así como a responsables de producción farmacéutica encargados de supervisar procesos, gestionar documentación y asegurar el cumplimiento de estándares regulatorios.
+  Afecta principalmente a especialistas de aseguramiento y control de calidad (QA/QC), así como a responsables de producción farmacéutica encargados de supervisar procesos, gestionar documentación y asegurar el cumplimiento de estándares regulatorios.
 
 - **When (¿Cuándo?):** *¿Cuándo ocurre?*
 
-- La necesidad se presenta durante todas las etapas del ciclo de vida de un lote farmacéutico, incluyendo la fabricación, el control de calidad, la gestión de desviaciones, la revisión documental y las actividades de auditoría.
+  La necesidad se presenta durante todas las etapas del ciclo de vida de un lote farmacéutico, incluyendo la fabricación, el control de calidad, la gestión de desviaciones, la revisión documental y las actividades de auditoría.
 
 - **Where (¿Dónde?):** *¿En dónde ocurre?*
 
-- Se manifiesta en laboratorios y plantas farmacéuticas donde se ejecutan actividades de producción, aseguramiento de calidad y control regulatorio.
+  Se manifiesta en laboratorios y plantas farmacéuticas donde se ejecutan actividades de producción, aseguramiento de calidad y control regulatorio.
 
 - **How (¿Cómo?):** *¿Cómo se resuelve?*
 
-- Puede abordarse mediante una plataforma digital que centralice protocolos, expedientes de calidad y registros asociados a los lotes farmacéuticos, complementando la información mediante tecnologías IoT para fortalecer la trazabilidad y disponibilidad de datos.
+  Puede abordarse mediante una plataforma digital que centralice protocolos, expedientes de calidad y registros asociados a los lotes farmacéuticos, complementando la información mediante tecnologías IoT para fortalecer la trazabilidad y disponibilidad de datos.
 
 - **How much (¿Cuánto?):** *¿Cuánto cuesta resolverlo?*
 
-- La implementación requiere infraestructura tecnológica para el despliegue de la solución, digitalización de procesos documentales, capacitación de los usuarios e integración con fuentes de información internas y dispositivos IoT. Para el laboratorio, el costo se traduce en una suscripción mensual sin inversión en servidores ni hardware propio: Standard Lab (US$199/mes) para laboratorios pequeños y Enterprise (US$599/mes) para operaciones multi-planta.
-
-La técnica 5W + 2H permitió delimitar el problema (What), su impacto regulatorio (Why), los segmentos afectados (Who), los momentos críticos del ciclo de vida del lote (When), el entorno (Where), la estrategia de solución (How) y su costo (How much). Estos resultados se reflejan en el Problem Statement de la sección 1.2.2.1.
-
-#### 4. OBJETIVOS
-
-**Objetivo general:** desarrollar y desplegar DoofPlus, una solución web compuesta por una Landing Page, una Frontend Web Application y un RESTful API, que centralice la documentación de calidad, la trazabilidad de lotes y la gestión de desviaciones de laboratorios farmacéuticos pequeños y medianos de Lima Metropolitana, con el fin de reducir en 30% el tiempo de preparación de auditorías durante los primeros seis meses de uso.
-
-**Objetivos específicos:**
-
-- Validar las necesidades de especialistas QA/QC y jefes de producción mediante al menos tres entrevistas por segmento (AV1).
-- Publicar una Landing Page responsive y bilingüe (en-US / es-419) que comunique la propuesta de valor y dirija a cada segmento a la Web Application (AV1 y TB1).
-- Implementar la Frontend Web Application con Angular y Angular Material para los flujos core de lotes, desviaciones y documentación de calidad (TB1 y AV2).
-- Implementar el RESTful API con Spring Boot y Spring Data JPA, documentado con OpenAPI (Swagger) e integrado con ThingsBoard y Niubiz (AV2 y TB2).
-- Validar la solución con usuarios de ambos segmentos mediante evaluaciones heurísticas de usabilidad, arquitectura de información y diseño inclusivo (AV2 y TB2).
-
-#### 5. RESTRICCIONES Y ALCANCE
-
-- **Alcance:** Landing Page, Frontend Web Application y RESTful API de elaboración interna. No incluye aplicación móvil nativa ni fabricación de hardware IoT: la captura de datos de sensores se integra mediante la plataforma externa ThingsBoard.
-- **Tecnológicas:** HTML5, CSS3 y JavaScript para la Landing Page; Angular con TypeScript y Angular Material (Material Design) para la Web Application; Spring Boot con Spring Data JPA (Java) para el RESTful API; MySQL como base de datos; OpenAPI (Swagger) para documentar los servicios; GitHub con GitFlow, Conventional Commits y Semantic Versioning.
-- **Regulatorias:** DoofPlus apoya el cumplimiento de las BPM de DIGEMID y de los principios de integridad de datos de la OMS, pero no reemplaza la validación de sistemas computarizados que cada laboratorio debe ejecutar; las firmas electrónicas siguen los criterios de 21 CFR Part 11 sin constituir una certificación.
-- **Datos personales:** el tratamiento de datos se rige por la Ley N.° 29733, Ley de Protección de Datos Personales.
-- **Idiomas y accesibilidad:** inglés (en-US) como idioma por defecto y español latinoamericano (es-419) en la Landing Page, la Web Application y los mensajes del RESTful API; atributos ARIA en la Landing Page y la Web Application.
-- **Tiempo:** cuatro sprints dentro del ciclo 2026-20 (AV1 semana 4, TB1 semana 7, AV2 semana 12 y TB2 semana 15).
+  La implementación requiere infraestructura tecnológica para el despliegue de la solución, digitalización de procesos documentales, capacitación de los usuarios e integración con fuentes de información internas y dispositivos IoT. La inversión dependerá del tamaño de la organización y del alcance de la integración requerida.
 
 ### 1.2.2. Lean UX Process
 
@@ -141,7 +118,7 @@ A continuación se muestran los Assumptions en su idioma original:
 
 **Business Assumptions:**
 
-- We believe that small and medium-sized Peruvian pharmaceutical laboratories are willing to pay a monthly subscription between US$199 and US$599 for a platform that reduces the risk of GMP observations during DIGEMID inspections.
+- We believe that small and medium-sized Peruvian pharmaceutical laboratories are willing to pay a monthly subscription between US\$ 199 and US\$ 599 for a platform that reduces the risk of GMP observations during DIGEMID inspections.
 - We believe that stricter DIGEMID GMP inspections create urgency for laboratories to digitize their paper-based quality records.
 - We believe that a SaaS model built on open-source technologies allows us to offer lower prices than global MES and QMS solutions while keeping a sustainable margin.
 - We believe that heads of quality assurance are the main decision-makers or influencers in the purchase of quality-management software.
@@ -259,19 +236,16 @@ A continuación se muestran las Hypothesis Statements en su idioma original:
 - **Hypothesis 8:**  
   ***We believe we will achieve*** 100% of DIGEMID traceability audits passed without critical observations during the first year
 
-  ***If*** QA/QC specialists
+  ***If*** QA/QC specialists and internal auditors
 
   ***Attain*** confidence that every change is recorded with who, when, what and why
 
   ***With*** an immutable audit trail with electronic signatures.
 
 #### 1.2.2.4. Lean UX Canvas
-
-El Lean UX Canvas (versión 2 de Jeff Gothelf) resume en una sola vista el Problem Statement, los usuarios, las soluciones, los resultados esperados y las hipótesis. Cada solución (S1 a S8) corresponde a un feature assumption y a su hypothesis statement. Los experimentos priorizan la Landing Page y los prototipos de los flujos principales antes de construir la Web Application.
-
 A continuación se muestra el Lean UX Canvas en su idioma original:
 
-![Lean UX Canvas](../assets/img/chapter1/lean-ux-canvas-v4.png)
+![LeanUX](../assets/img/chapter1/Lean-UX-canvas.jpg)
 
 ## 1.3. Segmentos objetivo
 
