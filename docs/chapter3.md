@@ -1,11 +1,8 @@
 # Capítulo III: Requirements Specification
+En este capítulo se presenta los requisitos especìficados de DoofPlus, acorde al análisis de la problemática, los segmentos objetivo y el alcance obtenido durante el desarrollo. La especificación cubre tres productos de la solución: la landing page pública, la aplicación web frontend y los servicios backend RESTful implementados con una arquitectura basada en bounded contexts.
 
-En este capítulo se presentan los requisitos de DoofPlus, especificados a partir del análisis de la problemática, los segmentos objetivo y los artefactos de needfinding. La especificación cubre los tres productos de la solución: la Landing Page, la Web Application y el RESTful API.
 
 ## 3.1. User Stories
-
-Los requisitos se expresan como épicas, User Stories y Technical Stories. Las User Stories de la Landing Page usan el rol visitante (o visitante de un segmento), las de la Web Application usan los roles de los segmentos objetivo, y las Technical Stories del RESTful API usan el rol Developer con criterios basados en escenarios de request/response. Cada historia incluye al menos dos criterios de aceptación en formato Gherkin (Dado–Cuando–Entonces), redactados en tiempo presente, en tercera persona y sin referirse a detalles de interfaz.
-
 | **Epic / Story ID** | **Título** | **Descripción** | **Criterios de Aceptación** | **Relacionado con (Epic ID)** |
 | --- | --- | --- | --- | --- |
 | **EP01** | **Landing Page & Public Experience** | Agrupa las funcionalidades del sitio web estático (Landing Page) que comunican la propuesta de valor a los visitantes de cada segmento y los dirigen a la Web Application. | – | – |
@@ -92,41 +89,13 @@ Los requisitos se expresan como épicas, User Stories y Technical Stories. Las U
 
 ## 3.2. Impact Mapping
 
-El Impact Mapping de DoofPlus conecta los objetivos estratégicos del negocio con los actores involucrados, los impactos esperados, los entregables digitales y sus respectivas User Stories. Se elaboró en UXPressia a partir de las fichas de User Persona de la sección 2.3.1 (María México para el segmento QA/QC y Alberto Valle para el segmento de Producción), respondiendo a las preguntas: ¿quiénes ayudarán a lograr la meta? (Personas), ¿qué tendrían que hacer? (Impacts), ¿qué puede hacer el negocio digital para provocar esos impactos? (Deliverables) y ¿qué User Stories construyen cada entregable?
-
-Los Business Goals cumplen los criterios SMART y provienen de los Business Outcomes y de las hipótesis del Lean UX Process (sección 1.2.2): el primero corresponde a la hipótesis 2, el segundo a la hipótesis 6, el tercero a la hipótesis 8 y el cuarto al criterio de éxito del Problem Statement.
+El Impact Mapping de DoofPlus conecta los objetivos estratégicos del negocio con los actores involucrados, los impactos esperados, los entregables digitales y sus respectivas User Stories. La solución busca optimizar los tiempos de liberación de lotes y erradicar los errores de transcripción manual en la planta, garantizando el estricto cumplimiento de las normativas de calidad farmacéutica (BPM) mediante trazabilidad centralizada, monitoreo automatizado vía dispositivos IoT, gestión digital de desviaciones y un registro de auditoría inalterable (Audit Trail).
 
 ![Impact Mapping](../assets/img/chapter3/Impact-Mapping.png)
 
-La siguiente tabla presenta el mapa completo con las User Stories vigentes de la sección 3.1. Cada historia se asigna a la persona cuyo rol aparece en su descripción:
-
-| Business Goal (SMART) | Persona | Impact | Deliverable | User Stories |
-| --- | --- | --- | --- | --- |
-| BG1. Reducir el tiempo promedio de liberación y trazabilidad de lotes farmacéuticos en un 40% durante los primeros 6 meses de uso de la plataforma. | María México | Aprobar lotes y estandarizar protocolos mediante aprobaciones electrónicas, eliminando el uso de papel. | Módulo de Gestión de Protocolos | **US09:** Como especialista QA/QC, quiero registrar protocolos digitales para estandarizar los procesos y cumplir las BPM.<br><br>**US12:** Como especialista QA/QC, quiero mantener el historial de versiones de cada documento para garantizar su integridad.<br><br>**US13:** Como jefe de aseguramiento de calidad, quiero aprobar documentos mediante firma electrónica para asegurar la trazabilidad regulatoria. |
-|  | María México | Revisar el historial completo de cada lote y liberarlo sin esperar expedientes en papel. | Sistema de Trazabilidad Centralizada de Lotes | **US15:** Como especialista QA/QC, quiero consultar el historial completo de un lote para revisar sus registros y eventos asociados.<br><br>**US54:** Como especialista QA/QC, quiero poner en cuarentena, evaluar y liberar o rechazar los lotes cerrados para que solo se distribuyan productos conformes. |
-|  | María México | Delegar al sistema el cálculo de los resultados analíticos para agilizar la revisión de calidad. | Motor de Cálculo Analítico Automatizado | **US11:** Como especialista QA/QC, quiero que el sistema calcule automáticamente los resultados analíticos para reducir errores manuales. |
-|  | Alberto Valle | Iniciar y gestionar órdenes de fabricación digitalmente para evitar tiempos muertos por papeleo. | Sistema de Trazabilidad Centralizada de Lotes | **US57:** Como jefe de producción, quiero crear y aprobar órdenes de producción para planificar la fabricación de los lotes.<br><br>**US58:** Como supervisor de producción, quiero registrar la recepción de materias primas con su lote de proveedor para que queden en cuarentena hasta su aprobación por Calidad.<br><br>**US14:** Como supervisor de producción, quiero registrar lotes para iniciar su trazabilidad digital.<br><br>**US16:** Como supervisor de producción, quiero actualizar el estado de los lotes durante su ciclo de vida para reflejar su avance real.<br><br>**US17:** Como supervisor de producción, quiero asociar las materias primas utilizadas a un lote para mantener su trazabilidad completa.<br><br>**US56:** Como supervisor de producción, quiero registrar las incidencias de un lote y escalarlas a Calidad para que se investiguen sin detener la producción más de lo necesario. |
-|  | Alberto Valle | Formular productos asegurando al instante que se usan las especificaciones autorizadas. | Gestor de Fórmulas Maestras | **US35:** Como jefe de producción, quiero administrar los productos farmacéuticos para fabricarlos en nuevos lotes.<br><br>**US36:** Como jefe de producción, quiero registrar las fórmulas maestras aprobadas para que cada lote se fabrique según la especificación autorizada. |
-| BG2. Disminuir a 0% las incidencias por errores de transcripción manual en los registros de planta durante el primer trimestre de implementación. | María México | Documentar anomalías en tiempo real para bloquear inmediatamente productos defectuosos. | Gestor Digital de Desviaciones y Eventos | **US18:** Como especialista QA/QC, quiero registrar desviaciones para realizar su seguimiento y análisis.<br><br>**US19:** Como especialista QA/QC, quiero documentar el análisis de causa raíz (RCA) para identificar el origen de las desviaciones.<br><br>**US20:** Como especialista QA/QC, quiero registrar acciones correctivas y preventivas derivadas de una desviación para evitar su recurrencia. |
-|  | Alberto Valle | Supervisar la maquinaria confiando en lecturas automáticas sin requerir que los operarios anoten a mano. | Módulo de Integración y Telemetría IoT | **US24:** Como supervisor de producción, quiero asociar los sensores de un equipo a un lote en fabricación para vincular sus lecturas.<br><br>**US25:** Como supervisor de producción, quiero que las variables críticas se registren automáticamente para evitar la transcripción manual. |
-|  | Alberto Valle | Tomar decisiones operativas en tiempo real basadas en métricas visuales consolidadas. | Dashboard de Indicadores de Cumplimiento | **US32:** Como supervisor de producción, quiero visualizar el estado de los lotes en curso para tomar decisiones oportunas. |
-| BG3. Alcanzar el 100% de cumplimiento sin observaciones críticas en las auditorías de trazabilidad de DIGEMID durante el primer año. | María México | Respaldar ante los inspectores cada cambio en el sistema mediante un registro cronológico blindado. | Registro de Auditoría Inalterable (Audit Trail) | **US27:** Como especialista QA/QC, quiero consultar todas las modificaciones realizadas sobre los registros para demostrar la integridad de los datos.<br><br>**US29:** Como especialista QA/QC, quiero consolidar la documentación requerida para una auditoría para responder a tiempo a los inspectores.<br><br>**US59:** Como especialista QA/QC, quiero programar auditorías y registrar sus hallazgos para dar seguimiento a su cierre. |
-|  | María México | Garantizar que solo personal calificado pueda autorizar procesos críticos usando credenciales seguras. | Sistema de Control de Accesos y Firmas Electrónicas | **US08:** Como especialista de calidad, quiero firmar electrónicamente las acciones críticas para validarlas conforme a los requisitos regulatorios. |
-|  | Alberto Valle | Asegurar que las mediciones de los sensores sean legalmente válidas demostrando su calibración vigente. | Gestor de Calibración de Dispositivos IoT | **US38:** Como supervisor de producción, quiero controlar la calibración de equipos y sensores para asegurar mediciones válidas. |
-| BG4. Alcanzar 10 laboratorios suscritos a un plan pagado en los primeros 6 meses después del lanzamiento. | María México | Evaluar DoofPlus y recomendar su contratación en su laboratorio. | Landing Page con propuesta de valor, planes y solicitud de demo | **US01:** Como visitante especialista QA/QC o jefe de producción, quiero conocer la propuesta de valor de DoofPlus para evaluar si responde a las necesidades de mi laboratorio.<br><br>**US03:** Como visitante responsable de compras de un laboratorio, quiero consultar los planes y precios disponibles para identificar la alternativa más adecuada para mi organización.<br><br>**US04:** Como visitante interesado, quiero dejar mi correo electrónico para recibir información y solicitar una demostración de DoofPlus.<br><br>**US48:** Como visitante especialista QA/QC o jefe de producción, quiero acceder desde la Landing Page a la vista de la Web Application de mi segmento para comenzar a usar la plataforma. |
-
-**Actualización pendiente en UXPressia:** los Business Goals, Personas, Impacts y Deliverables se mantienen, salvo estos cambios; las tarjetas de User Stories se reemplazan por las de la tabla anterior.
-
-| Cambio | Detalle |
-| --- | --- |
-| Impact y deliverable del muestreo (María, BG1) | Impact "Delegar al sistema el cálculo de los resultados analíticos para agilizar la revisión de calidad" y deliverable "Motor de Cálculo Analítico Automatizado", porque US11 calcula resultados analíticos y no el tamaño de muestra. |
-| Nueva rama de María en BG1 | Impact "Revisar el historial completo de cada lote y liberarlo sin esperar expedientes en papel", deliverable "Sistema de Trazabilidad Centralizada de Lotes", con US15 y US54. |
-| Rama de accesos y firmas (BG3) | Pasa de Alberto Valle a María México: la firma electrónica (US08) la realiza el especialista de calidad. |
-| Business Goal BG4 | Se agrega con la rama de la Landing Page (María México). |
-
 ## 3.3. Product Backlog
 
-El Product Backlog consolida las User Stories y Technical Stories ordenadas por valor para el negocio, no por dependencia técnica. Las historias de la Landing Page van primero porque se implementan desde el Sprint 1; siguen las del core del negocio (trazabilidad de lotes, desviaciones, liberación, auditoría y documentación de calidad), luego las de colaboración, dashboards, IoT y operaciones de laboratorio, y al final las de soporte genérico (autenticación, registro de la organización y suscripciones).
+El Product Backlog de DoofPlus consolida todas las User Stories y Technical Stories identificadas, ordenadas según el valor que aportan al negocio. Las historias relacionadas con la Landing Page se posicionan al inicio dado que corresponden al primer sprint y son el primer punto de contacto con los potenciales clientes. A continuación se presentan las historias del core de calidad y producción farmacéutica, y finalmente las Technical Stories del API.
 
 | **# Orden** | **User Story Id** | **Título** | **Descripción** | **Story Points (1 / 2 / 3 / 5 / 8)** |
 | --- | --- | --- | --- | --- |
@@ -201,6 +170,8 @@ El Product Backlog consolida las User Stories y Technical Stories ordenadas por 
 | 69 | US53 | Renovación y cancelación | Como administrador del laboratorio, quiero renovar o cancelar la suscripción para controlar mis costos. | 3 |
 | 70 | TS09 | API de suscripciones y pagos | Como Developer, quiero implementar endpoints de suscripciones integrados con la API de Niubiz. | 5 |
 
+<br>
+
 **Evidencia de Product Backlog en Jira:**
 
 A continuación, se muestra la gestión del backlog en la herramienta Jira Software, evidenciando la priorización y estimación de las historias.
@@ -208,4 +179,4 @@ A continuación, se muestra la gestión del backlog en la herramienta Jira Softw
 ![Evidence Product Backlog Jira](../assets/img/chapter3/product-backlog-jira.png)
 *Figura: Captura del Product Backlog en Jira Software.*
 
-**Enlace al Product Backlog en Jira:** [https://doofplus.atlassian.net/jira/software/projects/UPC/boards/3/backlog](https://doofplus.atlassian.net/jira/software/projects/UPC/boards/3/backlog)
+**Enlace al Product Backlog en Jira:** [click aquí](https://doofplus.atlassian.net/jira/software/projects/UPC/boards/3/backlog?jql=parent+IN+%28UPC-2%2C+UPC-9%2C+UPC-20%29&atlOrigin=eyJpIjoiOWZkY2NhNGFkYzdlNGFmNGJlZTE4MTY1OGVjNjAyZDciLCJwIjoiaiJ9)
