@@ -6,7 +6,7 @@ Para desarrollar una solución efectiva, es importante entender la situación co
 En este periodo, se analizan distintos tipos de competidores con el objetivo de entender sus fortalezas y debilidades, y así posicionar a DoofPlus como una propuesta que responda de manera más efectiva a las necesidades reales del sector.
 
 ### 2.1.1. Análisis competitivo
-A continuación, se presenta una tabla comparativa sobre los principales competidores, en el que se considera su propuesta de valor, mercado objetivo y características generales. Este análisis permite evidenciar que, mientras las soluciones existentes se orientan a grandes corporaciones o dependen de procesos manuales, DoofPlus podrá destacar como una alternativa especializada, accesible y centrada en la automatización del aseguramiento de la calidad mediante integración IoT y trazabilidad digital, especialmente pensada para laboratorios farmacéuticos pequeños y medianos (y, en el plan Enterprise, instituciones públicas como el INS).
+A continuación, se presenta una tabla comparativa sobre los principales competidores, en el que se considera su propuesta de valor, mercado objetivo y características generales. Este análisis permite evidenciar que, mientras las soluciones existentes se orientan a grandes corporaciones o dependen de procesos manuales, DoofPlus podrá destacar como una alternativa specializada, accesible y centrada en la automatización del aseguramiento de la calidad mediante integración IoT y trazabilidad digital, especialmente pensada para laboratorios medianos y entidades públicas de la región.
 
 <table>
   <tr>
@@ -28,7 +28,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td><img src="../assets/img/chapter2/competitors/drugxafe.png" width="120"><br><b>DrugXafe (Tiga Healthcare)</b></td>
   </tr>
   <tr>
-    <td rowspan="3">Perfil</td>
+    <td rowspan="2">Perfil</td>
     <td>Overview</td>
     <td>Plataforma SaaS bilingüe de gestión de calidad y trazabilidad de lotes para laboratorios farmacéuticos, con integración de sensores IoT.</td>
     <td>Plataforma MES de gestión de producción que integra IoT industrial, monitoreo de OEE en tiempo real y batch record electrónico (Colombia).</td>
@@ -43,6 +43,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Prevención de falsificaciones y fraude en la cadena de suministro: garantiza que solo medicamentos auténticos lleguen al paciente.</td>
   </tr>
   <tr>
+    <td rowspan="2">Perfil de marketing</td>
     <td>Mercado objetivo</td>
     <td>Laboratorios farmacéuticos pequeños y medianos de Lima y, luego, de la región andina.</td>
     <td>Manufactura regulada y no regulada (alimentos, farmacéuticos, cosméticos) en Colombia y Latinoamérica.</td>
@@ -50,7 +51,6 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Fabricantes, importadores, distribuidores y autoridades sanitarias.</td>
   </tr>
   <tr>
-    <td rowspan="2">Perfil de marketing</td>
     <td>Estrategias de marketing</td>
     <td>Contenido educativo sobre BPM e integridad de datos, demos desde la Landing Page y presencia en eventos del sector.</td>
     <td>Marketing digital B2B (blog, casos de éxito) y demostraciones comerciales.</td>
@@ -58,6 +58,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Venta B2B y B2G a actores de la cadena de suministro y reguladores.</td>
   </tr>
   <tr>
+    <td rowspan="3">Perfil de producto</td>
     <td>Productos &amp; Servicios</td>
     <td>Documentos y SOP, expediente de lote, desviaciones y CAPA, liberación, audit trail, reportes, dashboards e IoT.</td>
     <td>MES, monitoreo OEE, batch record electrónico, IA para operaciones y mantenimiento.</td>
@@ -65,7 +66,6 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Serialización, agregación de empaques y reportes de trazabilidad.</td>
   </tr>
   <tr>
-    <td rowspan="2">Perfil de producto</td>
     <td>Precios &amp; Costos</td>
     <td>Standard Lab US$199/mes (US$1,990/año); Enterprise US$599/mes (US$5,990/año).</td>
     <td>Suscripción e implementación cotizadas por planta (precios no publicados).</td>
@@ -329,12 +329,14 @@ A partir del análisis de las entrevistas y la información recopilada sobre los
 **1) Segmento 1: Especialista de Aseguramiento y Control de Calidad (QA/QC)**
 
 Para este segmento se elaboró el User Persona María México, tomando como referencia el perfil de los profesionales responsables de las actividades de aseguramiento y control de calidad dentro de laboratorios farmacéuticos. Se consideraron factores como su experiencia en validaciones, revisión documental, verificación de equipos y evaluación de personal analista, así como su participación en la gestión de protocolos, registros y auditorías regulatorias. Sus principales frustraciones se relacionan con la dependencia de procesos manuales para revisar cálculos, informes y documentación antes de registrar los resultados en los sistemas de la organización, lo que incrementa el tiempo invertido en tareas operativas y dificulta la preparación de evidencias para inspecciones y auditorías. Asimismo, se tomó en cuenta su necesidad de disponer de una plataforma que centralice la información de calidad, facilite la trazabilidad de los lotes, automatice la generación de reportes y reduzca la carga administrativa asociada a la gestión documental, permitiéndole dedicar más tiempo a actividades de supervisión y mejora continua de los procesos de calidad.
+
 ![User - Segmento 1](../assets/img/chapter2/interview/segmento1/user-persona1.png)
 
 
 **2) Segmento 2: Jefe o Supervisor de Producción Farmacéutica**
 
 Para este segmento se elaboró el User Persona Alberto Valle Vega. Se consideraron factores como su amplia experiencia en la industria farmacéutica, su responsabilidad en la supervisión de los procesos de fabricación y su participación en la coordinación con las áreas de aseguramiento y control de calidad. Sus principales motivaciones están orientadas a garantizar que la producción se desarrolle conforme a los procedimientos establecidos, manteniendo la calidad, la trazabilidad y el cumplimiento de los estándares regulatorios durante todas las etapas de fabricación. Entre sus principales dificultades se encuentra el acceso oportuno a información consolidada sobre los lotes en producción, así como la gestión y comunicación de incidencias que requieren seguimiento y documentación formal. Asimismo, se tomó en cuenta su necesidad de disponer de herramientas que faciliten la consulta del historial de producción, mejoren la coordinación entre las diferentes áreas involucradas y permitan acceder a información confiable para la toma de decisiones operativas, contribuyendo a una gestión más eficiente y a la reducción de errores durante el proceso productivo.
+
 ![User - Segmento 2](../assets/img/chapter2/interview/segmento2/user-persona2.png)
 
 ### 2.3.2. User Task Matrix
@@ -459,7 +461,7 @@ Cada integrante escribió en post-its naranjas, sin orden y en tiempo pasado, lo
 
 Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=3458764685732289571
 
-![Step 4 - Generating Domain Events](../assets/img/chapter2/event-storming/big-picture/step4-generating-domain-events.png)
+![Step 4 - Generating Domain Events](../assets/img/chapter2/big-picture/step4-generating-domain-events.jpg)
 
 **Step 5 – Sorting Domain Events**
 
@@ -467,7 +469,7 @@ Los eventos se ordenaron cronológicamente de izquierda a derecha. Los resultado
 
 Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=3458764685732347233
 
-![Step 5 - Sorting Domain Events](../assets/img/chapter2/event-storming/big-picture/step5-sorting-domain-events.png)
+![Step 5 - Sorting Domain Events](../assets/img/chapter2/big-picture/step5-sorting-domain-events.jpg)
 
 **Step 6 – Adding Actors and External Systems**
 
@@ -475,7 +477,7 @@ Sobre la línea de tiempo se agregaron los actores que provocan cada grupo de ev
 
 Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=3458764685732347919
 
-![Step 6 - Adding Actors and External Systems](../assets/img/chapter2/event-storming/big-picture/step6-actors-external-systems.png)
+![Step 6 - Adding Actors and External Systems](../assets/img/chapter2/big-picture/step6-actors-external-systems.jpg)
 
 **Step 7 – Storytelling**
 
@@ -494,13 +496,11 @@ Un integrante narró la historia completa de inicio a fin mientras el resto vali
 
 Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=3458764685732393843
 
-![Step 7 - Storytelling](../assets/img/chapter2/event-storming/big-picture/step7-storytelling.png)
-
-Al terminar la narración, el equipo validó el orden de los eventos y la comprensión compartida del proceso. Los términos del dominio que surgieron en la sesión se documentan en el Ubiquitous Language (sección 2.5).
+![Step 7 - Storytelling](../assets/img/chapter2/big-picture/step7-storytelling.jpg)
 
 ## 2.5. Ubiquitous Language
 
-En este proyecto, cuyo objetivo principal es mejorar la trazabilidad, la gestión documental y la eficiencia en los procesos de calidad de laboratorios y plantas farmacéuticas mediante la plataforma DoofPlus, se ha definido el siguiente **lenguaje ubicuo (ubiquitous language)** para asegurar claridad y consistencia entre desarrolladores, usuarios (QA/QC, Jefes de Producción) y stakeholders. Los términos provienen de las entrevistas y del Big Picture EventStorming (sección 2.4).
+En este proyecto, cuyo objetivo principal es mejorar la trazabilidad, la gestión documental y la eficiencia en los procesos de calidad de laboratorios y plantas farmacéuticas mediante la plataforma DoofPlus, se ha definido el siguiente **lenguaje ubicuo (ubiquitous language)** para asegurar claridad y consistencia entre desarrolladores, usuarios (QA/QC, Jefes de Producción) y stakeholders:
 
 | Term (Término) | Definition (Definición) |
 |---|---|
