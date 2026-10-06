@@ -2326,27 +2326,27 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 **Identity & Access Management.** `User` es el aggregate root de la identidad: controla su estado (`INVITED`, `ACTIVE`, `LOCKED`, `DISABLED`), sus roles y los intentos fallidos de inicio de sesión. `ElectronicSignature` registra quién firmó qué registro y con qué significado. Los servicios de tokens (JWT), hashing (BCrypt) y TOTP se definen como interfaces implementadas en la capa de infraestructura.
 
-![Class Diagram - IAM](assets/img/chapter4/diagram-class/java/class-01-iam.png)
+![Class Diagram - IAM](assets/img/chapter4/diagram-class/class-01-iam.png)
 
 **Organizations & Profiles.** `Organization` agrupa sus plantas y se identifica por el value object `Ruc`; `Profile` guarda los datos y preferencias de cada usuario; `DemoRequest` registra las solicitudes de demo de la Landing Page.
 
-![Class Diagram - Organizations & Profiles](assets/img/chapter4/diagram-class/java/class-02-organizations.png)
+![Class Diagram - Organizations & Profiles](assets/img/chapter4/diagram-class/class-02-organizations.png)
 
 **Subscriptions & Payments.** `Subscription` controla el ciclo de vida de la suscripción y sus pagos; `Plan` define precios y límites. `PaymentGateway` abstrae la pasarela y `NiubizPaymentGateway` la implementa.
 
-![Class Diagram - Subscriptions & Payments](assets/img/chapter4/diagram-class/java/class-03-subscriptions.png)
+![Class Diagram - Subscriptions & Payments](assets/img/chapter4/diagram-class/class-03-subscriptions.png)
 
 **Manufacturing & Batch Management.** `ProductionBatch` es el aggregate central del dominio: concentra el ciclo de vida del lote (`PLANNED` a `RELEASED` o `REJECTED`), sus consumos de insumos, parámetros de proceso, incidencias y su línea de tiempo (`BatchEvent`). `ProductionOrder`, `MasterFormula`, `Product` y `RawMaterialLot` completan el contexto.
 
-![Class Diagram - Manufacturing & Batch Management](assets/img/chapter4/diagram-class/java/class-04-manufacturing.png)
+![Class Diagram - Manufacturing & Batch Management](assets/img/chapter4/diagram-class/class-04-manufacturing.png)
 
 **IoT Monitoring.** `Equipment` mantiene su historial de calibraciones y mantenimientos y define si está apto para producción; `IoTDevice` representa un sensor de ThingsBoard asignable a un lote; `TelemetryReading` guarda cada lectura y `AlertRuleEvaluator` genera las alertas.
 
-![Class Diagram - IoT Monitoring](assets/img/chapter4/diagram-class/java/class-05-iot.png)
+![Class Diagram - IoT Monitoring](assets/img/chapter4/diagram-class/class-05-iot.png)
 
 **Quality & Compliance.** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS. `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
 
-![Class Diagram - Quality & Compliance](assets/img/chapter4/diagram-class/java/class-06-quality.png)
+![Class Diagram - Quality & Compliance](assets/img/chapter4/diagram-class/class-06-quality.png)
 
 ## 4.8. Database Design
 

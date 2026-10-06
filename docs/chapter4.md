@@ -95,6 +95,7 @@ Las directrices de estilo web de DoofPlus explican e ilustran las decisiones sob
 - Organización: el proyecto de la Web Application (Vue 3 + Vite) se organiza por bounded context: src/iam, src/manufacturing, src/quality, src/iot, src/subscriptions y src/organizations, cada uno con sus carpetas model, services, components y pages. Los recursos estáticos se ubican en src/assets (images, icons), los estilos globales y design tokens en src/assets/styles, los componentes reutilizables en src/shared/components y las traducciones en src/locales (en.json y es.json).
 - Versionado: Se utiliza Git gestionado desde GitHub como sistema de control de versiones central. El equipo aplica GitFlow y Conventional Commits para gestionar los cambios en el código, lo que ayuda a garantizar que el entorno de desarrollo mantenga una integración continua y una versión estable del producto en todo momento. Además, se aplica Semantic Versioning para darle un orden a las versiones.
 
+
 ## 4.2. Information Architecture
 
 La arquitectura de la información de DoofPlus establece las decisiones que dirigen la organización del contenido en las experiencias web, lo que está orientado a que tanto los visitantes del sector comercial como los usuarios operativos, que forman parte de los segmentos objetivos, se adapten con facilidad a la funcionalidad del producto y puedan encontrar lo que necesitan sin esfuerzo.
@@ -743,7 +744,6 @@ Prototipo navegable en Figma: <mark>pegar URL pública del prototipo</mark>
 Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0730-7742-IngesCompany-prototype-navigation-sprint-1: <mark>pegar URL, timing de inicio y duración</mark>
 
 ## 4.6. Domain-Driven Software Architecture
-
 La arquitectura de DoofPlus se fundamenta en Domain-Driven Design (DDD). El punto de partida es el Big Picture EventStorming (sección 2.4), que dejó una línea de tiempo de eventos organizada en siete swimlanes, con sus actores, sistemas externos y problemas. En esta sección ese conocimiento se profundiza con un Design-Level EventStorming hasta identificar los bounded contexts y obtener aggregates, commands, policies, read models y sistemas externos por contexto; luego la solución se representa con el modelo C4 (contexto, contenedores y componentes). Los mismos bounded contexts y aggregates se mantienen en los diagramas de clases (sección 4.7), en la base de datos (sección 4.8), en los módulos de la Web Application en Angular y en los paquetes del RESTful API en Spring Boot.
 
 La siguiente tabla resume la trazabilidad entre artefactos:
@@ -786,7 +786,7 @@ Antes de modelar, se acordó la "imagen que lo explica todo": un actor consulta 
 
 Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685756367551
 
-![Target design](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/target-design.png)
+![Target design](../assets/img/chapter4/design-level-event-storming/target-design.jpg)
 
 #### Paso 1: Timelines
 
@@ -794,27 +794,27 @@ Se organizaron en una línea de tiempo vertical los eventos de cada contexto, co
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-1-timelines.png)
+![Identity & Access Management - paso 1](../assets/img/chapter4/design-level-event-storming/timelines/iam-1-timelines.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-1-timelines.png)
+![Organizations & Profiles - paso 1](../assets/img/chapter4/design-level-event-storming/timelines/org-1-timelines.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-1-timelines.png)
+![Subscriptions & Payments - paso 1](../assets/img/chapter4/design-level-event-storming/timelines/sub-1-timelines.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-1-timelines.png)
+![Manufacturing & Batch Management - paso 1](../assets/img/chapter4/design-level-event-storming/timelines/mfg-1-timelines.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-1-timelines.png)
+![IoT Monitoring - paso 1](../assets/img/chapter4/design-level-event-storming/timelines/iot-1-timelines.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-1-timelines.png)
+![Quality & Compliance - paso 1](../assets/img/chapter4/design-level-event-storming/timelines/qa-1-timelines.jpg)
 
 #### Paso 2: Commands
 
@@ -822,27 +822,27 @@ Cada evento se antecedió por el command que lo provoca, redactado en imperativo
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-2-commands.png)
+![Identity & Access Management - paso 2](../assets/img/chapter4/design-level-event-storming/commands/iam-2-commands.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-2-commands.png)
+![Organizations & Profiles - paso 2](../assets/img/chapter4/design-level-event-storming/commands/org-2-commands.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-2-commands.png)
+![Subscriptions & Payments - paso 2](../assets/img/chapter4/design-level-event-storming/commands/sub-2-commands.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-2-commands.png)
+![Manufacturing & Batch Management - paso 2](../assets/img/chapter4/design-level-event-storming/commands/mfg-2-commands.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-2-commands.png)
+![IoT Monitoring - paso 2](../assets/img/chapter4/design-level-event-storming/commands/iot-2-commands.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-2-commands.png)
+![Quality & Compliance - paso 2](../assets/img/chapter4/design-level-event-storming/commands/qa-2-commands.jpg)
 
 #### Paso 3: Actors and policies
 
@@ -865,27 +865,27 @@ Se identificó quién ejecuta cada command: Administrador del laboratorio, Espec
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-3-actors-policies.png)
+![Identity & Access Management - paso 3](../assets/img/chapter4/design-level-event-storming/actors-policies/iam-3-actors-policies.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-3-actors-policies.png)
+![Organizations & Profiles - paso 3](../assets/img/chapter4/design-level-event-storming/actors-policies/org-3-actors-policies.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-3-actors-policies.png)
+![Subscriptions & Payments - paso 3](../assets/img/chapter4/design-level-event-storming/actors-policies/sub-3-actors-policies.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-3-actors-policies.png)
+![Manufacturing & Batch Management - paso 3](../assets/img/chapter4/design-level-event-storming/actors-policies/mfg-3-actors-policies.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-3-actors-policies.png)
+![IoT Monitoring - paso 3](../assets/img/chapter4/design-level-event-storming/actors-policies/iot-3-actors-policies.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-3-actors-policies.png)
+![Quality & Compliance - paso 3](../assets/img/chapter4/design-level-event-storming/actors-policies/qa-3-actors-policies.jpg)
 
 #### Paso 4: Read models
 
@@ -893,27 +893,27 @@ Se registró la información que cada actor consulta antes de decidir. Estos rea
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-4-read-models.png)
+![Identity & Access Management - paso 4](../assets/img/chapter4/design-level-event-storming/read-models/iam-4-read-models.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-4-read-models.png)
+![Organizations & Profiles - paso 4](../assets/img/chapter4/design-level-event-storming/read-models/org-4-read-models.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-4-read-models.png)
+![Subscriptions & Payments - paso 4](../assets/img/chapter4/design-level-event-storming/read-models/sub-4-read-models.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-4-read-models.png)
+![Manufacturing & Batch Management - paso 4](../assets/img/chapter4/design-level-event-storming/read-models/mfg-4-read-models.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-4-read-models.png)
+![IoT Monitoring - paso 4](../assets/img/chapter4/design-level-event-storming/read-models/iot-4-read-models.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-4-read-models.png)
+![Quality & Compliance - paso 4](../assets/img/chapter4/design-level-event-storming/read-models/qa-4-read-models.jpg)
 
 #### Paso 5: External systems
 
@@ -921,27 +921,27 @@ Se ubicaron los sistemas externos en el punto donde intervienen: Niubiz (pago y 
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-5-external-systems.png)
+![Identity & Access Management - paso 5](../assets/img/chapter4/design-level-event-storming/external-systems/iam-5-external-systems.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-5-external-systems.png)
+![Organizations & Profiles - paso 5](../assets/img/chapter4/design-level-event-storming/external-systems/org-5-external-systems.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-5-external-systems.png)
+![Subscriptions & Payments - paso 5](../assets/img/chapter4/design-level-event-storming/external-systems/sub-5-external-systems.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-5-external-systems.png)
+![Manufacturing & Batch Management - paso 5](../assets/img/chapter4/design-level-event-storming/external-systems/mfg-5-external-systems.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-5-external-systems.png)
+![IoT Monitoring - paso 5](../assets/img/chapter4/design-level-event-storming/external-systems/iot-5-external-systems.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-5-external-systems.png)
+![Quality & Compliance - paso 5](../assets/img/chapter4/design-level-event-storming/external-systems/qa-5-external-systems.jpg)
 
 #### Paso 6: Business rules y aggregates
 
@@ -969,27 +969,27 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-6-aggregates.png)
+![Identity & Access Management - paso 6](../assets/img/chapter4/design-level-event-storming/aggregates/iam-6-aggregates.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-6-aggregates.png)
+![Organizations & Profiles - paso 6](../assets/img/chapter4/design-level-event-storming/aggregates/org-6-aggregates.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-6-aggregates.png)
+![Subscriptions & Payments - paso 6](../assets/img/chapter4/design-level-event-storming/aggregates/sub-6-aggregates.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-6-aggregates.png)
+![Manufacturing & Batch Management - paso 6](../assets/img/chapter4/design-level-event-storming/aggregates/mfg-6-aggregates.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-6-aggregates.png)
+![IoT Monitoring - paso 6](../assets/img/chapter4/design-level-event-storming/aggregates/iot-6-aggregates.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-6-aggregates.png)
+![Quality & Compliance - paso 6](../assets/img/chapter4/design-level-event-storming/aggregates/qa-6-aggregates.jpg)
 
 #### Paso 7: Bounded contexts
 
@@ -999,7 +999,7 @@ El context map muestra cómo se integran los contextos. Las consultas entre cont
 
 Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685756367552
 
-![Context map](../assets/img/chapter4/design-level-event-storming/dles-v2/context-map.png)
+![Context map](../assets/img/chapter4/design-level-event-storming/context-map.jpg)
 
 | Contexto consumidor | Contexto proveedor | Integración | Motivo |
 | --- | --- | --- | --- |
@@ -1078,27 +1078,27 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 **Identity & Access Management.** `User` es el aggregate root de la identidad: controla su estado (`INVITED`, `ACTIVE`, `LOCKED`, `DISABLED`), sus roles y los intentos fallidos de inicio de sesión. `ElectronicSignature` registra quién firmó qué registro y con qué significado. Los servicios de tokens (JWT), hashing (BCrypt) y TOTP se definen como interfaces implementadas en la capa de infraestructura.
 
-![Class Diagram - IAM](../assets/img/chapter4/diagram-class/java/class-01-iam.png)
+![Class Diagram - IAM](../assets/img/chapter4/diagram-class/class-01-iam.png)
 
 **Organizations & Profiles.** `Organization` agrupa sus plantas y se identifica por el value object `Ruc`; `Profile` guarda los datos y preferencias de cada usuario; `DemoRequest` registra las solicitudes de demo de la Landing Page.
 
-![Class Diagram - Organizations & Profiles](../assets/img/chapter4/diagram-class/java/class-02-organizations.png)
+![Class Diagram - Organizations & Profiles](../assets/img/chapter4/diagram-class/class-02-organizations.png)
 
 **Subscriptions & Payments.** `Subscription` controla el ciclo de vida de la suscripción y sus pagos; `Plan` define precios y límites. `PaymentGateway` abstrae la pasarela y `NiubizPaymentGateway` la implementa.
 
-![Class Diagram - Subscriptions & Payments](../assets/img/chapter4/diagram-class/java/class-03-subscriptions.png)
+![Class Diagram - Subscriptions & Payments](../assets/img/chapter4/diagram-class/class-03-subscriptions.png)
 
 **Manufacturing & Batch Management.** `ProductionBatch` es el aggregate central del dominio: concentra el ciclo de vida del lote (`PLANNED` a `RELEASED` o `REJECTED`), sus consumos de insumos, parámetros de proceso, incidencias y su línea de tiempo (`BatchEvent`). `ProductionOrder`, `MasterFormula`, `Product` y `RawMaterialLot` completan el contexto.
 
-![Class Diagram - Manufacturing & Batch Management](../assets/img/chapter4/diagram-class/java/class-04-manufacturing.png)
+![Class Diagram - Manufacturing & Batch Management](../assets/img/chapter4/diagram-class/class-04-manufacturing.png)
 
 **IoT Monitoring.** `Equipment` mantiene su historial de calibraciones y mantenimientos y define si está apto para producción; `IoTDevice` representa un sensor de ThingsBoard asignable a un lote; `TelemetryReading` guarda cada lectura y `AlertRuleEvaluator` genera las alertas.
 
-![Class Diagram - IoT Monitoring](../assets/img/chapter4/diagram-class/java/class-05-iot.png)
+![Class Diagram - IoT Monitoring](../assets/img/chapter4/diagram-class/class-05-iot.png)
 
 **Quality & Compliance.** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS. `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
 
-![Class Diagram - Quality & Compliance](../assets/img/chapter4/diagram-class/java/class-06-quality.png)
+![Class Diagram - Quality & Compliance](../assets/img/chapter4/diagram-class/class-06-quality.png)
 
 ## 4.8. Database Design
 
