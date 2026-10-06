@@ -543,7 +543,7 @@ Para desarrollar una solución efectiva, es importante entender la situación co
 En este periodo, se analizan distintos tipos de competidores con el objetivo de entender sus fortalezas y debilidades, y así posicionar a DoofPlus como una propuesta que responda de manera más efectiva a las necesidades reales del sector.
 
 ### 2.1.1. Análisis competitivo
-A continuación, se presenta una tabla comparativa sobre los principales competidores, en el que se considera su propuesta de valor, mercado objetivo y características generales. Este análisis permite evidenciar que, mientras las soluciones existentes se orientan a grandes corporaciones o dependen de procesos manuales, DoofPlus podrá destacar como una alternativa specializada, accesible y centrada en la automatización del aseguramiento de la calidad mediante integración IoT y trazabilidad digital, especialmente pensada para laboratorios medianos y entidades públicas de la región.
+A continuación, se presenta una tabla comparativa sobre los principales competidores, en el que se considera su propuesta de valor, mercado objetivo y características generales. Este análisis permite evidenciar que, mientras las soluciones existentes se orientan a grandes corporaciones o dependen de procesos manuales, DoofPlus se posiciona como una alternativa especializada, accesible y centrada en la automatización del aseguramiento de la calidad mediante integración IoT y trazabilidad digital, especialmente pensada para laboratorios medianos y entidades públicas de la región.
 
 <table>
   <tr>
@@ -565,7 +565,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td><img src="assets/img/chapter2/competitors/drugxafe.png" width="120"><br><b>DrugXafe (Tiga Healthcare)</b></td>
   </tr>
   <tr>
-    <td rowspan="2">Perfil</td>
+    <td rowspan="3">Perfil</td>
     <td>Overview</td>
     <td>Plataforma SaaS bilingüe de gestión de calidad y trazabilidad de lotes para laboratorios farmacéuticos, con integración de sensores IoT.</td>
     <td>Plataforma MES de gestión de producción que integra IoT industrial, monitoreo de OEE en tiempo real y batch record electrónico (Colombia).</td>
@@ -580,7 +580,6 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Prevención de falsificaciones y fraude en la cadena de suministro: garantiza que solo medicamentos auténticos lleguen al paciente.</td>
   </tr>
   <tr>
-    <td rowspan="2">Perfil de marketing</td>
     <td>Mercado objetivo</td>
     <td>Laboratorios farmacéuticos pequeños y medianos de Lima y, luego, de la región andina.</td>
     <td>Manufactura regulada y no regulada (alimentos, farmacéuticos, cosméticos) en Colombia y Latinoamérica.</td>
@@ -588,6 +587,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Fabricantes, importadores, distribuidores y autoridades sanitarias.</td>
   </tr>
   <tr>
+    <td rowspan="2">Perfil de marketing</td>
     <td>Estrategias de marketing</td>
     <td>Contenido educativo sobre BPM e integridad de datos, demos desde la Landing Page y presencia en eventos del sector.</td>
     <td>Marketing digital B2B (blog, casos de éxito) y demostraciones comerciales.</td>
@@ -595,7 +595,6 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Venta B2B y B2G a actores de la cadena de suministro y reguladores.</td>
   </tr>
   <tr>
-    <td rowspan="3">Perfil de producto</td>
     <td>Productos &amp; Servicios</td>
     <td>Documentos y SOP, expediente de lote, desviaciones y CAPA, liberación, audit trail, reportes, dashboards e IoT.</td>
     <td>MES, monitoreo OEE, batch record electrónico, IA para operaciones y mantenimiento.</td>
@@ -603,6 +602,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Serialización, agregación de empaques y reportes de trazabilidad.</td>
   </tr>
   <tr>
+    <td rowspan="2">Perfil de producto</td>
     <td>Precios &amp; Costos</td>
     <td>Standard Lab US$199/mes (US$1,990/año); Enterprise US$599/mes (US$5,990/año).</td>
     <td>Suscripción e implementación cotizadas por planta (precios no publicados).</td>
@@ -669,7 +669,7 @@ La prospección se dirige a jefes de aseguramiento de calidad y de producción, 
 
 ## 2.2. Entrevistas
 
-Las entrevistas constituyen una herramienta fundamental para obtener información cualitativa directamente de los profesionales involucrados en los procesos de aseguramiento de calidad y producción farmacéutica. A través de conversaciones estructuradas, se busca comprender sus actividades, necesidades, desafíos, comportamientos y experiencias relacionadas con la gestión de documentación, la trazabilidad de lotes y el acceso a la información. La información recopilada permitirá identificar problemáticas, oportunidades de mejora y necesidades reales del entorno de aplicación, contribuyendo a definir una propuesta de solución alineada con los requerimientos y expectativas de los segmentos objetivo.
+Las entrevistas constituyen una herramienta fundamental para obtener información cualitativa directamente de los profesionales involucrados en los procesos de aseguramiento de calidad y producción farmacéutica. A través de conversaciones estructuradas, se busca comprender sus actividades, necesidades, desafíos, comportamientos y experiencias relacionadas con la gestión de documentación, la trazabilidad de lotes y el acceso a la información. La información recopilada permitió identificar problemáticas, oportunidades de mejora y necesidades reales del entorno de aplicación, contribuyendo a definir una propuesta de solución alineada con los requerimientos y expectativas de los segmentos objetivo.
 
 ### 2.2.1. Diseño de entrevistas
 
@@ -725,7 +725,7 @@ En esta sección se presentan los resultados obtenidos de las entrevistas realiz
 |---------|--------|
 | **Campo** | **Información** |
 | Nombre | María |
-| Apellido | Mexico |
+| Apellido | México |
 | Edad | 53 |
 | Distrito | San Juan de Lurigancho |
 | Evidencia | ![Entrevista 1 - Segmento 1](assets/img/chapter2/interview/segmento1/entrevista1-segmento1.png) |
@@ -807,7 +807,7 @@ En esta sección se presenta el análisis detallado de la información recolecta
 
 ##### Segmento 1: Especialista de Aseguramiento y Control de Calidad (QA/QC)
 
-**Análisis de Características Objetivas y Subjetivas:** El análisis de las entrevistas evidencia que las áreas de Aseguramiento y Control de Calidad dentro de las organizaciones farmacéuticas evaluadas mantienen una fuerte dependencia de procesos documentales para garantizar el cumplimiento normativo y la trazabilidad de las operaciones. El 100% de los entrevistados desempeña funciones relacionadas con el aseguramiento de la calidad, el control de calidad, la validación de procesos o la revisión documental, lo que brinda solidez y representatividad a la información recopilada para comprender las necesidades del dominio del problema.
+**Análisis de Características Objetivas y Subjetivas:** El análisis de las entrevistas evidencia que las áreas de Aseguramiento y Control de Calidad dentro de las organizaciones farmacéuticas evaluadas mantienen una fuerte dependencia de procesos documentales para garantizar el cumplimiento normativo y la trazabilidad de las operaciones. El 67% de los entrevistados (María y Julia) trabaja directamente en Control o Aseguramiento de la Calidad farmacéutica; la tercera entrevistada (Edith) valida registros de pacientes y gestiona incidencias de medicamentos y lotes vencidos en un servicio de salud, por lo que aporta la perspectiva de quien consume la información de los lotes. En conjunto, el 100% realiza revisión documental y de registros de calidad.
 
 Respecto a la gestión de información, el 100% manifestó utilizar esquemas mixtos que combinan documentación física con sistemas digitales para registrar, consultar y controlar información técnica relacionada con procedimientos, protocolos, registros de producción, resultados analíticos y actividades de calidad. Sin embargo, estos procesos continúan requiriendo revisiones manuales, verificaciones documentales y consolidación de información antes de su registro o aprobación definitiva, generando mayores tiempos operativos. Asimismo, se identificó que aproximadamente el 67% de los entrevistados presenta dificultades asociadas a la búsqueda, acceso o integración de información proveniente de diferentes fuentes, lo que afecta la eficiencia de determinadas actividades de control y seguimiento.
 
@@ -819,7 +819,7 @@ Desde la perspectiva subjetiva, el 100% de los entrevistados manifestó una valo
 
 ##### Segmento 2: Jefe o Supervisor de Producción Farmacéutica
 
-**Análisis de Características Objetivas y Subjetivas:** El análisis de las entrevistas evidencia que las áreas de Producción Farmacéutica mantienen una elevada dependencia de registros físicos, hojas de cálculo y mecanismos manuales para realizar el seguimiento de los lotes durante las diferentes etapas de fabricación. El 100% de los entrevistados desempeña funciones relacionadas con la supervisión de procesos productivos, el monitoreo de lotes y la coordinación con las áreas de calidad, proporcionando una perspectiva representativa de las necesidades operativas asociadas a la gestión de la información de producción.
+**Análisis de Características Objetivas y Subjetivas:** El análisis de las entrevistas evidencia que las áreas de Producción Farmacéutica mantienen una elevada dependencia de registros físicos, hojas de cálculo y mecanismos manuales para realizar el seguimiento de los lotes durante las diferentes etapas de fabricación. El 67% de los entrevistados (Alberto y Rick) supervisa directamente procesos de fabricación; la tercera entrevistada (Mariela), responsable de Control de Calidad en el INS, da seguimiento a los lotes de producción y coordina con Producción, por lo que el 100% realiza monitoreo de lotes y coordinación entre áreas.
 
 Respecto al seguimiento de los lotes, el 100% manifestó utilizar esquemas basados en formularios físicos, registros de producción, hojas de cálculo y documentación complementaria para registrar estados, parámetros operativos y actividades realizadas durante la fabricación. Asimismo, el 100% señaló que información crítica como los resultados de control de calidad, las desviaciones registradas, la disponibilidad de materiales y el cumplimiento de los parámetros de producción son elementos fundamentales para la toma de decisiones. Sin embargo, se identificó que aproximadamente el 67% de los entrevistados experimenta dificultades para acceder al historial completo de un lote debido a que la información suele encontrarse distribuida entre diferentes fuentes, incluyendo documentos físicos, correos electrónicos, registros archivados y archivos digitales independientes.
 
@@ -940,7 +940,7 @@ Se observa que las tareas **"Consultar el historial y trazabilidad de un lote"**
 
 ### 2.3.3. User Journey Mapping
 
-**Segmento 1 – Especialista de Aseguramiento y Control de Calidad (María Mexico)**
+**Segmento 1 – Especialista de Aseguramiento y Control de Calidad (María México)**
 
 El User Journey Map de María ilustra su recorrido integral (end-to-end) en el proceso de validación documental y liberación de lotes de producción. Este diagrama documenta su flujo de trabajo paso a paso: desde la recepción de expedientes de planta en formato físico, pasando por la verificación de cálculos analíticos, hasta la transcripción de datos y la búsqueda de antecedentes frente a auditorías inopinadas.
 
@@ -969,7 +969,7 @@ Para la elaboración de los Empathy Maps, el equipo partió del conocimiento y o
 
 En este mapa se analizó a María México, química farmacéutica encargada del área de aseguramiento y control de calidad en un laboratorio farmacéutico. Se identificó que piensa constantemente en la necesidad de automatizar procesos e informes para liberar la alta carga administrativa del departamento, preocupándose por el riesgo de errores humanos al momento de revisar registros manualmente. Escucha la exigencia de la gerencia para agilizar la entrega de documentación y de las autoridades de salud requerir trazabilidad inmediata. Observa el entorno cargado de expedientes físicos, tablas dispersas y la recurrencia de errores de llenado por parte del personal. María expresa la necesidad de reducir la carga operativa y actúa revisando minuciosamente cálculos a mano e investigando desviaciones operativas junto a su equipo. Su dolor principal es el tiempo invertido en revisiones manuales y la dificultad para recopilar evidencias en auditorías inopinadas, mientras que su ganancia esperada es disponer de generación automática de reportes, un expediente de lotes centralizado y tranquilidad en el cumplimiento normativo.
 
-**Segmento 2: Jefe o Supervisor de Producción Farmacéutica**
+**2) Segmento 2: Jefe o Supervisor de Producción Farmacéutica**
 
 ![EmpathyMap - Segmento 2](assets/img/chapter2/interview/segmento2/user-empathymap2.png)
 
