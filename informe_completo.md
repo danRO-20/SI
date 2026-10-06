@@ -1343,7 +1343,6 @@ Las directrices de estilo web de DoofPlus explican e ilustran las decisiones sob
 - Organización: el proyecto de la Web Application (Vue 3 + Vite) se organiza por bounded context: src/iam, src/manufacturing, src/quality, src/iot, src/subscriptions y src/organizations, cada uno con sus carpetas model, services, components y pages. Los recursos estáticos se ubican en src/assets (images, icons), los estilos globales y design tokens en src/assets/styles, los componentes reutilizables en src/shared/components y las traducciones en src/locales (en.json y es.json).
 - Versionado: Se utiliza Git gestionado desde GitHub como sistema de control de versiones central. El equipo aplica GitFlow y Conventional Commits para gestionar los cambios en el código, lo que ayuda a garantizar que el entorno de desarrollo mantenga una integración continua y una versión estable del producto en todo momento. Además, se aplica Semantic Versioning para darle un orden a las versiones.
 
-
 ## 4.2. Information Architecture
 
 La arquitectura de la información de DoofPlus establece las decisiones que dirigen la organización del contenido en las experiencias web, lo que está orientado a que tanto los visitantes del sector comercial como los usuarios operativos, que forman parte de los segmentos objetivos, se adapten con facilidad a la funcionalidad del producto y puedan encontrar lo que necesitan sin esfuerzo.
@@ -2041,9 +2040,6 @@ Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=34587646857
 
 Se organizaron en una línea de tiempo vertical los eventos de cada contexto, con los resultados alternativos en la columna "Alternativa" (por ejemplo, "Documento aprobado" o "Documento rechazado"). Al revisar qué dispara cada evento, en este nivel se agregaron eventos que faltaban en el Big Picture: "Demostración solicitada", "Plan de suscripción seleccionado", "Firma electrónica registrada", "Equipo registrado", "Sensor IoT registrado", "Aprobación de insumos solicitada a Calidad", "Mantenimiento preventivo realizado", "Lote puesto en espera" y "Acción CAPA vencida"; además, "Usuario registrado" se renombró como "Usuario dado de alta en la organización". También aparecen eventos de detalle que no eran relevantes en la vista general, como "Usuario autenticado", "Inicio de sesión fallido", "Cuenta bloqueada", "Planta agregada", "Perfil actualizado" y "Alerta reconocida".
 
-<details>
-<summary>Ver el paso 1 en cada bounded context</summary>
-
 **Identity & Access Management**
 
 ![Identity & Access Management - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-1-timelines.png)
@@ -2068,14 +2064,9 @@ Se organizaron en una línea de tiempo vertical los eventos de cada contexto, co
 
 ![Quality & Compliance - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-1-timelines.png)
 
-</details>
-
 #### Paso 2: Commands
 
 Cada evento se antecedió por el command que lo provoca, redactado en imperativo (por ejemplo, "Crear lote" produce "Lote creado"). Un mismo command puede terminar en dos eventos alternativos, como "Aprobar orden de producción", que produce "Orden de producción aprobada" u "Orden de producción rechazada".
-
-<details>
-<summary>Ver el paso 2 en cada bounded context</summary>
 
 **Identity & Access Management**
 
@@ -2101,8 +2092,6 @@ Cada evento se antecedió por el command que lo provoca, redactado en imperativo
 
 ![Quality & Compliance - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-2-commands.png)
 
-</details>
-
 #### Paso 3: Actors and policies
 
 Se identificó quién ejecuta cada command: Administrador del laboratorio, Especialista QA/QC, Jefe de Calidad, Jefe de Producción, Auditor interno, Responsable de la acción CAPA y, para las tareas programadas, el sistema. Cuando un command se ejecuta automáticamente, el actor se reemplazó por una policy. Las principales policies son:
@@ -2121,9 +2110,6 @@ Se identificó quién ejecuta cada command: Administrador del laboratorio, Espec
 | Quality | Cuando un resultado sale de especificación, marcarlo OOS y registrar una desviación. |
 | Quality | Cuando se libera el lote, emitir el certificado y actualizar el lote en Manufacturing. |
 | Quality | Cuando se cierra una desviación, reevaluar el lote afectado. |
-
-<details>
-<summary>Ver el paso 3 en cada bounded context</summary>
 
 **Identity & Access Management**
 
@@ -2149,14 +2135,9 @@ Se identificó quién ejecuta cada command: Administrador del laboratorio, Espec
 
 ![Quality & Compliance - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-3-actors-policies.png)
 
-</details>
-
 #### Paso 4: Read models
 
 Se registró la información que cada actor consulta antes de decidir. Estos read models son la base de las vistas de la Web Application y de los dashboards: por ejemplo, "Panel de control del lote" (GxP Batch Execution & Management Console), "Tablero de desviaciones y CAPA" (Critical Deviations & CAPA Actions Control), "Panel de resultados de laboratorio" (Analytical Results Entry & Validation), "Panel de alertas" (Environmental & Equipment Monitoring) y "Audit trail" (Cross-Traceability & Audit Center).
-
-<details>
-<summary>Ver el paso 4 en cada bounded context</summary>
 
 **Identity & Access Management**
 
@@ -2182,14 +2163,9 @@ Se registró la información que cada actor consulta antes de decidir. Estos rea
 
 ![Quality & Compliance - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-4-read-models.png)
 
-</details>
-
 #### Paso 5: External systems
 
 Se ubicaron los sistemas externos en el punto donde intervienen: Niubiz (pago y renovación de suscripciones), ThingsBoard (registro de sensores e ingesta de lecturas), SendGrid (invitaciones, alertas y notificaciones por correo), el Lector RFID (recepción de materias primas), la app autenticadora del usuario (códigos TOTP) y DIGEMID (inspección). Respecto del tablero original se corrigieron tres elementos: "Registro en la base de datos" no es un sistema externo (la base de datos es parte de la solución), el "Motor de alertas" es lógica propia del contexto IoT Monitoring y Google Authenticator no expone un API: solo genera el código que el usuario ingresa.
-
-<details>
-<summary>Ver el paso 5 en cada bounded context</summary>
 
 **Identity & Access Management**
 
@@ -2215,8 +2191,6 @@ Se ubicaron los sistemas externos en el punto donde intervienen: Niubiz (pago y 
 
 ![Quality & Compliance - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-5-external-systems.png)
 
-</details>
-
 #### Paso 6: Business rules y aggregates
 
 Donde no interviene un sistema externo se escribió la business rule que el command debe cumplir. Las reglas se tomaron de los criterios de aceptación de las User Stories (el identificador aparece en el post-it), por ejemplo "Número de lote único (US14)", "Solo materia prima aprobada (US17)" o "Requiere causa raíz y CAPA verificadas (US19)". Las reglas que protegen los mismos datos se apilaron y cada grupo recibió el nombre de su aggregate:
@@ -2240,9 +2214,6 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 | Manufacturing & Batch Management | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766787 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853302296 |
 | IoT Monitoring | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766073 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853335403 |
 | Quality & Compliance | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764686149839907 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764686150007814 |
-
-<details>
-<summary>Ver el paso 6 en cada bounded context</summary>
 
 **Identity & Access Management**
 
@@ -2268,7 +2239,6 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 
 ![Quality & Compliance - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-6-aggregates.png)
 
-</details>
 #### Paso 7: Bounded contexts
 
 Los aggregates se agruparon en seis bounded contexts, siguiendo los swimlanes del Big Picture y el lenguaje que comparten sus eventos, con nombres en inglés alineados al Ubiquitous Language y al código. Respecto del Design-Level original del equipo se mantuvieron los seis contextos y se refinaron sus aggregates: "Módulo de Credenciales y Sesión" pasó a User (la sesión se maneja con JWT y no se persiste), la matriz de roles pasó de Organizations a IAM, "Perfil Corporativo y Tenant" se dividió en Organization y Profile, "Inventario y Materia Prima" se separó en Product, MasterFormula y RawMaterialLot, "Lote de Producción" en ProductionOrder y ProductionBatch, "Registro de Maquinaria y Telemetría" en Equipment, IoTDevice, TelemetryReading y Alert, y "Expediente de Trazabilidad y Auditoría" en MaterialApproval, BatchReview, AnalyticalResult, Audit y AuditTrailEntry. Así cada aggregate protege un conjunto pequeño de reglas y se corresponde con una clase raíz y sus tablas.
