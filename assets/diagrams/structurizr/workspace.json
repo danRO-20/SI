@@ -1,0 +1,3617 @@
+{
+  "configuration": {},
+  "description": "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr DSL de los diagramas de la sección 4.7.",
+  "documentation": {},
+  "id": 0,
+  "lastModifiedDate": "2026-10-06T09:09:54Z",
+  "model": {
+    "people": [
+      {
+        "description": "Evalúa DoofPlus desde la Landing Page y solicita una demostración.",
+        "id": "1",
+        "name": "Visitante de un laboratorio",
+        "properties": {
+          "structurizr.dsl.identifier": "visitor"
+        },
+        "relationships": [
+          {
+            "description": "Conoce la propuesta de valor, los planes y solicita una demo",
+            "destinationId": "9",
+            "id": "90",
+            "sourceId": "1",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          },
+          {
+            "description": "Visita",
+            "destinationId": "10",
+            "id": "100",
+            "sourceId": "1",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          }
+        ],
+        "tags": "Element,Person"
+      },
+      {
+        "description": "Gestiona documentos, insumos, desviaciones, CAPA, auditorías y liberación de lotes.",
+        "id": "2",
+        "name": "Especialista QA/QC",
+        "properties": {
+          "structurizr.dsl.identifier": "qa"
+        },
+        "relationships": [
+          {
+            "description": "Gestiona calidad y cumplimiento",
+            "destinationId": "9",
+            "id": "91",
+            "sourceId": "2",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          },
+          {
+            "description": "Usa",
+            "destinationId": "11",
+            "id": "103",
+            "sourceId": "2",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          },
+          {
+            "description": "Usa",
+            "destinationId": "13",
+            "id": "112",
+            "sourceId": "2",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          }
+        ],
+        "tags": "Element,Person"
+      },
+      {
+        "description": "Gestiona órdenes y lotes, monitorea equipos y solicita aprobaciones a Calidad.",
+        "id": "3",
+        "name": "Jefe de Producción Farmacéutica",
+        "properties": {
+          "structurizr.dsl.identifier": "prod"
+        },
+        "relationships": [
+          {
+            "description": "Gestiona la producción y monitorea la planta",
+            "destinationId": "9",
+            "id": "92",
+            "sourceId": "3",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          },
+          {
+            "description": "Usa",
+            "destinationId": "11",
+            "id": "104",
+            "sourceId": "3",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          },
+          {
+            "description": "Usa",
+            "destinationId": "13",
+            "id": "113",
+            "sourceId": "3",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          }
+        ],
+        "tags": "Element,Person"
+      },
+      {
+        "description": "Registra la organización, usuarios, roles, sensores y la suscripción.",
+        "id": "4",
+        "name": "Administrador del laboratorio",
+        "properties": {
+          "structurizr.dsl.identifier": "admin"
+        },
+        "relationships": [
+          {
+            "description": "Administra organización, usuarios y suscripción",
+            "destinationId": "9",
+            "id": "93",
+            "sourceId": "4",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          },
+          {
+            "description": "Usa",
+            "destinationId": "11",
+            "id": "105",
+            "sourceId": "4",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          },
+          {
+            "description": "Usa",
+            "destinationId": "13",
+            "id": "114",
+            "sourceId": "4",
+            "tags": "Relationship",
+            "technology": "HTTPS"
+          }
+        ],
+        "tags": "Element,Person"
+      }
+    ],
+    "softwareSystems": [
+      {
+        "description": "Plataforma IoT que recibe los datos de los sensores de planta y los reenvía.",
+        "documentation": {},
+        "id": "5",
+        "name": "ThingsBoard",
+        "properties": {
+          "structurizr.dsl.identifier": "tb"
+        },
+        "relationships": [
+          {
+            "description": "Envía telemetría de sensores",
+            "destinationId": "9",
+            "id": "94",
+            "sourceId": "5",
+            "tags": "Relationship",
+            "technology": "Webhook REST/HTTPS, JSON"
+          },
+          {
+            "description": "Envía telemetría",
+            "destinationId": "23",
+            "id": "109",
+            "sourceId": "5",
+            "tags": "Relationship",
+            "technology": "Webhook JSON/HTTPS"
+          },
+          {
+            "description": "Webhook JSON/HTTPS",
+            "destinationId": "64",
+            "id": "199",
+            "sourceId": "5",
+            "tags": "Relationship"
+          }
+        ],
+        "tags": "Element,Software System,External"
+      },
+      {
+        "description": "Pasarela de pagos para cobrar las suscripciones.",
+        "documentation": {},
+        "id": "6",
+        "name": "Niubiz",
+        "properties": {
+          "structurizr.dsl.identifier": "niubiz"
+        },
+        "tags": "Element,Software System,External"
+      },
+      {
+        "description": "Servicio de correo para invitaciones, alertas y notificaciones.",
+        "documentation": {},
+        "id": "7",
+        "name": "SendGrid",
+        "properties": {
+          "structurizr.dsl.identifier": "mail"
+        },
+        "tags": "Element,Software System,External"
+      },
+      {
+        "description": "App móvil del usuario (p. ej., Google Authenticator) que genera códigos 2FA.",
+        "documentation": {},
+        "id": "8",
+        "name": "App autenticadora (TOTP)",
+        "properties": {
+          "structurizr.dsl.identifier": "ga"
+        },
+        "relationships": [
+          {
+            "description": "Muestra el código TOTP (sin integración por API)",
+            "destinationId": "2",
+            "id": "97",
+            "sourceId": "8",
+            "tags": "Relationship,Optional"
+          },
+          {
+            "description": "Muestra el código TOTP (sin integración por API)",
+            "destinationId": "3",
+            "id": "98",
+            "sourceId": "8",
+            "tags": "Relationship,Optional"
+          },
+          {
+            "description": "Muestra el código TOTP (sin integración por API)",
+            "destinationId": "4",
+            "id": "99",
+            "sourceId": "8",
+            "tags": "Relationship,Optional"
+          }
+        ],
+        "tags": "Element,Software System,External"
+      },
+      {
+        "containers": [
+          {
+            "description": "Sitio estático (GitHub Pages) con la propuesta de valor, planes y equipo; i18n en-US/es-419. Sus CTA llevan a la Web Application.",
+            "documentation": {},
+            "id": "10",
+            "name": "Landing Page",
+            "properties": {
+              "structurizr.dsl.identifier": "landing"
+            },
+            "relationships": [
+              {
+                "description": "Solicita demo",
+                "destinationId": "23",
+                "id": "101",
+                "sourceId": "10",
+                "tags": "Relationship",
+                "technology": "JSON/HTTPS"
+              },
+              {
+                "description": "Redirige por segmento (CTA)",
+                "destinationId": "11",
+                "id": "102",
+                "sourceId": "10",
+                "tags": "Relationship",
+                "technology": "HTTPS"
+              },
+              {
+                "description": "Solicita demo",
+                "destinationId": "36",
+                "id": "151",
+                "sourceId": "10",
+                "tags": "Relationship"
+              }
+            ],
+            "tags": "Element,Container",
+            "technology": "HTML5, CSS3, JavaScript"
+          },
+          {
+            "components": [
+              {
+                "description": "Rutas lazy por bounded context y protección de vistas por rol.",
+                "documentation": {},
+                "id": "12",
+                "name": "app.routes & authGuard",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_router"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "14",
+                    "id": "116",
+                    "sourceId": "12",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "15",
+                    "id": "117",
+                    "sourceId": "12",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "16",
+                    "id": "118",
+                    "sourceId": "12",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "17",
+                    "id": "119",
+                    "sourceId": "12",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "18",
+                    "id": "120",
+                    "sourceId": "12",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "19",
+                    "id": "121",
+                    "sourceId": "12",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "Angular Router, CanActivateFn"
+              },
+              {
+                "description": "Shell responsive y navegación global.",
+                "documentation": {},
+                "id": "13",
+                "name": "Layout, Toolbar y Footer",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_layout"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "12",
+                    "id": "115",
+                    "sourceId": "13",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Traduce textos",
+                    "destinationId": "21",
+                    "id": "128",
+                    "sourceId": "13",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Muestra alertas",
+                    "destinationId": "22",
+                    "id": "131",
+                    "sourceId": "13",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "shared/presentation – mat-toolbar, mat-sidenav"
+              },
+              {
+                "description": "Sign-in con 2FA, sesión (JWT), usuarios y firmas.",
+                "documentation": {},
+                "id": "14",
+                "name": "iam",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_iam"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "20",
+                    "id": "122",
+                    "sourceId": "14",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "views + IamStore + IamApi"
+              },
+              {
+                "description": "Organización, plantas y perfiles.",
+                "documentation": {},
+                "id": "15",
+                "name": "organizations",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_org"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "20",
+                    "id": "123",
+                    "sourceId": "15",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "views + store + api"
+              },
+              {
+                "description": "Planes, pago y estado de la suscripción.",
+                "documentation": {},
+                "id": "16",
+                "name": "subscriptions",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_subs"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "20",
+                    "id": "124",
+                    "sourceId": "16",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "views + store + api"
+              },
+              {
+                "description": "Órdenes, lotes, insumos e incidencias.",
+                "documentation": {},
+                "id": "17",
+                "name": "manufacturing",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_mfg"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "20",
+                    "id": "125",
+                    "sourceId": "17",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "views + ManufacturingStore + api"
+              },
+              {
+                "description": "Equipos, sensores, lecturas y alertas.",
+                "documentation": {},
+                "id": "18",
+                "name": "iot-monitoring",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_iot"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "20",
+                    "id": "126",
+                    "sourceId": "18",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "views + store + api"
+              },
+              {
+                "description": "Documentos, insumos, resultados, desviaciones, CAPA, liberación, auditorías y audit trail.",
+                "documentation": {},
+                "id": "19",
+                "name": "quality",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_qual"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "20",
+                    "id": "127",
+                    "sourceId": "19",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "views (mat-table) + QualityStore + api"
+              },
+              {
+                "description": "Cliente REST base, conversión resource ↔ entity y token Bearer.",
+                "documentation": {},
+                "id": "20",
+                "name": "shared/infrastructure",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_http"
+                },
+                "relationships": [
+                  {
+                    "description": "JSON/HTTPS",
+                    "destinationId": "23",
+                    "id": "129",
+                    "sourceId": "20",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "HttpClient, BaseApi, assemblers, authInterceptor"
+              },
+              {
+                "description": "public/i18n/en.json (por defecto) y es.json.",
+                "documentation": {},
+                "id": "21",
+                "name": "LanguageSwitcher",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_i18n"
+                },
+                "tags": "Element,Component",
+                "technology": "ngx-translate + HttpLoader"
+              },
+              {
+                "description": "Recibe alertas en tiempo real.",
+                "documentation": {},
+                "id": "22",
+                "name": "Notifications Client",
+                "properties": {
+                  "structurizr.dsl.identifier": "wa_ws"
+                },
+                "relationships": [
+                  {
+                    "description": "Se suscribe a alertas",
+                    "destinationId": "23",
+                    "id": "130",
+                    "sourceId": "22",
+                    "tags": "Relationship",
+                    "technology": "WebSocket (STOMP)"
+                  }
+                ],
+                "tags": "Element,Component",
+                "technology": "@stomp/rx-stomp"
+              }
+            ],
+            "description": "SPA responsive (Material Design) con un módulo por bounded context; i18n con ngx-translate y ARIA. Desplegada en Firebase Hosting.",
+            "documentation": {},
+            "id": "11",
+            "name": "Web Application",
+            "properties": {
+              "structurizr.dsl.identifier": "webapp"
+            },
+            "relationships": [
+              {
+                "description": "Consume endpoints",
+                "destinationId": "23",
+                "id": "106",
+                "sourceId": "11",
+                "tags": "Relationship",
+                "technology": "JSON/HTTPS, Bearer JWT"
+              },
+              {
+                "description": "Se suscribe a notificaciones en tiempo real",
+                "destinationId": "23",
+                "id": "107",
+                "sourceId": "11",
+                "tags": "Relationship",
+                "technology": "WebSocket – STOMP"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "24",
+                "id": "132",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "25",
+                "id": "133",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "36",
+                "id": "152",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "37",
+                "id": "153",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "46",
+                "id": "170",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "54",
+                "id": "181",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "55",
+                "id": "182",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "65",
+                "id": "200",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "Se suscribe a alertas",
+                "destinationId": "72",
+                "id": "213",
+                "sourceId": "11",
+                "tags": "Relationship",
+                "technology": "WebSocket"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "75",
+                "id": "218",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "76",
+                "id": "219",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "77",
+                "id": "220",
+                "sourceId": "11",
+                "tags": "Relationship"
+              },
+              {
+                "description": "JSON/HTTPS",
+                "destinationId": "78",
+                "id": "221",
+                "sourceId": "11",
+                "tags": "Relationship"
+              }
+            ],
+            "tags": "Element,Container",
+            "technology": "Angular, Angular Material, TypeScript"
+          },
+          {
+            "components": [
+              {
+                "description": "sign-up, sign-in y verificación 2FA.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "24",
+                "name": "AuthenticationController",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_ctl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "27",
+                    "id": "135",
+                    "sourceId": "24",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Alta de usuarios, roles y firmas.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "25",
+                "name": "UsersController · ElectronicSignaturesController",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_ctl2"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "27",
+                    "id": "136",
+                    "sourceId": "25",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "29",
+                    "id": "137",
+                    "sourceId": "25",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "28",
+                    "id": "138",
+                    "sourceId": "25",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Valida el JWT en cada request.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "26",
+                "name": "BearerAuthorizationRequestFilter",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_flt"
+                },
+                "relationships": [
+                  {
+                    "description": "Valida token",
+                    "destinationId": "31",
+                    "id": "134",
+                    "sourceId": "26",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Spring Security Filter"
+              },
+              {
+                "description": "Da de alta usuarios, asigna roles y bloquea cuentas tras 5 intentos.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "27",
+                "name": "UserCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_cmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "30",
+                    "id": "139",
+                    "sourceId": "27",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "32",
+                    "id": "141",
+                    "sourceId": "27",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "31",
+                    "id": "142",
+                    "sourceId": "27",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "33",
+                    "id": "143",
+                    "sourceId": "27",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Invitación",
+                    "destinationId": "7",
+                    "id": "144",
+                    "sourceId": "27",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "34",
+                    "id": "145",
+                    "sourceId": "27",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Verifica la identidad y registra la firma electrónica.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "28",
+                "name": "SignatureCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_sig"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "30",
+                    "id": "140",
+                    "sourceId": "28",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "34",
+                    "id": "147",
+                    "sourceId": "28",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Consultas de usuarios y roles.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "29",
+                "name": "UserQueryServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_qry"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "34",
+                    "id": "146",
+                    "sourceId": "29",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Spring @Service – Query Service"
+              },
+              {
+                "description": "Aggregates del contexto IAM.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "30",
+                "name": "User · Role · ElectronicSignature",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_dom"
+                },
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Domain Model"
+              },
+              {
+                "description": "Genera y valida tokens JWT.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "31",
+                "name": "TokenServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_tok"
+                },
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Infrastructure – JJWT"
+              },
+              {
+                "description": "Hash de contraseñas.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "32",
+                "name": "HashingServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_hash"
+                },
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Infrastructure – BCrypt"
+              },
+              {
+                "description": "Valida los códigos 2FA.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "33",
+                "name": "TotpServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_totp"
+                },
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Infrastructure – RFC 6238"
+              },
+              {
+                "description": "Persistencia en MySQL.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "34",
+                "name": "UserRepository · ElectronicSignatureRepository",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_repo"
+                },
+                "relationships": [
+                  {
+                    "description": "JDBC",
+                    "destinationId": "89",
+                    "id": "150",
+                    "sourceId": "34",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Spring Data JPA Repository"
+              },
+              {
+                "description": "Expone usuarios y firmas a los demás bounded contexts.",
+                "documentation": {},
+                "group": "Identity & Access Management",
+                "id": "35",
+                "name": "IamContextFacade",
+                "properties": {
+                  "structurizr.dsl.identifier": "iam_acl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "29",
+                    "id": "148",
+                    "sourceId": "35",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "28",
+                    "id": "149",
+                    "sourceId": "35",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Identity & Access Management",
+                "technology": "Interfaces – ACL Facade"
+              },
+              {
+                "description": "Registro de organizaciones, plantas y solicitudes de demo.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "36",
+                "name": "OrganizationsController · DemoRequestsController",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_ctl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "38",
+                    "id": "154",
+                    "sourceId": "36",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "39",
+                    "id": "155",
+                    "sourceId": "36",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "41",
+                    "id": "157",
+                    "sourceId": "36",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Perfiles y preferencias.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "37",
+                "name": "ProfilesController",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_ctl2"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "40",
+                    "id": "156",
+                    "sourceId": "37",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Registra la organización (RUC único) y pide crear su administrador.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "38",
+                "name": "OrganizationCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_cmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "42",
+                    "id": "158",
+                    "sourceId": "38",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "43",
+                    "id": "161",
+                    "sourceId": "38",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "44",
+                    "id": "164",
+                    "sourceId": "38",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Registra la solicitud y avisa al equipo comercial.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "39",
+                "name": "DemoRequestCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_dcmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "42",
+                    "id": "159",
+                    "sourceId": "39",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Aviso",
+                    "destinationId": "7",
+                    "id": "163",
+                    "sourceId": "39",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "44",
+                    "id": "165",
+                    "sourceId": "39",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Crea y actualiza perfiles.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "40",
+                "name": "ProfileCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_pcmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "42",
+                    "id": "160",
+                    "sourceId": "40",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "44",
+                    "id": "166",
+                    "sourceId": "40",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Consultas de organizaciones y plantas.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "41",
+                "name": "OrganizationQueryServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_qry"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "44",
+                    "id": "167",
+                    "sourceId": "41",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Spring @Service – Query Service"
+              },
+              {
+                "description": "Aggregates del contexto.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "42",
+                "name": "Organization · Plant · Profile · DemoRequest",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_dom"
+                },
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Domain Model"
+              },
+              {
+                "description": "Crea el usuario administrador mediante IamContextFacade.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "43",
+                "name": "ExternalIamService",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_ext"
+                },
+                "relationships": [
+                  {
+                    "description": "Crea administrador",
+                    "destinationId": "35",
+                    "id": "162",
+                    "sourceId": "43",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Application – Outbound ACL"
+              },
+              {
+                "description": "Persistencia en MySQL.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "44",
+                "name": "OrganizationRepository · ProfileRepository · DemoRequestRepository",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_repo"
+                },
+                "relationships": [
+                  {
+                    "description": "JDBC",
+                    "destinationId": "89",
+                    "id": "169",
+                    "sourceId": "44",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Spring Data JPA Repository"
+              },
+              {
+                "description": "Expone organización y plantas.",
+                "documentation": {},
+                "group": "Organizations & Profiles",
+                "id": "45",
+                "name": "OrganizationsContextFacade",
+                "properties": {
+                  "structurizr.dsl.identifier": "org_acl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "41",
+                    "id": "168",
+                    "sourceId": "45",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Organizations & Profiles",
+                "technology": "Interfaces – ACL Facade"
+              },
+              {
+                "description": "Planes, suscripción, pago, renovación y cancelación.",
+                "documentation": {},
+                "group": "Subscriptions & Payments",
+                "id": "46",
+                "name": "PlansController · SubscriptionsController",
+                "properties": {
+                  "structurizr.dsl.identifier": "sub_ctl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "47",
+                    "id": "171",
+                    "sourceId": "46",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "48",
+                    "id": "172",
+                    "sourceId": "46",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Subscriptions & Payments",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Selecciona plan, activa, renueva y cancela suscripciones.",
+                "documentation": {},
+                "group": "Subscriptions & Payments",
+                "id": "47",
+                "name": "SubscriptionCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "sub_cmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "50",
+                    "id": "174",
+                    "sourceId": "47",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "51",
+                    "id": "175",
+                    "sourceId": "47",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "52",
+                    "id": "177",
+                    "sourceId": "47",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Subscriptions & Payments",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Planes y límites vigentes.",
+                "documentation": {},
+                "group": "Subscriptions & Payments",
+                "id": "48",
+                "name": "PlanQueryServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "sub_qry"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "52",
+                    "id": "178",
+                    "sourceId": "48",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Subscriptions & Payments",
+                "technology": "Spring @Service – Query Service"
+              },
+              {
+                "description": "Renueva las suscripciones vencidas.",
+                "documentation": {},
+                "group": "Subscriptions & Payments",
+                "id": "49",
+                "name": "SubscriptionRenewalScheduler",
+                "properties": {
+                  "structurizr.dsl.identifier": "sub_job"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "47",
+                    "id": "173",
+                    "sourceId": "49",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Subscriptions & Payments",
+                "technology": "Spring @Scheduled"
+              },
+              {
+                "description": "Aggregates del contexto.",
+                "documentation": {},
+                "group": "Subscriptions & Payments",
+                "id": "50",
+                "name": "Plan · Subscription · Payment",
+                "properties": {
+                  "structurizr.dsl.identifier": "sub_dom"
+                },
+                "tags": "Element,Component,Subscriptions & Payments",
+                "technology": "Domain Model"
+              },
+              {
+                "description": "Implementa PaymentGateway contra la API REST de Niubiz.",
+                "documentation": {},
+                "group": "Subscriptions & Payments",
+                "id": "51",
+                "name": "NiubizPaymentGateway",
+                "properties": {
+                  "structurizr.dsl.identifier": "sub_gw"
+                },
+                "relationships": [
+                  {
+                    "description": "Autoriza cobro",
+                    "destinationId": "6",
+                    "id": "176",
+                    "sourceId": "51",
+                    "tags": "Relationship",
+                    "technology": "REST/HTTPS"
+                  }
+                ],
+                "tags": "Element,Component,Subscriptions & Payments",
+                "technology": "Infrastructure – RestClient"
+              },
+              {
+                "description": "Persistencia en MySQL.",
+                "documentation": {},
+                "group": "Subscriptions & Payments",
+                "id": "52",
+                "name": "SubscriptionRepository · PlanRepository",
+                "properties": {
+                  "structurizr.dsl.identifier": "sub_repo"
+                },
+                "relationships": [
+                  {
+                    "description": "JDBC",
+                    "destinationId": "89",
+                    "id": "180",
+                    "sourceId": "52",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Subscriptions & Payments",
+                "technology": "Spring Data JPA Repository"
+              },
+              {
+                "description": "Expone el plan vigente y sus límites (p. ej., dispositivos IoT).",
+                "documentation": {},
+                "group": "Subscriptions & Payments",
+                "id": "53",
+                "name": "SubscriptionsContextFacade",
+                "properties": {
+                  "structurizr.dsl.identifier": "sub_acl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "48",
+                    "id": "179",
+                    "sourceId": "53",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Subscriptions & Payments",
+                "technology": "Interfaces – ACL Facade"
+              },
+              {
+                "description": "Lotes, estados, consumo, parámetros, incidencias y línea de tiempo.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "54",
+                "name": "ProductionBatchesController · IncidentsController",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_ctl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "56",
+                    "id": "183",
+                    "sourceId": "54",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "58",
+                    "id": "184",
+                    "sourceId": "54",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Catálogo, fórmulas, insumos y órdenes.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "55",
+                "name": "ProductsController · MasterFormulasController · RawMaterialLotsController · ProductionOrdersController",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_ctl2"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "57",
+                    "id": "185",
+                    "sourceId": "55",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Crea lotes, cambia estados y registra consumos, parámetros e incidencias.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "56",
+                "name": "ProductionBatchCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_cmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "59",
+                    "id": "186",
+                    "sourceId": "56",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "61",
+                    "id": "188",
+                    "sourceId": "56",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "62",
+                    "id": "194",
+                    "sourceId": "56",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Órdenes de producción, recepción y ubicación de insumos.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "57",
+                "name": "ProductionOrderCommandServiceImpl · RawMaterialLotCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_ocmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "59",
+                    "id": "187",
+                    "sourceId": "57",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "61",
+                    "id": "189",
+                    "sourceId": "57",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "62",
+                    "id": "195",
+                    "sourceId": "57",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Historial y trazabilidad de lotes.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "58",
+                "name": "ProductionBatchQueryServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_qry"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "62",
+                    "id": "196",
+                    "sourceId": "58",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Spring @Service – Query Service"
+              },
+              {
+                "description": "Aggregates del contexto.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "59",
+                "name": "Product · MasterFormula · RawMaterialLot · ProductionOrder · ProductionBatch",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_dom"
+                },
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Domain Model"
+              },
+              {
+                "description": "Actualiza lotes e insumos con los veredictos de Quality & Compliance.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "60",
+                "name": "BatchReleaseDecidedEventHandler · MaterialApprovalDecidedEventHandler",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_evt"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "56",
+                    "id": "192",
+                    "sourceId": "60",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "57",
+                    "id": "193",
+                    "sourceId": "60",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Spring @EventListener"
+              },
+              {
+                "description": "Solicita aprobación de insumos y cuarentena; asigna sensores al lote.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "61",
+                "name": "ExternalQualityService · ExternalIotService",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_ext"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "88",
+                    "id": "190",
+                    "sourceId": "61",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "74",
+                    "id": "191",
+                    "sourceId": "61",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Application – Outbound ACL"
+              },
+              {
+                "description": "Persistencia en MySQL.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "62",
+                "name": "ProductionBatchRepository · ProductionOrderRepository · RawMaterialLotRepository · ProductRepository",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_repo"
+                },
+                "relationships": [
+                  {
+                    "description": "JDBC",
+                    "destinationId": "89",
+                    "id": "198",
+                    "sourceId": "62",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Spring Data JPA Repository"
+              },
+              {
+                "description": "Expone lotes en curso a IoT y Quality.",
+                "documentation": {},
+                "group": "Manufacturing & Batch Management",
+                "id": "63",
+                "name": "ManufacturingContextFacade",
+                "properties": {
+                  "structurizr.dsl.identifier": "mfg_acl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "58",
+                    "id": "197",
+                    "sourceId": "63",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Manufacturing & Batch Management",
+                "technology": "Interfaces – ACL Facade"
+              },
+              {
+                "description": "Recibe telemetría de ThingsBoard (API key por dispositivo).",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "64",
+                "name": "TelemetryWebhookController",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_wh"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "66",
+                    "id": "201",
+                    "sourceId": "64",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Equipos, calibraciones, mantenimientos, sensores y alertas.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "65",
+                "name": "EquipmentController · IotDevicesController · AlertsController",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_ctl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "68",
+                    "id": "203",
+                    "sourceId": "65",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Registra lecturas y las asocia al lote en curso.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "66",
+                "name": "TelemetryCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_ing"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "67",
+                    "id": "202",
+                    "sourceId": "66",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "70",
+                    "id": "205",
+                    "sourceId": "66",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "71",
+                    "id": "207",
+                    "sourceId": "66",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "73",
+                    "id": "215",
+                    "sourceId": "66",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Compara lecturas con los rangos y genera alertas.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "67",
+                "name": "AlertRuleEvaluator",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_rule"
+                },
+                "relationships": [
+                  {
+                    "description": "Alerta crítica",
+                    "destinationId": "72",
+                    "id": "211",
+                    "sourceId": "67",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Domain Service"
+              },
+              {
+                "description": "Equipos, calibraciones y sensores.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "68",
+                "name": "EquipmentCommandServiceImpl · IotDeviceCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_cmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "70",
+                    "id": "206",
+                    "sourceId": "68",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "71",
+                    "id": "208",
+                    "sourceId": "68",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "73",
+                    "id": "216",
+                    "sourceId": "68",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Marca equipos no aptos al vencer la calibración.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "69",
+                "name": "CalibrationExpirationScheduler",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_job"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "68",
+                    "id": "204",
+                    "sourceId": "69",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Spring @Scheduled"
+              },
+              {
+                "description": "Aggregates del contexto.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "70",
+                "name": "Equipment · IoTDevice · TelemetryReading · Alert",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_dom"
+                },
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Domain Model"
+              },
+              {
+                "description": "Verifica el lote en curso y el límite de dispositivos del plan.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "71",
+                "name": "ExternalManufacturingService · ExternalSubscriptionService",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_ext"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "63",
+                    "id": "209",
+                    "sourceId": "71",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "53",
+                    "id": "210",
+                    "sourceId": "71",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Application – Outbound ACL"
+              },
+              {
+                "description": "Publica alertas en tiempo real y por correo.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "72",
+                "name": "NotificationService",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_notif"
+                },
+                "relationships": [
+                  {
+                    "description": "REST/HTTPS",
+                    "destinationId": "7",
+                    "id": "212",
+                    "sourceId": "72",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Infrastructure – STOMP + SendGrid"
+              },
+              {
+                "description": "Persistencia en MySQL.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "73",
+                "name": "EquipmentRepository · IotDeviceRepository · TelemetryReadingRepository · AlertRepository",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_repo"
+                },
+                "relationships": [
+                  {
+                    "description": "JDBC",
+                    "destinationId": "89",
+                    "id": "217",
+                    "sourceId": "73",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Spring Data JPA Repository"
+              },
+              {
+                "description": "Asigna sensores a lotes a pedido de Manufacturing.",
+                "documentation": {},
+                "group": "IoT Monitoring",
+                "id": "74",
+                "name": "IotMonitoringContextFacade",
+                "properties": {
+                  "structurizr.dsl.identifier": "iot_acl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "68",
+                    "id": "214",
+                    "sourceId": "74",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,IoT Monitoring",
+                "technology": "Interfaces – ACL Facade"
+              },
+              {
+                "description": "Documentos y versiones; dictamen de materias primas.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "75",
+                "name": "QualityDocumentsController · MaterialApprovalsController",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_ctl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "79",
+                    "id": "222",
+                    "sourceId": "75",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Cuarentena, resultados, OOS y liberación de lotes.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "76",
+                "name": "BatchReviewsController · AnalyticalResultsController",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_ctl2"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "80",
+                    "id": "223",
+                    "sourceId": "76",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Desviaciones, RCA y acciones CAPA.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "77",
+                "name": "DeviationsController · CapaActionsController",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_ctl3"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "81",
+                    "id": "224",
+                    "sourceId": "77",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Auditorías, audit trail y reportes.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "78",
+                "name": "AuditsController · AuditTrailController · ReportsController",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_ctl4"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "81",
+                    "id": "225",
+                    "sourceId": "78",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "82",
+                    "id": "226",
+                    "sourceId": "78",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring @RestController"
+              },
+              {
+                "description": "Versionado, aprobación con firma y dictamen de insumos.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "79",
+                "name": "QualityDocumentCommandServiceImpl · MaterialApprovalCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_dcmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "83",
+                    "id": "229",
+                    "sourceId": "79",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "85",
+                    "id": "232",
+                    "sourceId": "79",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "86",
+                    "id": "237",
+                    "sourceId": "79",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "87",
+                    "id": "239",
+                    "sourceId": "79",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Cuarentena, evaluación, liberación y certificado de análisis.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "80",
+                "name": "BatchReviewCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_rcmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "83",
+                    "id": "230",
+                    "sourceId": "80",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "85",
+                    "id": "233",
+                    "sourceId": "80",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "86",
+                    "id": "236",
+                    "sourceId": "80",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "87",
+                    "id": "240",
+                    "sourceId": "80",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Ciclo de vida de desviaciones, CAPA y auditorías.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "81",
+                "name": "DeviationCommandServiceImpl · AuditCommandServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_vcmd"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "83",
+                    "id": "231",
+                    "sourceId": "81",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "87",
+                    "id": "241",
+                    "sourceId": "81",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring @Service – Command Service"
+              },
+              {
+                "description": "Expedientes de auditoría y reportes regulatorios en PDF.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "82",
+                "name": "ReportGenerationServiceImpl",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_rep"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "87",
+                    "id": "242",
+                    "sourceId": "82",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Application Service – OpenPDF"
+              },
+              {
+                "description": "Aggregates del contexto.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "83",
+                "name": "QualityDocument · MaterialApproval · BatchReview · AnalyticalResult · Deviation · Audit · AuditTrailEntry · RegulatoryReport",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_dom"
+                },
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Domain Model"
+              },
+              {
+                "description": "Registra quién, cuándo y qué cambió en todos los contextos (solo inserción).",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "84",
+                "name": "AuditTrailEntityListener",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_aud"
+                },
+                "relationships": [
+                  {
+                    "description": "Inserta entradas",
+                    "destinationId": "89",
+                    "id": "243",
+                    "sourceId": "84",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Infrastructure – JPA Entity Listener"
+              },
+              {
+                "description": "Firma electrónica y consulta de lotes.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "85",
+                "name": "ExternalIamService · ExternalManufacturingService",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_ext"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "35",
+                    "id": "234",
+                    "sourceId": "85",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "63",
+                    "id": "235",
+                    "sourceId": "85",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Application – Outbound ACL"
+              },
+              {
+                "description": "Publica BatchReleaseDecided y MaterialApprovalDecided.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "86",
+                "name": "ApplicationEventPublisher",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_pub"
+                },
+                "relationships": [
+                  {
+                    "description": "Veredictos",
+                    "destinationId": "60",
+                    "id": "238",
+                    "sourceId": "86",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring Events"
+              },
+              {
+                "description": "Persistencia en MySQL.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "87",
+                "name": "Quality repositories",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_repo"
+                },
+                "relationships": [
+                  {
+                    "description": "JDBC",
+                    "destinationId": "89",
+                    "id": "244",
+                    "sourceId": "87",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Spring Data JPA Repository"
+              },
+              {
+                "description": "Recibe solicitudes de aprobación y de cuarentena.",
+                "documentation": {},
+                "group": "Quality & Compliance",
+                "id": "88",
+                "name": "QualityContextFacade",
+                "properties": {
+                  "structurizr.dsl.identifier": "qa_acl"
+                },
+                "relationships": [
+                  {
+                    "description": "Usa",
+                    "destinationId": "79",
+                    "id": "227",
+                    "sourceId": "88",
+                    "tags": "Relationship"
+                  },
+                  {
+                    "description": "Usa",
+                    "destinationId": "80",
+                    "id": "228",
+                    "sourceId": "88",
+                    "tags": "Relationship"
+                  }
+                ],
+                "tags": "Element,Component,Quality & Compliance",
+                "technology": "Interfaces – ACL Facade"
+              }
+            ],
+            "description": "Monolito modular con los 6 bounded contexts; Spring Security (JWT + TOTP), OpenAPI (springdoc) y notificaciones WebSocket (STOMP). Render.",
+            "documentation": {},
+            "id": "23",
+            "name": "RESTful API",
+            "properties": {
+              "structurizr.dsl.identifier": "api"
+            },
+            "relationships": [
+              {
+                "description": "Lee y escribe",
+                "destinationId": "89",
+                "id": "108",
+                "sourceId": "23",
+                "tags": "Relationship",
+                "technology": "JDBC – Spring Data JPA/Hibernate"
+              },
+              {
+                "description": "Autoriza cobros",
+                "destinationId": "6",
+                "id": "110",
+                "sourceId": "23",
+                "tags": "Relationship",
+                "technology": "REST JSON/HTTPS"
+              },
+              {
+                "description": "Envía correos",
+                "destinationId": "7",
+                "id": "111",
+                "sourceId": "23",
+                "tags": "Relationship",
+                "technology": "REST JSON/HTTPS"
+              }
+            ],
+            "tags": "Element,Container",
+            "technology": "Spring Boot, Java 21, Spring Data JPA"
+          },
+          {
+            "description": "Tablas agrupadas por bounded context (Railway).",
+            "documentation": {},
+            "id": "89",
+            "name": "Database",
+            "properties": {
+              "structurizr.dsl.identifier": "db"
+            },
+            "tags": "Element,Container,Database",
+            "technology": "MySQL 8"
+          }
+        ],
+        "description": "Plataforma SaaS de gestión de calidad y trazabilidad de lotes farmacéuticos (Landing Page, Web Application y RESTful API).",
+        "documentation": {},
+        "id": "9",
+        "name": "DoofPlus",
+        "properties": {
+          "structurizr.dsl.identifier": "doofplus"
+        },
+        "relationships": [
+          {
+            "description": "Autoriza cobros de suscripción",
+            "destinationId": "6",
+            "id": "95",
+            "sourceId": "9",
+            "tags": "Relationship",
+            "technology": "REST/HTTPS, JSON"
+          },
+          {
+            "description": "Envía correos",
+            "destinationId": "7",
+            "id": "96",
+            "sourceId": "9",
+            "tags": "Relationship",
+            "technology": "REST/HTTPS, JSON"
+          }
+        ],
+        "tags": "Element,Software System"
+      }
+    ]
+  },
+  "name": "DoofPlus",
+  "properties": {
+    "structurizr.dsl": "d29ya3NwYWNlICJEb29mUGx1cyIgIk1vZGVsbyBDNCBkZSBEb29mUGx1cyAoSW5nZXNDb21wYW55KS4gRnVlbnRlIFN0cnVjdHVyaXpyIERTTCBkZSBsb3MgZGlhZ3JhbWFzIGRlIGxhIHNlY2Npw7NuIDQuNy4iIHsNCiAgICAvLyBMYXMgdmlzdGFzIG5vIHVzYW4gYXV0b0xheW91dDogbGEgcG9zaWNpw7NuIGRlIGNhZGEgZWxlbWVudG8gZXN0w6EgZW4gd29ya3NwYWNlLmpzb24gKG1pc21vIGRpcmVjdG9yaW8pLA0KICAgIC8vIGNhbGN1bGFkYSBwYXJhIHF1ZSBsYXMgZmxlY2hhcyBzZWFuIHJlY3RhcywgdmF5YW4gZGUgYXJyaWJhIGhhY2lhIGFiYWpvIHkgc2UgY3J1Y2VuIGxvIG1lbm9zIHBvc2libGUuDQoNCg0KICAgIG1vZGVsIHsNCiAgICAgICAgdmlzaXRvciA9IHBlcnNvbiAiVmlzaXRhbnRlIGRlIHVuIGxhYm9yYXRvcmlvIiAiRXZhbMO6YSBEb29mUGx1cyBkZXNkZSBsYSBMYW5kaW5nIFBhZ2UgeSBzb2xpY2l0YSB1bmEgZGVtb3N0cmFjacOzbi4iDQogICAgICAgIHFhID0gcGVyc29uICJFc3BlY2lhbGlzdGEgUUEvUUMiICJHZXN0aW9uYSBkb2N1bWVudG9zLCBpbnN1bW9zLCBkZXN2aWFjaW9uZXMsIENBUEEsIGF1ZGl0b3LDrWFzIHkgbGliZXJhY2nDs24gZGUgbG90ZXMuIg0KICAgICAgICBwcm9kID0gcGVyc29uICJKZWZlIGRlIFByb2R1Y2Npw7NuIEZhcm1hY8OpdXRpY2EiICJHZXN0aW9uYSDDs3JkZW5lcyB5IGxvdGVzLCBtb25pdG9yZWEgZXF1aXBvcyB5IHNvbGljaXRhIGFwcm9iYWNpb25lcyBhIENhbGlkYWQuIg0KICAgICAgICBhZG1pbiA9IHBlcnNvbiAiQWRtaW5pc3RyYWRvciBkZWwgbGFib3JhdG9yaW8iICJSZWdpc3RyYSBsYSBvcmdhbml6YWNpw7NuLCB1c3Vhcmlvcywgcm9sZXMsIHNlbnNvcmVzIHkgbGEgc3VzY3JpcGNpw7NuLiINCiAgICAgICAgdGIgPSBzb2Z0d2FyZVN5c3RlbSAiVGhpbmdzQm9hcmQiICJQbGF0YWZvcm1hIElvVCBxdWUgcmVjaWJlIGxvcyBkYXRvcyBkZSBsb3Mgc2Vuc29yZXMgZGUgcGxhbnRhIHkgbG9zIHJlZW52w61hLiIgIkV4dGVybmFsIg0KICAgICAgICBuaXViaXogPSBzb2Z0d2FyZVN5c3RlbSAiTml1Yml6IiAiUGFzYXJlbGEgZGUgcGFnb3MgcGFyYSBjb2JyYXIgbGFzIHN1c2NyaXBjaW9uZXMuIiAiRXh0ZXJuYWwiDQogICAgICAgIG1haWwgPSBzb2Z0d2FyZVN5c3RlbSAiU2VuZEdyaWQiICJTZXJ2aWNpbyBkZSBjb3JyZW8gcGFyYSBpbnZpdGFjaW9uZXMsIGFsZXJ0YXMgeSBub3RpZmljYWNpb25lcy4iICJFeHRlcm5hbCINCiAgICAgICAgZ2EgPSBzb2Z0d2FyZVN5c3RlbSAiQXBwIGF1dGVudGljYWRvcmEgKFRPVFApIiAiQXBwIG3Ds3ZpbCBkZWwgdXN1YXJpbyAocC4gZWouLCBHb29nbGUgQXV0aGVudGljYXRvcikgcXVlIGdlbmVyYSBjw7NkaWdvcyAyRkEuIiAiRXh0ZXJuYWwiDQogICAgICAgIGRvb2ZwbHVzID0gc29mdHdhcmVTeXN0ZW0gIkRvb2ZQbHVzIiAiUGxhdGFmb3JtYSBTYWFTIGRlIGdlc3Rpw7NuIGRlIGNhbGlkYWQgeSB0cmF6YWJpbGlkYWQgZGUgbG90ZXMgZmFybWFjw6l1dGljb3MgKExhbmRpbmcgUGFnZSwgV2ViIEFwcGxpY2F0aW9uIHkgUkVTVGZ1bCBBUEkpLiIgew0KICAgICAgICAgICAgbGFuZGluZyA9IGNvbnRhaW5lciAiTGFuZGluZyBQYWdlIiAiU2l0aW8gZXN0w6F0aWNvIChHaXRIdWIgUGFnZXMpIGNvbiBsYSBwcm9wdWVzdGEgZGUgdmFsb3IsIHBsYW5lcyB5IGVxdWlwbzsgaTE4biBlbi1VUy9lcy00MTkuIFN1cyBDVEEgbGxldmFuIGEgbGEgV2ViIEFwcGxpY2F0aW9uLiIgIkhUTUw1LCBDU1MzLCBKYXZhU2NyaXB0Ig0KICAgICAgICAgICAgd2ViYXBwID0gY29udGFpbmVyICJXZWIgQXBwbGljYXRpb24iICJTUEEgcmVzcG9uc2l2ZSAoTWF0ZXJpYWwgRGVzaWduKSBjb24gdW4gbcOzZHVsbyBwb3IgYm91bmRlZCBjb250ZXh0OyBpMThuIGNvbiBuZ3gtdHJhbnNsYXRlIHkgQVJJQS4gRGVzcGxlZ2FkYSBlbiBGaXJlYmFzZSBIb3N0aW5nLiIgIkFuZ3VsYXIsIEFuZ3VsYXIgTWF0ZXJpYWwsIFR5cGVTY3JpcHQiIHsNCiAgICAgICAgICAgICAgICB3YV9yb3V0ZXIgPSBjb21wb25lbnQgImFwcC5yb3V0ZXMgJiBhdXRoR3VhcmQiICJSdXRhcyBsYXp5IHBvciBib3VuZGVkIGNvbnRleHQgeSBwcm90ZWNjacOzbiBkZSB2aXN0YXMgcG9yIHJvbC4iICJBbmd1bGFyIFJvdXRlciwgQ2FuQWN0aXZhdGVGbiINCiAgICAgICAgICAgICAgICB3YV9sYXlvdXQgPSBjb21wb25lbnQgIkxheW91dCwgVG9vbGJhciB5IEZvb3RlciIgIlNoZWxsIHJlc3BvbnNpdmUgeSBuYXZlZ2FjacOzbiBnbG9iYWwuIiAic2hhcmVkL3ByZXNlbnRhdGlvbiDigJMgbWF0LXRvb2xiYXIsIG1hdC1zaWRlbmF2Ig0KICAgICAgICAgICAgICAgIHdhX2lhbSA9IGNvbXBvbmVudCAiaWFtIiAiU2lnbi1pbiBjb24gMkZBLCBzZXNpw7NuIChKV1QpLCB1c3VhcmlvcyB5IGZpcm1hcy4iICJ2aWV3cyArIElhbVN0b3JlICsgSWFtQXBpIg0KICAgICAgICAgICAgICAgIHdhX29yZyA9IGNvbXBvbmVudCAib3JnYW5pemF0aW9ucyIgIk9yZ2FuaXphY2nDs24sIHBsYW50YXMgeSBwZXJmaWxlcy4iICJ2aWV3cyArIHN0b3JlICsgYXBpIg0KICAgICAgICAgICAgICAgIHdhX3N1YnMgPSBjb21wb25lbnQgInN1YnNjcmlwdGlvbnMiICJQbGFuZXMsIHBhZ28geSBlc3RhZG8gZGUgbGEgc3VzY3JpcGNpw7NuLiIgInZpZXdzICsgc3RvcmUgKyBhcGkiDQogICAgICAgICAgICAgICAgd2FfbWZnID0gY29tcG9uZW50ICJtYW51ZmFjdHVyaW5nIiAiw5NyZGVuZXMsIGxvdGVzLCBpbnN1bW9zIGUgaW5jaWRlbmNpYXMuIiAidmlld3MgKyBNYW51ZmFjdHVyaW5nU3RvcmUgKyBhcGkiDQogICAgICAgICAgICAgICAgd2FfaW90ID0gY29tcG9uZW50ICJpb3QtbW9uaXRvcmluZyIgIkVxdWlwb3MsIHNlbnNvcmVzLCBsZWN0dXJhcyB5IGFsZXJ0YXMuIiAidmlld3MgKyBzdG9yZSArIGFwaSINCiAgICAgICAgICAgICAgICB3YV9xdWFsID0gY29tcG9uZW50ICJxdWFsaXR5IiAiRG9jdW1lbnRvcywgaW5zdW1vcywgcmVzdWx0YWRvcywgZGVzdmlhY2lvbmVzLCBDQVBBLCBsaWJlcmFjacOzbiwgYXVkaXRvcsOtYXMgeSBhdWRpdCB0cmFpbC4iICJ2aWV3cyAobWF0LXRhYmxlKSArIFF1YWxpdHlTdG9yZSArIGFwaSINCiAgICAgICAgICAgICAgICB3YV9odHRwID0gY29tcG9uZW50ICJzaGFyZWQvaW5mcmFzdHJ1Y3R1cmUiICJDbGllbnRlIFJFU1QgYmFzZSwgY29udmVyc2nDs24gcmVzb3VyY2Ug4oaUIGVudGl0eSB5IHRva2VuIEJlYXJlci4iICJIdHRwQ2xpZW50LCBCYXNlQXBpLCBhc3NlbWJsZXJzLCBhdXRoSW50ZXJjZXB0b3IiDQogICAgICAgICAgICAgICAgd2FfaTE4biA9IGNvbXBvbmVudCAiTGFuZ3VhZ2VTd2l0Y2hlciIgInB1YmxpYy9pMThuL2VuLmpzb24gKHBvciBkZWZlY3RvKSB5IGVzLmpzb24uIiAibmd4LXRyYW5zbGF0ZSArIEh0dHBMb2FkZXIiDQogICAgICAgICAgICAgICAgd2Ffd3MgPSBjb21wb25lbnQgIk5vdGlmaWNhdGlvbnMgQ2xpZW50IiAiUmVjaWJlIGFsZXJ0YXMgZW4gdGllbXBvIHJlYWwuIiAiQHN0b21wL3J4LXN0b21wIg0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgYXBpID0gY29udGFpbmVyICJSRVNUZnVsIEFQSSIgIk1vbm9saXRvIG1vZHVsYXIgY29uIGxvcyA2IGJvdW5kZWQgY29udGV4dHM7IFNwcmluZyBTZWN1cml0eSAoSldUICsgVE9UUCksIE9wZW5BUEkgKHNwcmluZ2RvYykgeSBub3RpZmljYWNpb25lcyBXZWJTb2NrZXQgKFNUT01QKS4gUmVuZGVyLiIgIlNwcmluZyBCb290LCBKYXZhIDIxLCBTcHJpbmcgRGF0YSBKUEEiIHsNCiAgICAgICAgICAgICAgICBncm91cCAiSWRlbnRpdHkgJiBBY2Nlc3MgTWFuYWdlbWVudCIgew0KICAgICAgICAgICAgICAgICAgICBpYW1fY3RsID0gY29tcG9uZW50ICJBdXRoZW50aWNhdGlvbkNvbnRyb2xsZXIiICJzaWduLXVwLCBzaWduLWluIHkgdmVyaWZpY2FjacOzbiAyRkEuIiAiU3ByaW5nIEBSZXN0Q29udHJvbGxlciIgIklkZW50aXR5ICYgQWNjZXNzIE1hbmFnZW1lbnQiDQogICAgICAgICAgICAgICAgICAgIGlhbV9jdGwyID0gY29tcG9uZW50ICJVc2Vyc0NvbnRyb2xsZXIgwrcgRWxlY3Ryb25pY1NpZ25hdHVyZXNDb250cm9sbGVyIiAiQWx0YSBkZSB1c3Vhcmlvcywgcm9sZXMgeSBmaXJtYXMuIiAiU3ByaW5nIEBSZXN0Q29udHJvbGxlciIgIklkZW50aXR5ICYgQWNjZXNzIE1hbmFnZW1lbnQiDQogICAgICAgICAgICAgICAgICAgIGlhbV9mbHQgPSBjb21wb25lbnQgIkJlYXJlckF1dGhvcml6YXRpb25SZXF1ZXN0RmlsdGVyIiAiVmFsaWRhIGVsIEpXVCBlbiBjYWRhIHJlcXVlc3QuIiAiU3ByaW5nIFNlY3VyaXR5IEZpbHRlciIgIklkZW50aXR5ICYgQWNjZXNzIE1hbmFnZW1lbnQiDQogICAgICAgICAgICAgICAgICAgIGlhbV9jbWQgPSBjb21wb25lbnQgIlVzZXJDb21tYW5kU2VydmljZUltcGwiICJEYSBkZSBhbHRhIHVzdWFyaW9zLCBhc2lnbmEgcm9sZXMgeSBibG9xdWVhIGN1ZW50YXMgdHJhcyA1IGludGVudG9zLiIgIlNwcmluZyBAU2VydmljZSDigJMgQ29tbWFuZCBTZXJ2aWNlIiAiSWRlbnRpdHkgJiBBY2Nlc3MgTWFuYWdlbWVudCINCiAgICAgICAgICAgICAgICAgICAgaWFtX3NpZyA9IGNvbXBvbmVudCAiU2lnbmF0dXJlQ29tbWFuZFNlcnZpY2VJbXBsIiAiVmVyaWZpY2EgbGEgaWRlbnRpZGFkIHkgcmVnaXN0cmEgbGEgZmlybWEgZWxlY3Ryw7NuaWNhLiIgIlNwcmluZyBAU2VydmljZSDigJMgQ29tbWFuZCBTZXJ2aWNlIiAiSWRlbnRpdHkgJiBBY2Nlc3MgTWFuYWdlbWVudCINCiAgICAgICAgICAgICAgICAgICAgaWFtX3FyeSA9IGNvbXBvbmVudCAiVXNlclF1ZXJ5U2VydmljZUltcGwiICJDb25zdWx0YXMgZGUgdXN1YXJpb3MgeSByb2xlcy4iICJTcHJpbmcgQFNlcnZpY2Ug4oCTIFF1ZXJ5IFNlcnZpY2UiICJJZGVudGl0eSAmIEFjY2VzcyBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBpYW1fZG9tID0gY29tcG9uZW50ICJVc2VyIMK3IFJvbGUgwrcgRWxlY3Ryb25pY1NpZ25hdHVyZSIgIkFnZ3JlZ2F0ZXMgZGVsIGNvbnRleHRvIElBTS4iICJEb21haW4gTW9kZWwiICJJZGVudGl0eSAmIEFjY2VzcyBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBpYW1fdG9rID0gY29tcG9uZW50ICJUb2tlblNlcnZpY2VJbXBsIiAiR2VuZXJhIHkgdmFsaWRhIHRva2VucyBKV1QuIiAiSW5mcmFzdHJ1Y3R1cmUg4oCTIEpKV1QiICJJZGVudGl0eSAmIEFjY2VzcyBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBpYW1faGFzaCA9IGNvbXBvbmVudCAiSGFzaGluZ1NlcnZpY2VJbXBsIiAiSGFzaCBkZSBjb250cmFzZcOxYXMuIiAiSW5mcmFzdHJ1Y3R1cmUg4oCTIEJDcnlwdCIgIklkZW50aXR5ICYgQWNjZXNzIE1hbmFnZW1lbnQiDQogICAgICAgICAgICAgICAgICAgIGlhbV90b3RwID0gY29tcG9uZW50ICJUb3RwU2VydmljZUltcGwiICJWYWxpZGEgbG9zIGPDs2RpZ29zIDJGQS4iICJJbmZyYXN0cnVjdHVyZSDigJMgUkZDIDYyMzgiICJJZGVudGl0eSAmIEFjY2VzcyBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBpYW1fcmVwbyA9IGNvbXBvbmVudCAiVXNlclJlcG9zaXRvcnkgwrcgRWxlY3Ryb25pY1NpZ25hdHVyZVJlcG9zaXRvcnkiICJQZXJzaXN0ZW5jaWEgZW4gTXlTUUwuIiAiU3ByaW5nIERhdGEgSlBBIFJlcG9zaXRvcnkiICJJZGVudGl0eSAmIEFjY2VzcyBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBpYW1fYWNsID0gY29tcG9uZW50ICJJYW1Db250ZXh0RmFjYWRlIiAiRXhwb25lIHVzdWFyaW9zIHkgZmlybWFzIGEgbG9zIGRlbcOhcyBib3VuZGVkIGNvbnRleHRzLiIgIkludGVyZmFjZXMg4oCTIEFDTCBGYWNhZGUiICJJZGVudGl0eSAmIEFjY2VzcyBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBncm91cCAiT3JnYW5pemF0aW9ucyAmIFByb2ZpbGVzIiB7DQogICAgICAgICAgICAgICAgICAgIG9yZ19jdGwgPSBjb21wb25lbnQgIk9yZ2FuaXphdGlvbnNDb250cm9sbGVyIMK3IERlbW9SZXF1ZXN0c0NvbnRyb2xsZXIiICJSZWdpc3RybyBkZSBvcmdhbml6YWNpb25lcywgcGxhbnRhcyB5IHNvbGljaXR1ZGVzIGRlIGRlbW8uIiAiU3ByaW5nIEBSZXN0Q29udHJvbGxlciIgIk9yZ2FuaXphdGlvbnMgJiBQcm9maWxlcyINCiAgICAgICAgICAgICAgICAgICAgb3JnX2N0bDIgPSBjb21wb25lbnQgIlByb2ZpbGVzQ29udHJvbGxlciIgIlBlcmZpbGVzIHkgcHJlZmVyZW5jaWFzLiIgIlNwcmluZyBAUmVzdENvbnRyb2xsZXIiICJPcmdhbml6YXRpb25zICYgUHJvZmlsZXMiDQogICAgICAgICAgICAgICAgICAgIG9yZ19jbWQgPSBjb21wb25lbnQgIk9yZ2FuaXphdGlvbkNvbW1hbmRTZXJ2aWNlSW1wbCIgIlJlZ2lzdHJhIGxhIG9yZ2FuaXphY2nDs24gKFJVQyDDum5pY28pIHkgcGlkZSBjcmVhciBzdSBhZG1pbmlzdHJhZG9yLiIgIlNwcmluZyBAU2VydmljZSDigJMgQ29tbWFuZCBTZXJ2aWNlIiAiT3JnYW5pemF0aW9ucyAmIFByb2ZpbGVzIg0KICAgICAgICAgICAgICAgICAgICBvcmdfZGNtZCA9IGNvbXBvbmVudCAiRGVtb1JlcXVlc3RDb21tYW5kU2VydmljZUltcGwiICJSZWdpc3RyYSBsYSBzb2xpY2l0dWQgeSBhdmlzYSBhbCBlcXVpcG8gY29tZXJjaWFsLiIgIlNwcmluZyBAU2VydmljZSDigJMgQ29tbWFuZCBTZXJ2aWNlIiAiT3JnYW5pemF0aW9ucyAmIFByb2ZpbGVzIg0KICAgICAgICAgICAgICAgICAgICBvcmdfcGNtZCA9IGNvbXBvbmVudCAiUHJvZmlsZUNvbW1hbmRTZXJ2aWNlSW1wbCIgIkNyZWEgeSBhY3R1YWxpemEgcGVyZmlsZXMuIiAiU3ByaW5nIEBTZXJ2aWNlIOKAkyBDb21tYW5kIFNlcnZpY2UiICJPcmdhbml6YXRpb25zICYgUHJvZmlsZXMiDQogICAgICAgICAgICAgICAgICAgIG9yZ19xcnkgPSBjb21wb25lbnQgIk9yZ2FuaXphdGlvblF1ZXJ5U2VydmljZUltcGwiICJDb25zdWx0YXMgZGUgb3JnYW5pemFjaW9uZXMgeSBwbGFudGFzLiIgIlNwcmluZyBAU2VydmljZSDigJMgUXVlcnkgU2VydmljZSIgIk9yZ2FuaXphdGlvbnMgJiBQcm9maWxlcyINCiAgICAgICAgICAgICAgICAgICAgb3JnX2RvbSA9IGNvbXBvbmVudCAiT3JnYW5pemF0aW9uIMK3IFBsYW50IMK3IFByb2ZpbGUgwrcgRGVtb1JlcXVlc3QiICJBZ2dyZWdhdGVzIGRlbCBjb250ZXh0by4iICJEb21haW4gTW9kZWwiICJPcmdhbml6YXRpb25zICYgUHJvZmlsZXMiDQogICAgICAgICAgICAgICAgICAgIG9yZ19leHQgPSBjb21wb25lbnQgIkV4dGVybmFsSWFtU2VydmljZSIgIkNyZWEgZWwgdXN1YXJpbyBhZG1pbmlzdHJhZG9yIG1lZGlhbnRlIElhbUNvbnRleHRGYWNhZGUuIiAiQXBwbGljYXRpb24g4oCTIE91dGJvdW5kIEFDTCIgIk9yZ2FuaXphdGlvbnMgJiBQcm9maWxlcyINCiAgICAgICAgICAgICAgICAgICAgb3JnX3JlcG8gPSBjb21wb25lbnQgIk9yZ2FuaXphdGlvblJlcG9zaXRvcnkgwrcgUHJvZmlsZVJlcG9zaXRvcnkgwrcgRGVtb1JlcXVlc3RSZXBvc2l0b3J5IiAiUGVyc2lzdGVuY2lhIGVuIE15U1FMLiIgIlNwcmluZyBEYXRhIEpQQSBSZXBvc2l0b3J5IiAiT3JnYW5pemF0aW9ucyAmIFByb2ZpbGVzIg0KICAgICAgICAgICAgICAgICAgICBvcmdfYWNsID0gY29tcG9uZW50ICJPcmdhbml6YXRpb25zQ29udGV4dEZhY2FkZSIgIkV4cG9uZSBvcmdhbml6YWNpw7NuIHkgcGxhbnRhcy4iICJJbnRlcmZhY2VzIOKAkyBBQ0wgRmFjYWRlIiAiT3JnYW5pemF0aW9ucyAmIFByb2ZpbGVzIg0KICAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgICAgICBncm91cCAiU3Vic2NyaXB0aW9ucyAmIFBheW1lbnRzIiB7DQogICAgICAgICAgICAgICAgICAgIHN1Yl9jdGwgPSBjb21wb25lbnQgIlBsYW5zQ29udHJvbGxlciDCtyBTdWJzY3JpcHRpb25zQ29udHJvbGxlciIgIlBsYW5lcywgc3VzY3JpcGNpw7NuLCBwYWdvLCByZW5vdmFjacOzbiB5IGNhbmNlbGFjacOzbi4iICJTcHJpbmcgQFJlc3RDb250cm9sbGVyIiAiU3Vic2NyaXB0aW9ucyAmIFBheW1lbnRzIg0KICAgICAgICAgICAgICAgICAgICBzdWJfY21kID0gY29tcG9uZW50ICJTdWJzY3JpcHRpb25Db21tYW5kU2VydmljZUltcGwiICJTZWxlY2Npb25hIHBsYW4sIGFjdGl2YSwgcmVudWV2YSB5IGNhbmNlbGEgc3VzY3JpcGNpb25lcy4iICJTcHJpbmcgQFNlcnZpY2Ug4oCTIENvbW1hbmQgU2VydmljZSIgIlN1YnNjcmlwdGlvbnMgJiBQYXltZW50cyINCiAgICAgICAgICAgICAgICAgICAgc3ViX3FyeSA9IGNvbXBvbmVudCAiUGxhblF1ZXJ5U2VydmljZUltcGwiICJQbGFuZXMgeSBsw61taXRlcyB2aWdlbnRlcy4iICJTcHJpbmcgQFNlcnZpY2Ug4oCTIFF1ZXJ5IFNlcnZpY2UiICJTdWJzY3JpcHRpb25zICYgUGF5bWVudHMiDQogICAgICAgICAgICAgICAgICAgIHN1Yl9qb2IgPSBjb21wb25lbnQgIlN1YnNjcmlwdGlvblJlbmV3YWxTY2hlZHVsZXIiICJSZW51ZXZhIGxhcyBzdXNjcmlwY2lvbmVzIHZlbmNpZGFzLiIgIlNwcmluZyBAU2NoZWR1bGVkIiAiU3Vic2NyaXB0aW9ucyAmIFBheW1lbnRzIg0KICAgICAgICAgICAgICAgICAgICBzdWJfZG9tID0gY29tcG9uZW50ICJQbGFuIMK3IFN1YnNjcmlwdGlvbiDCtyBQYXltZW50IiAiQWdncmVnYXRlcyBkZWwgY29udGV4dG8uIiAiRG9tYWluIE1vZGVsIiAiU3Vic2NyaXB0aW9ucyAmIFBheW1lbnRzIg0KICAgICAgICAgICAgICAgICAgICBzdWJfZ3cgPSBjb21wb25lbnQgIk5pdWJpelBheW1lbnRHYXRld2F5IiAiSW1wbGVtZW50YSBQYXltZW50R2F0ZXdheSBjb250cmEgbGEgQVBJIFJFU1QgZGUgTml1Yml6LiIgIkluZnJhc3RydWN0dXJlIOKAkyBSZXN0Q2xpZW50IiAiU3Vic2NyaXB0aW9ucyAmIFBheW1lbnRzIg0KICAgICAgICAgICAgICAgICAgICBzdWJfcmVwbyA9IGNvbXBvbmVudCAiU3Vic2NyaXB0aW9uUmVwb3NpdG9yeSDCtyBQbGFuUmVwb3NpdG9yeSIgIlBlcnNpc3RlbmNpYSBlbiBNeVNRTC4iICJTcHJpbmcgRGF0YSBKUEEgUmVwb3NpdG9yeSIgIlN1YnNjcmlwdGlvbnMgJiBQYXltZW50cyINCiAgICAgICAgICAgICAgICAgICAgc3ViX2FjbCA9IGNvbXBvbmVudCAiU3Vic2NyaXB0aW9uc0NvbnRleHRGYWNhZGUiICJFeHBvbmUgZWwgcGxhbiB2aWdlbnRlIHkgc3VzIGzDrW1pdGVzIChwLiBlai4sIGRpc3Bvc2l0aXZvcyBJb1QpLiIgIkludGVyZmFjZXMg4oCTIEFDTCBGYWNhZGUiICJTdWJzY3JpcHRpb25zICYgUGF5bWVudHMiDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgIGdyb3VwICJNYW51ZmFjdHVyaW5nICYgQmF0Y2ggTWFuYWdlbWVudCIgew0KICAgICAgICAgICAgICAgICAgICBtZmdfY3RsID0gY29tcG9uZW50ICJQcm9kdWN0aW9uQmF0Y2hlc0NvbnRyb2xsZXIgwrcgSW5jaWRlbnRzQ29udHJvbGxlciIgIkxvdGVzLCBlc3RhZG9zLCBjb25zdW1vLCBwYXLDoW1ldHJvcywgaW5jaWRlbmNpYXMgeSBsw61uZWEgZGUgdGllbXBvLiIgIlNwcmluZyBAUmVzdENvbnRyb2xsZXIiICJNYW51ZmFjdHVyaW5nICYgQmF0Y2ggTWFuYWdlbWVudCINCiAgICAgICAgICAgICAgICAgICAgbWZnX2N0bDIgPSBjb21wb25lbnQgIlByb2R1Y3RzQ29udHJvbGxlciDCtyBNYXN0ZXJGb3JtdWxhc0NvbnRyb2xsZXIgwrcgUmF3TWF0ZXJpYWxMb3RzQ29udHJvbGxlciDCtyBQcm9kdWN0aW9uT3JkZXJzQ29udHJvbGxlciIgIkNhdMOhbG9nbywgZsOzcm11bGFzLCBpbnN1bW9zIHkgw7NyZGVuZXMuIiAiU3ByaW5nIEBSZXN0Q29udHJvbGxlciIgIk1hbnVmYWN0dXJpbmcgJiBCYXRjaCBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBtZmdfY21kID0gY29tcG9uZW50ICJQcm9kdWN0aW9uQmF0Y2hDb21tYW5kU2VydmljZUltcGwiICJDcmVhIGxvdGVzLCBjYW1iaWEgZXN0YWRvcyB5IHJlZ2lzdHJhIGNvbnN1bW9zLCBwYXLDoW1ldHJvcyBlIGluY2lkZW5jaWFzLiIgIlNwcmluZyBAU2VydmljZSDigJMgQ29tbWFuZCBTZXJ2aWNlIiAiTWFudWZhY3R1cmluZyAmIEJhdGNoIE1hbmFnZW1lbnQiDQogICAgICAgICAgICAgICAgICAgIG1mZ19vY21kID0gY29tcG9uZW50ICJQcm9kdWN0aW9uT3JkZXJDb21tYW5kU2VydmljZUltcGwgwrcgUmF3TWF0ZXJpYWxMb3RDb21tYW5kU2VydmljZUltcGwiICLDk3JkZW5lcyBkZSBwcm9kdWNjacOzbiwgcmVjZXBjacOzbiB5IHViaWNhY2nDs24gZGUgaW5zdW1vcy4iICJTcHJpbmcgQFNlcnZpY2Ug4oCTIENvbW1hbmQgU2VydmljZSIgIk1hbnVmYWN0dXJpbmcgJiBCYXRjaCBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBtZmdfcXJ5ID0gY29tcG9uZW50ICJQcm9kdWN0aW9uQmF0Y2hRdWVyeVNlcnZpY2VJbXBsIiAiSGlzdG9yaWFsIHkgdHJhemFiaWxpZGFkIGRlIGxvdGVzLiIgIlNwcmluZyBAU2VydmljZSDigJMgUXVlcnkgU2VydmljZSIgIk1hbnVmYWN0dXJpbmcgJiBCYXRjaCBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBtZmdfZG9tID0gY29tcG9uZW50ICJQcm9kdWN0IMK3IE1hc3RlckZvcm11bGEgwrcgUmF3TWF0ZXJpYWxMb3QgwrcgUHJvZHVjdGlvbk9yZGVyIMK3IFByb2R1Y3Rpb25CYXRjaCIgIkFnZ3JlZ2F0ZXMgZGVsIGNvbnRleHRvLiIgIkRvbWFpbiBNb2RlbCIgIk1hbnVmYWN0dXJpbmcgJiBCYXRjaCBNYW5hZ2VtZW50Ig0KICAgICAgICAgICAgICAgICAgICBtZmdfZXZ0ID0gY29tcG9uZW50ICJCYXRjaFJlbGVhc2VEZWNpZGVkRXZlbnRIYW5kbGVyIMK3IE1hdGVyaWFsQXBwcm92YWxEZWNpZGVkRXZlbnRIYW5kbGVyIiAiQWN0dWFsaXphIGxvdGVzIGUgaW5zdW1vcyBjb24gbG9zIHZlcmVkaWN0b3MgZGUgUXVhbGl0eSAmIENvbXBsaWFuY2UuIiAiU3ByaW5nIEBFdmVudExpc3RlbmVyIiAiTWFudWZhY3R1cmluZyAmIEJhdGNoIE1hbmFnZW1lbnQiDQogICAgICAgICAgICAgICAgICAgIG1mZ19leHQgPSBjb21wb25lbnQgIkV4dGVybmFsUXVhbGl0eVNlcnZpY2UgwrcgRXh0ZXJuYWxJb3RTZXJ2aWNlIiAiU29saWNpdGEgYXByb2JhY2nDs24gZGUgaW5zdW1vcyB5IGN1YXJlbnRlbmE7IGFzaWduYSBzZW5zb3JlcyBhbCBsb3RlLiIgIkFwcGxpY2F0aW9uIOKAkyBPdXRib3VuZCBBQ0wiICJNYW51ZmFjdHVyaW5nICYgQmF0Y2ggTWFuYWdlbWVudCINCiAgICAgICAgICAgICAgICAgICAgbWZnX3JlcG8gPSBjb21wb25lbnQgIlByb2R1Y3Rpb25CYXRjaFJlcG9zaXRvcnkgwrcgUHJvZHVjdGlvbk9yZGVyUmVwb3NpdG9yeSDCtyBSYXdNYXRlcmlhbExvdFJlcG9zaXRvcnkgwrcgUHJvZHVjdFJlcG9zaXRvcnkiICJQZXJzaXN0ZW5jaWEgZW4gTXlTUUwuIiAiU3ByaW5nIERhdGEgSlBBIFJlcG9zaXRvcnkiICJNYW51ZmFjdHVyaW5nICYgQmF0Y2ggTWFuYWdlbWVudCINCiAgICAgICAgICAgICAgICAgICAgbWZnX2FjbCA9IGNvbXBvbmVudCAiTWFudWZhY3R1cmluZ0NvbnRleHRGYWNhZGUiICJFeHBvbmUgbG90ZXMgZW4gY3Vyc28gYSBJb1QgeSBRdWFsaXR5LiIgIkludGVyZmFjZXMg4oCTIEFDTCBGYWNhZGUiICJNYW51ZmFjdHVyaW5nICYgQmF0Y2ggTWFuYWdlbWVudCINCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgZ3JvdXAgIklvVCBNb25pdG9yaW5nIiB7DQogICAgICAgICAgICAgICAgICAgIGlvdF93aCA9IGNvbXBvbmVudCAiVGVsZW1ldHJ5V2ViaG9va0NvbnRyb2xsZXIiICJSZWNpYmUgdGVsZW1ldHLDrWEgZGUgVGhpbmdzQm9hcmQgKEFQSSBrZXkgcG9yIGRpc3Bvc2l0aXZvKS4iICJTcHJpbmcgQFJlc3RDb250cm9sbGVyIiAiSW9UIE1vbml0b3JpbmciDQogICAgICAgICAgICAgICAgICAgIGlvdF9jdGwgPSBjb21wb25lbnQgIkVxdWlwbWVudENvbnRyb2xsZXIgwrcgSW90RGV2aWNlc0NvbnRyb2xsZXIgwrcgQWxlcnRzQ29udHJvbGxlciIgIkVxdWlwb3MsIGNhbGlicmFjaW9uZXMsIG1hbnRlbmltaWVudG9zLCBzZW5zb3JlcyB5IGFsZXJ0YXMuIiAiU3ByaW5nIEBSZXN0Q29udHJvbGxlciIgIklvVCBNb25pdG9yaW5nIg0KICAgICAgICAgICAgICAgICAgICBpb3RfaW5nID0gY29tcG9uZW50ICJUZWxlbWV0cnlDb21tYW5kU2VydmljZUltcGwiICJSZWdpc3RyYSBsZWN0dXJhcyB5IGxhcyBhc29jaWEgYWwgbG90ZSBlbiBjdXJzby4iICJTcHJpbmcgQFNlcnZpY2Ug4oCTIENvbW1hbmQgU2VydmljZSIgIklvVCBNb25pdG9yaW5nIg0KICAgICAgICAgICAgICAgICAgICBpb3RfcnVsZSA9IGNvbXBvbmVudCAiQWxlcnRSdWxlRXZhbHVhdG9yIiAiQ29tcGFyYSBsZWN0dXJhcyBjb24gbG9zIHJhbmdvcyB5IGdlbmVyYSBhbGVydGFzLiIgIkRvbWFpbiBTZXJ2aWNlIiAiSW9UIE1vbml0b3JpbmciDQogICAgICAgICAgICAgICAgICAgIGlvdF9jbWQgPSBjb21wb25lbnQgIkVxdWlwbWVudENvbW1hbmRTZXJ2aWNlSW1wbCDCtyBJb3REZXZpY2VDb21tYW5kU2VydmljZUltcGwiICJFcXVpcG9zLCBjYWxpYnJhY2lvbmVzIHkgc2Vuc29yZXMuIiAiU3ByaW5nIEBTZXJ2aWNlIOKAkyBDb21tYW5kIFNlcnZpY2UiICJJb1QgTW9uaXRvcmluZyINCiAgICAgICAgICAgICAgICAgICAgaW90X2pvYiA9IGNvbXBvbmVudCAiQ2FsaWJyYXRpb25FeHBpcmF0aW9uU2NoZWR1bGVyIiAiTWFyY2EgZXF1aXBvcyBubyBhcHRvcyBhbCB2ZW5jZXIgbGEgY2FsaWJyYWNpw7NuLiIgIlNwcmluZyBAU2NoZWR1bGVkIiAiSW9UIE1vbml0b3JpbmciDQogICAgICAgICAgICAgICAgICAgIGlvdF9kb20gPSBjb21wb25lbnQgIkVxdWlwbWVudCDCtyBJb1REZXZpY2UgwrcgVGVsZW1ldHJ5UmVhZGluZyDCtyBBbGVydCIgIkFnZ3JlZ2F0ZXMgZGVsIGNvbnRleHRvLiIgIkRvbWFpbiBNb2RlbCIgIklvVCBNb25pdG9yaW5nIg0KICAgICAgICAgICAgICAgICAgICBpb3RfZXh0ID0gY29tcG9uZW50ICJFeHRlcm5hbE1hbnVmYWN0dXJpbmdTZXJ2aWNlIMK3IEV4dGVybmFsU3Vic2NyaXB0aW9uU2VydmljZSIgIlZlcmlmaWNhIGVsIGxvdGUgZW4gY3Vyc28geSBlbCBsw61taXRlIGRlIGRpc3Bvc2l0aXZvcyBkZWwgcGxhbi4iICJBcHBsaWNhdGlvbiDigJMgT3V0Ym91bmQgQUNMIiAiSW9UIE1vbml0b3JpbmciDQogICAgICAgICAgICAgICAgICAgIGlvdF9ub3RpZiA9IGNvbXBvbmVudCAiTm90aWZpY2F0aW9uU2VydmljZSIgIlB1YmxpY2EgYWxlcnRhcyBlbiB0aWVtcG8gcmVhbCB5IHBvciBjb3JyZW8uIiAiSW5mcmFzdHJ1Y3R1cmUg4oCTIFNUT01QICsgU2VuZEdyaWQiICJJb1QgTW9uaXRvcmluZyINCiAgICAgICAgICAgICAgICAgICAgaW90X3JlcG8gPSBjb21wb25lbnQgIkVxdWlwbWVudFJlcG9zaXRvcnkgwrcgSW90RGV2aWNlUmVwb3NpdG9yeSDCtyBUZWxlbWV0cnlSZWFkaW5nUmVwb3NpdG9yeSDCtyBBbGVydFJlcG9zaXRvcnkiICJQZXJzaXN0ZW5jaWEgZW4gTXlTUUwuIiAiU3ByaW5nIERhdGEgSlBBIFJlcG9zaXRvcnkiICJJb1QgTW9uaXRvcmluZyINCiAgICAgICAgICAgICAgICAgICAgaW90X2FjbCA9IGNvbXBvbmVudCAiSW90TW9uaXRvcmluZ0NvbnRleHRGYWNhZGUiICJBc2lnbmEgc2Vuc29yZXMgYSBsb3RlcyBhIHBlZGlkbyBkZSBNYW51ZmFjdHVyaW5nLiIgIkludGVyZmFjZXMg4oCTIEFDTCBGYWNhZGUiICJJb1QgTW9uaXRvcmluZyINCiAgICAgICAgICAgICAgICB9DQogICAgICAgICAgICAgICAgZ3JvdXAgIlF1YWxpdHkgJiBDb21wbGlhbmNlIiB7DQogICAgICAgICAgICAgICAgICAgIHFhX2N0bCA9IGNvbXBvbmVudCAiUXVhbGl0eURvY3VtZW50c0NvbnRyb2xsZXIgwrcgTWF0ZXJpYWxBcHByb3ZhbHNDb250cm9sbGVyIiAiRG9jdW1lbnRvcyB5IHZlcnNpb25lczsgZGljdGFtZW4gZGUgbWF0ZXJpYXMgcHJpbWFzLiIgIlNwcmluZyBAUmVzdENvbnRyb2xsZXIiICJRdWFsaXR5ICYgQ29tcGxpYW5jZSINCiAgICAgICAgICAgICAgICAgICAgcWFfY3RsMiA9IGNvbXBvbmVudCAiQmF0Y2hSZXZpZXdzQ29udHJvbGxlciDCtyBBbmFseXRpY2FsUmVzdWx0c0NvbnRyb2xsZXIiICJDdWFyZW50ZW5hLCByZXN1bHRhZG9zLCBPT1MgeSBsaWJlcmFjacOzbiBkZSBsb3Rlcy4iICJTcHJpbmcgQFJlc3RDb250cm9sbGVyIiAiUXVhbGl0eSAmIENvbXBsaWFuY2UiDQogICAgICAgICAgICAgICAgICAgIHFhX2N0bDMgPSBjb21wb25lbnQgIkRldmlhdGlvbnNDb250cm9sbGVyIMK3IENhcGFBY3Rpb25zQ29udHJvbGxlciIgIkRlc3ZpYWNpb25lcywgUkNBIHkgYWNjaW9uZXMgQ0FQQS4iICJTcHJpbmcgQFJlc3RDb250cm9sbGVyIiAiUXVhbGl0eSAmIENvbXBsaWFuY2UiDQogICAgICAgICAgICAgICAgICAgIHFhX2N0bDQgPSBjb21wb25lbnQgIkF1ZGl0c0NvbnRyb2xsZXIgwrcgQXVkaXRUcmFpbENvbnRyb2xsZXIgwrcgUmVwb3J0c0NvbnRyb2xsZXIiICJBdWRpdG9yw61hcywgYXVkaXQgdHJhaWwgeSByZXBvcnRlcy4iICJTcHJpbmcgQFJlc3RDb250cm9sbGVyIiAiUXVhbGl0eSAmIENvbXBsaWFuY2UiDQogICAgICAgICAgICAgICAgICAgIHFhX2RjbWQgPSBjb21wb25lbnQgIlF1YWxpdHlEb2N1bWVudENvbW1hbmRTZXJ2aWNlSW1wbCDCtyBNYXRlcmlhbEFwcHJvdmFsQ29tbWFuZFNlcnZpY2VJbXBsIiAiVmVyc2lvbmFkbywgYXByb2JhY2nDs24gY29uIGZpcm1hIHkgZGljdGFtZW4gZGUgaW5zdW1vcy4iICJTcHJpbmcgQFNlcnZpY2Ug4oCTIENvbW1hbmQgU2VydmljZSIgIlF1YWxpdHkgJiBDb21wbGlhbmNlIg0KICAgICAgICAgICAgICAgICAgICBxYV9yY21kID0gY29tcG9uZW50ICJCYXRjaFJldmlld0NvbW1hbmRTZXJ2aWNlSW1wbCIgIkN1YXJlbnRlbmEsIGV2YWx1YWNpw7NuLCBsaWJlcmFjacOzbiB5IGNlcnRpZmljYWRvIGRlIGFuw6FsaXNpcy4iICJTcHJpbmcgQFNlcnZpY2Ug4oCTIENvbW1hbmQgU2VydmljZSIgIlF1YWxpdHkgJiBDb21wbGlhbmNlIg0KICAgICAgICAgICAgICAgICAgICBxYV92Y21kID0gY29tcG9uZW50ICJEZXZpYXRpb25Db21tYW5kU2VydmljZUltcGwgwrcgQXVkaXRDb21tYW5kU2VydmljZUltcGwiICJDaWNsbyBkZSB2aWRhIGRlIGRlc3ZpYWNpb25lcywgQ0FQQSB5IGF1ZGl0b3LDrWFzLiIgIlNwcmluZyBAU2VydmljZSDigJMgQ29tbWFuZCBTZXJ2aWNlIiAiUXVhbGl0eSAmIENvbXBsaWFuY2UiDQogICAgICAgICAgICAgICAgICAgIHFhX3JlcCA9IGNvbXBvbmVudCAiUmVwb3J0R2VuZXJhdGlvblNlcnZpY2VJbXBsIiAiRXhwZWRpZW50ZXMgZGUgYXVkaXRvcsOtYSB5IHJlcG9ydGVzIHJlZ3VsYXRvcmlvcyBlbiBQREYuIiAiQXBwbGljYXRpb24gU2VydmljZSDigJMgT3BlblBERiIgIlF1YWxpdHkgJiBDb21wbGlhbmNlIg0KICAgICAgICAgICAgICAgICAgICBxYV9kb20gPSBjb21wb25lbnQgIlF1YWxpdHlEb2N1bWVudCDCtyBNYXRlcmlhbEFwcHJvdmFsIMK3IEJhdGNoUmV2aWV3IMK3IEFuYWx5dGljYWxSZXN1bHQgwrcgRGV2aWF0aW9uIMK3IEF1ZGl0IMK3IEF1ZGl0VHJhaWxFbnRyeSDCtyBSZWd1bGF0b3J5UmVwb3J0IiAiQWdncmVnYXRlcyBkZWwgY29udGV4dG8uIiAiRG9tYWluIE1vZGVsIiAiUXVhbGl0eSAmIENvbXBsaWFuY2UiDQogICAgICAgICAgICAgICAgICAgIHFhX2F1ZCA9IGNvbXBvbmVudCAiQXVkaXRUcmFpbEVudGl0eUxpc3RlbmVyIiAiUmVnaXN0cmEgcXVpw6luLCBjdcOhbmRvIHkgcXXDqSBjYW1iacOzIGVuIHRvZG9zIGxvcyBjb250ZXh0b3MgKHNvbG8gaW5zZXJjacOzbikuIiAiSW5mcmFzdHJ1Y3R1cmUg4oCTIEpQQSBFbnRpdHkgTGlzdGVuZXIiICJRdWFsaXR5ICYgQ29tcGxpYW5jZSINCiAgICAgICAgICAgICAgICAgICAgcWFfZXh0ID0gY29tcG9uZW50ICJFeHRlcm5hbElhbVNlcnZpY2UgwrcgRXh0ZXJuYWxNYW51ZmFjdHVyaW5nU2VydmljZSIgIkZpcm1hIGVsZWN0csOzbmljYSB5IGNvbnN1bHRhIGRlIGxvdGVzLiIgIkFwcGxpY2F0aW9uIOKAkyBPdXRib3VuZCBBQ0wiICJRdWFsaXR5ICYgQ29tcGxpYW5jZSINCiAgICAgICAgICAgICAgICAgICAgcWFfcHViID0gY29tcG9uZW50ICJBcHBsaWNhdGlvbkV2ZW50UHVibGlzaGVyIiAiUHVibGljYSBCYXRjaFJlbGVhc2VEZWNpZGVkIHkgTWF0ZXJpYWxBcHByb3ZhbERlY2lkZWQuIiAiU3ByaW5nIEV2ZW50cyIgIlF1YWxpdHkgJiBDb21wbGlhbmNlIg0KICAgICAgICAgICAgICAgICAgICBxYV9yZXBvID0gY29tcG9uZW50ICJRdWFsaXR5IHJlcG9zaXRvcmllcyIgIlBlcnNpc3RlbmNpYSBlbiBNeVNRTC4iICJTcHJpbmcgRGF0YSBKUEEgUmVwb3NpdG9yeSIgIlF1YWxpdHkgJiBDb21wbGlhbmNlIg0KICAgICAgICAgICAgICAgICAgICBxYV9hY2wgPSBjb21wb25lbnQgIlF1YWxpdHlDb250ZXh0RmFjYWRlIiAiUmVjaWJlIHNvbGljaXR1ZGVzIGRlIGFwcm9iYWNpw7NuIHkgZGUgY3VhcmVudGVuYS4iICJJbnRlcmZhY2VzIOKAkyBBQ0wgRmFjYWRlIiAiUXVhbGl0eSAmIENvbXBsaWFuY2UiDQogICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZGIgPSBjb250YWluZXIgIkRhdGFiYXNlIiAiVGFibGFzIGFncnVwYWRhcyBwb3IgYm91bmRlZCBjb250ZXh0IChSYWlsd2F5KS4iICJNeVNRTCA4IiAiRGF0YWJhc2UiDQogICAgICAgIH0NCg0KICAgICAgICB2aXNpdG9yIC0+IGRvb2ZwbHVzICJDb25vY2UgbGEgcHJvcHVlc3RhIGRlIHZhbG9yLCBsb3MgcGxhbmVzIHkgc29saWNpdGEgdW5hIGRlbW8iICJIVFRQUyINCiAgICAgICAgcWEgLT4gZG9vZnBsdXMgIkdlc3Rpb25hIGNhbGlkYWQgeSBjdW1wbGltaWVudG8iICJIVFRQUyINCiAgICAgICAgcHJvZCAtPiBkb29mcGx1cyAiR2VzdGlvbmEgbGEgcHJvZHVjY2nDs24geSBtb25pdG9yZWEgbGEgcGxhbnRhIiAiSFRUUFMiDQogICAgICAgIGFkbWluIC0+IGRvb2ZwbHVzICJBZG1pbmlzdHJhIG9yZ2FuaXphY2nDs24sIHVzdWFyaW9zIHkgc3VzY3JpcGNpw7NuIiAiSFRUUFMiDQogICAgICAgIHRiIC0+IGRvb2ZwbHVzICJFbnbDrWEgdGVsZW1ldHLDrWEgZGUgc2Vuc29yZXMiICJXZWJob29rIFJFU1QvSFRUUFMsIEpTT04iDQogICAgICAgIGRvb2ZwbHVzIC0+IG5pdWJpeiAiQXV0b3JpemEgY29icm9zIGRlIHN1c2NyaXBjacOzbiIgIlJFU1QvSFRUUFMsIEpTT04iDQogICAgICAgIGRvb2ZwbHVzIC0+IG1haWwgIkVudsOtYSBjb3JyZW9zIiAiUkVTVC9IVFRQUywgSlNPTiINCiAgICAgICAgZ2EgLT4gcWEgIk11ZXN0cmEgZWwgY8OzZGlnbyBUT1RQIChzaW4gaW50ZWdyYWNpw7NuIHBvciBBUEkpIiAiIiAiT3B0aW9uYWwiDQogICAgICAgIGdhIC0+IHByb2QgIk11ZXN0cmEgZWwgY8OzZGlnbyBUT1RQIChzaW4gaW50ZWdyYWNpw7NuIHBvciBBUEkpIiAiIiAiT3B0aW9uYWwiDQogICAgICAgIGdhIC0+IGFkbWluICJNdWVzdHJhIGVsIGPDs2RpZ28gVE9UUCAoc2luIGludGVncmFjacOzbiBwb3IgQVBJKSIgIiIgIk9wdGlvbmFsIg0KICAgICAgICB2aXNpdG9yIC0+IGxhbmRpbmcgIlZpc2l0YSIgIkhUVFBTIg0KICAgICAgICBsYW5kaW5nIC0+IGFwaSAiU29saWNpdGEgZGVtbyIgIkpTT04vSFRUUFMiDQogICAgICAgIGxhbmRpbmcgLT4gd2ViYXBwICJSZWRpcmlnZSBwb3Igc2VnbWVudG8gKENUQSkiICJIVFRQUyINCiAgICAgICAgcWEgLT4gd2ViYXBwICJVc2EiICJIVFRQUyINCiAgICAgICAgcHJvZCAtPiB3ZWJhcHAgIlVzYSIgIkhUVFBTIg0KICAgICAgICBhZG1pbiAtPiB3ZWJhcHAgIlVzYSIgIkhUVFBTIg0KICAgICAgICB3ZWJhcHAgLT4gYXBpICJDb25zdW1lIGVuZHBvaW50cyIgIkpTT04vSFRUUFMsIEJlYXJlciBKV1QiDQogICAgICAgIHdlYmFwcCAtPiBhcGkgIlNlIHN1c2NyaWJlIGEgbm90aWZpY2FjaW9uZXMgZW4gdGllbXBvIHJlYWwiICJXZWJTb2NrZXQg4oCTIFNUT01QIg0KICAgICAgICBhcGkgLT4gZGIgIkxlZSB5IGVzY3JpYmUiICJKREJDIOKAkyBTcHJpbmcgRGF0YSBKUEEvSGliZXJuYXRlIg0KICAgICAgICB0YiAtPiBhcGkgIkVudsOtYSB0ZWxlbWV0csOtYSIgIldlYmhvb2sgSlNPTi9IVFRQUyINCiAgICAgICAgYXBpIC0+IG5pdWJpeiAiQXV0b3JpemEgY29icm9zIiAiUkVTVCBKU09OL0hUVFBTIg0KICAgICAgICBhcGkgLT4gbWFpbCAiRW52w61hIGNvcnJlb3MiICJSRVNUIEpTT04vSFRUUFMiDQogICAgICAgIHFhIC0+IHdhX2xheW91dCAiVXNhIiAiSFRUUFMiDQogICAgICAgIHByb2QgLT4gd2FfbGF5b3V0ICJVc2EiICJIVFRQUyINCiAgICAgICAgYWRtaW4gLT4gd2FfbGF5b3V0ICJVc2EiICJIVFRQUyINCiAgICAgICAgd2FfbGF5b3V0IC0+IHdhX3JvdXRlciAiVXNhIg0KICAgICAgICB3YV9yb3V0ZXIgLT4gd2FfaWFtICJVc2EiDQogICAgICAgIHdhX3JvdXRlciAtPiB3YV9vcmcgIlVzYSINCiAgICAgICAgd2Ffcm91dGVyIC0+IHdhX3N1YnMgIlVzYSINCiAgICAgICAgd2Ffcm91dGVyIC0+IHdhX21mZyAiVXNhIg0KICAgICAgICB3YV9yb3V0ZXIgLT4gd2FfaW90ICJVc2EiDQogICAgICAgIHdhX3JvdXRlciAtPiB3YV9xdWFsICJVc2EiDQogICAgICAgIHdhX2lhbSAtPiB3YV9odHRwICJVc2EiDQogICAgICAgIHdhX29yZyAtPiB3YV9odHRwICJVc2EiDQogICAgICAgIHdhX3N1YnMgLT4gd2FfaHR0cCAiVXNhIg0KICAgICAgICB3YV9tZmcgLT4gd2FfaHR0cCAiVXNhIg0KICAgICAgICB3YV9pb3QgLT4gd2FfaHR0cCAiVXNhIg0KICAgICAgICB3YV9xdWFsIC0+IHdhX2h0dHAgIlVzYSINCiAgICAgICAgd2FfbGF5b3V0IC0+IHdhX2kxOG4gIlRyYWR1Y2UgdGV4dG9zIg0KICAgICAgICB3YV9odHRwIC0+IGFwaSAiSlNPTi9IVFRQUyINCiAgICAgICAgd2Ffd3MgLT4gYXBpICJTZSBzdXNjcmliZSBhIGFsZXJ0YXMiICJXZWJTb2NrZXQgKFNUT01QKSINCiAgICAgICAgd2FfbGF5b3V0IC0+IHdhX3dzICJNdWVzdHJhIGFsZXJ0YXMiDQogICAgICAgIHdlYmFwcCAtPiBpYW1fY3RsICJKU09OL0hUVFBTIg0KICAgICAgICB3ZWJhcHAgLT4gaWFtX2N0bDIgIkpTT04vSFRUUFMiDQogICAgICAgIGlhbV9mbHQgLT4gaWFtX3RvayAiVmFsaWRhIHRva2VuIg0KICAgICAgICBpYW1fY3RsIC0+IGlhbV9jbWQgIlVzYSINCiAgICAgICAgaWFtX2N0bDIgLT4gaWFtX2NtZCAiVXNhIg0KICAgICAgICBpYW1fY3RsMiAtPiBpYW1fcXJ5ICJVc2EiDQogICAgICAgIGlhbV9jdGwyIC0+IGlhbV9zaWcgIlVzYSINCiAgICAgICAgaWFtX2NtZCAtPiBpYW1fZG9tICJVc2EiDQogICAgICAgIGlhbV9zaWcgLT4gaWFtX2RvbSAiVXNhIg0KICAgICAgICBpYW1fY21kIC0+IGlhbV9oYXNoICJVc2EiDQogICAgICAgIGlhbV9jbWQgLT4gaWFtX3RvayAiVXNhIg0KICAgICAgICBpYW1fY21kIC0+IGlhbV90b3RwICJVc2EiDQogICAgICAgIGlhbV9jbWQgLT4gbWFpbCAiSW52aXRhY2nDs24iDQogICAgICAgIGlhbV9jbWQgLT4gaWFtX3JlcG8gIlVzYSINCiAgICAgICAgaWFtX3FyeSAtPiBpYW1fcmVwbyAiVXNhIg0KICAgICAgICBpYW1fc2lnIC0+IGlhbV9yZXBvICJVc2EiDQogICAgICAgIGlhbV9hY2wgLT4gaWFtX3FyeSAiVXNhIg0KICAgICAgICBpYW1fYWNsIC0+IGlhbV9zaWcgIlVzYSINCiAgICAgICAgaWFtX3JlcG8gLT4gZGIgIkpEQkMiDQogICAgICAgIGxhbmRpbmcgLT4gb3JnX2N0bCAiU29saWNpdGEgZGVtbyINCiAgICAgICAgd2ViYXBwIC0+IG9yZ19jdGwgIkpTT04vSFRUUFMiDQogICAgICAgIHdlYmFwcCAtPiBvcmdfY3RsMiAiSlNPTi9IVFRQUyINCiAgICAgICAgb3JnX2N0bCAtPiBvcmdfY21kICJVc2EiDQogICAgICAgIG9yZ19jdGwgLT4gb3JnX2RjbWQgIlVzYSINCiAgICAgICAgb3JnX2N0bDIgLT4gb3JnX3BjbWQgIlVzYSINCiAgICAgICAgb3JnX2N0bCAtPiBvcmdfcXJ5ICJVc2EiDQogICAgICAgIG9yZ19jbWQgLT4gb3JnX2RvbSAiVXNhIg0KICAgICAgICBvcmdfZGNtZCAtPiBvcmdfZG9tICJVc2EiDQogICAgICAgIG9yZ19wY21kIC0+IG9yZ19kb20gIlVzYSINCiAgICAgICAgb3JnX2NtZCAtPiBvcmdfZXh0ICJVc2EiDQogICAgICAgIG9yZ19leHQgLT4gaWFtX2FjbCAiQ3JlYSBhZG1pbmlzdHJhZG9yIg0KICAgICAgICBvcmdfZGNtZCAtPiBtYWlsICJBdmlzbyINCiAgICAgICAgb3JnX2NtZCAtPiBvcmdfcmVwbyAiVXNhIg0KICAgICAgICBvcmdfZGNtZCAtPiBvcmdfcmVwbyAiVXNhIg0KICAgICAgICBvcmdfcGNtZCAtPiBvcmdfcmVwbyAiVXNhIg0KICAgICAgICBvcmdfcXJ5IC0+IG9yZ19yZXBvICJVc2EiDQogICAgICAgIG9yZ19hY2wgLT4gb3JnX3FyeSAiVXNhIg0KICAgICAgICBvcmdfcmVwbyAtPiBkYiAiSkRCQyINCiAgICAgICAgd2ViYXBwIC0+IHN1Yl9jdGwgIkpTT04vSFRUUFMiDQogICAgICAgIHN1Yl9jdGwgLT4gc3ViX2NtZCAiVXNhIg0KICAgICAgICBzdWJfY3RsIC0+IHN1Yl9xcnkgIlVzYSINCiAgICAgICAgc3ViX2pvYiAtPiBzdWJfY21kICJVc2EiDQogICAgICAgIHN1Yl9jbWQgLT4gc3ViX2RvbSAiVXNhIg0KICAgICAgICBzdWJfY21kIC0+IHN1Yl9ndyAiVXNhIg0KICAgICAgICBzdWJfZ3cgLT4gbml1Yml6ICJBdXRvcml6YSBjb2JybyIgIlJFU1QvSFRUUFMiDQogICAgICAgIHN1Yl9jbWQgLT4gc3ViX3JlcG8gIlVzYSINCiAgICAgICAgc3ViX3FyeSAtPiBzdWJfcmVwbyAiVXNhIg0KICAgICAgICBzdWJfYWNsIC0+IHN1Yl9xcnkgIlVzYSINCiAgICAgICAgc3ViX3JlcG8gLT4gZGIgIkpEQkMiDQogICAgICAgIHdlYmFwcCAtPiBtZmdfY3RsICJKU09OL0hUVFBTIg0KICAgICAgICB3ZWJhcHAgLT4gbWZnX2N0bDIgIkpTT04vSFRUUFMiDQogICAgICAgIG1mZ19jdGwgLT4gbWZnX2NtZCAiVXNhIg0KICAgICAgICBtZmdfY3RsIC0+IG1mZ19xcnkgIlVzYSINCiAgICAgICAgbWZnX2N0bDIgLT4gbWZnX29jbWQgIlVzYSINCiAgICAgICAgbWZnX2NtZCAtPiBtZmdfZG9tICJVc2EiDQogICAgICAgIG1mZ19vY21kIC0+IG1mZ19kb20gIlVzYSINCiAgICAgICAgbWZnX2NtZCAtPiBtZmdfZXh0ICJVc2EiDQogICAgICAgIG1mZ19vY21kIC0+IG1mZ19leHQgIlVzYSINCiAgICAgICAgbWZnX2V4dCAtPiBxYV9hY2wgIlVzYSINCiAgICAgICAgbWZnX2V4dCAtPiBpb3RfYWNsICJVc2EiDQogICAgICAgIG1mZ19ldnQgLT4gbWZnX2NtZCAiVXNhIg0KICAgICAgICBtZmdfZXZ0IC0+IG1mZ19vY21kICJVc2EiDQogICAgICAgIG1mZ19jbWQgLT4gbWZnX3JlcG8gIlVzYSINCiAgICAgICAgbWZnX29jbWQgLT4gbWZnX3JlcG8gIlVzYSINCiAgICAgICAgbWZnX3FyeSAtPiBtZmdfcmVwbyAiVXNhIg0KICAgICAgICBtZmdfYWNsIC0+IG1mZ19xcnkgIlVzYSINCiAgICAgICAgbWZnX3JlcG8gLT4gZGIgIkpEQkMiDQogICAgICAgIHRiIC0+IGlvdF93aCAiV2ViaG9vayBKU09OL0hUVFBTIg0KICAgICAgICB3ZWJhcHAgLT4gaW90X2N0bCAiSlNPTi9IVFRQUyINCiAgICAgICAgaW90X3doIC0+IGlvdF9pbmcgIlVzYSINCiAgICAgICAgaW90X2luZyAtPiBpb3RfcnVsZSAiVXNhIg0KICAgICAgICBpb3RfY3RsIC0+IGlvdF9jbWQgIlVzYSINCiAgICAgICAgaW90X2pvYiAtPiBpb3RfY21kICJVc2EiDQogICAgICAgIGlvdF9pbmcgLT4gaW90X2RvbSAiVXNhIg0KICAgICAgICBpb3RfY21kIC0+IGlvdF9kb20gIlVzYSINCiAgICAgICAgaW90X2luZyAtPiBpb3RfZXh0ICJVc2EiDQogICAgICAgIGlvdF9jbWQgLT4gaW90X2V4dCAiVXNhIg0KICAgICAgICBpb3RfZXh0IC0+IG1mZ19hY2wgIlVzYSINCiAgICAgICAgaW90X2V4dCAtPiBzdWJfYWNsICJVc2EiDQogICAgICAgIGlvdF9ydWxlIC0+IGlvdF9ub3RpZiAiQWxlcnRhIGNyw610aWNhIg0KICAgICAgICBpb3Rfbm90aWYgLT4gbWFpbCAiUkVTVC9IVFRQUyINCiAgICAgICAgd2ViYXBwIC0+IGlvdF9ub3RpZiAiU2Ugc3VzY3JpYmUgYSBhbGVydGFzIiAiV2ViU29ja2V0Ig0KICAgICAgICBpb3RfYWNsIC0+IGlvdF9jbWQgIlVzYSINCiAgICAgICAgaW90X2luZyAtPiBpb3RfcmVwbyAiVXNhIg0KICAgICAgICBpb3RfY21kIC0+IGlvdF9yZXBvICJVc2EiDQogICAgICAgIGlvdF9yZXBvIC0+IGRiICJKREJDIg0KICAgICAgICB3ZWJhcHAgLT4gcWFfY3RsICJKU09OL0hUVFBTIg0KICAgICAgICB3ZWJhcHAgLT4gcWFfY3RsMiAiSlNPTi9IVFRQUyINCiAgICAgICAgd2ViYXBwIC0+IHFhX2N0bDMgIkpTT04vSFRUUFMiDQogICAgICAgIHdlYmFwcCAtPiBxYV9jdGw0ICJKU09OL0hUVFBTIg0KICAgICAgICBxYV9jdGwgLT4gcWFfZGNtZCAiVXNhIg0KICAgICAgICBxYV9jdGwyIC0+IHFhX3JjbWQgIlVzYSINCiAgICAgICAgcWFfY3RsMyAtPiBxYV92Y21kICJVc2EiDQogICAgICAgIHFhX2N0bDQgLT4gcWFfdmNtZCAiVXNhIg0KICAgICAgICBxYV9jdGw0IC0+IHFhX3JlcCAiVXNhIg0KICAgICAgICBxYV9hY2wgLT4gcWFfZGNtZCAiVXNhIg0KICAgICAgICBxYV9hY2wgLT4gcWFfcmNtZCAiVXNhIg0KICAgICAgICBxYV9kY21kIC0+IHFhX2RvbSAiVXNhIg0KICAgICAgICBxYV9yY21kIC0+IHFhX2RvbSAiVXNhIg0KICAgICAgICBxYV92Y21kIC0+IHFhX2RvbSAiVXNhIg0KICAgICAgICBxYV9kY21kIC0+IHFhX2V4dCAiVXNhIg0KICAgICAgICBxYV9yY21kIC0+IHFhX2V4dCAiVXNhIg0KICAgICAgICBxYV9leHQgLT4gaWFtX2FjbCAiVXNhIg0KICAgICAgICBxYV9leHQgLT4gbWZnX2FjbCAiVXNhIg0KICAgICAgICBxYV9yY21kIC0+IHFhX3B1YiAiVXNhIg0KICAgICAgICBxYV9kY21kIC0+IHFhX3B1YiAiVXNhIg0KICAgICAgICBxYV9wdWIgLT4gbWZnX2V2dCAiVmVyZWRpY3RvcyINCiAgICAgICAgcWFfZGNtZCAtPiBxYV9yZXBvICJVc2EiDQogICAgICAgIHFhX3JjbWQgLT4gcWFfcmVwbyAiVXNhIg0KICAgICAgICBxYV92Y21kIC0+IHFhX3JlcG8gIlVzYSINCiAgICAgICAgcWFfcmVwIC0+IHFhX3JlcG8gIlVzYSINCiAgICAgICAgcWFfYXVkIC0+IGRiICJJbnNlcnRhIGVudHJhZGFzIg0KICAgICAgICBxYV9yZXBvIC0+IGRiICJKREJDIg0KICAgIH0NCg0KICAgIHZpZXdzIHsNCiAgICAgICAgc3lzdGVtQ29udGV4dCBkb29mcGx1cyAiQzQtMDEtQ29udGV4dG8iIHsNCiAgICAgICAgICAgIHRpdGxlICJbU3lzdGVtIENvbnRleHRdIERvb2ZQbHVzIC0gRGlhZ3JhbWEgZGUgQ29udGV4dG8gKEM0IE5pdmVsIDEpIg0KICAgICAgICAgICAgaW5jbHVkZSAqDQogICAgICAgICAgICBpbmNsdWRlIGdhDQogICAgICAgIH0NCiAgICAgICAgY29udGFpbmVyIGRvb2ZwbHVzICJDNC0wMi1Db250ZW5lZG9yZXMiIHsNCiAgICAgICAgICAgIHRpdGxlICJbQ29udGFpbmVyXSBEb29mUGx1cyAtIERpYWdyYW1hIGRlIENvbnRlbmVkb3JlcyAoQzQgTml2ZWwgMikiDQogICAgICAgICAgICBpbmNsdWRlICoNCiAgICAgICAgfQ0KICAgICAgICBjb21wb25lbnQgd2ViYXBwICJDNC0wMy1XZWJBcHAiIHsNCiAgICAgICAgICAgIHRpdGxlICJbQ29tcG9uZW50XSBXZWIgQXBwbGljYXRpb24gKEFuZ3VsYXIpIC0gRGlhZ3JhbWEgZGUgQ29tcG9uZW50ZXMgKEM0IE5pdmVsIDMpIg0KICAgICAgICAgICAgaW5jbHVkZSB3YV9yb3V0ZXIgd2FfbGF5b3V0IHdhX2lhbSB3YV9vcmcgd2Ffc3VicyB3YV9tZmcgd2FfaW90IHdhX3F1YWwgd2FfaHR0cCB3YV9pMThuIHdhX3dzIGFwaSBxYSBwcm9kIGFkbWluDQogICAgICAgIH0NCiAgICAgICAgY29tcG9uZW50IGFwaSAiQzQtMDQtQVBJLUlBTSIgew0KICAgICAgICAgICAgdGl0bGUgIltDb21wb25lbnRdIFJFU1RmdWwgQVBJIChTcHJpbmcgQm9vdCkgLSBJZGVudGl0eSAmIEFjY2VzcyBNYW5hZ2VtZW50IChDNCBOaXZlbCAzKSINCiAgICAgICAgICAgIGluY2x1ZGUgd2ViYXBwIGlhbV9jdGwgaWFtX2N0bDIgaWFtX2ZsdCBpYW1fY21kIGlhbV9zaWcgaWFtX3FyeSBpYW1fZG9tIGlhbV90b2sgaWFtX2hhc2ggaWFtX3RvdHAgaWFtX3JlcG8gaWFtX2FjbCBkYiBtYWlsDQogICAgICAgIH0NCiAgICAgICAgY29tcG9uZW50IGFwaSAiQzQtMDUtQVBJLU9SRyIgew0KICAgICAgICAgICAgdGl0bGUgIltDb21wb25lbnRdIFJFU1RmdWwgQVBJIChTcHJpbmcgQm9vdCkgLSBPcmdhbml6YXRpb25zICYgUHJvZmlsZXMgKEM0IE5pdmVsIDMpIg0KICAgICAgICAgICAgaW5jbHVkZSB3ZWJhcHAgb3JnX2N0bCBvcmdfY3RsMiBvcmdfY21kIG9yZ19kY21kIG9yZ19wY21kIG9yZ19xcnkgb3JnX2RvbSBvcmdfZXh0IG9yZ19yZXBvIG9yZ19hY2wgZGIgaWFtX2FjbCBsYW5kaW5nIG1haWwNCiAgICAgICAgfQ0KICAgICAgICBjb21wb25lbnQgYXBpICJDNC0wNi1BUEktU1VCIiB7DQogICAgICAgICAgICB0aXRsZSAiW0NvbXBvbmVudF0gUkVTVGZ1bCBBUEkgKFNwcmluZyBCb290KSAtIFN1YnNjcmlwdGlvbnMgJiBQYXltZW50cyAoQzQgTml2ZWwgMykiDQogICAgICAgICAgICBpbmNsdWRlIHdlYmFwcCBzdWJfY3RsIHN1Yl9jbWQgc3ViX3FyeSBzdWJfam9iIHN1Yl9kb20gc3ViX2d3IHN1Yl9yZXBvIHN1Yl9hY2wgZGIgbml1Yml6DQogICAgICAgIH0NCiAgICAgICAgY29tcG9uZW50IGFwaSAiQzQtMDctQVBJLU1GRyIgew0KICAgICAgICAgICAgdGl0bGUgIltDb21wb25lbnRdIFJFU1RmdWwgQVBJIChTcHJpbmcgQm9vdCkgLSBNYW51ZmFjdHVyaW5nICYgQmF0Y2ggTWFuYWdlbWVudCAoQzQgTml2ZWwgMykiDQogICAgICAgICAgICBpbmNsdWRlIHdlYmFwcCBtZmdfY3RsIG1mZ19jdGwyIG1mZ19jbWQgbWZnX29jbWQgbWZnX3FyeSBtZmdfZG9tIG1mZ19ldnQgbWZnX2V4dCBtZmdfcmVwbyBtZmdfYWNsIGRiIHFhX2FjbCBpb3RfYWNsDQogICAgICAgIH0NCiAgICAgICAgY29tcG9uZW50IGFwaSAiQzQtMDgtQVBJLUlPVCIgew0KICAgICAgICAgICAgdGl0bGUgIltDb21wb25lbnRdIFJFU1RmdWwgQVBJIChTcHJpbmcgQm9vdCkgLSBJb1QgTW9uaXRvcmluZyAoQzQgTml2ZWwgMykiDQogICAgICAgICAgICBpbmNsdWRlIHdlYmFwcCBpb3Rfd2ggaW90X2N0bCBpb3RfaW5nIGlvdF9ydWxlIGlvdF9jbWQgaW90X2pvYiBpb3RfZG9tIGlvdF9leHQgaW90X25vdGlmIGlvdF9yZXBvIGlvdF9hY2wgZGIgdGIgbWFpbCBtZmdfYWNsIHN1Yl9hY2wNCiAgICAgICAgfQ0KICAgICAgICBjb21wb25lbnQgYXBpICJDNC0wOS1BUEktUUEiIHsNCiAgICAgICAgICAgIHRpdGxlICJbQ29tcG9uZW50XSBSRVNUZnVsIEFQSSAoU3ByaW5nIEJvb3QpIC0gUXVhbGl0eSAmIENvbXBsaWFuY2UgKEM0IE5pdmVsIDMpIg0KICAgICAgICAgICAgaW5jbHVkZSB3ZWJhcHAgcWFfY3RsIHFhX2N0bDIgcWFfY3RsMyBxYV9jdGw0IHFhX2RjbWQgcWFfcmNtZCBxYV92Y21kIHFhX3JlcCBxYV9kb20gcWFfYXVkIHFhX2V4dCBxYV9wdWIgcWFfcmVwbyBxYV9hY2wgZGIgaWFtX2FjbCBtZmdfYWNsIG1mZ19ldnQNCiAgICAgICAgfQ0KDQogICAgICAgIHN0eWxlcyB7DQogICAgICAgICAgICBlbGVtZW50ICJFbGVtZW50IiB7DQogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZg0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7DQogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDg0MjdCDQogICAgICAgICAgICAgICAgc2hhcGUgUGVyc29uDQogICAgICAgICAgICB9DQogICAgICAgICAgICBlbGVtZW50ICJTb2Z0d2FyZSBTeXN0ZW0iIHsNCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4QkQNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIkV4dGVybmFsIiB7DQogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOEM4QzhDDQogICAgICAgICAgICB9DQogICAgICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsNCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM0MzhERDUNCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7DQogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXINCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIGVsZW1lbnQgIkNvbXBvbmVudCIgew0KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzg1QkJGMA0KICAgICAgICAgICAgICAgIGNvbG9yICMwQjI1NDUNCiAgICAgICAgICAgICAgICB3aWR0aCA1NjANCiAgICAgICAgICAgICAgICBoZWlnaHQgMzQwDQogICAgICAgICAgICAgICAgZm9udFNpemUgMjANCiAgICAgICAgICAgIH0NCiAgICAgICAgICAgIHJlbGF0aW9uc2hpcCAiUmVsYXRpb25zaGlwIiB7DQogICAgICAgICAgICAgICAgZGFzaGVkIGZhbHNlDQogICAgICAgICAgICAgICAgY29sb3IgIzU1NTU1NQ0KICAgICAgICAgICAgfQ0KICAgICAgICAgICAgcmVsYXRpb25zaGlwICJPcHRpb25hbCIgew0KICAgICAgICAgICAgICAgIGRhc2hlZCB0cnVlDQogICAgICAgICAgICB9DQogICAgICAgIH0NCiAgICB9DQp9DQo="
+  },
+  "views": {
+    "componentViews": [
+      {
+        "containerId": "11",
+        "dimensions": {
+          "height": 6010,
+          "width": 6480
+        },
+        "elements": [
+          {
+            "id": "2",
+            "x": 2696,
+            "y": 400
+          },
+          {
+            "id": "3",
+            "x": 3366,
+            "y": 400
+          },
+          {
+            "id": "4",
+            "x": 4036,
+            "y": 400
+          },
+          {
+            "id": "12",
+            "x": 3184,
+            "y": 1700
+          },
+          {
+            "id": "13",
+            "x": 3311,
+            "y": 1030
+          },
+          {
+            "id": "14",
+            "x": 400,
+            "y": 3070
+          },
+          {
+            "id": "15",
+            "x": 1180,
+            "y": 3070
+          },
+          {
+            "id": "16",
+            "x": 4300,
+            "y": 3070
+          },
+          {
+            "id": "17",
+            "x": 3520,
+            "y": 3070
+          },
+          {
+            "id": "18",
+            "x": 2740,
+            "y": 3070
+          },
+          {
+            "id": "19",
+            "x": 1960,
+            "y": 3070
+          },
+          {
+            "id": "20",
+            "x": 2350,
+            "y": 4140
+          },
+          {
+            "id": "21",
+            "x": 2404,
+            "y": 1700
+          },
+          {
+            "id": "22",
+            "x": 5080,
+            "y": 3070
+          },
+          {
+            "id": "23",
+            "x": 3770,
+            "y": 4810
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "C4-03-WebApp",
+        "name": "Component View: DoofPlus - Web Application",
+        "order": 3,
+        "relationships": [
+          {
+            "id": "112"
+          },
+          {
+            "id": "113"
+          },
+          {
+            "id": "114"
+          },
+          {
+            "id": "115"
+          },
+          {
+            "id": "116"
+          },
+          {
+            "id": "117"
+          },
+          {
+            "id": "118"
+          },
+          {
+            "id": "119"
+          },
+          {
+            "id": "120"
+          },
+          {
+            "id": "121"
+          },
+          {
+            "id": "122"
+          },
+          {
+            "id": "123"
+          },
+          {
+            "id": "124"
+          },
+          {
+            "id": "125"
+          },
+          {
+            "id": "126"
+          },
+          {
+            "id": "127"
+          },
+          {
+            "id": "128"
+          },
+          {
+            "id": "129"
+          },
+          {
+            "id": "130"
+          },
+          {
+            "id": "131"
+          }
+        ],
+        "title": "[Component] Web Application (Angular) - Diagrama de Componentes (C4 Nivel 3)"
+      },
+      {
+        "containerId": "23",
+        "dimensions": {
+          "height": 4440,
+          "width": 5261
+        },
+        "elements": [
+          {
+            "id": "7",
+            "x": 3861,
+            "y": 2590
+          },
+          {
+            "id": "11",
+            "x": 1826,
+            "y": 400
+          },
+          {
+            "id": "24",
+            "x": 2161,
+            "y": 1030
+          },
+          {
+            "id": "25",
+            "x": 1381,
+            "y": 1030
+          },
+          {
+            "id": "26",
+            "x": 2941,
+            "y": 1030
+          },
+          {
+            "id": "27",
+            "x": 1960,
+            "y": 1700
+          },
+          {
+            "id": "28",
+            "x": 1180,
+            "y": 1700
+          },
+          {
+            "id": "29",
+            "x": 400,
+            "y": 1700
+          },
+          {
+            "id": "30",
+            "x": 1277,
+            "y": 2570
+          },
+          {
+            "id": "31",
+            "x": 2740,
+            "y": 1700
+          },
+          {
+            "id": "32",
+            "x": 2837,
+            "y": 2570
+          },
+          {
+            "id": "33",
+            "x": 2057,
+            "y": 2570
+          },
+          {
+            "id": "34",
+            "x": 497,
+            "y": 2570
+          },
+          {
+            "id": "35",
+            "x": 601,
+            "y": 1030
+          },
+          {
+            "id": "89",
+            "x": 552,
+            "y": 3240
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "C4-04-API-IAM",
+        "name": "Component View: DoofPlus - RESTful API",
+        "order": 4,
+        "relationships": [
+          {
+            "id": "132"
+          },
+          {
+            "id": "133"
+          },
+          {
+            "id": "134"
+          },
+          {
+            "id": "135"
+          },
+          {
+            "id": "136"
+          },
+          {
+            "id": "137"
+          },
+          {
+            "id": "138"
+          },
+          {
+            "id": "139"
+          },
+          {
+            "id": "140"
+          },
+          {
+            "id": "141"
+          },
+          {
+            "id": "142"
+          },
+          {
+            "id": "143"
+          },
+          {
+            "id": "144"
+          },
+          {
+            "id": "145"
+          },
+          {
+            "id": "146"
+          },
+          {
+            "id": "147"
+          },
+          {
+            "id": "148"
+          },
+          {
+            "id": "149"
+          },
+          {
+            "id": "150"
+          }
+        ],
+        "title": "[Component] RESTful API (Spring Boot) - Identity & Access Management (C4 Nivel 3)"
+      },
+      {
+        "containerId": "23",
+        "dimensions": {
+          "height": 5010,
+          "width": 5085
+        },
+        "elements": [
+          {
+            "id": "7",
+            "x": 400,
+            "y": 2490
+          },
+          {
+            "id": "10",
+            "x": 2035,
+            "y": 400
+          },
+          {
+            "id": "11",
+            "x": 2705,
+            "y": 400
+          },
+          {
+            "id": "35",
+            "x": 3685,
+            "y": 3140
+          },
+          {
+            "id": "36",
+            "x": 2120,
+            "y": 1030
+          },
+          {
+            "id": "37",
+            "x": 2900,
+            "y": 1030
+          },
+          {
+            "id": "38",
+            "x": 3555,
+            "y": 1700
+          },
+          {
+            "id": "39",
+            "x": 1995,
+            "y": 1700
+          },
+          {
+            "id": "40",
+            "x": 2775,
+            "y": 1700
+          },
+          {
+            "id": "41",
+            "x": 1215,
+            "y": 1700
+          },
+          {
+            "id": "42",
+            "x": 2905,
+            "y": 2470
+          },
+          {
+            "id": "43",
+            "x": 3685,
+            "y": 2470
+          },
+          {
+            "id": "44",
+            "x": 2125,
+            "y": 2470
+          },
+          {
+            "id": "45",
+            "x": 1210,
+            "y": 1030
+          },
+          {
+            "id": "89",
+            "x": 2180,
+            "y": 3810
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "C4-05-API-ORG",
+        "name": "Component View: DoofPlus - RESTful API",
+        "order": 5,
+        "relationships": [
+          {
+            "id": "102"
+          },
+          {
+            "id": "151"
+          },
+          {
+            "id": "152"
+          },
+          {
+            "id": "153"
+          },
+          {
+            "id": "154"
+          },
+          {
+            "id": "155"
+          },
+          {
+            "id": "156"
+          },
+          {
+            "id": "157"
+          },
+          {
+            "id": "158"
+          },
+          {
+            "id": "159"
+          },
+          {
+            "id": "160"
+          },
+          {
+            "id": "161"
+          },
+          {
+            "id": "162"
+          },
+          {
+            "id": "163"
+          },
+          {
+            "id": "164"
+          },
+          {
+            "id": "165"
+          },
+          {
+            "id": "166"
+          },
+          {
+            "id": "167"
+          },
+          {
+            "id": "168"
+          },
+          {
+            "id": "169"
+          }
+        ],
+        "title": "[Component] RESTful API (Spring Boot) - Organizations & Profiles (C4 Nivel 3)"
+      },
+      {
+        "containerId": "23",
+        "dimensions": {
+          "height": 4870,
+          "width": 3559
+        },
+        "elements": [
+          {
+            "id": "6",
+            "x": 455,
+            "y": 3670
+          },
+          {
+            "id": "11",
+            "x": 1434,
+            "y": 400
+          },
+          {
+            "id": "46",
+            "x": 1379,
+            "y": 1030
+          },
+          {
+            "id": "47",
+            "x": 1050,
+            "y": 1700
+          },
+          {
+            "id": "48",
+            "x": 1830,
+            "y": 1700
+          },
+          {
+            "id": "49",
+            "x": 599,
+            "y": 1030
+          },
+          {
+            "id": "50",
+            "x": 1180,
+            "y": 2370
+          },
+          {
+            "id": "51",
+            "x": 400,
+            "y": 2370
+          },
+          {
+            "id": "52",
+            "x": 1960,
+            "y": 2370
+          },
+          {
+            "id": "53",
+            "x": 2159,
+            "y": 1030
+          },
+          {
+            "id": "89",
+            "x": 2015,
+            "y": 3040
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "C4-06-API-SUB",
+        "name": "Component View: DoofPlus - RESTful API",
+        "order": 6,
+        "relationships": [
+          {
+            "id": "170"
+          },
+          {
+            "id": "171"
+          },
+          {
+            "id": "172"
+          },
+          {
+            "id": "173"
+          },
+          {
+            "id": "174"
+          },
+          {
+            "id": "175"
+          },
+          {
+            "id": "176"
+          },
+          {
+            "id": "177"
+          },
+          {
+            "id": "178"
+          },
+          {
+            "id": "179"
+          },
+          {
+            "id": "180"
+          }
+        ],
+        "title": "[Component] RESTful API (Spring Boot) - Subscriptions & Payments (C4 Nivel 3)"
+      },
+      {
+        "containerId": "23",
+        "dimensions": {
+          "height": 4910,
+          "width": 4376
+        },
+        "elements": [
+          {
+            "id": "11",
+            "x": 1471,
+            "y": 400
+          },
+          {
+            "id": "54",
+            "x": 2196,
+            "y": 1030
+          },
+          {
+            "id": "55",
+            "x": 636,
+            "y": 1030
+          },
+          {
+            "id": "56",
+            "x": 1830,
+            "y": 1700
+          },
+          {
+            "id": "57",
+            "x": 1050,
+            "y": 1700
+          },
+          {
+            "id": "58",
+            "x": 2610,
+            "y": 1700
+          },
+          {
+            "id": "59",
+            "x": 1570,
+            "y": 2370
+          },
+          {
+            "id": "60",
+            "x": 1416,
+            "y": 1030
+          },
+          {
+            "id": "61",
+            "x": 790,
+            "y": 2370
+          },
+          {
+            "id": "62",
+            "x": 2350,
+            "y": 2370
+          },
+          {
+            "id": "63",
+            "x": 2976,
+            "y": 1030
+          },
+          {
+            "id": "74",
+            "x": 400,
+            "y": 3040
+          },
+          {
+            "id": "88",
+            "x": 1180,
+            "y": 3040
+          },
+          {
+            "id": "89",
+            "x": 2405,
+            "y": 3710
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "C4-07-API-MFG",
+        "name": "Component View: DoofPlus - RESTful API",
+        "order": 7,
+        "relationships": [
+          {
+            "id": "181"
+          },
+          {
+            "id": "182"
+          },
+          {
+            "id": "183"
+          },
+          {
+            "id": "184"
+          },
+          {
+            "id": "185"
+          },
+          {
+            "id": "186"
+          },
+          {
+            "id": "187"
+          },
+          {
+            "id": "188"
+          },
+          {
+            "id": "189"
+          },
+          {
+            "id": "190"
+          },
+          {
+            "id": "191"
+          },
+          {
+            "id": "192"
+          },
+          {
+            "id": "193"
+          },
+          {
+            "id": "194"
+          },
+          {
+            "id": "195"
+          },
+          {
+            "id": "196"
+          },
+          {
+            "id": "197"
+          },
+          {
+            "id": "198"
+          }
+        ],
+        "title": "[Component] RESTful API (Spring Boot) - Manufacturing & Batch Management (C4 Nivel 3)"
+      },
+      {
+        "containerId": "23",
+        "dimensions": {
+          "height": 6270,
+          "width": 5103
+        },
+        "elements": [
+          {
+            "id": "5",
+            "x": 2015,
+            "y": 400
+          },
+          {
+            "id": "7",
+            "x": 3703,
+            "y": 5070
+          },
+          {
+            "id": "11",
+            "x": 3249,
+            "y": 1030
+          },
+          {
+            "id": "53",
+            "x": 918,
+            "y": 3770
+          },
+          {
+            "id": "63",
+            "x": 1698,
+            "y": 3770
+          },
+          {
+            "id": "64",
+            "x": 1960,
+            "y": 1660
+          },
+          {
+            "id": "65",
+            "x": 2740,
+            "y": 1660
+          },
+          {
+            "id": "66",
+            "x": 2671,
+            "y": 2430
+          },
+          {
+            "id": "67",
+            "x": 2868,
+            "y": 3100
+          },
+          {
+            "id": "68",
+            "x": 1111,
+            "y": 2430
+          },
+          {
+            "id": "69",
+            "x": 400,
+            "y": 1660
+          },
+          {
+            "id": "70",
+            "x": 1891,
+            "y": 2430
+          },
+          {
+            "id": "71",
+            "x": 1308,
+            "y": 3100
+          },
+          {
+            "id": "72",
+            "x": 3648,
+            "y": 3100
+          },
+          {
+            "id": "73",
+            "x": 2088,
+            "y": 3100
+          },
+          {
+            "id": "74",
+            "x": 1180,
+            "y": 1660
+          },
+          {
+            "id": "89",
+            "x": 2143,
+            "y": 4440
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "C4-08-API-IOT",
+        "name": "Component View: DoofPlus - RESTful API",
+        "order": 8,
+        "relationships": [
+          {
+            "id": "199"
+          },
+          {
+            "id": "200"
+          },
+          {
+            "id": "201"
+          },
+          {
+            "id": "202"
+          },
+          {
+            "id": "203"
+          },
+          {
+            "id": "204"
+          },
+          {
+            "id": "205"
+          },
+          {
+            "id": "206"
+          },
+          {
+            "id": "207"
+          },
+          {
+            "id": "208"
+          },
+          {
+            "id": "209"
+          },
+          {
+            "id": "210"
+          },
+          {
+            "id": "211"
+          },
+          {
+            "id": "212"
+          },
+          {
+            "id": "213"
+          },
+          {
+            "id": "214"
+          },
+          {
+            "id": "215"
+          },
+          {
+            "id": "216"
+          },
+          {
+            "id": "217"
+          }
+        ],
+        "title": "[Component] RESTful API (Spring Boot) - IoT Monitoring (C4 Nivel 3)"
+      },
+      {
+        "containerId": "23",
+        "dimensions": {
+          "height": 5310,
+          "width": 5180
+        },
+        "elements": [
+          {
+            "id": "11",
+            "x": 2004,
+            "y": 400
+          },
+          {
+            "id": "35",
+            "x": 2220,
+            "y": 3440
+          },
+          {
+            "id": "60",
+            "x": 3780,
+            "y": 3440
+          },
+          {
+            "id": "63",
+            "x": 3000,
+            "y": 3440
+          },
+          {
+            "id": "75",
+            "x": 2144,
+            "y": 1230
+          },
+          {
+            "id": "76",
+            "x": 3704,
+            "y": 1230
+          },
+          {
+            "id": "77",
+            "x": 1364,
+            "y": 1230
+          },
+          {
+            "id": "78",
+            "x": 584,
+            "y": 1230
+          },
+          {
+            "id": "79",
+            "x": 2236,
+            "y": 1900
+          },
+          {
+            "id": "80",
+            "x": 3016,
+            "y": 1900
+          },
+          {
+            "id": "81",
+            "x": 1456,
+            "y": 1900
+          },
+          {
+            "id": "82",
+            "x": 676,
+            "y": 1900
+          },
+          {
+            "id": "83",
+            "x": 1960,
+            "y": 2770
+          },
+          {
+            "id": "84",
+            "x": 400,
+            "y": 2770
+          },
+          {
+            "id": "85",
+            "x": 2740,
+            "y": 2770
+          },
+          {
+            "id": "86",
+            "x": 3520,
+            "y": 2770
+          },
+          {
+            "id": "87",
+            "x": 1180,
+            "y": 2770
+          },
+          {
+            "id": "88",
+            "x": 2924,
+            "y": 1230
+          },
+          {
+            "id": "89",
+            "x": 845,
+            "y": 4110
+          }
+        ],
+        "externalContainerBoundariesVisible": false,
+        "key": "C4-09-API-QA",
+        "name": "Component View: DoofPlus - RESTful API",
+        "order": 9,
+        "relationships": [
+          {
+            "id": "218"
+          },
+          {
+            "id": "219"
+          },
+          {
+            "id": "220"
+          },
+          {
+            "id": "221"
+          },
+          {
+            "id": "222"
+          },
+          {
+            "id": "223"
+          },
+          {
+            "id": "224"
+          },
+          {
+            "id": "225"
+          },
+          {
+            "id": "226"
+          },
+          {
+            "id": "227"
+          },
+          {
+            "id": "228"
+          },
+          {
+            "id": "229"
+          },
+          {
+            "id": "230"
+          },
+          {
+            "id": "231"
+          },
+          {
+            "id": "232"
+          },
+          {
+            "id": "233"
+          },
+          {
+            "id": "234"
+          },
+          {
+            "id": "235"
+          },
+          {
+            "id": "236"
+          },
+          {
+            "id": "237"
+          },
+          {
+            "id": "238"
+          },
+          {
+            "id": "239"
+          },
+          {
+            "id": "240"
+          },
+          {
+            "id": "241"
+          },
+          {
+            "id": "242"
+          },
+          {
+            "id": "243"
+          },
+          {
+            "id": "244"
+          }
+        ],
+        "title": "[Component] RESTful API (Spring Boot) - Quality & Compliance (C4 Nivel 3)"
+      }
+    ],
+    "configuration": {
+      "styles": {
+        "elements": [
+          {
+            "background": "#85bbf0",
+            "color": "#0b2545",
+            "fontSize": 20,
+            "height": 340,
+            "tag": "Component",
+            "width": 560
+          },
+          {
+            "background": "#438dd5",
+            "tag": "Container"
+          },
+          {
+            "shape": "Cylinder",
+            "tag": "Database"
+          },
+          {
+            "color": "#ffffff",
+            "tag": "Element"
+          },
+          {
+            "background": "#8c8c8c",
+            "tag": "External"
+          },
+          {
+            "background": "#08427b",
+            "shape": "Person",
+            "tag": "Person"
+          },
+          {
+            "background": "#1168bd",
+            "tag": "Software System"
+          }
+        ],
+        "relationships": [
+          {
+            "dashed": true,
+            "tag": "Optional"
+          },
+          {
+            "color": "#555555",
+            "dashed": false,
+            "tag": "Relationship"
+          }
+        ]
+      },
+      "terminology": {}
+    },
+    "containerViews": [
+      {
+        "dimensions": {
+          "height": 3490,
+          "width": 3810
+        },
+        "elements": [
+          {
+            "id": "1",
+            "x": 400,
+            "y": 400
+          },
+          {
+            "id": "2",
+            "x": 1070,
+            "y": 400
+          },
+          {
+            "id": "3",
+            "x": 1740,
+            "y": 400
+          },
+          {
+            "id": "4",
+            "x": 2410,
+            "y": 400
+          },
+          {
+            "id": "5",
+            "x": 2382,
+            "y": 1030
+          },
+          {
+            "id": "6",
+            "x": 1237,
+            "y": 2290
+          },
+          {
+            "id": "7",
+            "x": 1907,
+            "y": 2290
+          },
+          {
+            "id": "10",
+            "x": 902,
+            "y": 1030
+          },
+          {
+            "id": "11",
+            "x": 1572,
+            "y": 1030
+          },
+          {
+            "id": "23",
+            "x": 1572,
+            "y": 1660
+          },
+          {
+            "id": "89",
+            "x": 902,
+            "y": 1660
+          }
+        ],
+        "externalSoftwareSystemBoundariesVisible": false,
+        "key": "C4-02-Contenedores",
+        "name": "Container View: DoofPlus",
+        "order": 2,
+        "relationships": [
+          {
+            "id": "100"
+          },
+          {
+            "id": "101"
+          },
+          {
+            "id": "102"
+          },
+          {
+            "id": "103"
+          },
+          {
+            "id": "104"
+          },
+          {
+            "id": "105"
+          },
+          {
+            "id": "106"
+          },
+          {
+            "id": "107"
+          },
+          {
+            "id": "108"
+          },
+          {
+            "id": "109"
+          },
+          {
+            "id": "110"
+          },
+          {
+            "id": "111"
+          }
+        ],
+        "softwareSystemId": "9",
+        "title": "[Container] DoofPlus - Diagrama de Contenedores (C4 Nivel 2)"
+      }
+    ],
+    "systemContextViews": [
+      {
+        "dimensions": {
+          "height": 3490,
+          "width": 3140
+        },
+        "elements": [
+          {
+            "id": "1",
+            "x": 400,
+            "y": 1660
+          },
+          {
+            "id": "2",
+            "x": 1740,
+            "y": 1030
+          },
+          {
+            "id": "3",
+            "x": 400,
+            "y": 1030
+          },
+          {
+            "id": "4",
+            "x": 1070,
+            "y": 1030
+          },
+          {
+            "id": "5",
+            "x": 1740,
+            "y": 1660
+          },
+          {
+            "id": "6",
+            "x": 1405,
+            "y": 2290
+          },
+          {
+            "id": "7",
+            "x": 735,
+            "y": 2290
+          },
+          {
+            "id": "8",
+            "x": 1070,
+            "y": 400
+          },
+          {
+            "id": "9",
+            "x": 1070,
+            "y": 1660
+          }
+        ],
+        "enterpriseBoundaryVisible": true,
+        "key": "C4-01-Contexto",
+        "name": "System Context View: DoofPlus",
+        "order": 1,
+        "relationships": [
+          {
+            "id": "90"
+          },
+          {
+            "id": "91"
+          },
+          {
+            "id": "92"
+          },
+          {
+            "id": "93"
+          },
+          {
+            "id": "94"
+          },
+          {
+            "id": "95"
+          },
+          {
+            "id": "96"
+          },
+          {
+            "id": "97"
+          },
+          {
+            "id": "98"
+          },
+          {
+            "id": "99"
+          }
+        ],
+        "softwareSystemId": "9",
+        "title": "[System Context] DoofPlus - Diagrama de Contexto (C4 Nivel 1)"
+      }
+    ]
+  }
+}

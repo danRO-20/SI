@@ -1,4 +1,6 @@
 workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr DSL de los diagramas de la sección 4.7." {
+    // Las vistas no usan autoLayout: la posición de cada elemento está en workspace.json (mismo directorio),
+    // calculada para que las flechas sean rectas, vayan de arriba hacia abajo y se crucen lo menos posible.
 
 
     model {
@@ -269,47 +271,38 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
             title "[System Context] DoofPlus - Diagrama de Contexto (C4 Nivel 1)"
             include *
             include ga
-            autoLayout tb 300 200
         }
         container doofplus "C4-02-Contenedores" {
             title "[Container] DoofPlus - Diagrama de Contenedores (C4 Nivel 2)"
             include *
-            autoLayout tb 300 200
         }
         component webapp "C4-03-WebApp" {
             title "[Component] Web Application (Angular) - Diagrama de Componentes (C4 Nivel 3)"
             include wa_router wa_layout wa_iam wa_org wa_subs wa_mfg wa_iot wa_qual wa_http wa_i18n wa_ws api qa prod admin
-            autoLayout tb 300 200
         }
         component api "C4-04-API-IAM" {
             title "[Component] RESTful API (Spring Boot) - Identity & Access Management (C4 Nivel 3)"
             include webapp iam_ctl iam_ctl2 iam_flt iam_cmd iam_sig iam_qry iam_dom iam_tok iam_hash iam_totp iam_repo iam_acl db mail
-            autoLayout tb 300 200
         }
         component api "C4-05-API-ORG" {
             title "[Component] RESTful API (Spring Boot) - Organizations & Profiles (C4 Nivel 3)"
             include webapp org_ctl org_ctl2 org_cmd org_dcmd org_pcmd org_qry org_dom org_ext org_repo org_acl db iam_acl landing mail
-            autoLayout tb 300 200
         }
         component api "C4-06-API-SUB" {
             title "[Component] RESTful API (Spring Boot) - Subscriptions & Payments (C4 Nivel 3)"
             include webapp sub_ctl sub_cmd sub_qry sub_job sub_dom sub_gw sub_repo sub_acl db niubiz
-            autoLayout tb 300 200
         }
         component api "C4-07-API-MFG" {
             title "[Component] RESTful API (Spring Boot) - Manufacturing & Batch Management (C4 Nivel 3)"
             include webapp mfg_ctl mfg_ctl2 mfg_cmd mfg_ocmd mfg_qry mfg_dom mfg_evt mfg_ext mfg_repo mfg_acl db qa_acl iot_acl
-            autoLayout tb 300 200
         }
         component api "C4-08-API-IOT" {
             title "[Component] RESTful API (Spring Boot) - IoT Monitoring (C4 Nivel 3)"
             include webapp iot_wh iot_ctl iot_ing iot_rule iot_cmd iot_job iot_dom iot_ext iot_notif iot_repo iot_acl db tb mail mfg_acl sub_acl
-            autoLayout tb 300 200
         }
         component api "C4-09-API-QA" {
             title "[Component] RESTful API (Spring Boot) - Quality & Compliance (C4 Nivel 3)"
             include webapp qa_ctl qa_ctl2 qa_ctl3 qa_ctl4 qa_dcmd qa_rcmd qa_vcmd qa_rep qa_dom qa_aud qa_ext qa_pub qa_repo qa_acl db iam_acl mfg_acl mfg_evt
-            autoLayout tb 300 200
         }
 
         styles {
