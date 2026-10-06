@@ -986,7 +986,7 @@ Antes de generar eventos se cumplieron los pasos 1 a 3 de la guía: se preparó 
 | Actor | Amarillo (pequeño) | Persona o rol que provoca o atiende el evento. |
 | External system | Azul | Sistema u organización externa que interviene (Niubiz, ThingsBoard, Lector RFID, DIGEMID). |
 | Problema u oportunidad (hotspot) | Rosado | Dificultad detectada en la situación actual. |
-| Pivotal event | Línea roja | Evento que cambia de fase el proceso. |
+| Pivotal event | Naranja (de mayor tamaño) | Evento que cambia de fase el proceso. |
 
 **Step 4 – Generating Domain Events**
 
@@ -1014,7 +1014,7 @@ Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=34587646857
 
 **Step 7 – Storytelling**
 
-Un integrante narró la historia completa de inicio a fin mientras el resto validaba el orden y el significado de cada evento. Durante la narración se registraron en rosado los problemas que hoy enfrentan los laboratorios, tomados de las entrevistas, y se conectaron con flechas los eventos que disparan a otros (por ejemplo, "Parámetro fuera de rango detectado" dispara "Alerta generada", que genera una "Incidencia registrada").
+Un integrante narró la historia completa de inicio a fin mientras el resto validaba el orden y el significado de cada evento. Durante la narración se registraron en rosado los problemas que hoy enfrentan los laboratorios, tomados de las entrevistas, y se conectaron con flechas los eventos que disparan a otros (por ejemplo, "Parámetro fuera de rango detectado" dispara "Alerta generada", que genera una "Incidencia registrada"). Los pivotal events, destacados con un post-it de mayor tamaño, marcan los cambios de fase del lote: "Materia prima recibida", "Lote creado", "Lote cerrado", "Muestra de lote tomada", "Registro de lote revisado", "Lote liberado", "Auditoría iniciada" y "Auditoría cerrada".
 
 | Problema detectado | Evidencia en las entrevistas |
 | --- | --- |
