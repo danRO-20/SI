@@ -18,6 +18,10 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
   </tr>
   <tr>
     <td colspan="2"></td>
+    <td colspan="4">Es una propuesta que posiciona a DoofPlus como una plataforma SaaS orientada a la gestión de calidad farmacéutica, incorporando integración IoT para automatizar la captura de datos, mejorar la trazabilidad y asegurar el cumplimiento normativo frente a otras soluciones del mercado.</td>
+  </tr>
+  <tr>
+    <td colspan="2"></td>
     <td><img src="../assets/img/doofplus.png" width="120"><br><b>DoofPlus</b></td>
     <td><img src="../assets/img/chapter2/competitors/tuhub.png" width="120"><br><b>TuHub</b></td>
     <td><img src="../assets/img/chapter2/competitors/lolfar.png" width="120"><br><b>LOLFAR (LOLIMSA)</b></td>
