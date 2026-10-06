@@ -28,7 +28,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td><img src="../assets/img/chapter2/competitors/drugxafe.png" width="120"><br><b>DrugXafe (Tiga Healthcare)</b></td>
   </tr>
   <tr>
-    <td rowspan="3">Perfil</td>
+    <td rowspan="2">Perfil</td>
     <td>Overview</td>
     <td>Plataforma SaaS bilingüe de gestión de calidad y trazabilidad de lotes para laboratorios farmacéuticos, con integración de sensores IoT.</td>
     <td>Plataforma MES de gestión de producción que integra IoT industrial, monitoreo de OEE en tiempo real y batch record electrónico (Colombia).</td>
@@ -43,6 +43,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Prevención de falsificaciones y fraude en la cadena de suministro: garantiza que solo medicamentos auténticos lleguen al paciente.</td>
   </tr>
   <tr>
+    <td rowspan="2">Perfil de marketing</td>
     <td>Mercado objetivo</td>
     <td>Laboratorios farmacéuticos pequeños y medianos de Lima y, luego, de la región andina.</td>
     <td>Manufactura regulada y no regulada (alimentos, farmacéuticos, cosméticos) en Colombia y Latinoamérica.</td>
@@ -50,7 +51,6 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Fabricantes, importadores, distribuidores y autoridades sanitarias.</td>
   </tr>
   <tr>
-    <td rowspan="2">Perfil de marketing</td>
     <td>Estrategias de marketing</td>
     <td>Contenido educativo sobre BPM e integridad de datos, demos desde la Landing Page y presencia en eventos del sector.</td>
     <td>Marketing digital B2B (blog, casos de éxito) y demostraciones comerciales.</td>
@@ -58,6 +58,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Venta B2B y B2G a actores de la cadena de suministro y reguladores.</td>
   </tr>
   <tr>
+    <td rowspan="3">Perfil de producto</td>
     <td>Productos &amp; Servicios</td>
     <td>Documentos y SOP, expediente de lote, desviaciones y CAPA, liberación, audit trail, reportes, dashboards e IoT.</td>
     <td>MES, monitoreo OEE, batch record electrónico, IA para operaciones y mantenimiento.</td>
@@ -65,7 +66,6 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Serialización, agregación de empaques y reportes de trazabilidad.</td>
   </tr>
   <tr>
-    <td rowspan="2">Perfil de producto</td>
     <td>Precios &amp; Costos</td>
     <td>Standard Lab US$199/mes (US$1,990/año); Enterprise US$599/mes (US$5,990/año).</td>
     <td>Suscripción e implementación cotizadas por planta (precios no publicados).</td>

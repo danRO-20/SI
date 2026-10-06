@@ -298,7 +298,7 @@ Características demográficas:
 - **Género:** Indistinto.
 - **Ocupación:** Profesional responsable de planificar, supervisar y controlar las operaciones de fabricación farmacéutica, asegurando el cumplimiento de los parámetros establecidos para la producción.
 - **Nivel educativo:** Ingeniería Industrial, Ingeniería Química, Ingeniería Farmacéutica o carreras afines.
-- **Ubicación geográfica:** Lima Metropolitana y otras ciudades del Perú con plantas farmacéuticas, como Arequipa.
+- **Ubicación geográfica:** Lima Metropolitana, Perú.
 
 Información estadística de sustento:
 
