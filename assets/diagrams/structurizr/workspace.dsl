@@ -114,9 +114,9 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         tb -> doofplus "Envía telemetría de sensores" "Webhook REST/HTTPS, JSON"
         doofplus -> niubiz "Autoriza cobros de suscripción" "REST/HTTPS, JSON"
         doofplus -> mail "Envía correos" "REST/HTTPS, JSON"
-        qa -> ga "Leen el código TOTP (sin integración por API)" "" "Optional"
-        prod -> ga "Leen el código TOTP (sin integración por API)" "" "Optional"
-        admin -> ga "Leen el código TOTP (sin integración por API)" "" "Optional"
+        ga -> qa "Muestra el código TOTP (sin integración por API)" "" "Optional"
+        ga -> prod "Muestra el código TOTP (sin integración por API)" "" "Optional"
+        ga -> admin "Muestra el código TOTP (sin integración por API)" "" "Optional"
         visitor -> landing "Visita" "HTTPS"
         landing -> api "Solicita demo" "JSON/HTTPS"
         landing -> webapp "Redirige por segmento (CTA)" "HTTPS"
@@ -124,7 +124,7 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         prod -> webapp "Usa" "HTTPS"
         admin -> webapp "Usa" "HTTPS"
         webapp -> api "Consume endpoints" "JSON/HTTPS, Bearer JWT"
-        api -> webapp "Notificaciones en tiempo real" "WebSocket – STOMP"
+        webapp -> api "Se suscribe a notificaciones en tiempo real" "WebSocket – STOMP"
         api -> db "Lee y escribe" "JDBC – Spring Data JPA/Hibernate"
         tb -> api "Envía telemetría" "Webhook JSON/HTTPS"
         api -> niubiz "Autoriza cobros" "REST JSON/HTTPS"
@@ -147,8 +147,8 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         wa_qual -> wa_http "Usa"
         wa_layout -> wa_i18n "Traduce textos"
         wa_http -> api "JSON/HTTPS"
-        api -> wa_ws "WebSocket (STOMP)"
-        wa_ws -> wa_layout "Muestra alertas"
+        wa_ws -> api "Se suscribe a alertas" "WebSocket (STOMP)"
+        wa_layout -> wa_ws "Muestra alertas"
         webapp -> iam_ctl "JSON/HTTPS"
         webapp -> iam_ctl2 "JSON/HTTPS"
         iam_flt -> iam_tok "Valida token"
@@ -230,7 +230,7 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         iot_ext -> sub_acl "Usa"
         iot_rule -> iot_notif "Alerta crítica"
         iot_notif -> mail "REST/HTTPS"
-        iot_notif -> webapp "WebSocket"
+        webapp -> iot_notif "Se suscribe a alertas" "WebSocket"
         iot_acl -> iot_cmd "Usa"
         iot_ing -> iot_repo "Usa"
         iot_cmd -> iot_repo "Usa"
@@ -269,47 +269,47 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
             title "[System Context] DoofPlus - Diagrama de Contexto (C4 Nivel 1)"
             include *
             include ga
-            autoLayout tb
+            autoLayout tb 300 200
         }
         container doofplus "C4-02-Contenedores" {
             title "[Container] DoofPlus - Diagrama de Contenedores (C4 Nivel 2)"
             include *
-            autoLayout tb
+            autoLayout tb 300 200
         }
         component webapp "C4-03-WebApp" {
             title "[Component] Web Application (Angular) - Diagrama de Componentes (C4 Nivel 3)"
             include wa_router wa_layout wa_iam wa_org wa_subs wa_mfg wa_iot wa_qual wa_http wa_i18n wa_ws api qa prod admin
-            autoLayout tb
+            autoLayout tb 300 200
         }
         component api "C4-04-API-IAM" {
             title "[Component] RESTful API (Spring Boot) - Identity & Access Management (C4 Nivel 3)"
             include webapp iam_ctl iam_ctl2 iam_flt iam_cmd iam_sig iam_qry iam_dom iam_tok iam_hash iam_totp iam_repo iam_acl db mail
-            autoLayout tb
+            autoLayout tb 300 200
         }
         component api "C4-05-API-ORG" {
             title "[Component] RESTful API (Spring Boot) - Organizations & Profiles (C4 Nivel 3)"
             include webapp org_ctl org_ctl2 org_cmd org_dcmd org_pcmd org_qry org_dom org_ext org_repo org_acl db iam_acl landing mail
-            autoLayout tb
+            autoLayout tb 300 200
         }
         component api "C4-06-API-SUB" {
             title "[Component] RESTful API (Spring Boot) - Subscriptions & Payments (C4 Nivel 3)"
             include webapp sub_ctl sub_cmd sub_qry sub_job sub_dom sub_gw sub_repo sub_acl db niubiz
-            autoLayout tb
+            autoLayout tb 300 200
         }
         component api "C4-07-API-MFG" {
             title "[Component] RESTful API (Spring Boot) - Manufacturing & Batch Management (C4 Nivel 3)"
             include webapp mfg_ctl mfg_ctl2 mfg_cmd mfg_ocmd mfg_qry mfg_dom mfg_evt mfg_ext mfg_repo mfg_acl db qa_acl iot_acl
-            autoLayout tb
+            autoLayout tb 300 200
         }
         component api "C4-08-API-IOT" {
             title "[Component] RESTful API (Spring Boot) - IoT Monitoring (C4 Nivel 3)"
             include webapp iot_wh iot_ctl iot_ing iot_rule iot_cmd iot_job iot_dom iot_ext iot_notif iot_repo iot_acl db tb mail mfg_acl sub_acl
-            autoLayout tb
+            autoLayout tb 300 200
         }
         component api "C4-09-API-QA" {
             title "[Component] RESTful API (Spring Boot) - Quality & Compliance (C4 Nivel 3)"
             include webapp qa_ctl qa_ctl2 qa_ctl3 qa_ctl4 qa_dcmd qa_rcmd qa_vcmd qa_rep qa_dom qa_aud qa_ext qa_pub qa_repo qa_acl db iam_acl mfg_acl mfg_evt
-            autoLayout tb
+            autoLayout tb 300 200
         }
 
         styles {
