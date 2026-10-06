@@ -100,20 +100,6 @@ Los criterios de aceptación siguen la estructura de Gherkin (Dado que / Cuando 
 
 El Impact Mapping de DoofPlus conecta los objetivos estratégicos del negocio con los actores involucrados, los impactos esperados, los entregables digitales y sus respectivas User Stories. La solución busca optimizar los tiempos de liberación de lotes y erradicar los errores de transcripción manual en la planta, garantizando el estricto cumplimiento de las normativas de calidad farmacéutica (BPM) mediante trazabilidad centralizada, monitoreo automatizado vía dispositivos IoT, gestión digital de desviaciones y un registro de auditoría inalterable (Audit Trail).
 
-El mapa se elaboró en UXPressia a partir de las fichas de User Persona de la sección 2.3.1 y considera cuatro business goals SMART:
-
-| Business goal | Actor / Persona | Impacts | Deliverables | User Stories |
-| --- | --- | --- | --- | --- |
-| Reducir en 40% el tiempo promedio de liberación y trazabilidad de los lotes durante los primeros 6 meses de uso de la plataforma. | María México (QA/QC) | Aprobar lotes y estandarizar protocolos con aprobaciones electrónicas; delegar al sistema el cálculo de los resultados analíticos; revisar el historial completo de cada lote y liberarlo sin esperar expedientes en papel. | Módulo de Gestión de Protocolos; Motor de Cálculo Analítico Automatizado; Sistema de Trazabilidad Centralizada de Lotes. | US09, US12, US13, US11, US15, US54 |
-| | Alberto Valle (Producción) | Iniciar y gestionar órdenes de fabricación digitalmente; formular productos con las especificaciones autorizadas. | Sistema de Trazabilidad Centralizada de Lotes; Gestor de Fórmulas Maestras. | US14, US16, US17, US56, US57, US58, US35, US36 |
-| Disminuir a 0% las incidencias por errores de transcripción manual en los registros de planta durante el primer trimestre de implementación. | María México (QA/QC) | Documentar anomalías en tiempo real para bloquear de inmediato los productos defectuosos. | Gestor Digital de Desviaciones y Eventos. | US18, US19, US20 |
-| | Alberto Valle (Producción) | Supervisar la maquinaria con lecturas automáticas, sin anotaciones a mano; tomar decisiones operativas con métricas consolidadas. | Módulo de Integración y Telemetría IoT; Dashboard de Indicadores de Cumplimiento. | US24, US25, US32 |
-| Alcanzar el 100% de cumplimiento sin observaciones críticas en las auditorías de trazabilidad de DIGEMID durante el primer año. | María México (QA/QC) | Respaldar ante los inspectores cada cambio con un registro cronológico inalterable; garantizar que solo el personal calificado autorice procesos críticos. | Registro de Auditoría Inalterable (Audit Trail); Sistema de Control de Accesos y Firmas Electrónicas. | US27, US29, US59, US08 |
-| | Alberto Valle (Producción) | Asegurar que las mediciones de los sensores sean válidas demostrando su calibración vigente. | Gestor de Calibración de Dispositivos IoT. | US38 |
-| Alcanzar 10 laboratorios suscritos a un plan pagado en los primeros 6 meses después del lanzamiento. | María México (visitante del segmento QA/QC) | Evaluar DoofPlus y recomendar su contratación en su laboratorio. | Landing Page con propuesta de valor, planes y solicitud de demo. | US01, US03, US04, US48 |
-
-Los tres primeros business goals corresponden a las hipótesis 2, 6 y 8 de la sección 1.2.2.3, y el cuarto, a los Business Outcome Assumptions de la sección 1.2.2.2.
-
 ![Impact Mapping](../assets/img/chapter3/Impact-Mapping.png)
 
 ## 3.3. Product Backlog
