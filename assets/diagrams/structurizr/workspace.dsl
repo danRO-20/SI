@@ -264,6 +264,9 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         qa_rep -> qa_repo "Usa"
         qa_aud -> db "Inserta entradas"
         qa_repo -> db "JDBC"
+        rfid = softwareSystem "Lector RFID" "Lector de etiquetas RFID del almacén; envía el código leído a la Web Application como entrada de teclado (USB HID), sin API propia." "External"
+        prod -> rfid "Lee la etiqueta del insumo recibido"
+        rfid -> wa_mfg "Envía el código de la etiqueta del insumo" "USB HID (emulación de teclado)"
     }
 
     views {
@@ -278,7 +281,7 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         }
         component webapp "C4-03-WebApp" {
             title "[Component] Web Application (Angular) - Diagrama de Componentes (C4 Nivel 3)"
-            include wa_router wa_layout wa_iam wa_org wa_subs wa_mfg wa_iot wa_qual wa_http wa_i18n wa_ws api qa prod admin
+            include wa_router wa_layout wa_iam wa_org wa_subs wa_mfg wa_iot wa_qual wa_http wa_i18n wa_ws api qa prod admin rfid
         }
         component api "C4-04-API-IAM" {
             title "[Component] RESTful API (Spring Boot) - Identity & Access Management (C4 Nivel 3)"

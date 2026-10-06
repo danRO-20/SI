@@ -1,6 +1,6 @@
 # Capítulo IV: Product Design
 
-En este capítulo se detallan las decisiones de diseño del producto para su plataforma DoofPlus, junto con la Landing Page. Se establecen guías de estilo visuales, arquitectura de la información (AI) y criterios que aseguran que la experiencia de usuario (UX) sea intuitiva y profesional, donde alineamos a las exigencias en las máquinas de la industria farmacéutica y entidades regulatorias para la calidad de los fármacos como la DIGEMID.
+En este capítulo se presenta el diseño de DoofPlus a partir de las User Stories y el Impact Map del capítulo III: las guías de estilo, la arquitectura de información, el diseño de la Landing Page y de la Web Application, la arquitectura de software orientada al dominio, el diseño orientado a objetos y el diseño de la base de datos. Las decisiones responden a las exigencias de los laboratorios farmacéuticos y de la DIGEMID sobre la calidad, la trazabilidad y la integridad de los registros.
 
 ## 4.1. Style Guidelines
 
@@ -11,7 +11,7 @@ En esta sección se establecen las bases visuales y de comunicación para DoofPl
 Para asegurar una interfaz coherente y alineada con los estándares que exige la industria farmacéutica, el sistema de diseño de DoofPlus toma como base **Material Design**, el lenguaje de diseño indicado para el proyecto. En la Web Application se implementa con **Angular CLI** usando un tema basado en **Material Design**, y en la Landing Page con ***HTML5*** y ***CSS3*** respetando los mismos tokens de color, tipografía y espaciado.
 
 #### Branding:
-El logotico escogido para DoofPlus comunica de forma directa y sintética la propuesta de valor del sistema: la integración de la automatización industrial con la rigurosidad del control farmacéutico. Para la sección de Branding, el análisis de los componentes de dicho logotipo se desglosa de la siguiente manera:
+El logotipo escogido para DoofPlus comunica de forma directa y sintética la propuesta de valor del sistema: la integración de la automatización industrial con la rigurosidad del control farmacéutico. Para la sección de Branding, el análisis de los componentes de dicho logotipo se desglosa de la siguiente manera:
 
 <p align="center">
   <img src="../assets/img/chapter4/doofplus-logo.png" alt="DoofPlus Logo" width="350px" />
@@ -92,7 +92,7 @@ Las directrices de estilo web de DoofPlus explican e ilustran las decisiones sob
 - Íconos: Se emplea la biblioteca Material Symbols para un estilo lineal y minimalista. Estos íconos ofrecen una guía visual rápida para representar servicios críticos: un microchip o antena para la telemetría, un escudo con un símbolo de check para el cumplimiento regulatorio y cápsulas o maquinaria para la gestión de producción.
 
 5. Repositorio Central
-- Organización: el proyecto de la Web Application (Vue 3 + Vite) se organiza por bounded context: src/iam, src/manufacturing, src/quality, src/iot, src/subscriptions y src/organizations, cada uno con sus carpetas model, services, components y pages. Los recursos estáticos se ubican en src/assets (images, icons), los estilos globales y design tokens en src/assets/styles, los componentes reutilizables en src/shared/components y las traducciones en src/locales (en.json y es.json).
+- Organización: el proyecto de la Web Application en Angular se organiza por bounded context dentro de `src/app`: `iam`, `organizations`, `subscriptions`, `manufacturing`, `iot-monitoring` y `quality`, cada uno con las capas `domain`, `application`, `infrastructure` y `presentation`. Los elementos comunes (layout, toolbar, footer, selector de idioma y cliente REST base) se ubican en `src/app/shared`; los estilos globales y los design tokens de color, tipografía y espaciado, en `src/styles.css`; las imágenes e íconos, en `public/images`, y las traducciones, en `public/i18n` (`en.json`, idioma por defecto, y `es.json`). La Landing Page aplica los mismos tokens en su hoja de estilos.
 - Versionado: Se utiliza Git gestionado desde GitHub como sistema de control de versiones central. El equipo aplica GitFlow y Conventional Commits para gestionar los cambios en el código, lo que ayuda a garantizar que el entorno de desarrollo mantenga una integración continua y una versión estable del producto en todo momento. Además, se aplica Semantic Versioning para darle un orden a las versiones.
 
 
@@ -115,8 +115,8 @@ Para estructurar los grupos de información de la plataforma se aplican los sigu
 
 Para asegurar la simplicidad y evitar la confusión de los visitantes y usuarios, la representación de los datos se realiza mediante etiquetas que utilizan el mínimo número de palabras posibles, lo que representa la terminología técnica de la industria farmacéutica:
 
-- Landing Page: Se emplean asociaciones de uso estándar como "Features" (para módulos técnicos), "Pricing" (para los planes) y "Request Demo" (para el contacto comercial).
-- Web Application: Las etiquetas operativas evitan ambigüedades. Se utiliza "Lotes" (agrupando el historial de fabricación), "Cuarentena" (asociado a la evaluación de calidad), "Desviaciones" (asociado a alertas IoT y errores) y "Audit Trail" (asociado al registro inmutable de auditoría).
+- Landing Page: las etiquetas de la barra de navegación usan asociaciones estándar de una o dos palabras: "Home", "Features" (módulos técnicos), "Benefits", "About Us", "Plans" (planes y precios) y "Get Started" (acceso a la Web Application). En español latinoamericano se muestran como "Inicio", "Características", "Beneficios", "Nosotros", "Planes" y "Comenzar".
+- Web Application: las etiquetas operativas siguen el Ubiquitous Language de la sección 2.5 y se definen en inglés, idioma por defecto, con su traducción al español: "Batches" (Lotes) agrupa el historial de fabricación, "Quarantine" (Cuarentena) se asocia a la evaluación de calidad, "Deviations & CAPA" (Desviaciones y CAPA) a las incidencias y alertas, y "Audit Trail" (registro de auditoría) al registro inmutable de cambios.
 
 ### 4.2.3. SEO Tags and Meta Tags
 
@@ -128,7 +128,7 @@ Valores para la Landing Page (sitio estático indexable):
 | --- | --- | --- | --- | --- |
 | Landing Page (index.html) | DoofPlus \| Pharmaceutical Quality & Batch Traceability Platform | SaaS platform that centralizes quality documentation, batch traceability, deviations and IoT data for pharmaceutical laboratories (GMP/DIGEMID). | pharmaceutical quality management, batch traceability, GMP, DIGEMID, CAPA, audit trail, IoT | IngesCompany |
 
-Valores para las vistas principales de la Web Application. Al ser una SPA, el título y la descripción se actualizan en cada cambio de ruta (meta de Vue Router); keywords y author se definen una vez en index.html con los mismos valores de la Landing Page:
+Valores para las vistas principales de la Web Application. Al ser una SPA, el título se actualiza en cada cambio de ruta con la propiedad `title` de las rutas de Angular Router y la descripción con el servicio `Meta` de Angular; keywords y author se definen una vez en `index.html` con los mismos valores de la Landing Page:
 
 | **Vista de la Web Application** | **Title** | **Meta description** |
 | --- | --- | --- |
@@ -144,7 +144,7 @@ Para que los usuarios no se pierdan en el volumen de información generado por l
 
 - **Búsqueda global:** barra en el encabezado para consultar por identificador exacto (número de lote, código de documento o de sensor).
 - **Filtros combinados:** por estado del lote (In Progress, Quarantine, Released, Rejected), rango de fechas de fabricación, severidad de la desviación (Minor, Major, Critical) y tipo de documento.
-- **Presentación de resultados:** tabla de datos (PrimeVue DataTable) paginada y ordenable que resalta la coincidencia y muestra el estado actual de cada registro; si no hay resultados se muestra un mensaje con sugerencias.
+- **Presentación de resultados:** tabla de datos de Angular Material (`mat-table` con `MatPaginator` y `MatSort`) paginada y ordenable que resalta la coincidencia y muestra el estado actual de cada registro; si no hay resultados se muestra un mensaje con sugerencias.
 
 ### 4.2.5. Navigation Systems
 
@@ -156,7 +156,7 @@ Las acciones y técnicas que guían a los usuarios son:
 
 2. ***Web Application:***
 - **Navegación global:** barra lateral (sidebar) con los módulos del entorno (Dashboard, Batches, Documents, Deviations & CAPA, Monitoring, Reports).
-- **avegación contextual:** breadcrumbs para ubicar al usuario dentro de un expediente y regresar a vistas generales.
+- **Navegación contextual:** breadcrumbs para ubicar al usuario dentro de un expediente y regresar a vistas generales.
 
 3. **Navegación por teclado y accesibilidad:** orden de tabulación lógico, foco visible y atributos ARIA en menús y diálogos.
 
@@ -166,11 +166,11 @@ La propuesta de UI de la Landing Page traduce las decisiones anteriores: la jera
 
 ### 4.3.1. Landing Page Wireframe
 
-El wireframe de nuestra página de inicio sirve como un mapa visual que define la estructura y el flujo de la información, alineado con los principios de rigurosidad y claridad que exige el sector farmacéutico. Este esquema asegura una disposición lógica de los componentes, facilitando la navegación y destacando la propuesta de valor de **DoofPlus.** Las secciones del wireframe están diseñadas para contar una historia completa y persuasiva:
+Se presentan los wireframes de la Landing Page para Desktop Web Browser; en Mobile Web Browser las mismas secciones se apilan en una sola columna y la navegación se agrupa en un menú hamburguesa, según el Web Style Guide de la sección 4.1.2. El wireframe sirve como un mapa visual que define la estructura y el flujo de la información, alineado con los principios de rigurosidad y claridad que exige el sector farmacéutico. Este esquema asegura una disposición lógica de los componentes, facilitando la navegación y destacando la propuesta de valor de **DoofPlus.** Las secciones del wireframe están diseñadas para contar una historia completa y persuasiva:
 
 **Nav y Hero:**
 
-Esta sección inicial incluye el logotipo de DoofPlus junto con una presentación breve que introduce al visitante en la propuesta de valor de la plataforma: 'The Future of Pharmaceutical Quality Management' (El futuro de la gestión de calidad farmacéutica). La barra de navegación permite un acceso rápido a secciones clave como Features, Benefits y About Us, mientras que el área principal ofrece una visión concisa del producto, acompañada de un claro llamado a la acción: 'Request a Demo' (Solicitar Demo). Un elemento visual atractivo refuerza el mensaje de innovación tecnológica, precisión y cumplimiento regulatorio que distingue a DoofPlus.
+Esta sección inicial incluye el logotipo de DoofPlus junto con una presentación breve que introduce al visitante en la propuesta de valor de la plataforma: 'The Future of Pharmaceutical Quality Management' (El futuro de la gestión de calidad farmacéutica). La barra de navegación permite un acceso rápido a secciones clave como Features, Benefits y About Us, mientras que el área principal ofrece una visión concisa del producto, acompañada de un llamado a la acción principal que dirige al visitante a la Web Application. Un elemento visual atractivo refuerza el mensaje de innovación tecnológica, precisión y cumplimiento regulatorio que distingue a DoofPlus.
 
 ![Hero Section Wireframe](../assets/img/chapter4/landing-page/wireframes/hero-section-landing-wireframe.png)
 
@@ -208,53 +208,53 @@ Este wireframe sienta las bases para un diseño visual que no solo se ve bien, s
 
 ### 4.3.2. Landing Page Mock-up
 
-Esta sección presenta y explica los Mock-ups del Landing Page, tanto en su versión para Desktop Web Browser como Mobile Web Browser. En la propuesta y la explicación se evidencia la aplicación de los principios, elementos de diseño, diseño inclusivo y arquitectura de información, así como el Design System establecido para los productos digitales.
+Esta sección presenta y explica los Mock-ups de la Landing Page para Desktop Web Browser; en Mobile Web Browser se aplican las reglas de adaptación de la sección 4.1.2. Los mock-ups muestran la versión en español latinoamericano (es-419): el selector "En / Es" del footer cambia todos los textos al inglés (en-US), idioma por defecto. En ellos se aplica el Design System de la sección 4.1 (tipografía Inter, verde marino #0D9488 para las llamadas a la acción y azul pizarra para los encabezados y el footer), la jerarquía visual y las etiquetas de la arquitectura de información, y criterios de diseño inclusivo: contraste alto entre texto y fondo, botones con texto explícito y tamaños de toque amplios.
 
 **Hero de la aplicación**
 
-El hero de nuestra plataforma **DoofPlus** presenta un fondo moderno e institucional que evoca precisión tecnológica y cumplimiento normativo, con un título claro: 'The Future of Pharmaceutical Quality Management'. Una breve descripción capta nuestra esencia para el control de calidad, y un botón de llamado a la acción sólido y centrado ('Request a Demo') invita a los usuarios a dar el primer paso hacia la digitalización de sus procesos. Una barra de navegación en la parte superior con el logotipo de DoofPlus permite acceder de forma fluida a todas las secciones de la página, proporcionando una experiencia de usuario intuitiva.
+El hero presenta un fondo verde marino con el título "El Futuro de la Gestión de Calidad Farmacéutica" (The Future of Pharmaceutical Quality Management), una descripción breve y el botón "Empieza Ahora" (Get Started), que lleva al visitante a la Web Application. La barra de navegación fija muestra el logotipo de DoofPlus, los enlaces a cada sección y el botón "Comenzar", de modo que el acceso a la plataforma está disponible desde cualquier punto de la página.
 
 ![Hero Section Mockup](../assets/img/chapter4/landing-page/mockups/hero-section-landing-mockup.png)
 
 **What We Offer**
 
-En la sección 'What we offer', presentamos nuestras principales áreas de servicio a través de tarjetas limpias. Cada tarjeta cuenta con un título y una descripción enfocada, como 'Real-Time IoT Monitoring', 'Automated BPM Compliance', 'Immutable Traceability' y 'Digital Batch Management'. Esto permite a los usuarios entender rápidamente el alcance de nuestra plataforma para resolver los problemas de documentación de calidad farmacéutica.
+En la sección "Lo que ofrecemos" (What We Offer) se presentan las principales áreas de servicio en tarjetas con título y descripción: "Monitoreo IoT en Tiempo Real" (Real-Time IoT Monitoring), "Cumplimiento BPM Automatizado" (Automated BPM Compliance), "Trazabilidad Inmutable" (Immutable Traceability) y "Gestión Digital de Lotes" (Digital Batch Management). Esto permite a los usuarios entender rápidamente el alcance de nuestra plataforma para resolver los problemas de documentación de calidad farmacéutica.
 
 ![What We Offer Mockup](../assets/img/chapter4/landing-page/mockups/whatweoffer-section-landing-mockup.png)
 
 **Features**
 
-La sección de "Features" muestra las funcionalidades clave de DoofPlus. El diseño tipo acordeón interactivo permite a los usuarios expandir cada característica (como la integración de sensores IoT o alertas instantáneas por desviación) para leer su descripción completa, mientras que el recuadro visual de la izquierda balancea el contenido. Este formato combina información técnica detallada con un diseño dinámico.
+La sección "Características" (Features) muestra las funcionalidades clave de DoofPlus en un acordeón: "Integración de Telemetría IoT", "Motor de Compliance BPM", "Alertas Instantáneas por Desviación" y "Panel de Analítica y KPIs". Cada elemento se expande para mostrar su descripción, mientras que el recuadro visual de la izquierda equilibra el contenido.
 
 ![Features Mockup](../assets/img/chapter4/landing-page/mockups/features-section-landing-mockup.png)
 
 **Benefits**
 
-En 'Benefits', destacamos las ventajas tangibles de utilizar DoofPlus. A través de un diseño de tarjetas (cards) sobre fondo claro con íconos representativos, comunicamos de manera directa cómo nuestra plataforma reduce el tiempo de preparación para auditorías en un 80%, elimina el error humano en los registros y proporciona una infraestructura SaaS escalable.
+En "Beneficios" (Benefits) cuatro tarjetas comunican las ventajas de DoofPlus: 80% menos tiempo en la preparación de auditorías, cero error humano en los registros gracias a la captura automática de variables, detección instantánea de desviaciones y una infraestructura SaaS escalable sin costos de servidores.
 
 ![Benefits Mockup](../assets/img/chapter4/landing-page/mockups/benefits-section-landing-mockup.png)
 
 **About Us**
 
-La sección 'About Us' presenta a **Inges Company**, la startup detrás de DoofPlus. Aquí compartimos nuestra visión de transformar digitalmente procesos especializados, detallando cómo nuestra solución permite centralizar información para el ciclo de vida farmacéutico y asegurar las BPM. El diseño separa claramente la misión de la empresa de una lista puntual con los pilares del servicio (IoT, Trazabilidad, Cumplimiento).
+La sección "Nosotros" (About Us) presenta a IngesCompany, la startup detrás de DoofPlus, con el título "DoofPlus: Transformando la Gestión de Calidad Farmacéutica con IoT y Cumplimiento Normativo". El texto describe cómo la plataforma centraliza la información de los procesos de fabricación y apoya el cumplimiento de las BPM, acompañado de un recuadro visual a la derecha.
 
 ![About Us Mockup](../assets/img/chapter4/landing-page/mockups/aboutus-section-landing-mockup.png)
 
 **Our Team**
 
-La sección "Our Team" presenta a los ingenieros de software detrás de Inges Company: Marcelo Angulo, Yhoshua Cobades, Ricardo Flores, Nestor Rojas y Rodolfo Zavaleta. Las tarjetas de perfil muestran una foto, el nombre, el rol de Software Engineer y una biografía detallada para cada miembro. El diseño de tarjetas alineadas en cuadrícula brinda un aspecto organizado, humanizando el desarrollo del software.
+La sección "Nuestro Equipo" (Our Team) presenta a los integrantes de IngesCompany: Marcelo Angulo, Yhoshua Cobades, Ricardo Flores, Nestor Rojas y Rodolfo Zavaleta. Cada tarjeta reserva el espacio de la foto y muestra el nombre y el rol de Ingeniero de Software, en una cuadrícula de tres y dos columnas que mantiene el orden visual.
 
 ![Our Team Mockup](../assets/img/chapter4/landing-page/mockups/ourteam-section-landing-mockup.png)
 
 **Plans**
 
-En la sección de "Plans", ofrecemos los detalles de nuestros planes de suscripción. Las tarjetas de "Standard Lab" y "Enterprise" incluyen descripciones precisas para los segmentos objetivos, precios mensuales/anuales, y listas completas de características. El Plan Enterprise destaca visualmente con el color Verde Marino principal como fondo sólido para distinguirlo, y se incorpora un toggle para facilitar la vista de precios anuales.
+En la sección "Planes" (Plans) se comparan el Plan Estándar (Standard Lab, US$199 al mes, hasta 5 dispositivos IoT y 10 cuentas de usuario) y el Plan Enterprise (US$599 al mes, conexiones IoT ilimitadas y gestión multi-sede), cada uno con su descripción, su lista de características y el botón "Obtener plan". El Plan Enterprise destaca con el verde marino como fondo sólido, y el selector "Mensual / Anual" muestra los precios de cada modalidad.
 
 ![Plans Mockup](../assets/img/chapter4/landing-page/mockups/plans-section-landing-mockup.png)
 
 **Footer**
 
-El "Footer" de nuestra landing page actúa como cierre funcional de la navegación. Contiene el logotipo en su versión blanca y el nombre de DoofPlus, enlaces de contacto y acceso a recursos. Finalmente, se observa la declaración oficial "Copyright © 2026 Inges Company", asegurando la propiedad del producto en una interfaz ordenada con los colores oscuros corporativos.
+El cierre de la página reúne tres testimonios de clientes ("Lo que opinan nuestros clientes"), un llamado a la acción final ("¿Listo para digitalizar la gestión de calidad de tu laboratorio?" con el botón "Comenzar") y el footer en azul pizarra. El footer contiene el logotipo en su versión blanca, los enlaces de producto (Características, Planes de Precio y Cómo funciona), los datos de contacto (correo, teléfono y ubicación), la declaración "Copyright © 2026 Inges Company" y el selector de idioma "En / Es".
 
 ![Footer Mockup](../assets/img/chapter4/landing-page/mockups/footer-section-landing-mockup.png)
 
@@ -268,7 +268,7 @@ El diseño considera principios de usabilidad, accesibilidad, consistencia visua
 
 En esta sección se presentan los wireframes diseñados para la aplicación web de DoofPlus. Cada pantalla fue desarrollada para gestionar procesos de calidad farmacéutica, producción regulada GxP, trazabilidad de lotes, control documental y cumplimiento normativo mediante firmas electrónicas y registros auditables.
 
-A continuación, se muestran las representaciones esquemáticas de baja fidelidad que describen la estructura, distribución de componentes y funcionalidades principales de cada módulo de la plataforma.
+A continuación, se muestran las representaciones esquemáticas de baja fidelidad que describen la estructura, distribución de componentes y funcionalidades principales de cada módulo de la plataforma. Todas las pantallas comparten la misma estructura, derivada de la arquitectura de información de la sección 4.2: una barra superior con el entorno activo (Quality Segment o GxP Production), el usuario y el selector de idioma; un sidebar con los módulos del entorno (navegación global); y un área de contenido que ubica arriba los indicadores y abajo las tablas de detalle (jerarquía visual). Las acciones críticas, como aprobar, liberar o rechazar, se agrupan al final de cada formulario y se confirman con firma electrónica.
 
 - **Landing Page - DoofPlus**
 
@@ -278,7 +278,7 @@ Pantalla de presentación de la plataforma que comunica la propuesta de valor de
 
 - **Regulatory Identification - DoofPlus**
 
-Pantalla de autenticación regulatoria que solicita las credenciales corporativas y la firma electrónica necesarias para acceder a funcionalidades sujetas a cumplimiento FDA 21 CFR Part 11 y normativas GxP.
+Pantalla de inicio de sesión que solicita el correo corporativo y la contraseña del usuario, la misma con la que confirma sus firmas electrónicas, y advierte que se trata de un sistema regulado en el que todo intento de acceso no autorizado queda registrado. Tras validar las credenciales se solicita el código 2FA (US06).
 
 ![Wireframe](../assets/img/chapter4/prototype/wireframes/Login.png)
 
@@ -359,6 +359,12 @@ Panel principal del entorno de producción que permite supervisar órdenes activ
 Interfaz para la gestión operativa de lotes de fabricación, incluyendo seguimiento de etapas de producción, firmas electrónicas y responsables asignados.
 
 ![Wireframe](../assets/img/chapter4/prototype/wireframes/Gestión%20de%20Lotes.png)
+
+- **Environmental & Equipment Monitoring - DoofPlus**
+
+Consola de monitoreo ambiental del entorno de producción ("Environmental Monitoring Console & Equipment") que muestra, por línea, la presión diferencial, la humedad relativa y la clase de partículas frente a sus rangos de referencia, resalta los valores fuera de rango y lista el estado de calibración de los equipos.
+
+![Wireframe](../assets/img/chapter4/prototype/wireframes/Monitoreo.png)
 
 - **GxP Incident Registration & Deviation Management - DoofPlus**
 
@@ -488,7 +494,7 @@ Flujo: GxP Production Control Console → GxP Regulatory Reports & Metrics.
 
 En esta sección se presentan los mock-ups desarrollados para la aplicación web de DoofPlus. Estas representaciones de alta fidelidad muestran la apariencia final de la plataforma, incorporando la identidad visual del producto, componentes interactivos y elementos orientados al cumplimiento regulatorio farmacéutico bajo estándares GMP y FDA 21 CFR Part 11.
 
-Los mock-ups fueron diseñados considerando los procesos críticos de aseguramiento y control de calidad, manufactura farmacéutica, trazabilidad de lotes y gestión documental, garantizando una experiencia de usuario intuitiva y alineada con los requisitos de integridad de datos, auditoría y firmas electrónicas.
+Los mock-ups fueron diseñados considerando los procesos críticos de aseguramiento y control de calidad, manufactura farmacéutica, trazabilidad de lotes y gestión documental, garantizando una experiencia de usuario intuitiva y alineada con los requisitos de integridad de datos, auditoría y firmas electrónicas. Aplican el Design System de la sección 4.1: tipografía Inter, azul pizarra en la barra superior y el sidebar, y colores funcionales para los estados (verde para conforme, ámbar para advertencia y rojo para fuera de especificación). Como criterio de diseño inclusivo, cada estado se comunica con una etiqueta de texto además del color (por ejemplo, "Calibrated OK" o "Low Pressure"), las tablas mantienen encabezados explícitos y el selector "EN / ES" permanece visible en todas las pantallas.
 
 - **Landing Page - DoofPlus**
 
@@ -498,7 +504,7 @@ Pantalla de presentación de la plataforma que comunica la propuesta de valor de
 
 - **Regulatory Identification - DoofPlus**
 
-Pantalla de autenticación regulatoria que solicita las credenciales corporativas y la firma electrónica necesarias para acceder a funcionalidades sujetas a cumplimiento FDA 21 CFR Part 11 y normativas GxP.
+Pantalla de inicio de sesión que solicita el correo corporativo y la contraseña del usuario, la misma con la que confirma sus firmas electrónicas, y advierte que se trata de un sistema regulado en el que todo intento de acceso no autorizado queda registrado. Tras validar las credenciales se solicita el código 2FA (US06).
 
 ![Mockup](../assets/img/chapter4/prototype/mockup/Login.png)
 
@@ -579,6 +585,12 @@ Panel principal del entorno de producción que permite supervisar órdenes activ
 Interfaz para la gestión operativa de lotes de fabricación, incluyendo seguimiento de etapas de producción, firmas electrónicas y responsables asignados.
 
 ![Mockup](../assets/img/chapter4/prototype/mockup/Gestión%20de%20Lotes.png)
+
+- **Environmental & Equipment Monitoring - DoofPlus**
+
+Consola de monitoreo ambiental del entorno de producción ("Environmental Monitoring Console & Equipment") que muestra, por línea, la presión diferencial, la humedad relativa y la clase de partículas frente a sus rangos de referencia, resalta los valores fuera de rango y lista el estado de calibración de los equipos.
+
+![Mockup](../assets/img/chapter4/prototype/mockup/Monitoreo.png)
 
 - **GxP Incident Registration & Deviation Management - DoofPlus**
 
@@ -707,11 +719,11 @@ La sección de Web Applications Prototyping presenta los prototipos interactivos
 
 El diseño de los prototipos fue guiado por cuatro principios fundamentales:
 
-- Cumplimiento regulatorio por diseño
+**Cumplimiento regulatorio por diseño**
 
 Todas las interacciones fueron concebidas considerando requisitos de FDA 21 CFR Part 11, GMP y buenas prácticas de documentación, incorporando controles asociados a firmas electrónicas, auditoría de registros y segregación de funciones.
 
-- Arquitectura basada en procesos farmacéuticos
+**Arquitectura basada en procesos farmacéuticos**
 
 La navegación se organiza alrededor de los procesos más frecuentes dentro de la industria farmacéutica:
 
@@ -721,11 +733,12 @@ La navegación se organiza alrededor de los procesos más frecuentes dentro de l
 - Gestión CAPA.
 - Auditorías regulatorias.
 - Validación y control analítico.
-- Consistencia visual y operativa
+
+**Consistencia visual y operativa**
 
 Los prototipos mantienen una identidad visual uniforme mediante el uso consistente de colores institucionales, componentes reutilizables, tablas regulatorias y paneles de control orientados a la supervisión operativa.
 
-- Optimización para entornos de trabajo regulados
+**Optimización para entornos de trabajo regulados**
 
 La interfaz prioriza:
 
@@ -741,17 +754,17 @@ Los prototipos de Desktop y Mobile Web Browser siguen los paths de los User Flow
 
 Prototipo navegable en Figma: <mark>pegar URL pública del prototipo</mark>
 
-Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0730-7742-IngesCompany-prototype-navigation-sprint-1: <mark>pegar URL, timing de inicio y duración</mark>
+Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0729-7742-IngesCompany-prototype-navigation: <mark>pegar URL, timing de inicio y duración</mark>
 
 ## 4.6. Domain-Driven Software Architecture
-La arquitectura de DoofPlus se fundamenta en Domain-Driven Design (DDD). El punto de partida es el Big Picture EventStorming (sección 2.4), que dejó una línea de tiempo de eventos organizada en siete swimlanes, con sus actores, sistemas externos y problemas. En esta sección ese conocimiento se profundiza con un Design-Level EventStorming hasta identificar los bounded contexts y obtener aggregates, commands, policies, read models y sistemas externos por contexto; luego la solución se representa con el modelo C4 (contexto, contenedores y componentes). Los mismos bounded contexts y aggregates se mantienen en los diagramas de clases (sección 4.7), en la base de datos (sección 4.8), en los módulos de la Web Application en Angular y en los paquetes del RESTful API en Spring Boot.
+La arquitectura de DoofPlus se fundamenta en Domain-Driven Design (DDD). El punto de partida es el Big Picture EventStorming (sección 2.4), que dejó una línea de tiempo de eventos organizada en siete swimlanes, con sus actores, sistemas externos y problemas. En esta sección ese conocimiento se profundiza con un Design-Level EventStorming hasta identificar los bounded contexts y obtener aggregates, commands, policies, read models y sistemas externos por contexto; luego la solución se representa con el modelo C4 (contexto, contenedores y componentes). Cada bounded context se corresponde con un módulo de la Web Application en Angular y con un paquete del RESTful API en Spring Boot.
 
 La siguiente tabla resume la trazabilidad entre artefactos:
 
-| Bounded context | Tipo | Swimlanes del Big Picture | Épicas | Aggregates (DLES y clases) | Módulo Angular / paquete Spring |
+| Bounded context | Tipo | Swimlanes del Big Picture | Épicas | Aggregates (DLES) | Módulo Angular / paquete Spring |
 | --- | --- | --- | --- | --- | --- |
 | Manufacturing & Batch Management | Core | Producción y almacén | EP04, EP09 (productos y fórmulas) | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch | `manufacturing` |
-| Quality & Compliance | Core | Gestión documental, Control de calidad y liberación, Desviaciones y CAPA, Auditoría y cumplimiento | EP03, EP05, EP07, EP08, EP10 | QualityDocument, MaterialApproval, BatchReview, AnalyticalResult, Deviation, Audit, AuditTrailEntry, RegulatoryReport | `quality` |
+| Quality & Compliance | Core | Gestión documental, Control de calidad y liberación, Desviaciones y CAPA, Auditoría y cumplimiento | EP03, EP05, EP07, EP08, EP10 | QualityDocument, MaterialApproval, BatchReview, AnalyticalResult, Deviation, Audit, RegulatoryReport | `quality` |
 | IoT Monitoring | Supporting | Monitoreo de equipos (IoT) | EP06, EP09 (equipos, calibraciones y mantenimiento) | Equipment, IoTDevice, TelemetryReading, Alert | `iot-monitoring` / `iotmonitoring` |
 | Identity & Access Management | Generic | Plataforma y administración, Gestión documental | EP02 | User, ElectronicSignature | `iam` |
 | Organizations & Profiles | Supporting | Plataforma y administración | EP01 (solicitud de demo), EP02 (registro de la organización) | Organization, Profile, DemoRequest | `organizations` |
@@ -889,7 +902,7 @@ Se identificó quién ejecuta cada command: Administrador del laboratorio, Espec
 
 #### Paso 4: Read models
 
-Se registró la información que cada actor consulta antes de decidir. Estos read models son la base de las vistas de la Web Application y de los dashboards: por ejemplo, "Panel de control del lote" (GxP Batch Execution & Management Console), "Tablero de desviaciones y CAPA" (Critical Deviations & CAPA Actions Control), "Panel de resultados de laboratorio" (Analytical Results Entry & Validation), "Panel de alertas" (Environmental & Equipment Monitoring) y "Audit trail" (Cross-Traceability & Audit Center).
+Se registró la información que cada actor consulta antes de decidir. Estos read models son la base de las vistas de la Web Application y de los dashboards: por ejemplo, "Panel de control del lote" (GxP Batch Execution & Management Console), "Tablero de desviaciones y CAPA" (Critical Deviations & CAPA Actions Control), "Panel de resultados de laboratorio" (Analytical Results Entry & Validation), "Panel de alertas" (Environmental & Equipment Monitoring) y "Audit trail" (Cross-Traceability & Audit Center). Cada read model se obtiene con una query del contexto, atendida por su query service: por ejemplo, el panel de control del lote se arma con la consulta del lote y su línea de tiempo, y el tablero de desviaciones, con la consulta de las desviaciones abiertas por severidad.
 
 **Identity & Access Management**
 
@@ -951,7 +964,7 @@ Donde no interviene un sistema externo se escribió la business rule que el comm
 | --- | --- | --- |
 | IAM | User, ElectronicSignature | Una cuenta se bloquea tras 5 intentos fallidos; firmar exige reingresar la contraseña. |
 | Organizations & Profiles | DemoRequest, Organization, Profile | El RUC de la organización es válido y único. |
-| Subscriptions & Payments | Subscription (con su Plan) | La suscripción se activa solo si Niubiz autoriza el cobro. |
+| Subscriptions & Payments | Plan, Subscription | La suscripción se activa solo si Niubiz autoriza el cobro. |
 | Manufacturing & Batch Management | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch | Un lote solo consume materia prima aprobada y solo Calidad puede liberarlo. |
 | IoT Monitoring | Equipment, IoTDevice, TelemetryReading, Alert | Un equipo con calibración vencida no puede asignarse a un lote. |
 | Quality & Compliance | QualityDocument, MaterialApproval, BatchReview, AnalyticalResult, Deviation, Audit, RegulatoryReport | Un lote con un resultado OOS sin desviación cerrada no puede liberarse. |
@@ -993,7 +1006,7 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 
 #### Paso 7: Bounded contexts
 
-Los aggregates se agruparon en seis bounded contexts, siguiendo los swimlanes del Big Picture y el lenguaje que comparten sus eventos, con nombres en inglés alineados al Ubiquitous Language y al código. Respecto del Design-Level original del equipo se mantuvieron los seis contextos y se refinaron sus aggregates: "Módulo de Credenciales y Sesión" pasó a User (la sesión se maneja con JWT y no se persiste), la matriz de roles pasó de Organizations a IAM, "Perfil Corporativo y Tenant" se dividió en Organization y Profile, "Inventario y Materia Prima" se separó en Product, MasterFormula y RawMaterialLot, "Lote de Producción" en ProductionOrder y ProductionBatch, "Registro de Maquinaria y Telemetría" en Equipment, IoTDevice, TelemetryReading y Alert, y "Expediente de Trazabilidad y Auditoría" en MaterialApproval, BatchReview, AnalyticalResult, Audit y AuditTrailEntry. Así cada aggregate protege un conjunto pequeño de reglas y se corresponde con una clase raíz y sus tablas.
+Los aggregates se agruparon en seis bounded contexts, siguiendo los swimlanes del Big Picture y el lenguaje que comparten sus eventos, con nombres en inglés alineados al Ubiquitous Language y al código. Respecto del Design-Level original del equipo se mantuvieron los seis contextos y se refinaron sus aggregates: "Módulo de Credenciales y Sesión" pasó a User (la sesión se maneja con JWT y no se persiste), la matriz de roles pasó de Organizations a IAM, "Perfil Corporativo y Tenant" se dividió en Organization y Profile, "Inventario y Materia Prima" se separó en Product, MasterFormula y RawMaterialLot, "Lote de Producción" en ProductionOrder y ProductionBatch, "Registro de Maquinaria y Telemetría" en Equipment, IoTDevice, TelemetryReading y Alert, y "Expediente de Trazabilidad y Auditoría" en MaterialApproval, BatchReview, AnalyticalResult y Audit. Así cada aggregate protege un conjunto pequeño de reglas y se corresponde con una clase raíz y sus tablas.
 
 El context map muestra cómo se integran los contextos. Las consultas entre contextos pasan por un Anti-Corruption Layer (fachada `ContextFacade` del contexto proveedor y servicio `External…Service` del consumidor); las decisiones de Quality hacia Manufacturing se comunican con domain events.
 
@@ -1013,7 +1026,7 @@ Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=34587646857
 
 ### 4.6.2. Software Architecture Context Diagram
 
-El diagrama de contexto (nivel 1 del modelo C4) muestra a DoofPlus como un único sistema rodeado por sus usuarios y los sistemas externos identificados en el EventStorming. Los usuarios son el visitante de un laboratorio (Landing Page), el Especialista QA/QC y el Jefe de Producción (segmentos objetivo) y el Administrador del laboratorio. Los sistemas externos son ThingsBoard, que envía la telemetría de los sensores; Niubiz, que autoriza los cobros de las suscripciones; y SendGrid, que entrega correos. La app autenticadora del usuario genera los códigos TOTP del segundo factor sin integración por API, por eso se muestra con línea punteada. Los diagramas C4 se elaboraron con Structurizr DSL (Diagram-as-Code) y se renderizaron con Structurizr, la herramienta de referencia del modelo C4; todas las vistas salen de un único modelo (`assets/diagrams/structurizr/workspace.dsl`), y la disposición de los elementos de cada vista se guarda en `workspace.json`, ordenada en capas de arriba hacia abajo para que las relaciones no se crucen ni atraviesen otros elementos.
+El diagrama de contexto (nivel 1 del modelo C4) muestra a DoofPlus como un único sistema rodeado por sus usuarios y los sistemas externos identificados en el EventStorming. Los usuarios son el visitante de un laboratorio (Landing Page), el Especialista QA/QC y el Jefe de Producción (segmentos objetivo) y el Administrador del laboratorio. Los sistemas externos son ThingsBoard, que envía la telemetría de los sensores; Niubiz, que autoriza los cobros de las suscripciones; SendGrid, que entrega correos; y el Lector RFID del almacén, con el que el Jefe de Producción lee la etiqueta del insumo recibido y que envía ese código a DoofPlus. La app autenticadora del usuario genera los códigos TOTP del segundo factor sin integración por API, por eso se muestra con línea punteada. DIGEMID, identificada como sistema externo en el EventStorming, no forma parte del diagrama porque inspecciona al laboratorio sin intercambiar datos con DoofPlus: el modelo C4 solo incluye las personas y los sistemas conectados directamente con el sistema. Los diagramas C4 se elaboraron con Structurizr DSL (Diagram-as-Code) y se renderizaron con Structurizr, la herramienta de referencia del modelo C4; todas las vistas salen de un único modelo (`assets/diagrams/structurizr/workspace.dsl`), y la disposición de los elementos de cada vista se guarda en `workspace.json`, ordenada en capas de arriba hacia abajo para que las relaciones no se crucen ni atraviesen otros elementos.
 
 ![Context Level Diagram](../assets/img/chapter4/software-architecture/c4/c4-01-context.png)
 
@@ -1028,13 +1041,15 @@ El diagrama de contenedores (nivel 2) muestra las unidades de despliegue de la s
 | RESTful API | Spring Boot, Java 21, Spring Data JPA, Spring Security, springdoc-openapi | Render | Monolito modular con los seis bounded contexts; expone endpoints REST documentados con OpenAPI (Swagger), recibe la telemetría de ThingsBoard y publica notificaciones por WebSocket (STOMP). |
 | Database | MySQL 8 | Railway | Persistencia relacional; las tablas se agrupan por bounded context. |
 
+El Lector RFID se conecta al equipo del almacén y envía a la Web Application el código de la etiqueta como entrada de teclado (USB HID), por lo que no requiere integración con el RESTful API.
+
 Se eligió un monolito modular en lugar de microservicios porque el statement define un único RESTful API y porque el equipo y el volumen de datos de laboratorios pequeños y medianos no justifican la complejidad operativa de varios servicios. La separación por bounded context dentro del código (paquetes independientes que solo se comunican mediante fachadas y eventos) permite extraer un contexto a un servicio propio en el futuro.
 
 ![Container Level Diagram](../assets/img/chapter4/software-architecture/c4/c4-02-container.png)
 
 ### 4.6.4. Software Architecture Components Diagrams
 
-Los diagramas de componentes (nivel 3) descomponen la Web Application y el RESTful API. La Web Application sigue la estructura del proyecto en Angular: un módulo por bounded context con las capas `domain`, `application`, `infrastructure` y `presentation`, más los elementos compartidos de `shared`.
+Los diagramas de componentes (nivel 3) descomponen la Web Application y el RESTful API. La Web Application sigue la estructura del proyecto en Angular: un módulo por bounded context con las capas `domain`, `application`, `infrastructure` y `presentation`, más los elementos compartidos de `shared`. El módulo `manufacturing` recibe el código leído por el Lector RFID en el registro de la recepción de insumos.
 
 ![Component Diagram - Web Application](../assets/img/chapter4/software-architecture/c4/c4-03-webapp-components.png)
 
@@ -1096,7 +1111,7 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - IoT Monitoring](../assets/img/chapter4/diagram-class/class-05-iot.png)
 
-**Quality & Compliance.** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS. `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
+**Quality & Compliance.** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS. `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry`, de solo inserción, persiste el read model "Audit trail" del Design-Level EventStorming; `RegulatoryReport` guarda los reportes generados.
 
 ![Class Diagram - Quality & Compliance](../assets/img/chapter4/diagram-class/class-06-quality.png)
 
