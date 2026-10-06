@@ -14,11 +14,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
   </tr>
   <tr>
     <td colspan="2">¿Por qué llevar a cabo este análisis?</td>
-    <td colspan="4">¿Cómo se posiciona DoofPlus frente a sus competidores en fortalezas, debilidades, oportunidades y propuesta de valor dentro del mercado de software de gestión de calidad y trazabilidad farmacéutica?</td>
-  </tr>
-  <tr>
-    <td colspan="2"></td>
-    <td colspan="4">Es una propuesta que posiciona a DoofPlus como una plataforma SaaS orientada a la gestión de calidad farmacéutica, incorporando integración IoT para automatizar la captura de datos, mejorar la trazabilidad y asegurar el cumplimiento normativo frente a otras soluciones del mercado.</td>
+    <td colspan="4">¿Cómo se posiciona DoofPlus frente a sus competidores en fortalezas, debilidades, oportunidades y propuesta de valor dentro del mercado de software de gestión de calidad y trazabilidad farmacéutica?<br><br>Es una propuesta que posiciona a DoofPlus como una plataforma SaaS orientada a la gestión de calidad farmacéutica, incorporando integración IoT para automatizar la captura de datos, mejorar la trazabilidad y asegurar el cumplimiento normativo frente a otras soluciones del mercado.</td>
   </tr>
   <tr>
     <td colspan="2"></td>
