@@ -502,31 +502,43 @@ En este proyecto, cuyo objetivo principal es mejorar la trazabilidad, la gestió
 |---|---|
 | Batch (Lote) | Cantidad definida de un producto farmacéutico elaborado en un mismo ciclo de fabricación, caracterizada por su homogeneidad. |
 | Batch Record (Expediente de Lote) | Conjunto consolidado de documentos físicos o digitales que proporcionan el historial completo de la producción, controles y distribución de un lote específico. |
+| Product (Producto) | Medicamento que el laboratorio fabrica, identificado por un código único; se elabora según su fórmula maestra aprobada. |
 | Master Formula (Fórmula maestra) | Documento aprobado que define los componentes y cantidades de un producto; cada lote se fabrica según una versión aprobada de la fórmula. |
 | Production Order (Orden de producción) | Autorización para fabricar una cantidad planificada de un producto según su fórmula maestra; origina uno o más lotes. |
 | Raw Material (Materia Prima / Insumo) | Toda sustancia, activa o inactiva, que es empleada e incorporada durante el proceso de formulación o fabricación de un producto farmacéutico. Se recibe por lote de proveedor y queda en cuarentena hasta su aprobación. |
-| Production Parameter (Parámetro de Producción) | Variable operativa asociada a una etapa de fabricación cuya información puede registrarse y vincularse al historial de trazabilidad de un lote farmacéutico. |
+| Storage Location (Ubicación de almacén) | Lugar del almacén asignado a un insumo recibido; queda registrado en su historial para ubicarlo durante la cuarentena y el consumo. |
+| Process Parameter (Parámetro de proceso) | Variable operativa de una etapa de fabricación (por ejemplo, temperatura o tiempo de mezcla) cuyo valor se registra y queda vinculado al historial del lote. |
 | Incident (Incidencia) | Evento anómalo que Producción registra durante la fabricación; si es crítico detiene el lote (On Hold) y puede escalarse a Calidad como desviación. |
 | Traceability (Trazabilidad) | Capacidad de rastrear y reconstruir el historial completo, la aplicación o la ubicación de un lote farmacéutico a lo largo de toda su cadena de producción. |
 | Good Manufacturing Practices / GMP (Buenas Prácticas de Manufactura / BPM) | Conjunto de normativas y lineamientos regulatorios (como los exigidos por DIGEMID) que aseguran que los productos se fabriquen y controlen de forma consistente. |
 | Quality Assurance / QA (Aseguramiento de Calidad) | Conjunto de acciones planificadas y sistemáticas necesarias para garantizar que un producto farmacéutico se fabrique cumpliendo los estándares de calidad exigidos. |
-| Quality Control / QC (Control de Calidad) | Área encargada de ejecutar pruebas, validaciones y muestreos operativos para verificar que los productos o insumos cumplen con especificaciones técnicas precisas. |
+| Quality Control / QC (Control de Calidad) | Conjunto de pruebas, muestreos y verificaciones analíticas que comprueban que los insumos y los productos cumplen sus especificaciones técnicas. |
 | Standard Operating Procedure / SOP (Procedimiento operativo estándar) | Documento controlado que describe paso a paso cómo ejecutar una actividad; solo la versión aprobada vigente puede aplicarse. |
 | Analytical Protocol (Protocolo Analítico) | Documento técnico normado que describe detalladamente los métodos, equipos y criterios de aceptación utilizados para realizar las pruebas de control de un producto. |
+| Document Version (Versión de documento) | Edición numerada de un documento controlado con su autor, fecha y motivo de cambio; al aprobarse una nueva versión, la anterior queda obsoleta. |
+| Sample (Muestra) | Porción de un insumo o de un lote que Calidad toma para realizar los ensayos analíticos que sustentan su dictamen. |
+| Analytical Result (Resultado analítico) | Valor obtenido en un ensayo de control de calidad, calculado según la fórmula del protocolo y comparado con su especificación. |
 | Quarantine (Cuarentena) | Estado en que un insumo o un lote no puede usarse ni distribuirse hasta que Calidad emita su dictamen. |
 | Out of Specification / OOS (Resultado fuera de especificación) | Resultado analítico que no cumple el rango de aceptación del protocolo; obliga a registrar una desviación. |
-| Deviation (Desviación) | Cualquier alteración, no conformidad o evento imprevisto que se aleje de los procedimientos, protocolos o parámetros establecidos durante el proceso de fabricación. |
+| Deviation (Desviación) | Cualquier alteración, no conformidad o evento imprevisto que se aleje de los procedimientos, protocolos o especificaciones establecidos, detectado durante la fabricación, en un resultado de control de calidad o al escalar una incidencia de Producción; se registra, investiga y cierra con su causa raíz y CAPA. |
 | Root Cause Analysis / RCA (Análisis de causa raíz) | Investigación estructurada (por ejemplo, 5 porqués o Ishikawa) que identifica el origen de una desviación; sin causa raíz no se puede cerrar la desviación. |
 | CAPA (Acción correctiva y preventiva) | Acción con responsable y fecha límite que corrige una desviación y evita su recurrencia; se verifica su eficacia antes de cerrarla. |
 | Batch Release (Liberación de Lote) | Aprobación formal otorgada por el área de calidad que certifica que un lote ha sido fabricado según las normativas y parámetros, permitiendo su fase de distribución comercial. |
 | Certificate of Analysis (Certificado de análisis) | Documento firmado que acredita los resultados analíticos de un lote liberado. |
 | Audit (Auditoría) | Revisión sistemática e independiente, ya sea interna o realizada por entidades regulatorias, para evaluar el estricto cumplimiento de las normativas y reportes de calidad. |
 | Finding / Observation (Hallazgo / Observación) | Incumplimiento (hallazgo) o recomendación de mejora (observación) registrado durante una auditoría. |
+| Audit Evidence Package (Expediente de auditoría) | Conjunto de evidencias de un rango de fechas o de lotes (registros, certificados, firmas y audit trail) que se entrega a los auditores o inspectores. |
+| Regulatory Report (Reporte regulatorio) | Informe periódico estandarizado con los registros de calidad del laboratorio, preparado para la autoridad sanitaria o para la revisión interna. |
+| Regulatory Inspection (Inspección regulatoria) | Visita de la autoridad sanitaria (DIGEMID) al laboratorio para verificar el cumplimiento de las BPM. |
 | Audit Trail (Registro de auditoría) | Registro inalterable de quién, cuándo, qué y por qué cambió en cada registro de calidad. |
 | Electronic Signature (Firma electrónica) | Confirmación de identidad del usuario con su contraseña al aprobar, revisar o liberar un registro; incluye nombre, fecha, hora y significado. |
+| Equipment (Equipo) | Máquina o instrumento de producción o de laboratorio, identificado por su número de serie, cuya calibración y mantenimiento determinan si es apto para fabricar. |
 | Calibration (Calibración) | Verificación periódica de un equipo o sensor contra un patrón; si vence, el equipo queda no apto para producción. |
+| IoT Sensor (Sensor IoT) | Dispositivo instalado en un equipo que mide una variable crítica y envía sus lecturas a través de ThingsBoard; se asocia al lote en fabricación. |
 | Sensor Reading (Lectura de sensor) | Valor de una variable crítica (temperatura, humedad, presión, pH) enviado por un sensor y asociado al lote en curso. |
 | Alert (Alerta) | Aviso generado cuando una lectura sale del rango permitido; puede derivar en una incidencia. |
+| Organization (Organización) | Laboratorio farmacéutico cliente registrado en DoofPlus con su razón social y RUC; agrupa sus plantas, usuarios y suscripción. |
+| Role (Rol) | Conjunto de permisos que el administrador del laboratorio asigna a un usuario (por ejemplo, QA Specialist o Production Supervisor) y que determina qué acciones puede realizar. |
 | Subscription Plan (Plan de suscripción) | Modalidad comercial de DoofPlus (Standard Lab o Enterprise) que define el precio y los límites de usuarios y sensores. |
 
 **Beneficios esperados del Ubiquitous Language:**
