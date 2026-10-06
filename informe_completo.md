@@ -135,8 +135,8 @@ https://github.com/IngesCompany-7742/IngesCompany-Project-Report.git
   - [1.2. Solution Profile](#12-solution-profile)
     - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
       - [1. ANTECEDENTES:](#1-antecedentes)
-      - [2. PROBLEMATICA](#2-problematica)
-      - [3. ANALISIS 5W & 2H:](#3-analisis-5w--2h)
+      - [2. PROBLEMÁTICA](#2-problemática)
+      - [3. ANÁLISIS 5W & 2H](#3-análisis-5w--2h)
       - [4. OBJETIVOS](#4-objetivos)
       - [5. RESTRICCIONES Y ALCANCE](#5-restricciones-y-alcance)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
@@ -224,9 +224,9 @@ https://github.com/IngesCompany-7742/IngesCompany-Project-Report.git
 
 ---
 
-# Capítulo 1: Introducción
+# Capítulo I: Introducción
 
-La presente introducción tiene como finalidad contextualizar el proyecto desarrollado, proporcionando una visión general de los antecedentes, objetivos y fundamentos que sustentan su planteamiento. Asimismo, delimita el alcance de la propuesta y establece el marco de referencia necesario para comprender su desarrollo, destacando su relevancia, los retos que busca abordar y los beneficios esperados de su implementación. De esta manera, se ofrece una base conceptual que orienta al lector y facilita la comprensión de los contenidos expuestos en las secciones posteriores del documento.
+La presente introducción tiene como finalidad contextualizar el proyecto desarrollado, proporcionando una visión general de los antecedentes, objetivos y fundamentos que sustentan su planteamiento. Asimismo, delimita el alcance de la propuesta y establece el marco de referencia necesario para comprender su desarrollo, destacando su relevancia, los retos que busca abordar y los beneficios esperados de su implementación. De esta manera, se ofrece una base conceptual que orienta al lector sobre el problema y la propuesta.
 
 ## 1.1. Startup Profile
 
@@ -248,7 +248,7 @@ Diseñar soluciones tecnológicas abiertas que permitan digitalizar y optimizar 
 
 Convertirnos en una referencia en soluciones digitales de aseguramiento de calidad para la industria farmacéutica latinoamericana, facilitando la adopción de tecnologías abiertas que mejoren la trazabilidad, la integridad de los datos y la gestión del cumplimiento regulatorio.
 
-### 1.1.2 Perfiles de Integrantes del Equipo
+### 1.1.2. Perfiles de integrantes del equipo
 
 | Foto | **Nombres, código y carrera** | **Resumen de conocimientos y habilidades** |
 | --- | --- | --- |
@@ -270,7 +270,7 @@ De manera complementaria, organismos internacionales como la Organización Mundi
 
 En este contexto, la transformación digital se ha convertido en un factor estratégico para fortalecer la gestión de calidad dentro de las organizaciones farmacéuticas. La adopción de plataformas digitales integradas con tecnologías de captura y monitoreo de datos permite optimizar la trazabilidad de los lotes de producción, mejorar la disponibilidad y exactitud de los registros de calidad, y facilitar el acceso a información crítica para la toma de decisiones. Como resultado, estas iniciativas contribuyen a incrementar la eficiencia operativa, reducir riesgos asociados a errores manuales y fortalecer el cumplimiento de los requisitos regulatorios exigidos por las autoridades sanitarias nacionales e internacionales.
 
-#### 2. PROBLEMATICA
+#### 2. PROBLEMÁTICA
 
 ##### - Gestión compleja de la documentación de calidad:
 
@@ -288,7 +288,7 @@ La OMS destaca que la integridad de los datos es un componente esencial de los s
 
 Las tecnologías basadas en Internet de las Cosas (IoT) permiten capturar información directamente desde equipos, entornos y procesos mediante dispositivos conectados. Su incorporación representa una oportunidad para complementar los registros de calidad con datos obtenidos de forma automática, aumentando la confiabilidad de la información y facilitando la supervisión de variables relevantes dentro de los procesos de fabricación farmacéutica.
 
-#### 3. ANALISIS 5W & 2H:
+#### 3. ANÁLISIS 5W & 2H
 
 - **What (¿Qué?):** *¿Qué es lo que se busca resolver?*
 
@@ -318,6 +318,27 @@ Las tecnologías basadas en Internet de las Cosas (IoT) permiten capturar inform
 
   La implementación requiere infraestructura tecnológica para el despliegue de la solución, digitalización de procesos documentales, capacitación de los usuarios e integración con fuentes de información internas y dispositivos IoT. La inversión dependerá del tamaño de la organización y del alcance de la integración requerida.
 
+#### 4. OBJETIVOS
+
+**Objetivo general:** desarrollar y desplegar DoofPlus, una solución web compuesta por una Landing Page, una Frontend Web Application y un RESTful API, que centralice la documentación de calidad, la trazabilidad de lotes y la gestión de desviaciones de laboratorios farmacéuticos pequeños y medianos de Lima Metropolitana, con el fin de reducir en 80% el tiempo de preparación de auditorías durante los primeros seis meses de uso.
+
+**Objetivos específicos:**
+
+- Identificar las necesidades de especialistas QA/QC y jefes de producción mediante entrevistas a cada segmento objetivo.
+- Publicar una Landing Page responsive y bilingüe (en-US / es-419) que comunique la propuesta de valor y dirija a cada segmento a la Web Application.
+- Implementar una Frontend Web Application con Angular y Angular Material para la gestión de lotes, desviaciones y documentación de calidad.
+- Implementar un RESTful API con Spring Boot y Spring Data JPA, documentado con OpenAPI (Swagger) e integrado con los servicios externos ThingsBoard y Niubiz.
+- Validar la solución con usuarios de ambos segmentos mediante evaluaciones heurísticas de usabilidad, arquitectura de información y diseño inclusivo.
+
+#### 5. RESTRICCIONES Y ALCANCE
+
+- **Alcance:** Landing Page, Frontend Web Application y RESTful API de elaboración interna. No incluye una aplicación móvil nativa ni la fabricación de hardware IoT: la captura de datos de sensores se integra mediante la plataforma externa ThingsBoard.
+- **Tecnológicas:** HTML5, CSS3 y JavaScript para la Landing Page; Angular con TypeScript y Angular Material (Material Design) para la Web Application; Spring Boot con Spring Data JPA (Java) para el RESTful API; MySQL como base de datos; OpenAPI (Swagger) para documentar los servicios; GitHub con GitFlow, Conventional Commits y Semantic Versioning.
+- **Regulatorias:** DoofPlus apoya el cumplimiento de las BPM de DIGEMID y de los principios de integridad de datos de la OMS, pero no reemplaza la validación de sistemas computarizados que cada laboratorio debe ejecutar; las firmas electrónicas siguen los criterios de 21 CFR Part 11 sin constituir una certificación.
+- **Datos personales:** el tratamiento de datos se rige por la Ley N.° 29733, Ley de Protección de Datos Personales.
+- **Idiomas y accesibilidad:** inglés (en-US) como idioma por defecto y español latinoamericano (es-419) en la Landing Page, la Web Application y los mensajes del RESTful API; atributos ARIA en la Landing Page y la Web Application.
+- **Tiempo:** el desarrollo se organiza en cuatro sprints dentro del ciclo académico 2026-20.
+
 ### 1.2.2. Lean UX Process
 
 La presente sección tiene como finalidad presentar el proceso de Lean UX aplicado para la validación de la propuesta desarrollada. En ella se describen las actividades de investigación, análisis y validación realizadas con el fin de comprender el contexto de los usuarios y verificar los supuestos que motivan la solución planteada. Asimismo, se exponen los artefactos y resultados obtenidos durante el proceso, los cuales permiten identificar necesidades, oportunidades y criterios de diseño relevantes. De esta manera, la información recopilada constituye una base para la definición y evolución de la propuesta de solución presentada en el proyecto.
@@ -334,11 +355,11 @@ A continuación se muestra el problem statement en su idioma original:
 
 ***Our initial focus will be*** QA/QC specialists and pharmaceutical production supervisors of small and medium-sized laboratories in Lima Metropolitana that manufacture under DIGEMID GMP requirements.
 
-***We’ll know we are successful when we see***, within the first six months after launch, at least 80% of the quality documentation queries of pilot laboratories resolved through the platform, a 50% reduction in the time required to retrieve a complete batch history, a 30% reduction in audit-preparation time, and at least 10 laboratories subscribed to a paid plan.
+***We’ll know we are successful when we see***, within the first six months after launch, at least 80% of the quality documentation queries of pilot laboratories resolved through the platform, a 50% reduction in the time required to retrieve a complete batch history, an 80% reduction in audit-preparation time, and at least 10 laboratories subscribed to a paid plan.
 
 #### 1.2.2.2. Lean UX Assumptions
 
-En esta sección se presentan las principales premisas que sustentan la propuesta de DoofPlus. Estas suposiciones han sido formuladas a partir del análisis del contexto regulatorio de la industria farmacéutica, las necesidades asociadas al control de calidad y producción, y las oportunidades que ofrecen las tecnologías IoT para fortalecer la trazabilidad y el monitoreo de los procesos. Los assumptions constituyen hipótesis iniciales que deberán validarse posteriormente mediante actividades de investigación y retroalimentación con usuarios potenciales.
+En esta sección se presentan las principales premisas que sustentan la propuesta de DoofPlus. Estas suposiciones han sido formuladas a partir del análisis del contexto regulatorio de la industria farmacéutica, las necesidades asociadas al control de calidad y producción, y las oportunidades que ofrecen las tecnologías IoT para fortalecer la trazabilidad y el monitoreo de los procesos. Los assumptions constituyen las creencias iniciales del equipo y son la base de los hypothesis statements.
 
 A continuación se muestran los Assumptions en su idioma original:
 
@@ -420,7 +441,7 @@ A continuación se muestran las Hypothesis Statements en su idioma original:
 
 
 - **Hypothesis 4:**  
-  ***We believe we will achieve*** a 30% reduction in audit-preparation time
+  ***We believe we will achieve*** an 80% reduction in audit-preparation time
 
   ***If*** QA/QC specialists
 
@@ -492,8 +513,8 @@ Información estadística de sustento:
 - Solo 4 de cada 10 laboratorios inspeccionados por DIGEMID obtuvieron la certificación de BPM: de 51 laboratorios inspeccionados hasta mayo de 2026, 20 la obtuvieron, 21 no la lograron y 7 desistieron del proceso. Entre los aspectos evaluados figuran los controles de laboratorio y la trazabilidad de productos, actividades a cargo de QA/QC (Gestión, 2026).
 - 385 laboratorios extranjeros esperaban su certificación de BPM ante una DIGEMID desbordada por la demanda, lo que evidencia la presión regulatoria sobre la documentación de calidad (Infobae, 2025).
 - La OMS establece que los registros de calidad deben ser atribuibles, legibles, contemporáneos, originales y exactos (principios ALCOA) durante todo su ciclo de vida (World Health Organization, 2016).
-- Los sistemas de gestión de calidad farmacéutica requieren evidencia documentada para respaldar la liberación de productos y el seguimiento de desviaciones.
-- La trazabilidad y la integridad de los datos son reconocidas como elementos fundamentales para garantizar la calidad y seguridad de los medicamentos.
+- Las BPM de la OMS exigen que toda desviación significativa se registre e investigue completamente para determinar su causa raíz y aplicar acciones correctivas y preventivas, tarea que recae en QA/QC (World Health Organization, 2014).
+- Las mismas BPM exigen conservar registros de fabricación y distribución que permitan rastrear la historia completa de cada lote en forma comprensible y accesible (World Health Organization, 2014).
 
 ### Segmento Objetivo 2: Jefe o Supervisor de Producción Farmacéutica
 
@@ -503,14 +524,12 @@ Características demográficas:
 - **Género:** Indistinto.
 - **Ocupación:** Profesional responsable de planificar, supervisar y controlar las operaciones de fabricación farmacéutica, asegurando el cumplimiento de los parámetros establecidos para la producción.
 - **Nivel educativo:** Ingeniería Industrial, Ingeniería Química, Ingeniería Farmacéutica o carreras afines.
-- **Ubicación geográfica:** Lima Metropolitana, Perú.
+- **Ubicación geográfica:** Lima Metropolitana y otras ciudades del Perú con plantas farmacéuticas, como Arequipa.
 
 Información estadística de sustento:
 
-- Los procesos de producción farmacéutica requieren control continuo de variables operativas para garantizar la calidad del producto final.
-- Las BPM establecen la necesidad de documentar adecuadamente las actividades productivas y mantener evidencia del cumplimiento de los procedimientos establecidos.
-- La disponibilidad de información trazable facilita la identificación y análisis de desviaciones durante la fabricación.
-- La incorporación de herramientas digitales e iniciativas de Industria 4.0 ha impulsado la adopción de tecnologías para mejorar la visibilidad de los procesos productivos.
+- Las BPM de la OMS exigen que durante la fabricación se registre, manual o automáticamente, que se cumplieron todos los pasos de los procedimientos y que la cantidad y calidad del producto son las esperadas; estos registros los genera y supervisa Producción (World Health Organization, 2014).
+- En la encuesta Pharma 4.0 de ISPE (418 profesionales de 45 países), la proporción de organizaciones que aún no iniciaban su transformación digital bajó de 31.2% en 2021 a 15.1% en 2023, y el 58.1% ya contaba con pilotos o acciones sistemáticas en curso (Minero & Kuger, 2024).
 - El sector farmacéutico peruano proyectó un crecimiento de 4% para 2025 según la Asociación Nacional de Laboratorios Farmacéuticos (Agencia Andina, 2025), lo que incrementa el volumen de lotes que los supervisores deben controlar y documentar.
 - Las BPM evaluadas por DIGEMID incluyen procesos de producción, calidad de materias primas, controles de laboratorio, condiciones de almacenamiento y trazabilidad de productos (Gestión, 2026), aspectos que dependen de los registros que genera Producción.
 
@@ -1343,6 +1362,7 @@ Las directrices de estilo web de DoofPlus explican e ilustran las decisiones sob
 - Organización: el proyecto de la Web Application (Vue 3 + Vite) se organiza por bounded context: src/iam, src/manufacturing, src/quality, src/iot, src/subscriptions y src/organizations, cada uno con sus carpetas model, services, components y pages. Los recursos estáticos se ubican en src/assets (images, icons), los estilos globales y design tokens en src/assets/styles, los componentes reutilizables en src/shared/components y las traducciones en src/locales (en.json y es.json).
 - Versionado: Se utiliza Git gestionado desde GitHub como sistema de control de versiones central. El equipo aplica GitFlow y Conventional Commits para gestionar los cambios en el código, lo que ayuda a garantizar que el entorno de desarrollo mantenga una integración continua y una versión estable del producto en todo momento. Además, se aplica Semantic Versioning para darle un orden a las versiones.
 
+
 ## 4.2. Information Architecture
 
 La arquitectura de la información de DoofPlus establece las decisiones que dirigen la organización del contenido en las experiencias web, lo que está orientado a que tanto los visitantes del sector comercial como los usuarios operativos, que forman parte de los segmentos objetivos, se adapten con facilidad a la funcionalidad del producto y puedan encontrar lo que necesitan sin esfuerzo.
@@ -1991,7 +2011,6 @@ Prototipo navegable en Figma: <mark>pegar URL pública del prototipo</mark>
 Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0730-7742-IngesCompany-prototype-navigation-sprint-1: <mark>pegar URL, timing de inicio y duración</mark>
 
 ## 4.6. Domain-Driven Software Architecture
-
 La arquitectura de DoofPlus se fundamenta en Domain-Driven Design (DDD). El punto de partida es el Big Picture EventStorming (sección 2.4), que dejó una línea de tiempo de eventos organizada en siete swimlanes, con sus actores, sistemas externos y problemas. En esta sección ese conocimiento se profundiza con un Design-Level EventStorming hasta identificar los bounded contexts y obtener aggregates, commands, policies, read models y sistemas externos por contexto; luego la solución se representa con el modelo C4 (contexto, contenedores y componentes). Los mismos bounded contexts y aggregates se mantienen en los diagramas de clases (sección 4.7), en la base de datos (sección 4.8), en los módulos de la Web Application en Angular y en los paquetes del RESTful API en Spring Boot.
 
 La siguiente tabla resume la trazabilidad entre artefactos:
@@ -2034,7 +2053,7 @@ Antes de modelar, se acordó la "imagen que lo explica todo": un actor consulta 
 
 Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685756367551
 
-![Target design](assets/img/chapter4/design-level-event-storming/dles-v2/steps/target-design.png)
+![Target design](assets/img/chapter4/design-level-event-storming/target-design.jpg)
 
 #### Paso 1: Timelines
 
@@ -2042,27 +2061,27 @@ Se organizaron en una línea de tiempo vertical los eventos de cada contexto, co
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-1-timelines.png)
+![Identity & Access Management - paso 1](assets/img/chapter4/design-level-event-storming/timelines/iam-1-timelines.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-1-timelines.png)
+![Organizations & Profiles - paso 1](assets/img/chapter4/design-level-event-storming/timelines/org-1-timelines.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-1-timelines.png)
+![Subscriptions & Payments - paso 1](assets/img/chapter4/design-level-event-storming/timelines/sub-1-timelines.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-1-timelines.png)
+![Manufacturing & Batch Management - paso 1](assets/img/chapter4/design-level-event-storming/timelines/mfg-1-timelines.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-1-timelines.png)
+![IoT Monitoring - paso 1](assets/img/chapter4/design-level-event-storming/timelines/iot-1-timelines.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-1-timelines.png)
+![Quality & Compliance - paso 1](assets/img/chapter4/design-level-event-storming/timelines/qa-1-timelines.jpg)
 
 #### Paso 2: Commands
 
@@ -2070,27 +2089,27 @@ Cada evento se antecedió por el command que lo provoca, redactado en imperativo
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-2-commands.png)
+![Identity & Access Management - paso 2](assets/img/chapter4/design-level-event-storming/commands/iam-2-commands.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-2-commands.png)
+![Organizations & Profiles - paso 2](assets/img/chapter4/design-level-event-storming/commands/org-2-commands.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-2-commands.png)
+![Subscriptions & Payments - paso 2](assets/img/chapter4/design-level-event-storming/commands/sub-2-commands.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-2-commands.png)
+![Manufacturing & Batch Management - paso 2](assets/img/chapter4/design-level-event-storming/commands/mfg-2-commands.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-2-commands.png)
+![IoT Monitoring - paso 2](assets/img/chapter4/design-level-event-storming/commands/iot-2-commands.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-2-commands.png)
+![Quality & Compliance - paso 2](assets/img/chapter4/design-level-event-storming/commands/qa-2-commands.jpg)
 
 #### Paso 3: Actors and policies
 
@@ -2113,27 +2132,27 @@ Se identificó quién ejecuta cada command: Administrador del laboratorio, Espec
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-3-actors-policies.png)
+![Identity & Access Management - paso 3](assets/img/chapter4/design-level-event-storming/actors-policies/iam-3-actors-policies.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-3-actors-policies.png)
+![Organizations & Profiles - paso 3](assets/img/chapter4/design-level-event-storming/actors-policies/org-3-actors-policies.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-3-actors-policies.png)
+![Subscriptions & Payments - paso 3](assets/img/chapter4/design-level-event-storming/actors-policies/sub-3-actors-policies.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-3-actors-policies.png)
+![Manufacturing & Batch Management - paso 3](assets/img/chapter4/design-level-event-storming/actors-policies/mfg-3-actors-policies.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-3-actors-policies.png)
+![IoT Monitoring - paso 3](assets/img/chapter4/design-level-event-storming/actors-policies/iot-3-actors-policies.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-3-actors-policies.png)
+![Quality & Compliance - paso 3](assets/img/chapter4/design-level-event-storming/actors-policies/qa-3-actors-policies.jpg)
 
 #### Paso 4: Read models
 
@@ -2141,27 +2160,27 @@ Se registró la información que cada actor consulta antes de decidir. Estos rea
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-4-read-models.png)
+![Identity & Access Management - paso 4](assets/img/chapter4/design-level-event-storming/read-models/iam-4-read-models.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-4-read-models.png)
+![Organizations & Profiles - paso 4](assets/img/chapter4/design-level-event-storming/read-models/org-4-read-models.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-4-read-models.png)
+![Subscriptions & Payments - paso 4](assets/img/chapter4/design-level-event-storming/read-models/sub-4-read-models.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-4-read-models.png)
+![Manufacturing & Batch Management - paso 4](assets/img/chapter4/design-level-event-storming/read-models/mfg-4-read-models.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-4-read-models.png)
+![IoT Monitoring - paso 4](assets/img/chapter4/design-level-event-storming/read-models/iot-4-read-models.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-4-read-models.png)
+![Quality & Compliance - paso 4](assets/img/chapter4/design-level-event-storming/read-models/qa-4-read-models.jpg)
 
 #### Paso 5: External systems
 
@@ -2169,27 +2188,27 @@ Se ubicaron los sistemas externos en el punto donde intervienen: Niubiz (pago y 
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-5-external-systems.png)
+![Identity & Access Management - paso 5](assets/img/chapter4/design-level-event-storming/external-systems/iam-5-external-systems.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-5-external-systems.png)
+![Organizations & Profiles - paso 5](assets/img/chapter4/design-level-event-storming/external-systems/org-5-external-systems.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-5-external-systems.png)
+![Subscriptions & Payments - paso 5](assets/img/chapter4/design-level-event-storming/external-systems/sub-5-external-systems.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-5-external-systems.png)
+![Manufacturing & Batch Management - paso 5](assets/img/chapter4/design-level-event-storming/external-systems/mfg-5-external-systems.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-5-external-systems.png)
+![IoT Monitoring - paso 5](assets/img/chapter4/design-level-event-storming/external-systems/iot-5-external-systems.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-5-external-systems.png)
+![Quality & Compliance - paso 5](assets/img/chapter4/design-level-event-storming/external-systems/qa-5-external-systems.jpg)
 
 #### Paso 6: Business rules y aggregates
 
@@ -2217,27 +2236,27 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 
 **Identity & Access Management**
 
-![Identity & Access Management - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iam-6-aggregates.png)
+![Identity & Access Management - paso 6](assets/img/chapter4/design-level-event-storming/aggregates/iam-6-aggregates.jpg)
 
 **Organizations & Profiles**
 
-![Organizations & Profiles - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/org-6-aggregates.png)
+![Organizations & Profiles - paso 6](assets/img/chapter4/design-level-event-storming/aggregates/org-6-aggregates.jpg)
 
 **Subscriptions & Payments**
 
-![Subscriptions & Payments - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/sub-6-aggregates.png)
+![Subscriptions & Payments - paso 6](assets/img/chapter4/design-level-event-storming/aggregates/sub-6-aggregates.jpg)
 
 **Manufacturing & Batch Management**
 
-![Manufacturing & Batch Management - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/mfg-6-aggregates.png)
+![Manufacturing & Batch Management - paso 6](assets/img/chapter4/design-level-event-storming/aggregates/mfg-6-aggregates.jpg)
 
 **IoT Monitoring**
 
-![IoT Monitoring - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-6-aggregates.png)
+![IoT Monitoring - paso 6](assets/img/chapter4/design-level-event-storming/aggregates/iot-6-aggregates.jpg)
 
 **Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-6-aggregates.png)
+![Quality & Compliance - paso 6](assets/img/chapter4/design-level-event-storming/aggregates/qa-6-aggregates.jpg)
 
 #### Paso 7: Bounded contexts
 
@@ -2247,7 +2266,7 @@ El context map muestra cómo se integran los contextos. Las consultas entre cont
 
 Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685756367552
 
-![Context map](assets/img/chapter4/design-level-event-storming/dles-v2/context-map.png)
+![Context map](assets/img/chapter4/design-level-event-storming/context-map.jpg)
 
 | Contexto consumidor | Contexto proveedor | Integración | Motivo |
 | --- | --- | --- | --- |
@@ -2402,82 +2421,130 @@ La fuente Structurizr DSL de los diagramas C4 se encuentra en `assets/diagrams/s
 
 ## 5.1. Software Configuration Management
 
-En esta sección se describen las decisiones, convenciones y herramientas utilizadas por el equipo Inges Company para gestionar el ciclo de vida, implementación, validación y despliegue de **DoofPlus**. Estas decisiones permitieron mantener la trazabilidad sobre los cambios realizados en cada sprint para la Landing Page, Frontend Web Application y Backend Web Services.
+En esta sección se describen las decisiones, convenciones y herramientas utilizadas por el equipo Inges Company para gestionar el ciclo de vida, la implementación, la validación y el despliegue de **DoofPlus**. Estas decisiones permiten mantener la consistencia y la trazabilidad de los cambios realizados en cada sprint sobre la Landing Page, la Frontend Web Application y los RESTful Web Services.
 
 ### 5.1.1. Software Development Environment Configuration
 
-Se detallan las herramientas utilizadas en el ciclo de vida del producto:
+A continuación se detallan los productos de software que los miembros del equipo utilizan para colaborar en el ciclo de vida de DoofPlus, indicando su propósito y su ruta de referencia (productos SaaS) o de descarga (productos que se ejecutan en el computador de cada integrante).
 
 * **Project Management**
-    * **Jira / Trello:** Planificación de sprints, gestión del Product Backlog y seguimiento visual de tareas. (Referencia: https://www.atlassian.com/software/jira, https://trello.com)
+    * **Jira Software:** Gestión del Product Backlog, planificación de sprints y seguimiento de tareas en el board del proyecto. (Referencia: https://www.atlassian.com/software/jira)
+    * **Discord:** Canal de comunicación del equipo para las reuniones de Sprint Planning, Sprint Review y coordinación diaria. (Referencia: https://discord.com)
 * **Requirements Management**
-    * **Markdown:** Documentación del proyecto. (Referencia: https://www.markdownguide.org)
-    * **Gherkin:** Redacción de criterios de aceptación (Given-When-Then). (Referencia: https://cucumber.io/docs/gherkin)
+    * **Jira Software:** Registro de User Stories y Technical Stories con sus Story Points y criterios de aceptación. (Referencia: https://www.atlassian.com/software/jira)
+    * **Gherkin:** Redacción de criterios de aceptación con la estructura Given-When-Then. (Referencia: https://cucumber.io/docs/gherkin/reference)
+    * **Miro:** Elaboración del Big Picture Event Storming y del Design-Level Event Storming. (Referencia: https://miro.com)
 * **Product UX/UI Design**
-    * **Figma:** Elaboración de Wireframes, Mock-ups y Prototypes. (Referencia: https://www.figma.com)
+    * **Figma:** Elaboración de Wireframes, Mock-ups y Prototypes de la Landing Page y la Web Application. (Referencia: https://www.figma.com)
     * **UXPressia:** Elaboración de User Personas, Empathy Maps, Journey Maps e Impact Maps. (Referencia: https://uxpressia.com)
-    * **Lucidchart:** Diagramación técnica y diseño de base de datos. (Referencia: https://www.lucidchart.com)
+    * **Lucidchart:** Elaboración de Wireflows, User Flows y diagramas técnicos. (Referencia: https://www.lucidchart.com)
 * **Software Development**
-    * **WebStorm / IntelliJ IDEA:** Entornos de desarrollo integrados para codificación. (Descarga: https://www.jetbrains.com)
-    * **HTML5, CSS3 y JavaScript:** Tecnologías core utilizadas para el desarrollo exclusivo del Landing Page.
-    * **Angular Framework:** Framework basado en TypeScript utilizado para el desarrollo de Frontend Web Applications, integrando **Angular Material** como biblioteca de componentes de interfaz basados en Material Design. (Referencia: https://angular.dev)
-    * **Spring Boot & Spring Data JPA:** Frameworks basados en Java para el desarrollo de los RESTful Web Services. (Referencia: https://spring.io)
-    * **PostgreSQL:** Sistema gestor de base de datos relacional. (Referencia: https://www.postgresql.org)
+    * **Git:** Sistema de control de versiones distribuido utilizado en todos los repositorios. (Descarga: https://git-scm.com/downloads)
+    * **GitHub:** Plataforma de alojamiento de los repositorios de la organización y de colaboración mediante ramas y Pull Requests. (Referencia: https://github.com/IngesCompany-7742)
+    * **WebStorm:** IDE para el desarrollo de la Landing Page (HTML5, CSS3 y JavaScript) y de la Frontend Web Application en Angular. (Descarga: https://www.jetbrains.com/webstorm/download)
+    * **IntelliJ IDEA:** IDE para el desarrollo de los RESTful Web Services en Java con Spring Boot. (Descarga: https://www.jetbrains.com/idea/download)
+    * **Node.js y npm:** Entorno de ejecución y gestor de paquetes requeridos por Angular CLI. (Descarga: https://nodejs.org/en/download)
+    * **Angular CLI:** Herramienta para generar, ejecutar y compilar la Frontend Web Application, integrando **Angular Material** como biblioteca de componentes y **ngx-translate** para la internacionalización. (Referencia: https://angular.dev/tools/cli)
+    * **Spring Boot y Spring Data JPA:** Frameworks de Java para el desarrollo de los RESTful Web Services. (Referencia: https://spring.io/projects/spring-boot)
+    * **PostgreSQL:** Sistema gestor de base de datos relacional. (Descarga: https://www.postgresql.org/download)
 * **Software Testing**
-    * **Swagger UI / Chrome DevTools / pgAdmin:** Ejecución de pruebas de APIs, inspección de rendimiento frontend y revisión directa de la persistencia en bases de datos.
+    * **Chrome DevTools:** Inspección del diseño responsive y depuración de la Landing Page y la Web Application. (Referencia: https://developer.chrome.com/docs/devtools)
+    * **json-server:** Fake API para simular los endpoints REST desde la Web Application mientras se implementan los Web Services. (Referencia: https://github.com/typicode/json-server)
+    * **Swagger UI:** Ejecución de pruebas sobre los endpoints documentados de los RESTful Web Services. (Referencia: https://swagger.io/tools/swagger-ui)
 * **Software Documentation**
-    * **OpenAPI (Swagger):** Documentación técnica y contratos de los RESTful Web Services. (Referencia: https://swagger.io)
-    * **PlantUML:** Aplicación de Diagram-as-Code para diagramas UML y diagramas de base de datos. (Referencia: https://plantuml.com)
+    * **Markdown en GitHub:** Redacción del informe del proyecto bajo el enfoque Docs-as-Code en el repositorio del informe. (Referencia: https://www.markdownguide.org)
+    * **OpenAPI (Swagger):** Documentación de los RESTful Web Services. (Referencia: https://swagger.io/specification)
 * **Software Deployment**
-    * **GitHub Pages / Firebase / Render / Railway:** Plataformas cloud para el despliegue de los distintos repositorios y servicios de la solución.
+    * **GitHub Pages:** Publicación de la Landing Page. (Referencia: https://pages.github.com)
+    * **Firebase Hosting:** Publicación de la Frontend Web Application. (Referencia: https://firebase.google.com/docs/hosting)
+    * **Render:** Publicación de los RESTful Web Services. (Referencia: https://render.com)
+    * **Railway:** Base de datos PostgreSQL gestionada en la nube. (Referencia: https://railway.com)
 
 ### 5.1.2. Source Code Management
 
-El código fuente de la solución es gestionado mediante **GitHub** como plataforma y sistema de control de versiones distribuido.
-* **Landing Page:** https://github.com/IngesCompany-7742/DoofPlus-LandingPage
-* **Frontend Web Application:** https://github.com/IngesCompany-7742/DoofPlus-Frontend
-* **Backend Web Services:** https://github.com/IngesCompany-7742/doofplus-platform
+El equipo utiliza **GitHub** como plataforma y **Git** como sistema de control de versiones. Todos los repositorios pertenecen a la organización [IngesCompany-7742](https://github.com/IngesCompany-7742):
+
+| Producto | Repositorio |
+|----------|-------------|
+| Landing Page | https://github.com/IngesCompany-7742/IngesCompany-LandingPage |
+| Frontend Web Application | https://github.com/IngesCompany-7742/IngesCompany-Frontend |
+| RESTful Web Services | Se creará en el Sprint 3. |
+| Informe del proyecto | https://github.com/IngesCompany-7742/IngesCompany-Project-Report |
 
 **GitFlow Workflow**
-El proyecto adopta **GitFlow** para la organización de ramas:
-* `main`: Rama principal para el código en producción estable.
-* `develop`: Rama de integración donde se consolidan las funcionalidades de todo el equipo.
-* `feature/<nombre>`: Convención para desarrollar nuevas funcionalidades (ej. `feature/auth-module`).
-* `release/v<version>`: Ramas creadas desde develop para preparar y asegurar una nueva versión.
-* `hotfix/<nombre>`: Ramas que nacen de `main` para corregir errores críticos en producción.
 
-**Semantic Versioning y Conventional Commits**
-Se aplica **Semantic Versioning 2.0.0** (`MAJOR.MINOR.PATCH`) para nombrar las releases.
-Todos los mensajes siguen la convención **Conventional Commits** (`tipo[scope opcional]: descripción`) usando prefijos como `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore` (ej. `feat(landing): add benefits section`).
+El equipo aplica el modelo GitFlow propuesto por Vincent Driessen en *A successful Git branching model*:
+
+* **`main`:** Contiene únicamente versiones estables listas para producción. Solo recibe merges desde ramas `release/*` y `hotfix/*`, y cada merge se etiqueta con su versión (por ejemplo, `v1.0.0`).
+* **`develop`:** Rama de integración. Consolida las funcionalidades terminadas antes de preparar una nueva versión.
+* **Feature branches:** Nacen de `develop` y regresan a `develop` mediante Pull Request. Convención: `feature/<nombre-en-kebab-case>`, nombrando el bounded context o la funcionalidad (por ejemplo, `feature/shared`, `feature/manufacturing`, `feature/project-configuration`). En el repositorio del informe se usa `feature/chapter<n>`.
+* **Release branches:** Nacen de `develop` cuando un incremento está listo para entregarse y se fusionan con `main` y `develop`. Convención: `release/v<MAJOR>.<MINOR>.<PATCH>`, admitiendo el sufijo de pre-release `-rc.<n>` (por ejemplo, `release/v1.0.0-rc.1`, usada en la Landing Page).
+* **Hotfix branches:** Nacen de `main` para corregir errores críticos en producción y se fusionan con `main` y `develop`. Convención: `hotfix/v<MAJOR>.<MINOR>.<PATCH>` (por ejemplo, `hotfix/v1.0.1`).
+
+**Semantic Versioning**
+
+Las releases se nombran según **Semantic Versioning 2.0.0** con el formato `MAJOR.MINOR.PATCH`:
+
+* **MAJOR:** Cambios incompatibles con versiones anteriores (por ejemplo, `v2.0.0`).
+* **MINOR:** Nuevas funcionalidades compatibles con la versión anterior (por ejemplo, `v1.1.0`).
+* **PATCH:** Correcciones de errores compatibles (por ejemplo, `v1.0.1`).
+
+**Conventional Commits**
+
+Los mensajes de commit siguen la especificación **Conventional Commits 1.0.0**:
+
+```
+<type>(<optional scope>): <description>
+
+<optional body>
+
+<optional footer(s)>
+```
+
+* **type:** `feat` (nueva funcionalidad), `fix` (corrección de errores), `docs` (documentación), `style` (formato sin cambios de lógica), `refactor` (reestructuración sin cambio de comportamiento), `test` (pruebas), `build` (sistema de build o dependencias), `ci` (integración continua), `chore` (tareas de mantenimiento).
+* **scope:** Módulo o bounded context afectado, por ejemplo `feat(lots): ...` o `docs(chapter5): ...`.
+* **description:** Resumen breve en inglés, en modo imperativo y en minúsculas.
+* **body y footer:** Detalle del cambio y referencias a tareas; los cambios incompatibles se marcan con `BREAKING CHANGE:` o con `!` después del type.
 
 ### 5.1.3. Source Code Style Guide & Coding Conventions
 
-Toda la nomenclatura y lógica programática en el código fuente se desarrolla estrictamente en **inglés**, respetando el Ubiquitous Language del dominio de calidad farmacéutica. Se han adoptado las siguientes convenciones estándar oficiales para la programación:
+Toda la nomenclatura del código fuente (archivos, clases, variables, métodos y comentarios) se escribe en **inglés**, respetando el Ubiquitous Language del dominio de calidad farmacéutica (por ejemplo, `Batch`, `Deviation`, `QualityEvent`). Las convenciones adoptadas por lenguaje son las siguientes:
 
-* **HTML/CSS:** *Google HTML/CSS Style Guide* y *HTML Style Guide and Coding Conventions*.
-* **JavaScript / TypeScript:** *Google JavaScript Style Guide*, *Google TypeScript Style Guide* y *Angular coding style guide*.
-* **Java / Spring Boot:** *Google Java Style Guide* y buenas prácticas de *Spring Boot Features* para controladores RESTful y abstracción JPA.
-* **BDD:** *Gherkin Conventions for Readable Specifications*.
+* **HTML:** [HTML Style Guide and Coding Conventions (W3Schools)](https://www.w3schools.com/html/html5_syntax.asp) y [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). Etiquetas y atributos en minúsculas, valores de atributos entre comillas dobles, uso de etiquetas semánticas (`header`, `main`, `section`, `footer`) y atributo `alt` en todas las imágenes.
+* **CSS:** [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). Indentación de 2 espacios, nombres de clases en kebab-case y selectores cortos; los ids no se usan para estilos.
+* **JavaScript:** [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html). Uso de `const`/`let`, lowerCamelCase para variables y funciones y punto y coma al final de cada sentencia.
+* **TypeScript:** [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html). UpperCamelCase para clases e interfaces, lowerCamelCase para propiedades y métodos, tipado explícito y sin uso de `any`.
+* **Angular:** [Angular coding style guide](https://angular.dev/style-guide). Nombres de archivos en kebab-case, un componente por archivo, selectores con el prefijo `app-`, inyección de dependencias en servicios y organización del código por bounded context (`domain`, `infrastructure`, `application`, `presentation`).
+* **Java:** [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html). UpperCamelCase para clases, lowerCamelCase para métodos y variables, CONSTANT_CASE para constantes y llaves obligatorias en todas las estructuras de control.
+* **Spring Boot:** [Spring Boot Features](https://docs.spring.io/spring-boot/reference/features/index.html). Clase principal en el paquete raíz, configuración externalizada en `application.properties` y variables de entorno, y controladores RESTful con rutas en plural y kebab-case (por ejemplo, `/api/v1/batches`).
+* **Gherkin:** [Gherkin Conventions for Readable Specifications](https://specflow.org/gherkin/gherkin-conventions-for-readable-specifications). Palabras clave `Feature`, `Scenario`, `Given`, `When`, `Then` en inglés, un comportamiento por escenario y uso de `Scenario Outline` con `Examples` para casos basados en datos.
 
 ### 5.1.4. Software Deployment Configuration
 
-Pasos y configuración necesarios para el despliegue de la solución en la nube a partir de los repositorios de código:
+A continuación se describen los pasos para desplegar cada producto de la solución a partir de su repositorio de código fuente:
 
-1. **Landing Page (GitHub Pages):** Se navega a la configuración del repositorio, se habilita GitHub Pages apuntando a la raíz (`/root`) de la rama `main` y el código estático es servido públicamente de manera automática por GitHub.
-2. **Frontend Web Application (Firebase Hosting):**
-    - Se ejecuta la construcción optimizada localmente (`ng build --configuration production`).
-    - Se utiliza Firebase CLI y el comando `firebase deploy --only hosting` apuntando a la carpeta de distribución para sincronizar la SPA a la nube.
-3. **Backend Web Services (Render & Railway):**
-    - Se aprovisiona la base de datos PostgreSQL en **Railway**, obteniendo la URL y credenciales.
-    - El backend se despliega como Web Service en **Render** vinculado automáticamente a la rama `main` de su repositorio. Se inyectan las variables de entorno de producción (credenciales de BBDD, JWT keys, tokens de **Niubiz** para flujos de suscripción). En cada commit a `main`, Render compila el proyecto y lo expone públicamente.
+1. **Landing Page (GitHub Pages)**
+    1. Fusionar la rama en `main` y etiquetar la versión.
+    2. En el repositorio `IngesCompany-LandingPage`, ingresar a *Settings > Pages* y seleccionar *Deploy from a branch* con la rama `main` y la carpeta `/ (root)`.
+    3. GitHub Pages publica el sitio en https://ingescompany-7742.github.io/IngesCompany-LandingPage/ y lo vuelve a publicar con cada push a `main`.
+2. **Frontend Web Application (Firebase Hosting)**
+    1. Instalar Firebase CLI (`npm install -g firebase-tools`) e iniciar sesión con `firebase login`.
+    2. Ejecutar `firebase init` en la raíz del proyecto Angular, indicando como carpeta pública `dist/<project-name>/browser` y configurándolo como Single Page Application.
+    3. Compilar la versión de producción con `ng build --configuration production`.
+    4. Publicar con `firebase deploy`.
+3. **RESTful Web Services (Render y Railway)**
+    1. Crear la base de datos PostgreSQL en Railway y obtener la URL de conexión y las credenciales.
+    2. Crear un Web Service en Render vinculado a la rama `main` del repositorio de Web Services, con el Dockerfile del proyecto Spring Boot.
+    3. Registrar en Render las variables de entorno de producción (URL y credenciales de la base de datos, secreto JWT y credenciales de la pasarela de pagos Niubiz).
+    4. Render compila y publica el servicio con cada push a `main`; la documentación OpenAPI queda disponible en la ruta `/swagger-ui/index.html` del servicio.
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
-En esta sección se explica y evidencia el proceso de implementación, pruebas, documentación y despliegue de **DoofPlus**, incluyendo la Landing Page, Web Services y Frontend Web Applications. Se presenta el avance organizado por Sprints a partir del Product Backlog.
+En esta sección se explica y evidencia el proceso de implementación, pruebas, documentación y despliegue de **DoofPlus**, incluyendo la Landing Page, la Frontend Web Application y los RESTful Web Services. El avance se presenta organizado por Sprints a partir del Product Backlog.
 
 ### 5.2.1. Sprint 1
 
-En esta sección se registra y explica el avance en términos de producto y trabajo colaborativo para el **Sprint 1**, el cual tuvo como enfoque principal la construcción y despliegue de la primera versión de la Landing Page de DoofPlus, así como la configuración inicial de los repositorios y entornos de despliegue.
+En esta sección se registra y explica el avance en términos de producto y trabajo colaborativo para el **Sprint 1**, cuyo enfoque principal fue la construcción y el despliegue de la primera versión de la Landing Page de DoofPlus, así como la configuración inicial de los repositorios.
 
 #### 5.2.1.1. Sprint Planning 1
 
@@ -2489,122 +2556,136 @@ El Sprint Planning Meeting sirvió para definir los objetivos iniciales, asignar
 | **Date** | 2026-09-20 |
 | **Time** | 10:00 AM |
 | **Location** | Reunión virtual vía Discord |
-| **Prepared By** | Cobades, Yhoshua |
-| **Attendees (to planning meeting)** | Angulo, Marcelo / Cobades, Yhoshua / Flores, Ricardo / Rojas, Nestor / Zavaleta, Rodolfo |
-| **Sprint 1 – 1 Review Summary** | (No aplica por ser el primer Sprint del proyecto). |
-| **Sprint 1 – 1 Retrospective Summary** | (No aplica por ser el primer Sprint del proyecto). |
+| **Prepared By** | Cobades Zamora, Yhoshua Hebert |
+| **Attendees (to planning meeting)** | Angulo Ramírez, Marcelo Martín / Cobades Zamora, Yhoshua Hebert / Flores Martinez, Ricardo Andres / Rojas Ambicho, Nestor Daniel / Zavaleta Gutierrez, Rodolfo Martin |
+| **Sprint 0 Review Summary** | No aplica por ser el primer Sprint del proyecto. |
+| **Sprint 0 Retrospective Summary** | No aplica por ser el primer Sprint del proyecto. |
 | **Sprint Goal & User Stories** | |
-| **Sprint 1 Goal** | **Our focus is on** delivering a complete and responsive Landing Page.<br>**We believe it delivers** a clear understanding of DoofPlus' value proposition to our potential pharmaceutical clients.<br>**This will be confirmed when** visitors can navigate through the features, plans, and team information flawlessly on both desktop and mobile devices. |
-| **Sprint 1 Velocity** | 12 Story Points |
-| **Sum of Story Points** | 12 Story Points |
+| **Sprint 1 Goal** | **Our focus is on** delivering a responsive and bilingual Landing Page for DoofPlus.<br>**We believe it delivers** a clear understanding of DoofPlus' value proposition, plans and team to quality managers and production supervisors of pharmaceutical laboratories.<br>**This will be confirmed when** visitors can navigate through the features, plans and team sections, switch between Spanish and English, and reach the contact form on both desktop and mobile devices. |
+| **Sprint 1 Velocity** | 16 Story Points |
+| **Sum of Story Points** | 16 Story Points (US44: 3, US03: 2, US45: 1, US04: 1, TS01: 3, US46: 5, US47: 1) |
 
 #### 5.2.1.2. Aspect Leaders and Collaborators
 
-A continuación se presenta el Leadership-and-Collaboration Matrix (LACX), que indica quién es el líder (L) y quiénes son los colaboradores (C) para cada aspecto dentro del alcance del Sprint 1 (enfocado principalmente en la Landing Page y setup inicial).
+En el Sprint 1 se consideraron cuatro aspectos: el diseño de la Landing Page, su implementación, la configuración de repositorios y despliegue, y la documentación del sprint. A continuación se presenta el Leadership-and-Collaboration Matrix (LACX), que indica quién es el líder (L) y quiénes son los colaboradores (C) en cada aspecto:
 
-| Team Member | GitHub Username | Landing Page (UI/UX) | Landing Page (Code) | Deployment & Setup | Documentation |
-|-------------|-----------------|----------------------|---------------------|--------------------|---------------|
-| Angulo, Marcelo | Zock2005| L | C |  | C |
-| Cobades, Yhoshua | YhoshuaCZ | C | C |  | C |
-| Flores, Ricardo | Nitoryu2801 | C | C |  | C |
-| Rojas, Nestor | danRO-20 | C | C |  |  |
-| Zavaleta, Rodolfo | gutierrezrodolfo360-bit | C | L |  | L |
+| Team Member (Last Name, First Name) | GitHub Username | Landing Page UI/UX | Landing Page Implementation | Repositories & Deployment | Documentation |
+|-------------------------------------|-----------------|:------------------:|:---------------------------:|:-------------------------:|:-------------:|
+| Angulo Ramírez, Marcelo Martín | Zock2005 | L | C | | C |
+| Cobades Zamora, Yhoshua Hebert | YhoshuaCZ | C | C | L | C |
+| Flores Martinez, Ricardo Andres | Nitoryu28 / Nitoryu2801 | C | C | | C |
+| Rojas Ambicho, Nestor Daniel | danRO-20 | C | C | | |
+| Zavaleta Gutierrez, Rodolfo Martin | gutierrezrodolfo360-bit | C | L | C | L |
 
 #### 5.2.1.3. Sprint Backlog 1
 
-El objetivo principal de este Sprint fue implementar el sitio web estático (Landing Page) para dar a conocer a Inges Company y el producto DoofPlus.
+El objetivo principal de este Sprint fue implementar y publicar la Landing Page de DoofPlus para dar a conocer a Inges Company y su propuesta de valor. La siguiente imagen muestra el board del Sprint 1 en Jira:
 
-![jira](assets/img/chapter5/jira-pb.png)
+![Sprint Backlog 1 en Jira](assets/img/chapter5/jira-pb.png)
 
+*Figura: Board del Sprint 1 en Jira Software.*
 
-| User Story | Work-Item / Task | Status |
-|------------|------------------|--------|
-| **Story Id** \| **Story Title** | **Task Id** \| **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **(To-do / In-Process / To-Review / Done)** |
-| US44 \| Navegación por secciones | T001 \| Implementar navbar responsivo | Estructurar el menú de navegación con los enlaces a Home, Features, Benefits, Plans y Contact. | 2 | Zavaleta, Rodolfo | Done |
-| US44 \| Navegación por secciones | T002 \| Estilos y menú hamburguesa | Aplicar estilos CSS al menú y añadir comportamiento responsive con menú hamburguesa para móvil. | 2 | Angulo, Marcelo | Done |
-| US03 \| Visualización de planes y precios | T003 \| Diseñar tarjetas de planes | Crear las tarjetas de los planes Standard Lab ($199/mes) y Enterprise ($599/mes) con sus características. | 3 | Flores, Ricardo | Done |
-| US03 \| Visualización de planes y precios | T004 \| Toggle mensual/anual | Implementar el toggle de cambio entre precios mensuales y anuales con descuento del 15%. | 2 | Cobades, Yhoshua | Done |
-| US45 \| Visualización del equipo y de la startup | T005 \| Maquetar sección Our Team | Implementar las tarjetas de los 5 integrantes del equipo Inges Company con foto, nombre y descripción. | 2 | Rojas, Nestor | Done |
-| US45 \| Visualización del equipo y de la startup | T006 \| Correcciones sección Our Team | Corregir la estructura y contenido de la sección del equipo tras revisión de pares. | 1 | Angulo, Marcelo | Done |
-| US04 \| Formulario de contacto | T007 \| Implementar footer y formulario | Desarrollar el footer con el formulario de suscripción por email, datos de contacto y links legales. | 3 | Zavaleta, Rodolfo | Done |
-| TS01 \| Implementación de Landing Page responsive y accesible | T008 \| Correcciones de estructura index | Corregir la estructura general del index.html para asegurar consistencia semántica y accesibilidad. | 2 | Flores, Ricardo | Done |
-| US46 \| Cambio de idioma | T009 \| Lógica i18n y toggle de idioma | Implementar el switcher de idioma ES/EN con archivos de traducción y lógica JavaScript de i18n. | 3 | Cobades, Yhoshua | Done |
-| US47 \| Consulta de términos y política de privacidad | T010 \| Agregar Terms of Service | Redactar e implementar la página de Términos de Servicio de DoofPlus. | 2 | Rojas, Nestor | Done |
-| US47 \| Consulta de términos y política de privacidad | T011 \| Agregar Privacy Policy | Redactar e implementar la Política de Privacidad conforme a la Ley N.° 29733. | 2 | Angulo, Marcelo | Done |
+**Enlace al board en Jira:** [click aquí](https://doofplus.atlassian.net/jira/software/projects/UPC/boards/3/backlog?jql=parent+IN+%28UPC-2%2C+UPC-9%2C+UPC-20%29&atlOrigin=eyJpIjoiOWZkY2NhNGFkYzdlNGFmNGJlZTE4MTY1OGVjNjAyZDciLCJwIjoiaiJ9)
+
+| Sprint # | Sprint 1 | | | | | | |
+|----------|----------|---|---|---|---|---|---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
+| US44 | Navegación por secciones | T001 | Implementar navbar responsivo | Estructurar el menú de navegación con los enlaces a Home, Features, Benefits, Plans y Contact. | 2 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| US44 | Navegación por secciones | T002 | Estilos y menú hamburguesa | Aplicar estilos CSS al menú y añadir el comportamiento responsive con menú hamburguesa para móvil. | 2 | Angulo Ramírez, Marcelo Martín | Done |
+| US03 | Visualización de planes y precios | T003 | Diseñar tarjetas de planes | Crear las tarjetas de los planes Standard Lab ($199/mes) y Enterprise ($599/mes) con sus características. | 3 | Flores Martinez, Ricardo Andres | Done |
+| US03 | Visualización de planes y precios | T004 | Toggle mensual/anual | Implementar el cambio entre precios mensuales y anuales con descuento del 15%. | 2 | Cobades Zamora, Yhoshua Hebert | Done |
+| US45 | Visualización del equipo y de la startup | T005 | Maquetar sección Our Team | Implementar las tarjetas de los 5 integrantes del equipo Inges Company con foto, nombre y descripción. | 2 | Rojas Ambicho, Nestor Daniel | Done |
+| US45 | Visualización del equipo y de la startup | T006 | Correcciones sección Our Team | Corregir la estructura y el contenido de la sección del equipo tras la revisión de pares. | 1 | Angulo Ramírez, Marcelo Martín | Done |
+| US04 | Formulario de contacto | T007 | Implementar footer y formulario | Desarrollar el footer con el formulario de suscripción por email, datos de contacto y enlaces legales. | 3 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| TS01 | Implementación de Landing Page responsive y accesible | T008 | Correcciones de estructura index | Corregir la estructura general de `index.html` para asegurar la consistencia semántica y la accesibilidad. | 2 | Flores Martinez, Ricardo Andres | Done |
+| US46 | Cambio de idioma | T009 | Lógica i18n y toggle de idioma | Implementar el selector de idioma ES/EN con archivos de traducción y lógica JavaScript de i18n. | 3 | Cobades Zamora, Yhoshua Hebert | Done |
+| US47 | Consulta de términos y política de privacidad | T010 | Agregar Terms of Service | Redactar e implementar la página de Términos de Servicio de DoofPlus. | 2 | Rojas Ambicho, Nestor Daniel | Done |
+| US47 | Consulta de términos y política de privacidad | T011 | Agregar Privacy Policy | Redactar e implementar la Política de Privacidad conforme a la Ley N.° 29733. | 2 | Angulo Ramírez, Marcelo Martín | Done |
 
 #### 5.2.1.4. Development Evidence for Sprint Review
 
-En esta sección se presentan los principales avances en la implementación del Landing Page.
+Durante el Sprint 1 se implementó la Landing Page con HTML5, CSS3 y JavaScript: estructura semántica de las secciones, hoja de estilos responsive, recursos gráficos, footer con formulario de contacto y cambio de idioma ES/EN mediante archivos de traducción. La versión estable se integró a `main` a través de la rama `release/v1.0.0-rc.1`. La siguiente tabla presenta los commits del repositorio:
 
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
-|------------|--------|-----------|----------------|---------------------|--------------------|
-| DoofPlus-LandingPage | main | `1f1a22f` | Merge branch 'release/v1.0.0-rc.1' into main | Se fusionó la rama de liberación a producción. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `e530153` | fix: change the defect language | Corrección del idioma predeterminado. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `7eded14` | build: add the option to change the language in main.js | Adición de lógica para alternar idiomas en el script principal. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `432fb64` | fix: update links of the images in index.html | Actualización de rutas y enlaces de las imágenes. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `46b51b6` | build: add styles | Incorporación de la hoja de estilos CSS. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `86d4578` | chore: add images | Inclusión de recursos gráficos al proyecto. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `06bd5ef` | build: Add footer | Creación de la sección del pie de página. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `be8e428` | build: add body | Estructuración y contenido del cuerpo principal. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `9b082a5` | feat: add language switching functionality in main.js | Implementación de funcionalidad de cambio de idioma. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `b9ff9e6` | ci: add translations | Adición de diccionarios y archivos de traducción. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `6a1377f` | docs: update README.md | Actualización de la documentación del proyecto. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `0de92b6` | fix: refactor README.md | Refactorización de formato en el README. | 20/09/2026 |
-| DoofPlus-LandingPage | main | `6e6efc0` | docs: add README.md | Creación inicial del archivo README. | 20/09/2026 |
-| DoofPlus-LandingPage | develop | `8dca66b` | Merge remote-tracking branch 'origin/develop' into develop | Sincronización de la rama develop. | 20/09/2026 |
-| DoofPlus-LandingPage | develop | `a8c7448` | chore: Create template | Creación de plantilla base del proyecto. | 20/09/2026 |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| IngesCompany-7742/IngesCompany-LandingPage | main | `b93c547` | fix: refactor index.html | Refactorización de la estructura de `index.html`. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | main | `1f1a22f` | Merge branch 'release/v1.0.0-rc.1' into main | Integración de la rama de release a producción. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `e530153` | fix: change the defect language | Corrección del idioma predeterminado. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `7eded14` | build: add the option to change the language in main.js | Lógica para alternar idiomas en el script principal. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `432fb64` | fix: update links of the images in index.html | Actualización de las rutas de las imágenes. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `46b51b6` | build: add styles | Incorporación de la hoja de estilos CSS. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `86d4578` | chore: add images | Inclusión de los recursos gráficos del sitio. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `06bd5ef` | build: Add footer | Creación de la sección del pie de página. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `be8e428` | build: add body | Estructura y contenido del cuerpo principal. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `9b082a5` | feat: add language switching functionality in main.js | Funcionalidad de cambio de idioma. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `b9ff9e6` | ci: add translations | Archivos de traducción ES/EN. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `6a1377f` | docs: update README.md | Actualización de la documentación del repositorio. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `0de92b6` | fix: refactor README.md | Corrección del formato del README. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `6e6efc0` | docs: add README.md | Creación del README del repositorio. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `8dca66b` | Merge remote-tracking branch 'origin/develop' into develop | Sincronización de la rama `develop`. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `a8c7448` | chore: Create template | Creación de la plantilla base del proyecto. | 20/09/2026 |
+| IngesCompany-7742/IngesCompany-LandingPage | develop | `e68b54e` | feat: init commit | Commit inicial del repositorio. | 20/09/2026 |
 
 #### 5.2.1.5. Execution Evidence for Sprint Review
 
-Lo alcanzado en este Sprint corresponde a la Landing Page totalmente funcional, responsiva y con soporte bilingüe.
+En este Sprint se logró una Landing Page funcional, responsive y bilingüe (español e inglés), con navegación por secciones, propuesta de valor, características, planes y precios con toggle mensual/anual, sección del equipo, formulario de contacto y páginas de Términos de Servicio y Política de Privacidad. A continuación se presentan las capturas de las principales secciones implementadas:
 
-![capturas de pantalla](assets/img/chapter5/screenshots/1.png)
+![Landing Page - Parte 1](assets/img/chapter5/screenshots/1.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/2.png)
+![Landing Page - Parte 2](assets/img/chapter5/screenshots/2.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/3.png)
+![Landing Page - Parte 3](assets/img/chapter5/screenshots/3.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/4.png)
+![Landing Page - Parte 4](assets/img/chapter5/screenshots/4.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/5.png)
+![Landing Page - Parte 5](assets/img/chapter5/screenshots/5.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/6.png)
+![Landing Page - Parte 6](assets/img/chapter5/screenshots/6.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/7.png)
+![Landing Page - Parte 7](assets/img/chapter5/screenshots/7.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/8.png)
+![Landing Page - Parte 8](assets/img/chapter5/screenshots/8.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/9.png)
+![Landing Page - Parte 9](assets/img/chapter5/screenshots/9.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/10.png)
+![Landing Page - Parte 10](assets/img/chapter5/screenshots/10.png)
 
-![capturas de pantalla](assets/img/chapter5/screenshots/11.png)
+![Landing Page - Parte 11](assets/img/chapter5/screenshots/11.png)
+
+**Landing Page desplegada:** https://ingescompany-7742.github.io/IngesCompany-LandingPage/
 
 #### 5.2.1.6. Services Documentation Evidence for Sprint Review
 
-Dado que el enfoque del Sprint 1 fue la Landing Page, la documentación de servicios backend mediante OpenAPI (Swagger) se abordará en los Sprints siguientes conforme se implementen los RESTful Web Services.
+El alcance del Sprint 1 se limitó a la Landing Page, por lo que no se implementaron ni documentaron endpoints. La documentación de los RESTful Web Services con OpenAPI se elaborará en el sprint en que se implementen dichos servicios.
 
 #### 5.2.1.7. Software Deployment Evidence for Sprint Review
 
-Durante este Sprint, el equipo configuró los entornos en la nube para el alojamiento del Landing Page.
-Se configuró **GitHub Pages** apuntando a la rama `main` del repositorio `DoofPlus-LandingPage`, permitiendo que cualquier cambio en el código se publique automáticamente.
+Durante este Sprint, el equipo publicó la Landing Page en **GitHub Pages**. Para ello se configuró, en *Settings > Pages* del repositorio `IngesCompany-LandingPage`, la publicación desde la rama `main` y la carpeta raíz, de modo que cada cambio integrado en `main` se publica automáticamente.
 
-![github page](assets/img/chapter5/evidencia/github-pages.png)
+![Configuración de GitHub Pages](assets/img/chapter5/evidencia/github-pages.png)
 
-![pages](assets/img/chapter5/evidencia/pages.png)
+*Figura: Configuración de GitHub Pages en el repositorio de la Landing Page.*
+
+![Landing Page publicada](assets/img/chapter5/evidencia/pages.png)
+
+*Figura: Landing Page publicada en GitHub Pages.*
 
 #### 5.2.1.8. Team Collaboration Insights during Sprint
 
-Todos los miembros del equipo participaron activamente en la implementación de la Landing Page, organizándose a través de ramas y realizando Pull Requests que fueron revisados por sus pares antes de ser fusionados a `main`.
+Todos los miembros del equipo participaron en la implementación de la Landing Page. Los cambios se integraron en la rama `develop` y, desde ella, se preparó la rama `release/v1.0.0-rc.1`, que se fusionó con `main` para su publicación. La siguiente imagen muestra los analíticos de commits del repositorio en GitHub:
 
-![evidencia](assets/img/chapter5/evidencia/evidencia.png)
+![Insights del repositorio de la Landing Page](assets/img/chapter5/evidencia/evidencia.png)
+
+*Figura: Analíticos de colaboración del repositorio de la Landing Page en GitHub.*
 
 ### 5.2.2. Sprint 2
 
+En esta sección se registra y explica el avance en términos de producto y trabajo colaborativo para el **Sprint 2**, cuyo enfoque es la primera versión de la Frontend Web Application de DoofPlus: la configuración base del proyecto Angular y las vistas de gestión de lotes, desviaciones y dashboards. El Sprint 2 se encuentra en curso, por lo que en esta sección se presenta su avance.
+
 #### 5.2.2.1. Sprint Planning 2
 
-El Sprint Planning Meeting sirvió para definir los objetivos del desarrollo frontend, asignar las responsabilidades entre los miembros del equipo y seleccionar las User Stories prioritarias orientadas a la experiencia de usuario en la gestión de lotes farmacéuticos, eventos de calidad y
-monitoreo mediante dashboards. A continuación, se presenta el resumen de la reunión de planificación:
+El Sprint Planning Meeting sirvió para definir los objetivos del desarrollo frontend, asignar responsabilidades y seleccionar las User Stories prioritarias orientadas a la gestión de lotes farmacéuticos, el registro de desviaciones de calidad y el monitoreo mediante dashboards. A continuación, se presenta el resumen de la reunión de planificación:
 
 | Sprint # | Sprint 2 |
 |----------|----------|
@@ -2612,79 +2693,101 @@ monitoreo mediante dashboards. A continuación, se presenta el resumen de la reu
 | **Date** | 2026-10-02 |
 | **Time** | 09:00 AM |
 | **Location** | Reunión virtual vía Discord |
-| **Prepared By** | Cobades, Yhoshua |
-| **Attendees (to planning meeting)** | Angulo, Marcelo / Cobades, Yhoshua / Flores, Ricardo / Rojas, Nestor / Zavaleta, Rodolfo |
-| **Sprint 2 – 1 Review Summary** | Evaluación satisfactoria del progreso de la solución digital y alineación de la Web Application con la guía de estilos del producto. |
-| **Sprint 2 – 1 Retrospective Summary** | Se acordó reforzar la consistencia en el uso del data-binding bidireccional (ngModel) para búsquedas y filtros en tiempo real sobre las vistas tabulares. |
+| **Prepared By** | Cobades Zamora, Yhoshua Hebert |
+| **Attendees (to planning meeting)** | Angulo Ramírez, Marcelo Martín / Cobades Zamora, Yhoshua Hebert / Flores Martinez, Ricardo Andres / Rojas Ambicho, Nestor Daniel / Zavaleta Gutierrez, Rodolfo Martin |
+| **Sprint 1 Review Summary** | Se entregó la Landing Page de DoofPlus publicada en GitHub Pages, con navegación por secciones, planes y precios, sección del equipo, formulario de contacto, cambio de idioma ES/EN y páginas legales, completando los 16 Story Points comprometidos (US44, US03, US45, US04, TS01, US46 y US47). |
+| **Sprint 1 Retrospective Summary** | Como acierto, el equipo integró la versión estable mediante una rama de release siguiendo GitFlow. Como oportunidades de mejora, se acordó trabajar en feature branches que nazcan de `develop`, distribuir los commits a lo largo del sprint en lugar de concentrarlos al final y usar los types de Conventional Commits según su significado (`feat` para funcionalidades en lugar de `build` o `ci`). |
 | **Sprint Goal & User Stories** | |
-| **Sprint 2 Goal** | **Our focus is on** delivering an interactive and fully functional SPA Frontend for the Web Application.<br>**We believe it delivers** an intuitive interface for lab specialists and production supervisors to manage batch traceability and quality events.<br>**This will be confirmed when** users can navigate through the dashboard, create and inspect batches and deviations, and perform real-time search/filtering smoothly. |
-| **Sprint 2 Velocity** | 18 Story Points |
-| **Sum of Story Points** | 18 Story Points |
+| **Sprint 2 Goal** | **Our focus is on** delivering the first version of the DoofPlus Web Application for batch registration, deviation tracking and quality and production dashboards.<br>**We believe it delivers** a centralized view of batch traceability and quality events to quality specialists and production supervisors of pharmaceutical laboratories.<br>**This will be confirmed when** users can register a batch, review its details, record a deviation by severity and filter batches and deviations in real time from the web application. |
+| **Sprint 2 Velocity** | 17 Story Points |
+| **Sum of Story Points** | 17 Story Points (US14: 3, US15: 5, US18: 3, US31: 3, US32: 3) |
 
 #### 5.2.2.2. Aspect Leaders and Collaborators
 
-A continuación se presenta el Leadership-and-Collaboration Matrix (LACX), que indica quién es el líder (L) y quiénes son los colaboradores (C) para cada aspecto dentro del alcance del Sprint 2.
+En el Sprint 2 se consideraron cinco aspectos de la Frontend Web Application: la configuración del proyecto y los componentes compartidos (shared), la gestión de lotes, la gestión de desviaciones, los dashboards de calidad y producción, y la documentación del sprint. A continuación se presenta el Leadership-and-Collaboration Matrix (LACX):
 
-| Team Member | GitHub Username | Landing Page (UI/UX) | Landing Page (Code) | Deployment & Setup | Documentation |
-|-------------|-----------------|----------------------|---------------------|--------------------|---------------|
-| Angulo, Marcelo | Zock2005 | L | C |  | C |
-| Cobades, Yhoshua | YhoshuaCZ | C | C |  | C |
-| Flores, Ricardo | Nitoryu2801 | C | C |  | C |
-| Rojas, Nestor | danRO | C | C |  |  |
-| Zavaleta, Rodolfo | gutierrezrodolfo360 | C | L |  | L |
+| Team Member (Last Name, First Name) | GitHub Username | Project Setup & Shared | Batch Management | Deviation Management | Dashboards | Documentation |
+|-------------------------------------|-----------------|:----------------------:|:----------------:|:--------------------:|:----------:|:-------------:|
+| Angulo Ramírez, Marcelo Martín | Zock2005 | C | | C | C | |
+| Cobades Zamora, Yhoshua Hebert | YhoshuaCZ | C | C | | L | L |
+| Flores Martinez, Ricardo Andres | Nitoryu28 / Nitoryu2801 | | L | L | | C |
+| Rojas Ambicho, Nestor Daniel | danRO-20 | | C | | | C |
+| Zavaleta Gutierrez, Rodolfo Martin | gutierrezrodolfo360-bit | L | C | | | C |
 
 #### 5.2.2.3. Sprint Backlog 2
 
-El objetivo principal de este Sprint fue implementar el frontend de la Web Application (SPA) para permitir la gestión operativa de calidad y producción en DoofPlus.
+El objetivo principal de este Sprint es implementar la primera versión de la Frontend Web Application de DoofPlus para la gestión de lotes y desviaciones y el monitoreo mediante dashboards. La siguiente imagen muestra el board del Sprint 2 en Jira:
 
-![jira](assets/img/chapter5/evidencia/jira-pb2.png)
+![Sprint Backlog 2 en Jira](assets/img/chapter5/evidencia/jira-pb2.png)
 
-| User Story | Work-Item / Task | Status |
-|------------|------------------|--------|
-| **Story Id** \| **Story Title** | **Task Id** \| **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **(To-do / In-Process / To-Review / Done)** |
-| US14 \| Registro de lotes | T012 \| Creación del componente de registro de lotes | Diseñar el formulario reactivo para captura de código de producto, nombre, cantidad planificada y fecha de expiración. | 4 | Flores, Ricardo | Done |
-| US14 \| Registro de lotes | T013 \| Persistencia e integración del servicio de lotes | Implementar el manejo de estado en memoria en el servicio TypeScript para almacenar dinámicamente los lotes. | 3 | Cobades, Yhoshua | Done |
-| US15 \| Consulta del historial de lotes | T014 \| Creación del componente de lista de lotes | Diseñar la tabla de inspección de lotes con badges dinámicos de color según el estado del lote. | 4 | Zavaleta, Rodolfo | Done |
-| US15 \| Consulta del historial de lotes | T015 \| Implementación de filtros y buscador en tiempo real | Incorporar el campo de búsqueda con icono de lupa y selector por estado mediante ngModel | 3 | Rojas, Nestor | Done |
-| US18 \| Registro de desviaciones | T016 \| Creación del componente de registro de desviaciones | Construir el formulario para el registro de hallazgos técnicos clasificados por nivel de severidad. | 4 | Flores, Ricardo | Done |
-| US18 \| Registro de desviaciones | T017 \| Creación del componente de lista de desviaciones | Desarrollar la vista tabular e integración para la consulta y filtrado de desviaciones. | 3 | Angulo, Marcelo | Done |
-| US31 \| Visualización de indicadores KPI de calidad | T018 \| Implementación de tarjetas de métricas KPI | Diseñar e integrar las tarjetas dinámicas de indicadores KPI para el control de lotes y desviaciones en el dashboard. | 3 | Cobades, Yhoshua | Done |
-| US32 \| Monitoreo de producción en tiempo real| T019 \| Implementación de tabla y widgets de monitoreo | Desarrollar la tabla de seguimiento centralizado de lotes en ejecución y widgets de alertas de calidad recientes. | 3 | Angulo, Marcelo | Done |
+*Figura: Board del Sprint 2 en Jira Software.*
+
+**Enlace al board en Jira:** [click aquí](https://doofplus.atlassian.net/jira/software/projects/UPC/boards/3/backlog?jql=parent+IN+%28UPC-2%2C+UPC-9%2C+UPC-20%29&atlOrigin=eyJpIjoiOWZkY2NhNGFkYzdlNGFmNGJlZTE4MTY1OGVjNjAyZDciLCJwIjoiaiJ9)
+
+| Sprint # | Sprint 2 | | | | | | |
+|----------|----------|---|---|---|---|---|---|
+| **User Story** | | **Work-Item / Task** | | | | | |
+| **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
+| US14 | Registro de lotes | T012 | Componente de registro de lotes | Diseñar el formulario para capturar código de producto, nombre, cantidad y fecha de expiración del lote. | 4 | Flores Martinez, Ricardo Andres | In-Process |
+| US14 | Registro de lotes | T013 | Servicio de lotes | Implementar el manejo de estado con signals en el servicio de lotes para registrar y consultar lotes. | 3 | Cobades Zamora, Yhoshua Hebert | In-Process |
+| US15 | Consulta del historial de lotes | T014 | Componente de lista y detalle de lotes | Diseñar la tabla de lotes con badges de color según el estado y la vista de detalle de cada lote. | 4 | Zavaleta Gutierrez, Rodolfo Martin | In-Process |
+| US15 | Consulta del historial de lotes | T015 | Filtros y buscador en tiempo real | Incorporar el campo de búsqueda y el selector por estado con `ngModel`. | 3 | Rojas Ambicho, Nestor Daniel | In-Process |
+| US18 | Registro de desviaciones | T016 | Componente de registro de desviaciones | Construir el formulario para registrar hallazgos clasificados por nivel de severidad. | 4 | Flores Martinez, Ricardo Andres | In-Process |
+| US18 | Registro de desviaciones | T017 | Componente de lista de desviaciones | Desarrollar la vista tabular para la consulta y el filtrado de desviaciones. | 3 | Angulo Ramírez, Marcelo Martín | In-Process |
+| US31 | Dashboard de calidad | T018 | Tarjetas de indicadores KPI | Diseñar e integrar las tarjetas de indicadores de lotes y desviaciones en el dashboard. | 3 | Cobades Zamora, Yhoshua Hebert | In-Process |
+| US32 | Dashboard de producción | T019 | Tabla y widgets de monitoreo | Desarrollar la tabla de seguimiento de lotes y los widgets de alertas de calidad recientes. | 3 | Angulo Ramírez, Marcelo Martín | In-Process |
+| — | Tareas técnicas de la Frontend Web Application | T020 | Configuración del proyecto Angular | Configurar i18n con ngx-translate, Angular Material y los environments de desarrollo y producción. | 3 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| — | Tareas técnicas de la Frontend Web Application | T021 | Componentes compartidos de layout | Implementar el toolbar responsive, el layout y el selector de idioma del bounded context shared. | 3 | Angulo Ramírez, Marcelo Martín | Done |
+| — | Tareas técnicas de la Frontend Web Application | T022 | Vistas Home, About y Page Not Found | Implementar las vistas públicas, sus rutas y los value objects `DateTime` y `Url`. | 3 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| — | Tareas técnicas de la Frontend Web Application | T023 | Footer con traducciones | Implementar el footer y mostrar el toolbar en todas las vistas públicas. | 2 | Zavaleta Gutierrez, Rodolfo Martin | Done |
+| — | Tareas técnicas de la Frontend Web Application | T024 | Entidad Batch y Fake API | Crear la entidad `Batch` del bounded context manufacturing y el `db.json` inicial para json-server. | 2 | Zavaleta Gutierrez, Rodolfo Martin | In-Process |
 
 #### 5.2.2.4. Development Evidence for Sprint Review
 
-En esta sección se presentan las evidencias de desarrollo registradas en el repositorio de la Web Application:
+Hasta el momento, en el repositorio `IngesCompany-Frontend` se configuró el proyecto Angular (i18n, Angular Material y environments) y se implementaron los componentes compartidos (toolbar, layout, selector de idioma, footer) y las vistas Home, About y Page Not Found, siguiendo GitFlow con las ramas `feature/project-configuration`, `feature/shared` y `feature/manufacturing`. Además, se inició el bounded context manufacturing con la entidad `Batch` y la Fake API. La siguiente tabla presenta los commits del repositorio:
 
-| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
-|------------|--------|-----------|----------------|---------------------|--------------------|
-| DoofPlus-WebApplication | main | `382179b` | feat(models): add deviation model interface and severity types | Definición de la interfaz Deviation y recursos de creación con tipado estricto | 05/10/2026 |
-| DoofPlus-WebApplication | main | `0994c14` | feat(models): add lot model interface and product properties | Definición de la interfaz Lot y consistencia en propiedades temporales | 05/10/2026 |
-| DoofPlus-WebApplication | main | `69c570f` | feat(models): add user model interface and authentication roles | Creación de la estructura del modelo de usuario y gestión de permisos | 05/10/2026 |
-| DoofPlus-WebApplication | main | `4cf0caa` | feat(services): implement reactive signals state management in deviations service | Creación y configuración del servicio de desviaciones | 05/10/2026 |
-| DoofPlus-WebApplication | main | `14f48f6` | feat(services): implement reactive signals state management in lots service | Refactorización del servicio de lotes para admitir reactividad en tiempo real | 05/10/2026 |
-| DoofPlus-WebApplication | main | `efea45c` | feat(dashboard): integrate real-time reactive deviation alerts and metrics into dashboard overview | Conexión del componente de dashboard en features con el servicio reactivo para mostrar alertas recientes y métricas dinámicas | 05/10/2026 |
-| DoofPlus-WebApplication | main | `7264e6d` | feat(deviations): implement deviation creation component with reactive form bindings | Creación del componente de registro de nuevas desviaciones conectado al servicio con signals | 05/10/2026 |
-| DoofPlus-WebApplication | main | `f331ce9` | feat(deviations): implement deviation list component with reactive signals integration | Desarrollo de la vista de listado y filtrado de desviaciones en tiempo real dentro del módulo de features | 05/10/2026 |
-| DoofPlus-WebApplication | main | `6e08d7a` | feat(lots): implement lot list component with reactive signals integration | Desarrollo de la vista de listado y filtrado de lotes en tiempo real dentro del módulo de features | 05/10/2026 |
-| DoofPlus-WebApplication | main | `f995087` | feat(lots): implement lot creation component with reactive form bindings | Creación del componente de registro de nuevos lotes conectado al servicio con signals | 05/10/2026 |
-| DoofPlus-WebApplication | main | `9d163b0` | feat(lots): implement lot detail component with reactive state management | Desarrollo del componente de detalles e información específica de cada lote | 05/10/2026 |
-| DoofPlus-WebApplication | main | `97f6560` | feat(shared): implement responsive navbar component with routing and active states | Desarrollo e integración del componente de navegación principal ubicado en shared con soporte para enrutamiento y estados activos | 05/10/2026 |
-| DoofPlus-WebApplication | main | `cbca755` | feat(shared): implement responsive sidebar navigation component with active state routing | Desarrollo e integración del componente de barra lateral en shared para la navegación estructural de la aplicación | 05/10/2026 |
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|---------------------|
+| IngesCompany-7742/IngesCompany-Frontend | develop | `16247a9` | chore: initial commit | Creación del proyecto Angular. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | develop | `58f3404` | chore: add git ignore | Configuración de archivos ignorados por Git. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/project-configuration | `89336d3` | feat(i18n): add i18n support for English and Spanish translation | Configuración de ngx-translate con los archivos de traducción ES/EN. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/project-configuration | `84282bf` | feat(ui): add Material Design UI Library | Instalación y configuración de Angular Material. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/project-configuration | `cb6376e` | feat(environment): add Environment configuration for development and production modes | Configuración de los environments de desarrollo y producción. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | develop | `3ea5890` | Merge branch 'feature/project-configuration' into develop | Integración de la configuración del proyecto en `develop`. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `b066a80` | feat(home): add Home view with title and content, including route definition and style | Vista Home con su ruta y estilos. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `6d386d5` | feat(home): add DateTime and URL value objects for handing dates and URLs | Value objects `DateTime` y `Url` del bounded context shared. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `574db0d` | feat(base-entity): add BaseEntity interface for domain entities with UUID identifier | Interfaz `BaseEntity` para las entidades de dominio. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `b1906c4` | feat(toolbar): add responsive toolbar component | Toolbar responsive de la aplicación. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `c701062` | feat(layout): add layout component | Componente de layout general. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `f5ed375` | feat(language-switcher): add language switcher component for UI language selection | Selector de idioma de la interfaz. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `c0bcedc` | feat(about): add About page with layout, styles, and content for product overview | Vista About con la descripción del producto. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `78a850c` | feat(page-not-found): add Page Not Found component with template and navigation | Vista Page Not Found con navegación de retorno. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `9df65b3` | chore(index): update index.html structure for semantic consistency | Ajuste semántico de `index.html`. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `8ebbec3` | style(layout): add tittle | Título del layout. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `9840b0b` | feat(routes): add the route definition of the view About and PageNotFound | Rutas de las vistas About y Page Not Found. | 29/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `485f392` | feat(footer): add footer component and translation | Footer con sus traducciones. | 30/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/shared | `46a135e` | fix(layout): render toolbar globally across public views and add translations | Toolbar visible en todas las vistas públicas. | 30/09/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | develop | `e7ec1ba` | Merge branch 'feature/shared' into develop | Integración de los componentes compartidos en `develop`. | 05/10/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/manufacturing | `c5951a6` | feat(database): add initial db.json with vaccine batch data | Datos iniciales de lotes para la Fake API. | 05/10/2026 |
+| IngesCompany-7742/IngesCompany-Frontend | feature/manufacturing | `dd30869` | feat(batch): add Batch entity to represent product batches | Entidad `Batch` del bounded context manufacturing. | 05/10/2026 |
 
 #### 5.2.2.5. Execution Evidence for Sprint Review
 
+Al momento, la Frontend Web Application cuenta con la estructura base del proyecto Angular, el toolbar con navegación y selector de idioma ES/EN, el footer y las vistas Home, About y Page Not Found. Las vistas de gestión de lotes, registro de desviaciones y dashboards de calidad y producción se encuentran en implementación y se presentarán al cierre del Sprint 2.
 
-#### 5.2.1.6. Services Documentation Evidence for Sprint Review
-Dado que durante el Sprint 2 el enfoque principal se centró en la maquetación UI/UX de la Web Application y la gestión de estado local mediante servicios TypeScript, la documentación técnica formal de los RESTful Web Services a través de OpenAPI (Swagger) se profundizará en los Sprints siguientes con la integración directa de los endpoints de backend.
+#### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
-#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+En el Sprint 2 no se implementaron RESTful Web Services, por lo que aún no hay endpoints documentados con OpenAPI. En `IngesCompany-Frontend` se inició la Fake API con json-server (`src/server/db.json`), que se usará para consumir los recursos de lotes mediante HTTP mientras se implementan los Web Services. La documentación con OpenAPI se elaborará en el Sprint 3, junto con la implementación de los endpoints en Spring Boot.
 
-Durante este Sprint, el equipo configuró los entornos en la nube para el alojamiento del Front Web Application.
-Se configuró **GitHub Pages** apuntando a la rama `main` del repositorio `DoofPlus-Frontend`, permitiendo que cualquier cambio en el código se publique automáticamente.
+#### 5.2.2.7. Software Deployment Evidence for Sprint Review
 
-#### 5.2.1.8. Team Collaboration Insights during Sprint
+En el Sprint 2, la Landing Page se mantuvo publicada en GitHub Pages. La Web Application se ejecuta y valida localmente con `ng serve` durante el sprint; su publicación en Firebase Hosting, según los pasos descritos en la sección 5.1.4, se realizará al cierre del Sprint 2.
 
-Todos los integrantes del equipo colaboraron activamente en el desarrollo del frontend de la Web Application bajo el flujo GitFlow.
+#### 5.2.2.8. Team Collaboration Insights during Sprint
+
+La implementación del Sprint 2 se realiza en el repositorio `IngesCompany-Frontend` siguiendo GitFlow. Hasta el momento, Rodolfo Zavaleta configuró el proyecto e implementó las vistas públicas y el footer; Marcelo Angulo implementó el toolbar, el layout, el selector de idioma y las vistas About y Page Not Found; y Yhoshua Cobades ajustó el layout, trabajando en feature branches integradas en `develop`.
+
+Las capturas necesarias y obligatorias se subirán al final del sprint 2.
 
 ## 5.3. Validation Interviews
 

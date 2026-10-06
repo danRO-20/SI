@@ -1,6 +1,6 @@
-# Capítulo 1: Introducción
+# Capítulo I: Introducción
 
-La presente introducción tiene como finalidad contextualizar el proyecto desarrollado, proporcionando una visión general de los antecedentes, objetivos y fundamentos que sustentan su planteamiento. Asimismo, delimita el alcance de la propuesta y establece el marco de referencia necesario para comprender su desarrollo, destacando su relevancia, los retos que busca abordar y los beneficios esperados de su implementación. De esta manera, se ofrece una base conceptual que orienta al lector y facilita la comprensión de los contenidos expuestos en las secciones posteriores del documento.
+La presente introducción tiene como finalidad contextualizar el proyecto desarrollado, proporcionando una visión general de los antecedentes, objetivos y fundamentos que sustentan su planteamiento. Asimismo, delimita el alcance de la propuesta y establece el marco de referencia necesario para comprender su desarrollo, destacando su relevancia, los retos que busca abordar y los beneficios esperados de su implementación. De esta manera, se ofrece una base conceptual que orienta al lector sobre el problema y la propuesta.
 
 ## 1.1. Startup Profile
 
@@ -22,7 +22,7 @@ Diseñar soluciones tecnológicas abiertas que permitan digitalizar y optimizar 
 
 Convertirnos en una referencia en soluciones digitales de aseguramiento de calidad para la industria farmacéutica latinoamericana, facilitando la adopción de tecnologías abiertas que mejoren la trazabilidad, la integridad de los datos y la gestión del cumplimiento regulatorio.
 
-### 1.1.2 Perfiles de Integrantes del Equipo
+### 1.1.2. Perfiles de integrantes del equipo
 
 | Foto | **Nombres, código y carrera** | **Resumen de conocimientos y habilidades** |
 | --- | --- | --- |
@@ -44,7 +44,7 @@ De manera complementaria, organismos internacionales como la Organización Mundi
 
 En este contexto, la transformación digital se ha convertido en un factor estratégico para fortalecer la gestión de calidad dentro de las organizaciones farmacéuticas. La adopción de plataformas digitales integradas con tecnologías de captura y monitoreo de datos permite optimizar la trazabilidad de los lotes de producción, mejorar la disponibilidad y exactitud de los registros de calidad, y facilitar el acceso a información crítica para la toma de decisiones. Como resultado, estas iniciativas contribuyen a incrementar la eficiencia operativa, reducir riesgos asociados a errores manuales y fortalecer el cumplimiento de los requisitos regulatorios exigidos por las autoridades sanitarias nacionales e internacionales.
 
-#### 2. PROBLEMATICA
+#### 2. PROBLEMÁTICA
 
 ##### - Gestión compleja de la documentación de calidad:
 
@@ -62,7 +62,7 @@ La OMS destaca que la integridad de los datos es un componente esencial de los s
 
 Las tecnologías basadas en Internet de las Cosas (IoT) permiten capturar información directamente desde equipos, entornos y procesos mediante dispositivos conectados. Su incorporación representa una oportunidad para complementar los registros de calidad con datos obtenidos de forma automática, aumentando la confiabilidad de la información y facilitando la supervisión de variables relevantes dentro de los procesos de fabricación farmacéutica.
 
-#### 3. ANALISIS 5W & 2H:
+#### 3. ANÁLISIS 5W & 2H
 
 - **What (¿Qué?):** *¿Qué es lo que se busca resolver?*
 
@@ -92,6 +92,27 @@ Las tecnologías basadas en Internet de las Cosas (IoT) permiten capturar inform
 
   La implementación requiere infraestructura tecnológica para el despliegue de la solución, digitalización de procesos documentales, capacitación de los usuarios e integración con fuentes de información internas y dispositivos IoT. La inversión dependerá del tamaño de la organización y del alcance de la integración requerida.
 
+#### 4. OBJETIVOS
+
+**Objetivo general:** desarrollar y desplegar DoofPlus, una solución web compuesta por una Landing Page, una Frontend Web Application y un RESTful API, que centralice la documentación de calidad, la trazabilidad de lotes y la gestión de desviaciones de laboratorios farmacéuticos pequeños y medianos de Lima Metropolitana, con el fin de reducir en 80% el tiempo de preparación de auditorías durante los primeros seis meses de uso.
+
+**Objetivos específicos:**
+
+- Identificar las necesidades de especialistas QA/QC y jefes de producción mediante entrevistas a cada segmento objetivo.
+- Publicar una Landing Page responsive y bilingüe (en-US / es-419) que comunique la propuesta de valor y dirija a cada segmento a la Web Application.
+- Implementar una Frontend Web Application con Angular y Angular Material para la gestión de lotes, desviaciones y documentación de calidad.
+- Implementar un RESTful API con Spring Boot y Spring Data JPA, documentado con OpenAPI (Swagger) e integrado con los servicios externos ThingsBoard y Niubiz.
+- Validar la solución con usuarios de ambos segmentos mediante evaluaciones heurísticas de usabilidad, arquitectura de información y diseño inclusivo.
+
+#### 5. RESTRICCIONES Y ALCANCE
+
+- **Alcance:** Landing Page, Frontend Web Application y RESTful API de elaboración interna. No incluye una aplicación móvil nativa ni la fabricación de hardware IoT: la captura de datos de sensores se integra mediante la plataforma externa ThingsBoard.
+- **Tecnológicas:** HTML5, CSS3 y JavaScript para la Landing Page; Angular con TypeScript y Angular Material (Material Design) para la Web Application; Spring Boot con Spring Data JPA (Java) para el RESTful API; MySQL como base de datos; OpenAPI (Swagger) para documentar los servicios; GitHub con GitFlow, Conventional Commits y Semantic Versioning.
+- **Regulatorias:** DoofPlus apoya el cumplimiento de las BPM de DIGEMID y de los principios de integridad de datos de la OMS, pero no reemplaza la validación de sistemas computarizados que cada laboratorio debe ejecutar; las firmas electrónicas siguen los criterios de 21 CFR Part 11 sin constituir una certificación.
+- **Datos personales:** el tratamiento de datos se rige por la Ley N.° 29733, Ley de Protección de Datos Personales.
+- **Idiomas y accesibilidad:** inglés (en-US) como idioma por defecto y español latinoamericano (es-419) en la Landing Page, la Web Application y los mensajes del RESTful API; atributos ARIA en la Landing Page y la Web Application.
+- **Tiempo:** el desarrollo se organiza en cuatro sprints dentro del ciclo académico 2026-20.
+
 ### 1.2.2. Lean UX Process
 
 La presente sección tiene como finalidad presentar el proceso de Lean UX aplicado para la validación de la propuesta desarrollada. En ella se describen las actividades de investigación, análisis y validación realizadas con el fin de comprender el contexto de los usuarios y verificar los supuestos que motivan la solución planteada. Asimismo, se exponen los artefactos y resultados obtenidos durante el proceso, los cuales permiten identificar necesidades, oportunidades y criterios de diseño relevantes. De esta manera, la información recopilada constituye una base para la definición y evolución de la propuesta de solución presentada en el proyecto.
@@ -108,11 +129,11 @@ A continuación se muestra el problem statement en su idioma original:
 
 ***Our initial focus will be*** QA/QC specialists and pharmaceutical production supervisors of small and medium-sized laboratories in Lima Metropolitana that manufacture under DIGEMID GMP requirements.
 
-***We’ll know we are successful when we see***, within the first six months after launch, at least 80% of the quality documentation queries of pilot laboratories resolved through the platform, a 50% reduction in the time required to retrieve a complete batch history, a 30% reduction in audit-preparation time, and at least 10 laboratories subscribed to a paid plan.
+***We’ll know we are successful when we see***, within the first six months after launch, at least 80% of the quality documentation queries of pilot laboratories resolved through the platform, a 50% reduction in the time required to retrieve a complete batch history, an 80% reduction in audit-preparation time, and at least 10 laboratories subscribed to a paid plan.
 
 #### 1.2.2.2. Lean UX Assumptions
 
-En esta sección se presentan las principales premisas que sustentan la propuesta de DoofPlus. Estas suposiciones han sido formuladas a partir del análisis del contexto regulatorio de la industria farmacéutica, las necesidades asociadas al control de calidad y producción, y las oportunidades que ofrecen las tecnologías IoT para fortalecer la trazabilidad y el monitoreo de los procesos. Los assumptions constituyen hipótesis iniciales que deberán validarse posteriormente mediante actividades de investigación y retroalimentación con usuarios potenciales.
+En esta sección se presentan las principales premisas que sustentan la propuesta de DoofPlus. Estas suposiciones han sido formuladas a partir del análisis del contexto regulatorio de la industria farmacéutica, las necesidades asociadas al control de calidad y producción, y las oportunidades que ofrecen las tecnologías IoT para fortalecer la trazabilidad y el monitoreo de los procesos. Los assumptions constituyen las creencias iniciales del equipo y son la base de los hypothesis statements.
 
 A continuación se muestran los Assumptions en su idioma original:
 
@@ -194,7 +215,7 @@ A continuación se muestran las Hypothesis Statements en su idioma original:
 
 
 - **Hypothesis 4:**  
-  ***We believe we will achieve*** a 30% reduction in audit-preparation time
+  ***We believe we will achieve*** an 80% reduction in audit-preparation time
 
   ***If*** QA/QC specialists
 
@@ -266,8 +287,8 @@ Información estadística de sustento:
 - Solo 4 de cada 10 laboratorios inspeccionados por DIGEMID obtuvieron la certificación de BPM: de 51 laboratorios inspeccionados hasta mayo de 2026, 20 la obtuvieron, 21 no la lograron y 7 desistieron del proceso. Entre los aspectos evaluados figuran los controles de laboratorio y la trazabilidad de productos, actividades a cargo de QA/QC (Gestión, 2026).
 - 385 laboratorios extranjeros esperaban su certificación de BPM ante una DIGEMID desbordada por la demanda, lo que evidencia la presión regulatoria sobre la documentación de calidad (Infobae, 2025).
 - La OMS establece que los registros de calidad deben ser atribuibles, legibles, contemporáneos, originales y exactos (principios ALCOA) durante todo su ciclo de vida (World Health Organization, 2016).
-- Los sistemas de gestión de calidad farmacéutica requieren evidencia documentada para respaldar la liberación de productos y el seguimiento de desviaciones.
-- La trazabilidad y la integridad de los datos son reconocidas como elementos fundamentales para garantizar la calidad y seguridad de los medicamentos.
+- Las BPM de la OMS exigen que toda desviación significativa se registre e investigue completamente para determinar su causa raíz y aplicar acciones correctivas y preventivas, tarea que recae en QA/QC (World Health Organization, 2014).
+- Las mismas BPM exigen conservar registros de fabricación y distribución que permitan rastrear la historia completa de cada lote en forma comprensible y accesible (World Health Organization, 2014).
 
 ### Segmento Objetivo 2: Jefe o Supervisor de Producción Farmacéutica
 
@@ -277,13 +298,11 @@ Características demográficas:
 - **Género:** Indistinto.
 - **Ocupación:** Profesional responsable de planificar, supervisar y controlar las operaciones de fabricación farmacéutica, asegurando el cumplimiento de los parámetros establecidos para la producción.
 - **Nivel educativo:** Ingeniería Industrial, Ingeniería Química, Ingeniería Farmacéutica o carreras afines.
-- **Ubicación geográfica:** Lima Metropolitana, Perú.
+- **Ubicación geográfica:** Lima Metropolitana y otras ciudades del Perú con plantas farmacéuticas, como Arequipa.
 
 Información estadística de sustento:
 
-- Los procesos de producción farmacéutica requieren control continuo de variables operativas para garantizar la calidad del producto final.
-- Las BPM establecen la necesidad de documentar adecuadamente las actividades productivas y mantener evidencia del cumplimiento de los procedimientos establecidos.
-- La disponibilidad de información trazable facilita la identificación y análisis de desviaciones durante la fabricación.
-- La incorporación de herramientas digitales e iniciativas de Industria 4.0 ha impulsado la adopción de tecnologías para mejorar la visibilidad de los procesos productivos.
+- Las BPM de la OMS exigen que durante la fabricación se registre, manual o automáticamente, que se cumplieron todos los pasos de los procedimientos y que la cantidad y calidad del producto son las esperadas; estos registros los genera y supervisa Producción (World Health Organization, 2014).
+- En la encuesta Pharma 4.0 de ISPE (418 profesionales de 45 países), la proporción de organizaciones que aún no iniciaban su transformación digital bajó de 31.2% en 2021 a 15.1% en 2023, y el 58.1% ya contaba con pilotos o acciones sistemáticas en curso (Minero & Kuger, 2024).
 - El sector farmacéutico peruano proyectó un crecimiento de 4% para 2025 según la Asociación Nacional de Laboratorios Farmacéuticos (Agencia Andina, 2025), lo que incrementa el volumen de lotes que los supervisores deben controlar y documentar.
 - Las BPM evaluadas por DIGEMID incluyen procesos de producción, calidad de materias primas, controles de laboratorio, condiciones de almacenamiento y trazabilidad de productos (Gestión, 2026), aspectos que dependen de los registros que genera Producción.
