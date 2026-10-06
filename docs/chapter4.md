@@ -8,10 +8,10 @@ En esta sección se establecen las bases visuales y de comunicación para DoofPl
 
 ### 4.1.1. General Style Guidelines
 
-Para asegurar una interfaz coherente y alineada con los estándares que exige la industria farmacéutica, el sistema de diseño de DoofPlus toma como base **Material Design**, el lenguaje de diseño indicado para el proyecto. En la Web Application se implementa con **Angular Material**, la biblioteca oficial de componentes de Material Design para Angular, mediante un tema propio (`material-theme.scss`) con los tokens de color, tipografía y espaciado de DoofPlus; en la Landing Page se aplican los mismos tokens con ***HTML5*** y ***CSS3***.
+Para asegurar una interfaz coherente y alineada con los estándares que exige la industria farmacéutica, el sistema de diseño de DoofPlus toma como base **Material Design**, el lenguaje de diseño indicado para el proyecto. En la Web Application se implementa con **Angular CLI** usando un tema basado en **Material Design**, y en la Landing Page con ***HTML5*** y ***CSS3*** respetando los mismos tokens de color, tipografía y espaciado.
 
 #### Branding:
-El logotipo escogido para DoofPlus comunica de forma directa y sintética la propuesta de valor del sistema: la integración de la automatización industrial con la rigurosidad del control farmacéutico. Para la sección de Branding, el análisis de los componentes de dicho logotipo se desglosa de la siguiente manera:
+El logotico escogido para DoofPlus comunica de forma directa y sintética la propuesta de valor del sistema: la integración de la automatización industrial con la rigurosidad del control farmacéutico. Para la sección de Branding, el análisis de los componentes de dicho logotipo se desglosa de la siguiente manera:
 
 <p align="center">
   <img src="../assets/img/chapter4/doofplus-logo.png" alt="DoofPlus Logo" width="350px" />
@@ -50,7 +50,7 @@ La paleta de colores de DoofPlus está diseñada para evocar pulcritud clínica,
 | --error-color | #F44336 | Funcional | Errores, rechazos y desviaciones críticas |
 | --warning-color | #FFC107 | Funcional | Advertencias y alertas |
 
-  ![paleta-colores](../assets/img/chapter4/color-palette.png)
+![paleta-colores](../assets/img/chapter4/color-palette.png)
 
 #### Spacing
 
@@ -92,7 +92,7 @@ Las directrices de estilo web de DoofPlus explican e ilustran las decisiones sob
 - Íconos: Se emplea la biblioteca Material Symbols para un estilo lineal y minimalista. Estos íconos ofrecen una guía visual rápida para representar servicios críticos: un microchip o antena para la telemetría, un escudo con un símbolo de check para el cumplimiento regulatorio y cápsulas o maquinaria para la gestión de producción.
 
 5. Repositorio Central
-- Organización: el proyecto de la Web Application (Angular CLI) se organiza por bounded context dentro de `src/app`: `iam`, `organizations`, `subscriptions`, `manufacturing`, `iot-monitoring` y `quality`, los mismos contextos del Design-Level EventStorming (sección 4.6.1). Cada contexto tiene las capas `domain/model` (entidades), `application` (store con signals), `infrastructure` (cliente del API y assemblers) y `presentation` (components y views). Los elementos comunes (layout, toolbar, footer, language switcher, vistas Home, About y Page Not Found, y el cliente HTTP base) están en `src/app/shared`. Los recursos estáticos se ubican en `public`, el tema de Angular Material en `src/material-theme.scss`, los estilos globales en `src/styles.css` y las traducciones de ngx-translate en `public/i18n` (`en.json` y `es.json`).
+- Organización: el proyecto de la Web Application (Vue 3 + Vite) se organiza por bounded context: src/iam, src/manufacturing, src/quality, src/iot, src/subscriptions y src/organizations, cada uno con sus carpetas model, services, components y pages. Los recursos estáticos se ubican en src/assets (images, icons), los estilos globales y design tokens en src/assets/styles, los componentes reutilizables en src/shared/components y las traducciones en src/locales (en.json y es.json).
 - Versionado: Se utiliza Git gestionado desde GitHub como sistema de control de versiones central. El equipo aplica GitFlow y Conventional Commits para gestionar los cambios en el código, lo que ayuda a garantizar que el entorno de desarrollo mantenga una integración continua y una versión estable del producto en todo momento. Además, se aplica Semantic Versioning para darle un orden a las versiones.
 
 
@@ -128,7 +128,7 @@ Valores para la Landing Page (sitio estático indexable):
 | --- | --- | --- | --- | --- |
 | Landing Page (index.html) | DoofPlus \| Pharmaceutical Quality & Batch Traceability Platform | SaaS platform that centralizes quality documentation, batch traceability, deviations and IoT data for pharmaceutical laboratories (GMP/DIGEMID). | pharmaceutical quality management, batch traceability, GMP, DIGEMID, CAPA, audit trail, IoT | IngesCompany |
 
-Valores para las vistas principales de la Web Application. Al ser una SPA, el título se define en la propiedad `title` de cada ruta (`app.routes.ts`) y la descripción se actualiza con el servicio `Meta` de `@angular/platform-browser` en cada cambio de ruta; keywords y author se definen una vez en `index.html` con los mismos valores de la Landing Page:
+Valores para las vistas principales de la Web Application. Al ser una SPA, el título y la descripción se actualizan en cada cambio de ruta (meta de Vue Router); keywords y author se definen una vez en index.html con los mismos valores de la Landing Page:
 
 | **Vista de la Web Application** | **Title** | **Meta description** |
 | --- | --- | --- |
@@ -144,7 +144,7 @@ Para que los usuarios no se pierdan en el volumen de información generado por l
 
 - **Búsqueda global:** barra en el encabezado para consultar por identificador exacto (número de lote, código de documento o de sensor).
 - **Filtros combinados:** por estado del lote (In Progress, Quarantine, Released, Rejected), rango de fechas de fabricación, severidad de la desviación (Minor, Major, Critical) y tipo de documento.
-- **Presentación de resultados:** tabla de datos de Angular Material (`mat-table` con `mat-paginator` y `matSort`) paginada y ordenable que resalta la coincidencia y muestra el estado actual de cada registro; si no hay resultados se muestra un mensaje con sugerencias.
+- **Presentación de resultados:** tabla de datos (PrimeVue DataTable) paginada y ordenable que resalta la coincidencia y muestra el estado actual de cada registro; si no hay resultados se muestra un mensaje con sugerencias.
 
 ### 4.2.5. Navigation Systems
 
@@ -156,7 +156,7 @@ Las acciones y técnicas que guían a los usuarios son:
 
 2. ***Web Application:***
 - **Navegación global:** barra lateral (sidebar) con los módulos del entorno (Dashboard, Batches, Documents, Deviations & CAPA, Monitoring, Reports).
-- **Navegación contextual:** breadcrumbs para ubicar al usuario dentro de un expediente y regresar a vistas generales.
+- **avegación contextual:** breadcrumbs para ubicar al usuario dentro de un expediente y regresar a vistas generales.
 
 3. **Navegación por teclado y accesibilidad:** orden de tabulación lógico, foco visible y atributos ARIA en menús y diálogos.
 
@@ -388,8 +388,6 @@ Para DoofPlus se desarrollaron distintos Wireflow Diagrams basados en los princi
 
 **User Goal QA-1:** Ingresar a DoofPlus y acceder al entorno de calidad.
 
-User Stories relacionadas: US48, US06.
-
 Como especialista QA/QC, quiero ingresar con mis credenciales y seleccionar el entorno de calidad para revisar mis pendientes.
 
 Flujo: Landing Page → Regulatory Identification → Environment Selection Portal → QA & Lab Console.
@@ -397,8 +395,6 @@ Flujo: Landing Page → Regulatory Identification → Environment Selection Port
 ![Wireflow QA-1: Ingresar a DoofPlus y acceder al entorno de calidad](../assets/img/chapter4/prototype/wireflow-diagrams/segmento-1-user-goal-1.png)
 
 **User Goal QA-2:** Gestionar documentación y protocolos de validación.
-
-User Stories relacionadas: US09, US10, US12, US13.
 
 Como especialista QA/QC, quiero gestionar SOP y protocolos de validación para mantener documentos controlados y vigentes.
 
@@ -408,8 +404,6 @@ Flujo: QA & Lab Console → Document Management & Master SOPs → Quality Protoc
 
 **User Goal QA-3:** Registrar una desviación y gestionar su CAPA.
 
-User Stories relacionadas: US18, US19, US20, US21.
-
 Como especialista QA/QC, quiero registrar desviaciones y sus acciones CAPA para controlar los riesgos de calidad.
 
 Flujo: QA & Lab Console → Critical Deviations & CAPA → Incident Registration & Deviation → GxP Regulatory Reports & Metrics.
@@ -417,8 +411,6 @@ Flujo: QA & Lab Console → Critical Deviations & CAPA → Incident Registration
 ![Wireflow QA-3: Registrar una desviación y gestionar su CAPA](../assets/img/chapter4/prototype/wireflow-diagrams/segmento-1-user-goal-3.png)
 
 **User Goal QA-4:** Planificar una auditoría y reunir sus evidencias.
-
-User Stories relacionadas: US59, US29, US28.
 
 Como especialista QA/QC, quiero programar auditorías y reunir la documentación de soporte para responder a los inspectores.
 
@@ -428,8 +420,6 @@ Flujo: QA & Lab Console → Process Audit Master Plan → Document Management & 
 
 **User Goal QA-5:** Registrar y validar resultados analíticos.
 
-User Stories relacionadas: US11, US54.
-
 Como especialista QA/QC, quiero registrar y validar resultados de ensayos para respaldar la liberación de los lotes.
 
 Flujo: QA & Lab Console → Analytical & Microbiology Testing → Analytical Results Entry & Validation → Batch History & Traceability.
@@ -437,8 +427,6 @@ Flujo: QA & Lab Console → Analytical & Microbiology Testing → Analytical Res
 ![Wireflow QA-5: Registrar y validar resultados analíticos](../assets/img/chapter4/prototype/wireflow-diagrams/segmento-1-user-goal-5.png)
 
 **User Goal QA-6:** Consultar la trazabilidad completa de un lote.
-
-User Stories relacionadas: US15, US27.
 
 Como especialista QA/QC, quiero consultar la genealogía y el audit trail de un lote para verificar la integridad de sus registros.
 
@@ -450,8 +438,6 @@ Flujo: QA & Lab Console → Batch History & Traceability → Cross-Traceability 
 
 **User Goal PR-1:** Ingresar a DoofPlus y acceder al entorno de producción.
 
-User Stories relacionadas: US48, US06.
-
 Como jefe de producción, quiero ingresar con mis credenciales y seleccionar el entorno de producción para supervisar las órdenes activas.
 
 Flujo: Landing Page → Regulatory Identification → Environment Selection Portal → GxP Production Control Console.
@@ -459,8 +445,6 @@ Flujo: Landing Page → Regulatory Identification → Environment Selection Port
 ![Wireflow PR-1: Ingresar a DoofPlus y acceder al entorno de producción](../assets/img/chapter4/prototype/wireflow-diagrams/segmento-2-user-goal-1.png)
 
 **User Goal PR-2:** Gestionar la ejecución de un lote y consultar su historial.
-
-User Stories relacionadas: US14, US16, US17, US42.
 
 Como jefe de producción, quiero actualizar las etapas de un lote y revisar su historial para mantener su trazabilidad.
 
@@ -470,8 +454,6 @@ Flujo: GxP Production Control Console → Batch Execution & Management → Batch
 
 **User Goal PR-3:** Monitorear equipos y condiciones ambientales.
 
-User Stories relacionadas: US24, US25, US38.
-
 Como jefe de producción, quiero supervisar las variables de los equipos y del ambiente para asegurar que la fabricación cumpla las BPM.
 
 Flujo: GxP Production Control Console → Environmental & Equipment Monitoring → Batch Execution & Management.
@@ -479,8 +461,6 @@ Flujo: GxP Production Control Console → Environmental & Equipment Monitoring �
 ![Wireflow PR-3: Monitorear equipos y condiciones ambientales](../assets/img/chapter4/prototype/wireflow-diagrams/segmento-2-user-goal-3.png)
 
 **User Goal PR-4:** Registrar una incidencia de producción.
-
-User Stories relacionadas: US56, US18.
 
 Como jefe de producción, quiero registrar incidencias y escalarlas a Calidad para que se gestionen como desviaciones.
 
@@ -490,8 +470,6 @@ Flujo: GxP Production Control Console → Incident Registration & Deviation → 
 
 **User Goal PR-5:** Consultar la trazabilidad de un lote para investigar un evento.
 
-User Stories relacionadas: US15, US17.
-
 Como jefe de producción, quiero revisar los materiales y eventos de un lote para investigar una situación excepcional.
 
 Flujo: GxP Production Control Console → Batch History & Traceability → Cross-Traceability & Audit Center.
@@ -499,8 +477,6 @@ Flujo: GxP Production Control Console → Batch History & Traceability → Cross
 ![Wireflow PR-5: Consultar la trazabilidad de un lote para investigar un evento](../assets/img/chapter4/prototype/wireflow-diagrams/segmento-2-user-goal-5.png)
 
 **User Goal PR-6:** Consultar reportes y métricas de producción.
-
-User Stories relacionadas: US32, US31.
 
 Como jefe de producción, quiero consultar reportes y métricas para evaluar el desempeño de las líneas.
 
@@ -765,7 +741,7 @@ Los prototipos de Desktop y Mobile Web Browser siguen los paths de los User Flow
 
 Prototipo navegable en Figma: <mark>pegar URL pública del prototipo</mark>
 
-Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0729-7742-IngesCompany-prototype-navigation-sprint-1: <mark>pegar URL, timing de inicio y duración</mark>
+Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0730-7742-IngesCompany-prototype-navigation-sprint-1: <mark>pegar URL, timing de inicio y duración</mark>
 
 ## 4.6. Domain-Driven Software Architecture
 
@@ -786,7 +762,7 @@ Los dashboards (EP08) y las notificaciones entre áreas (EP10) no forman un cont
 
 ### 4.6.1. Design-Level Event Storming
 
-El equipo realizó el Design-Level EventStorming en Miro siguiendo la agenda propuesta en "The best agenda for Design-Level Event Storming" (EventStorming Journal) y la guía del statement (https://bit.ly/dles-guide). Se trabajó un bounded context a la vez, tomando como punto de partida los eventos del Big Picture que pertenecen a ese contexto; Quality & Compliance se dividió en dos flujos (documentos, insumos y liberación; desviaciones, CAPA y auditoría) por su tamaño.
+El equipo realizó el Design-Level EventStorming en Miro siguiendo la agenda propuesta en "The best agenda for Design-Level Event Storming" (EventStorming Journal) y la guía del statement (https://bit.ly/dles-guide). Se trabajó un bounded context a la vez, tomando como punto de partida los eventos del Big Picture que pertenecen a ese contexto. Quality & Compliance, el contexto más grande, se modeló en un solo frame con dos swimlanes: liberación de lotes (documentos, insumos, resultados analíticos y liberación) y desviaciones y auditoría (desviaciones, CAPA, auditorías y reportes regulatorios).
 
 Tablero de Miro: https://miro.com/app/board/uXjVHkhKOXE=/
 
@@ -840,13 +816,9 @@ Se organizaron en una línea de tiempo vertical los eventos de cada contexto, co
 
 ![IoT Monitoring - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-1-timelines.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-1-timelines.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-1-timelines.png)
+![Quality & Compliance - paso 1](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-1-timelines.png)
 
 </details>
 
@@ -877,13 +849,9 @@ Cada evento se antecedió por el command que lo provoca, redactado en imperativo
 
 ![IoT Monitoring - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-2-commands.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-2-commands.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-2-commands.png)
+![Quality & Compliance - paso 2](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-2-commands.png)
 
 </details>
 
@@ -929,13 +897,9 @@ Se identificó quién ejecuta cada command: Administrador del laboratorio, Espec
 
 ![IoT Monitoring - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-3-actors-policies.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-3-actors-policies.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-3-actors-policies.png)
+![Quality & Compliance - paso 3](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-3-actors-policies.png)
 
 </details>
 
@@ -966,13 +930,9 @@ Se registró la información que cada actor consulta antes de decidir. Estos rea
 
 ![IoT Monitoring - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-4-read-models.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-4-read-models.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-4-read-models.png)
+![Quality & Compliance - paso 4](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-4-read-models.png)
 
 </details>
 
@@ -1003,13 +963,9 @@ Se ubicaron los sistemas externos en el punto donde intervienen: Niubiz (pago y 
 
 ![IoT Monitoring - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-5-external-systems.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-5-external-systems.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-5-external-systems.png)
+![Quality & Compliance - paso 5](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-5-external-systems.png)
 
 </details>
 
@@ -1035,8 +991,7 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 | Subscriptions & Payments | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766072 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853249317 |
 | Manufacturing & Batch Management | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766787 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853302296 |
 | IoT Monitoring | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766073 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853335403 |
-| Quality & Compliance (1/2) | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754975946 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853386353 |
-| Quality & Compliance (2/2) | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754975947 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853414376 |
+| Quality & Compliance | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764686149839907 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764686150007814 |
 
 <details>
 <summary>Ver el paso 6 en cada bounded context</summary>
@@ -1061,13 +1016,9 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 
 ![IoT Monitoring - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-6-aggregates.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-6-aggregates.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-6-aggregates.png)
+![Quality & Compliance - paso 6](../assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-6-aggregates.png)
 
 </details>
 #### Paso 7: Bounded contexts
@@ -1175,11 +1126,11 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - IoT Monitoring](../assets/img/chapter4/diagram-class/java/class-05-iot.png)
 
-**Quality & Compliance (1/2).** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS.
+**Quality & Compliance: liberación de lotes.** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS.
 
 ![Class Diagram - Quality & Compliance 1](../assets/img/chapter4/diagram-class/java/class-06a-quality.png)
 
-**Quality & Compliance (2/2).** `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
+**Quality & Compliance: desviaciones y auditoría.** `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
 
 ![Class Diagram - Quality & Compliance 2](../assets/img/chapter4/diagram-class/java/class-06b-quality.png)
 
@@ -1224,11 +1175,11 @@ Los diagramas se elaboraron con Mermaid (Diagram-as-Code), uno por bounded conte
 
 ![Database Diagram - IoT](../assets/img/chapter4/database/db-05-iot.png)
 
-**Quality & Compliance (1/2): documentos, insumos y liberación**
+**Quality & Compliance: liberación de lotes (documentos, insumos, resultados y liberación)**
 
 ![Database Diagram - Quality 1](../assets/img/chapter4/database/db-06a-quality.png)
 
-**Quality & Compliance (2/2): desviaciones, CAPA y auditoría**
+**Quality & Compliance: desviaciones y auditoría (desviaciones, CAPA, auditorías y reportes)**
 
 ![Database Diagram - Quality 2](../assets/img/chapter4/database/db-06b-quality.png)
 

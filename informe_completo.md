@@ -224,7 +224,7 @@ https://github.com/IngesCompany-7742/IngesCompany-Project-Report.git
 
 ---
 
-# Capítulo I: Introducción
+# Capítulo 1: Introducción
 
 La presente introducción tiene como finalidad contextualizar el proyecto desarrollado, proporcionando una visión general de los antecedentes, objetivos y fundamentos que sustentan su planteamiento. Asimismo, delimita el alcance de la propuesta y establece el marco de referencia necesario para comprender su desarrollo, destacando su relevancia, los retos que busca abordar y los beneficios esperados de su implementación. De esta manera, se ofrece una base conceptual que orienta al lector y facilita la comprensión de los contenidos expuestos en las secciones posteriores del documento.
 
@@ -248,15 +248,15 @@ Diseñar soluciones tecnológicas abiertas que permitan digitalizar y optimizar 
 
 Convertirnos en una referencia en soluciones digitales de aseguramiento de calidad para la industria farmacéutica latinoamericana, facilitando la adopción de tecnologías abiertas que mejoren la trazabilidad, la integridad de los datos y la gestión del cumplimiento regulatorio.
 
-### 1.1.2. Perfiles de integrantes del equipo
+### 1.1.2 Perfiles de Integrantes del Equipo
 
 | Foto | **Nombres, código y carrera** | **Resumen de conocimientos y habilidades** |
 | --- | --- | --- |
-| <img src="assets/img/photo/Marcelo.jpg" width="120"> | **Angulo Ramírez, Marcelo Martín**<br>Código: U202321425<br>Carrera: Ingeniería de Software<br>GitHub: Zock2005 | Tengo 21 años y soy una persona puntual, responsable y comunicativa. Me interesé por la carrera gracias a los cursos de programación del colegio y a los que llevé por mi cuenta. Manejo C++ y Python; en el proyecto aporto en investigación de usuarios (diseño y análisis de entrevistas), diseño UX/UI de la Web Application y en la integración de los capítulos del informe con GitFlow. |
-| <img src="assets/img/photo/Yhoshua.jpg" width="120"> | **Cobades Zamora, Yhoshua Hebert**<br>Código: U20231H117<br>Carrera: Ingeniería de Software<br>GitHub: YhoshuaCZ | Tengo 19 años, me apasiona la tecnología y trabajo bien bajo presión. Uso Linux (Arch) como entorno principal, lo que me ha dado experiencia con la terminal, Git y la configuración de entornos. En el proyecto aporto en la gestión del Product Backlog en Jira, la configuración de repositorios y despliegues (GitHub Pages) y la documentación de Software Configuration Management. |
-| <img src="assets/img/photo/Ricardo.jpg" width="120"> | **Flores Martinez, Ricardo Andres**<br>Código: U202423162<br>Carrera: Ingeniería de Software<br>GitHub: Nitoryu2801 | Tengo 19 años y soy una persona responsable, organizada y comprometida. Mi interés por la programación nació en mi familia, lo que me llevó a elegir Ingeniería de Software. Cuento con conocimientos de programación, bases de datos y maquetación web (HTML y CSS); en el proyecto aporto en las fichas de User Persona, los Empathy Maps y la implementación de la Landing Page. |
-| <img src="assets/img/photo/Daniel.jpg" width="120"> | **Rojas Ambicho, Nestor Daniel**<br>Código: U20241F397<br>Carrera: Ingeniería de Software<br>GitHub: danRO-20 | Tengo 20 años y me apasiona el desarrollo de aplicaciones. Tengo experiencia en proyectos académicos de software y bases de datos, y en modelado con UML y C4. En el proyecto aporto en los User Journey Maps, el Impact Mapping, la arquitectura de software (C4), el diseño orientado a objetos y la internacionalización de la Landing Page. |
-| <img src="assets/img/photo/Rodolfo.jpg" width="120"> | **Zavaleta Gutierrez, Rodolfo Martin**<br>Código: U20241F733<br>Carrera: Ingeniería de Software<br>GitHub: gutierrezrodolfo360-bit | Tengo 19 años y soy una persona puntual y responsable. Me interesé por la carrera gracias a los cursos de programación del colegio y a los que llevé por mi cuenta. Manejo HTML, CSS y JavaScript; en el proyecto aporto en la redacción de User Stories, el diseño de base de datos, el Design-Level EventStorming y los estilos e internacionalización de la Landing Page. |
+| <img src="assets/img/photo/Marcelo.jpg" width="120"> | **Angulo Ramírez, Marcelo Martín**<br>Código: U202321425<br>Carrera: Ingeniería de Software<br>GitHub: Zock2005 | Tengo 21 años y soy una persona puntual, responsable y comunicativa. Me interesé por la carrera gracias a cursos de programación del colegio y a los que tomé por mi cuenta; actualmente manejo C++ y Python, y busco ampliar mis conocimientos en otros lenguajes para optimizar mi trabajo en equipo y resolver problemas. |
+| <img src="assets/img/photo/Yhoshua.jpg" width="120"> | **Cobades Zamora, Yhoshua Hebert**<br>Código: U20231H117<br>Carrera: Ingeniería de Software<br>GitHub: YhoshuaCZ | Tengo 19 años, me interesa mucho aprender sobre tecnología y soy bastante resistente al estrés. En mis tiempos libres me gusta aprender e informarme sobre la situación actual de varias tecnologías. Me divierto surfeando en las olas de internet. I use Arch btw. |
+| <img src="assets/img/photo/Ricardo.jpg" width="120"> | **Flores Martinez, Ricardo Andres**<br>Código: U202423162<br>Carrera: Ingeniería de Software<br>GitHub: Nitoryu2801 | Tengo 19 años y soy una persona responsable, organizada y comprometida. Me interesa mucho la tecnología, especialmente el desarrollo de software y la creación de aplicaciones. Mi interés por la programación fue gracias a mi familia, lo que me llevó a elegir Ingeniería de Software. Actualmente cuento con conocimientos en programación, bases de datos y desarrollo de proyectos, y busco constantemente aprender nuevas herramientas y tecnologías |
+| <img src="assets/img/photo/Daniel.jpg" width="120"> | **Rojas Ambicho, Nestor Daniel**<br>Código: U20241F397<br>Carrera: Ingeniería de Software<br>GitHub: danRO-20 | Tengo 20 años, apasionado por la tecnología, el desarrollo de aplicaciones y la programación. Con experiencia en proyectos académicos de software, bases de datos y metodologías de desarrollo, busco constantemente aprender y dominar nuevas herramientas técnicas. Me interesé por la carrera debido a que desde el colegio me gustaban cursos relacionados a la tecnologia, y después empecé a aprender por mi cuenta. |
+| <img src="assets/img/photo/Rodolfo.jpg" width="120"> | **Zavaleta Gutierrez, Rodolfo Martin**<br>Código: U20241F733<br>Carrera: Ingeniería de Software<br>GitHub: gutierrezrodolfo360-bit | Tengo 19 años y soy una persona puntual y responsable. Me interesé por la carrera debido a mis gustos adquiridos por la programación gracias a cursos del colegio y que tomé por mi parte. |
 
 ## 1.2. Solution Profile
 
@@ -292,54 +292,31 @@ Las tecnologías basadas en Internet de las Cosas (IoT) permiten capturar inform
 
 - **What (¿Qué?):** *¿Qué es lo que se busca resolver?*
 
-- Se busca resolver las limitaciones relacionadas con la gestión de documentación de calidad, la trazabilidad de los lotes farmacéuticos y la disponibilidad de información confiable para actividades de aseguramiento de calidad y cumplimiento regulatorio.
+  Se busca resolver las limitaciones relacionadas con la gestión de documentación de calidad, la trazabilidad de los lotes farmacéuticos y la disponibilidad de información confiable para actividades de aseguramiento de calidad y cumplimiento regulatorio.
 
 - **Why (¿Por qué?):** *¿Por qué es importante resolverlo?*
 
-- Porque la calidad de los medicamentos depende de procesos adecuadamente controlados, documentados y respaldados por información íntegra y trazable. Además, una gestión eficiente de los registros facilita las auditorías, fortalece la toma de decisiones y contribuye al cumplimiento de las BPM y de los requisitos regulatorios aplicables.
+  Porque la calidad de los medicamentos depende de procesos adecuadamente controlados, documentados y respaldados por información íntegra y trazable. Además, una gestión eficiente de los registros facilita las auditorías, fortalece la toma de decisiones y contribuye al cumplimiento de las BPM y de los requisitos regulatorios aplicables.
 
 - **Who (¿Quién?):** *¿A quién afecta?*
 
-- Afecta principalmente a especialistas de aseguramiento y control de calidad (QA/QC), así como a responsables de producción farmacéutica encargados de supervisar procesos, gestionar documentación y asegurar el cumplimiento de estándares regulatorios.
+  Afecta principalmente a especialistas de aseguramiento y control de calidad (QA/QC), así como a responsables de producción farmacéutica encargados de supervisar procesos, gestionar documentación y asegurar el cumplimiento de estándares regulatorios.
 
 - **When (¿Cuándo?):** *¿Cuándo ocurre?*
 
-- La necesidad se presenta durante todas las etapas del ciclo de vida de un lote farmacéutico, incluyendo la fabricación, el control de calidad, la gestión de desviaciones, la revisión documental y las actividades de auditoría.
+  La necesidad se presenta durante todas las etapas del ciclo de vida de un lote farmacéutico, incluyendo la fabricación, el control de calidad, la gestión de desviaciones, la revisión documental y las actividades de auditoría.
 
 - **Where (¿Dónde?):** *¿En dónde ocurre?*
 
-- Se manifiesta en laboratorios y plantas farmacéuticas donde se ejecutan actividades de producción, aseguramiento de calidad y control regulatorio.
+  Se manifiesta en laboratorios y plantas farmacéuticas donde se ejecutan actividades de producción, aseguramiento de calidad y control regulatorio.
 
 - **How (¿Cómo?):** *¿Cómo se resuelve?*
 
-- Puede abordarse mediante una plataforma digital que centralice protocolos, expedientes de calidad y registros asociados a los lotes farmacéuticos, complementando la información mediante tecnologías IoT para fortalecer la trazabilidad y disponibilidad de datos.
+  Puede abordarse mediante una plataforma digital que centralice protocolos, expedientes de calidad y registros asociados a los lotes farmacéuticos, complementando la información mediante tecnologías IoT para fortalecer la trazabilidad y disponibilidad de datos.
 
 - **How much (¿Cuánto?):** *¿Cuánto cuesta resolverlo?*
 
-- La implementación requiere infraestructura tecnológica para el despliegue de la solución, digitalización de procesos documentales, capacitación de los usuarios e integración con fuentes de información internas y dispositivos IoT. Para el laboratorio, el costo se traduce en una suscripción mensual sin inversión en servidores ni hardware propio: Standard Lab (US$199/mes) para laboratorios pequeños y Enterprise (US$599/mes) para operaciones multi-planta.
-
-La técnica 5W + 2H permitió delimitar el problema (What), su impacto regulatorio (Why), los segmentos afectados (Who), los momentos críticos del ciclo de vida del lote (When), el entorno (Where), la estrategia de solución (How) y su costo (How much). Estos resultados se reflejan en el Problem Statement de la sección 1.2.2.1.
-
-#### 4. OBJETIVOS
-
-**Objetivo general:** desarrollar y desplegar DoofPlus, una solución web compuesta por una Landing Page, una Frontend Web Application y un RESTful API, que centralice la documentación de calidad, la trazabilidad de lotes y la gestión de desviaciones de laboratorios farmacéuticos pequeños y medianos de Lima Metropolitana, con el fin de reducir en 30% el tiempo de preparación de auditorías durante los primeros seis meses de uso.
-
-**Objetivos específicos:**
-
-- Validar las necesidades de especialistas QA/QC y jefes de producción mediante al menos tres entrevistas por segmento (AV1).
-- Publicar una Landing Page responsive y bilingüe (en-US / es-419) que comunique la propuesta de valor y dirija a cada segmento a la Web Application (AV1 y TB1).
-- Implementar la Frontend Web Application con Angular y Angular Material para los flujos core de lotes, desviaciones y documentación de calidad (TB1 y AV2).
-- Implementar el RESTful API con Spring Boot y Spring Data JPA, documentado con OpenAPI (Swagger) e integrado con ThingsBoard y Niubiz (AV2 y TB2).
-- Validar la solución con usuarios de ambos segmentos mediante evaluaciones heurísticas de usabilidad, arquitectura de información y diseño inclusivo (AV2 y TB2).
-
-#### 5. RESTRICCIONES Y ALCANCE
-
-- **Alcance:** Landing Page, Frontend Web Application y RESTful API de elaboración interna. No incluye aplicación móvil nativa ni fabricación de hardware IoT: la captura de datos de sensores se integra mediante la plataforma externa ThingsBoard.
-- **Tecnológicas:** HTML5, CSS3 y JavaScript para la Landing Page; Angular con TypeScript y Angular Material (Material Design) para la Web Application; Spring Boot con Spring Data JPA (Java) para el RESTful API; MySQL como base de datos; OpenAPI (Swagger) para documentar los servicios; GitHub con GitFlow, Conventional Commits y Semantic Versioning.
-- **Regulatorias:** DoofPlus apoya el cumplimiento de las BPM de DIGEMID y de los principios de integridad de datos de la OMS, pero no reemplaza la validación de sistemas computarizados que cada laboratorio debe ejecutar; las firmas electrónicas siguen los criterios de 21 CFR Part 11 sin constituir una certificación.
-- **Datos personales:** el tratamiento de datos se rige por la Ley N.° 29733, Ley de Protección de Datos Personales.
-- **Idiomas y accesibilidad:** inglés (en-US) como idioma por defecto y español latinoamericano (es-419) en la Landing Page, la Web Application y los mensajes del RESTful API; atributos ARIA en la Landing Page y la Web Application.
-- **Tiempo:** cuatro sprints dentro del ciclo 2026-20 (AV1 semana 4, TB1 semana 7, AV2 semana 12 y TB2 semana 15).
+  La implementación requiere infraestructura tecnológica para el despliegue de la solución, digitalización de procesos documentales, capacitación de los usuarios e integración con fuentes de información internas y dispositivos IoT. La inversión dependerá del tamaño de la organización y del alcance de la integración requerida.
 
 ### 1.2.2. Lean UX Process
 
@@ -367,7 +344,7 @@ A continuación se muestran los Assumptions en su idioma original:
 
 **Business Assumptions:**
 
-- We believe that small and medium-sized Peruvian pharmaceutical laboratories are willing to pay a monthly subscription between US$199 and US$599 for a platform that reduces the risk of GMP observations during DIGEMID inspections.
+- We believe that small and medium-sized Peruvian pharmaceutical laboratories are willing to pay a monthly subscription between US\$ 199 and US\$ 599 for a platform that reduces the risk of GMP observations during DIGEMID inspections.
 - We believe that stricter DIGEMID GMP inspections create urgency for laboratories to digitize their paper-based quality records.
 - We believe that a SaaS model built on open-source technologies allows us to offer lower prices than global MES and QMS solutions while keeping a sustainable margin.
 - We believe that heads of quality assurance are the main decision-makers or influencers in the purchase of quality-management software.
@@ -485,19 +462,16 @@ A continuación se muestran las Hypothesis Statements en su idioma original:
 - **Hypothesis 8:**  
   ***We believe we will achieve*** 100% of DIGEMID traceability audits passed without critical observations during the first year
 
-  ***If*** QA/QC specialists
+  ***If*** QA/QC specialists and internal auditors
 
   ***Attain*** confidence that every change is recorded with who, when, what and why
 
   ***With*** an immutable audit trail with electronic signatures.
 
 #### 1.2.2.4. Lean UX Canvas
-
-El Lean UX Canvas (versión 2 de Jeff Gothelf) resume en una sola vista el Problem Statement, los usuarios, las soluciones, los resultados esperados y las hipótesis. Cada solución (S1 a S8) corresponde a un feature assumption y a su hypothesis statement. Los experimentos priorizan la Landing Page y los prototipos de los flujos principales antes de construir la Web Application.
-
 A continuación se muestra el Lean UX Canvas en su idioma original:
 
-![Lean UX Canvas](assets/img/chapter1/lean-ux-canvas-v4.png)
+![LeanUX](assets/img/chapter1/Lean-UX-canvas.jpg)
 
 ## 1.3. Segmentos objetivo
 
@@ -550,7 +524,7 @@ Para desarrollar una solución efectiva, es importante entender la situación co
 En este periodo, se analizan distintos tipos de competidores con el objetivo de entender sus fortalezas y debilidades, y así posicionar a DoofPlus como una propuesta que responda de manera más efectiva a las necesidades reales del sector.
 
 ### 2.1.1. Análisis competitivo
-A continuación, se presenta una tabla comparativa sobre los principales competidores, en el que se considera su propuesta de valor, mercado objetivo y características generales. Este análisis permite evidenciar que, mientras las soluciones existentes se orientan a grandes corporaciones o dependen de procesos manuales, DoofPlus podrá destacar como una alternativa especializada, accesible y centrada en la automatización del aseguramiento de la calidad mediante integración IoT y trazabilidad digital, especialmente pensada para laboratorios farmacéuticos pequeños y medianos (y, en el plan Enterprise, instituciones públicas como el INS).
+A continuación, se presenta una tabla comparativa sobre los principales competidores, en el que se considera su propuesta de valor, mercado objetivo y características generales. Este análisis permite evidenciar que, mientras las soluciones existentes se orientan a grandes corporaciones o dependen de procesos manuales, DoofPlus podrá destacar como una alternativa specializada, accesible y centrada en la automatización del aseguramiento de la calidad mediante integración IoT y trazabilidad digital, especialmente pensada para laboratorios medianos y entidades públicas de la región.
 
 <table>
   <tr>
@@ -572,7 +546,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td><img src="assets/img/chapter2/competitors/drugxafe.png" width="120"><br><b>DrugXafe (Tiga Healthcare)</b></td>
   </tr>
   <tr>
-    <td rowspan="3">Perfil</td>
+    <td rowspan="2">Perfil</td>
     <td>Overview</td>
     <td>Plataforma SaaS bilingüe de gestión de calidad y trazabilidad de lotes para laboratorios farmacéuticos, con integración de sensores IoT.</td>
     <td>Plataforma MES de gestión de producción que integra IoT industrial, monitoreo de OEE en tiempo real y batch record electrónico (Colombia).</td>
@@ -587,6 +561,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Prevención de falsificaciones y fraude en la cadena de suministro: garantiza que solo medicamentos auténticos lleguen al paciente.</td>
   </tr>
   <tr>
+    <td rowspan="2">Perfil de marketing</td>
     <td>Mercado objetivo</td>
     <td>Laboratorios farmacéuticos pequeños y medianos de Lima y, luego, de la región andina.</td>
     <td>Manufactura regulada y no regulada (alimentos, farmacéuticos, cosméticos) en Colombia y Latinoamérica.</td>
@@ -594,7 +569,6 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Fabricantes, importadores, distribuidores y autoridades sanitarias.</td>
   </tr>
   <tr>
-    <td rowspan="2">Perfil de marketing</td>
     <td>Estrategias de marketing</td>
     <td>Contenido educativo sobre BPM e integridad de datos, demos desde la Landing Page y presencia en eventos del sector.</td>
     <td>Marketing digital B2B (blog, casos de éxito) y demostraciones comerciales.</td>
@@ -602,6 +576,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Venta B2B y B2G a actores de la cadena de suministro y reguladores.</td>
   </tr>
   <tr>
+    <td rowspan="3">Perfil de producto</td>
     <td>Productos &amp; Servicios</td>
     <td>Documentos y SOP, expediente de lote, desviaciones y CAPA, liberación, audit trail, reportes, dashboards e IoT.</td>
     <td>MES, monitoreo OEE, batch record electrónico, IA para operaciones y mantenimiento.</td>
@@ -609,7 +584,6 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
     <td>Serialización, agregación de empaques y reportes de trazabilidad.</td>
   </tr>
   <tr>
-    <td rowspan="2">Perfil de producto</td>
     <td>Precios &amp; Costos</td>
     <td>Standard Lab US$199/mes (US$1,990/año); Enterprise US$599/mes (US$5,990/año).</td>
     <td>Suscripción e implementación cotizadas por planta (precios no publicados).</td>
@@ -873,12 +847,14 @@ A partir del análisis de las entrevistas y la información recopilada sobre los
 **1) Segmento 1: Especialista de Aseguramiento y Control de Calidad (QA/QC)**
 
 Para este segmento se elaboró el User Persona María México, tomando como referencia el perfil de los profesionales responsables de las actividades de aseguramiento y control de calidad dentro de laboratorios farmacéuticos. Se consideraron factores como su experiencia en validaciones, revisión documental, verificación de equipos y evaluación de personal analista, así como su participación en la gestión de protocolos, registros y auditorías regulatorias. Sus principales frustraciones se relacionan con la dependencia de procesos manuales para revisar cálculos, informes y documentación antes de registrar los resultados en los sistemas de la organización, lo que incrementa el tiempo invertido en tareas operativas y dificulta la preparación de evidencias para inspecciones y auditorías. Asimismo, se tomó en cuenta su necesidad de disponer de una plataforma que centralice la información de calidad, facilite la trazabilidad de los lotes, automatice la generación de reportes y reduzca la carga administrativa asociada a la gestión documental, permitiéndole dedicar más tiempo a actividades de supervisión y mejora continua de los procesos de calidad.
+
 ![User - Segmento 1](assets/img/chapter2/interview/segmento1/user-persona1.png)
 
 
 **2) Segmento 2: Jefe o Supervisor de Producción Farmacéutica**
 
 Para este segmento se elaboró el User Persona Alberto Valle Vega. Se consideraron factores como su amplia experiencia en la industria farmacéutica, su responsabilidad en la supervisión de los procesos de fabricación y su participación en la coordinación con las áreas de aseguramiento y control de calidad. Sus principales motivaciones están orientadas a garantizar que la producción se desarrolle conforme a los procedimientos establecidos, manteniendo la calidad, la trazabilidad y el cumplimiento de los estándares regulatorios durante todas las etapas de fabricación. Entre sus principales dificultades se encuentra el acceso oportuno a información consolidada sobre los lotes en producción, así como la gestión y comunicación de incidencias que requieren seguimiento y documentación formal. Asimismo, se tomó en cuenta su necesidad de disponer de herramientas que faciliten la consulta del historial de producción, mejoren la coordinación entre las diferentes áreas involucradas y permitan acceder a información confiable para la toma de decisiones operativas, contribuyendo a una gestión más eficiente y a la reducción de errores durante el proceso productivo.
+
 ![User - Segmento 2](assets/img/chapter2/interview/segmento2/user-persona2.png)
 
 ### 2.3.2. User Task Matrix
@@ -1003,7 +979,7 @@ Cada integrante escribió en post-its naranjas, sin orden y en tiempo pasado, lo
 
 Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=3458764685732289571
 
-![Step 4 - Generating Domain Events](assets/img/chapter2/event-storming/big-picture/step4-generating-domain-events.png)
+![Step 4 - Generating Domain Events](assets/img/chapter2/big-picture/step4-generating-domain-events.jpg)
 
 **Step 5 – Sorting Domain Events**
 
@@ -1011,7 +987,7 @@ Los eventos se ordenaron cronológicamente de izquierda a derecha. Los resultado
 
 Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=3458764685732347233
 
-![Step 5 - Sorting Domain Events](assets/img/chapter2/event-storming/big-picture/step5-sorting-domain-events.png)
+![Step 5 - Sorting Domain Events](assets/img/chapter2/big-picture/step5-sorting-domain-events.jpg)
 
 **Step 6 – Adding Actors and External Systems**
 
@@ -1019,7 +995,7 @@ Sobre la línea de tiempo se agregaron los actores que provocan cada grupo de ev
 
 Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=3458764685732347919
 
-![Step 6 - Adding Actors and External Systems](assets/img/chapter2/event-storming/big-picture/step6-actors-external-systems.png)
+![Step 6 - Adding Actors and External Systems](assets/img/chapter2/big-picture/step6-actors-external-systems.jpg)
 
 **Step 7 – Storytelling**
 
@@ -1038,13 +1014,11 @@ Un integrante narró la historia completa de inicio a fin mientras el resto vali
 
 Frame en Miro: https://miro.com/app/board/uXjVHl-67N8=/?moveToWidget=3458764685732393843
 
-![Step 7 - Storytelling](assets/img/chapter2/event-storming/big-picture/step7-storytelling.png)
-
-Al terminar la narración, el equipo validó el orden de los eventos y la comprensión compartida del proceso. Los términos del dominio que surgieron en la sesión se documentan en el Ubiquitous Language (sección 2.5).
+![Step 7 - Storytelling](assets/img/chapter2/big-picture/step7-storytelling.jpg)
 
 ## 2.5. Ubiquitous Language
 
-En este proyecto, cuyo objetivo principal es mejorar la trazabilidad, la gestión documental y la eficiencia en los procesos de calidad de laboratorios y plantas farmacéuticas mediante la plataforma DoofPlus, se ha definido el siguiente **lenguaje ubicuo (ubiquitous language)** para asegurar claridad y consistencia entre desarrolladores, usuarios (QA/QC, Jefes de Producción) y stakeholders. Los términos provienen de las entrevistas y del Big Picture EventStorming (sección 2.4).
+En este proyecto, cuyo objetivo principal es mejorar la trazabilidad, la gestión documental y la eficiencia en los procesos de calidad de laboratorios y plantas farmacéuticas mediante la plataforma DoofPlus, se ha definido el siguiente **lenguaje ubicuo (ubiquitous language)** para asegurar claridad y consistencia entre desarrolladores, usuarios (QA/QC, Jefes de Producción) y stakeholders:
 
 | Term (Término) | Definition (Definición) |
 |---|---|
@@ -1087,13 +1061,10 @@ En este proyecto, cuyo objetivo principal es mejorar la trazabilidad, la gestió
 ---
 
 # Capítulo III: Requirements Specification
+En este capítulo se presenta los requisitos especìficados de DoofPlus, acorde al análisis de la problemática, los segmentos objetivo y el alcance obtenido durante el desarrollo. La especificación cubre tres productos de la solución: la landing page pública, la aplicación web frontend y los servicios backend RESTful implementados con una arquitectura basada en bounded contexts.
 
-En este capítulo se presentan los requisitos de DoofPlus, especificados a partir del análisis de la problemática, los segmentos objetivo y los artefactos de needfinding. La especificación cubre los tres productos de la solución: la Landing Page, la Web Application y el RESTful API.
 
 ## 3.1. User Stories
-
-Los requisitos se expresan como épicas, User Stories y Technical Stories. Las User Stories de la Landing Page usan el rol visitante (o visitante de un segmento), las de la Web Application usan los roles de los segmentos objetivo, y las Technical Stories del RESTful API usan el rol Developer con criterios basados en escenarios de request/response. Cada historia incluye al menos dos criterios de aceptación en formato Gherkin (Dado–Cuando–Entonces), redactados en tiempo presente, en tercera persona y sin referirse a detalles de interfaz.
-
 | **Epic / Story ID** | **Título** | **Descripción** | **Criterios de Aceptación** | **Relacionado con (Epic ID)** |
 | --- | --- | --- | --- | --- |
 | **EP01** | **Landing Page & Public Experience** | Agrupa las funcionalidades del sitio web estático (Landing Page) que comunican la propuesta de valor a los visitantes de cada segmento y los dirigen a la Web Application. | – | – |
@@ -1180,41 +1151,13 @@ Los requisitos se expresan como épicas, User Stories y Technical Stories. Las U
 
 ## 3.2. Impact Mapping
 
-El Impact Mapping de DoofPlus conecta los objetivos estratégicos del negocio con los actores involucrados, los impactos esperados, los entregables digitales y sus respectivas User Stories. Se elaboró en UXPressia a partir de las fichas de User Persona de la sección 2.3.1 (María México para el segmento QA/QC y Alberto Valle para el segmento de Producción), respondiendo a las preguntas: ¿quiénes ayudarán a lograr la meta? (Personas), ¿qué tendrían que hacer? (Impacts), ¿qué puede hacer el negocio digital para provocar esos impactos? (Deliverables) y ¿qué User Stories construyen cada entregable?
-
-Los Business Goals cumplen los criterios SMART y provienen de los Business Outcomes y de las hipótesis del Lean UX Process (sección 1.2.2): el primero corresponde a la hipótesis 2, el segundo a la hipótesis 6, el tercero a la hipótesis 8 y el cuarto al criterio de éxito del Problem Statement.
+El Impact Mapping de DoofPlus conecta los objetivos estratégicos del negocio con los actores involucrados, los impactos esperados, los entregables digitales y sus respectivas User Stories. La solución busca optimizar los tiempos de liberación de lotes y erradicar los errores de transcripción manual en la planta, garantizando el estricto cumplimiento de las normativas de calidad farmacéutica (BPM) mediante trazabilidad centralizada, monitoreo automatizado vía dispositivos IoT, gestión digital de desviaciones y un registro de auditoría inalterable (Audit Trail).
 
 ![Impact Mapping](assets/img/chapter3/Impact-Mapping.png)
 
-La siguiente tabla presenta el mapa completo con las User Stories vigentes de la sección 3.1. Cada historia se asigna a la persona cuyo rol aparece en su descripción:
-
-| Business Goal (SMART) | Persona | Impact | Deliverable | User Stories |
-| --- | --- | --- | --- | --- |
-| BG1. Reducir el tiempo promedio de liberación y trazabilidad de lotes farmacéuticos en un 40% durante los primeros 6 meses de uso de la plataforma. | María México | Aprobar lotes y estandarizar protocolos mediante aprobaciones electrónicas, eliminando el uso de papel. | Módulo de Gestión de Protocolos | **US09:** Como especialista QA/QC, quiero registrar protocolos digitales para estandarizar los procesos y cumplir las BPM.<br><br>**US12:** Como especialista QA/QC, quiero mantener el historial de versiones de cada documento para garantizar su integridad.<br><br>**US13:** Como jefe de aseguramiento de calidad, quiero aprobar documentos mediante firma electrónica para asegurar la trazabilidad regulatoria. |
-|  | María México | Revisar el historial completo de cada lote y liberarlo sin esperar expedientes en papel. | Sistema de Trazabilidad Centralizada de Lotes | **US15:** Como especialista QA/QC, quiero consultar el historial completo de un lote para revisar sus registros y eventos asociados.<br><br>**US54:** Como especialista QA/QC, quiero poner en cuarentena, evaluar y liberar o rechazar los lotes cerrados para que solo se distribuyan productos conformes. |
-|  | María México | Delegar al sistema el cálculo de los resultados analíticos para agilizar la revisión de calidad. | Motor de Cálculo Analítico Automatizado | **US11:** Como especialista QA/QC, quiero que el sistema calcule automáticamente los resultados analíticos para reducir errores manuales. |
-|  | Alberto Valle | Iniciar y gestionar órdenes de fabricación digitalmente para evitar tiempos muertos por papeleo. | Sistema de Trazabilidad Centralizada de Lotes | **US57:** Como jefe de producción, quiero crear y aprobar órdenes de producción para planificar la fabricación de los lotes.<br><br>**US58:** Como supervisor de producción, quiero registrar la recepción de materias primas con su lote de proveedor para que queden en cuarentena hasta su aprobación por Calidad.<br><br>**US14:** Como supervisor de producción, quiero registrar lotes para iniciar su trazabilidad digital.<br><br>**US16:** Como supervisor de producción, quiero actualizar el estado de los lotes durante su ciclo de vida para reflejar su avance real.<br><br>**US17:** Como supervisor de producción, quiero asociar las materias primas utilizadas a un lote para mantener su trazabilidad completa.<br><br>**US56:** Como supervisor de producción, quiero registrar las incidencias de un lote y escalarlas a Calidad para que se investiguen sin detener la producción más de lo necesario. |
-|  | Alberto Valle | Formular productos asegurando al instante que se usan las especificaciones autorizadas. | Gestor de Fórmulas Maestras | **US35:** Como jefe de producción, quiero administrar los productos farmacéuticos para fabricarlos en nuevos lotes.<br><br>**US36:** Como jefe de producción, quiero registrar las fórmulas maestras aprobadas para que cada lote se fabrique según la especificación autorizada. |
-| BG2. Disminuir a 0% las incidencias por errores de transcripción manual en los registros de planta durante el primer trimestre de implementación. | María México | Documentar anomalías en tiempo real para bloquear inmediatamente productos defectuosos. | Gestor Digital de Desviaciones y Eventos | **US18:** Como especialista QA/QC, quiero registrar desviaciones para realizar su seguimiento y análisis.<br><br>**US19:** Como especialista QA/QC, quiero documentar el análisis de causa raíz (RCA) para identificar el origen de las desviaciones.<br><br>**US20:** Como especialista QA/QC, quiero registrar acciones correctivas y preventivas derivadas de una desviación para evitar su recurrencia. |
-|  | Alberto Valle | Supervisar la maquinaria confiando en lecturas automáticas sin requerir que los operarios anoten a mano. | Módulo de Integración y Telemetría IoT | **US24:** Como supervisor de producción, quiero asociar los sensores de un equipo a un lote en fabricación para vincular sus lecturas.<br><br>**US25:** Como supervisor de producción, quiero que las variables críticas se registren automáticamente para evitar la transcripción manual. |
-|  | Alberto Valle | Tomar decisiones operativas en tiempo real basadas en métricas visuales consolidadas. | Dashboard de Indicadores de Cumplimiento | **US32:** Como supervisor de producción, quiero visualizar el estado de los lotes en curso para tomar decisiones oportunas. |
-| BG3. Alcanzar el 100% de cumplimiento sin observaciones críticas en las auditorías de trazabilidad de DIGEMID durante el primer año. | María México | Respaldar ante los inspectores cada cambio en el sistema mediante un registro cronológico blindado. | Registro de Auditoría Inalterable (Audit Trail) | **US27:** Como especialista QA/QC, quiero consultar todas las modificaciones realizadas sobre los registros para demostrar la integridad de los datos.<br><br>**US29:** Como especialista QA/QC, quiero consolidar la documentación requerida para una auditoría para responder a tiempo a los inspectores.<br><br>**US59:** Como especialista QA/QC, quiero programar auditorías y registrar sus hallazgos para dar seguimiento a su cierre. |
-|  | María México | Garantizar que solo personal calificado pueda autorizar procesos críticos usando credenciales seguras. | Sistema de Control de Accesos y Firmas Electrónicas | **US08:** Como especialista de calidad, quiero firmar electrónicamente las acciones críticas para validarlas conforme a los requisitos regulatorios. |
-|  | Alberto Valle | Asegurar que las mediciones de los sensores sean legalmente válidas demostrando su calibración vigente. | Gestor de Calibración de Dispositivos IoT | **US38:** Como supervisor de producción, quiero controlar la calibración de equipos y sensores para asegurar mediciones válidas. |
-| BG4. Alcanzar 10 laboratorios suscritos a un plan pagado en los primeros 6 meses después del lanzamiento. | María México | Evaluar DoofPlus y recomendar su contratación en su laboratorio. | Landing Page con propuesta de valor, planes y solicitud de demo | **US01:** Como visitante especialista QA/QC o jefe de producción, quiero conocer la propuesta de valor de DoofPlus para evaluar si responde a las necesidades de mi laboratorio.<br><br>**US03:** Como visitante responsable de compras de un laboratorio, quiero consultar los planes y precios disponibles para identificar la alternativa más adecuada para mi organización.<br><br>**US04:** Como visitante interesado, quiero dejar mi correo electrónico para recibir información y solicitar una demostración de DoofPlus.<br><br>**US48:** Como visitante especialista QA/QC o jefe de producción, quiero acceder desde la Landing Page a la vista de la Web Application de mi segmento para comenzar a usar la plataforma. |
-
-**Actualización pendiente en UXPressia:** los Business Goals, Personas, Impacts y Deliverables se mantienen, salvo estos cambios; las tarjetas de User Stories se reemplazan por las de la tabla anterior.
-
-| Cambio | Detalle |
-| --- | --- |
-| Impact y deliverable del muestreo (María, BG1) | Impact "Delegar al sistema el cálculo de los resultados analíticos para agilizar la revisión de calidad" y deliverable "Motor de Cálculo Analítico Automatizado", porque US11 calcula resultados analíticos y no el tamaño de muestra. |
-| Nueva rama de María en BG1 | Impact "Revisar el historial completo de cada lote y liberarlo sin esperar expedientes en papel", deliverable "Sistema de Trazabilidad Centralizada de Lotes", con US15 y US54. |
-| Rama de accesos y firmas (BG3) | Pasa de Alberto Valle a María México: la firma electrónica (US08) la realiza el especialista de calidad. |
-| Business Goal BG4 | Se agrega con la rama de la Landing Page (María México). |
-
 ## 3.3. Product Backlog
 
-El Product Backlog consolida las User Stories y Technical Stories ordenadas por valor para el negocio, no por dependencia técnica. Las historias de la Landing Page van primero porque se implementan desde el Sprint 1; siguen las del core del negocio (trazabilidad de lotes, desviaciones, liberación, auditoría y documentación de calidad), luego las de colaboración, dashboards, IoT y operaciones de laboratorio, y al final las de soporte genérico (autenticación, registro de la organización y suscripciones).
+El Product Backlog de DoofPlus consolida todas las User Stories y Technical Stories identificadas, ordenadas según el valor que aportan al negocio. Las historias relacionadas con la Landing Page se posicionan al inicio dado que corresponden al primer sprint y son el primer punto de contacto con los potenciales clientes. A continuación se presentan las historias del core de calidad y producción farmacéutica, y finalmente las Technical Stories del API.
 
 | **# Orden** | **User Story Id** | **Título** | **Descripción** | **Story Points (1 / 2 / 3 / 5 / 8)** |
 | --- | --- | --- | --- | --- |
@@ -1289,6 +1232,8 @@ El Product Backlog consolida las User Stories y Technical Stories ordenadas por 
 | 69 | US53 | Renovación y cancelación | Como administrador del laboratorio, quiero renovar o cancelar la suscripción para controlar mis costos. | 3 |
 | 70 | TS09 | API de suscripciones y pagos | Como Developer, quiero implementar endpoints de suscripciones integrados con la API de Niubiz. | 5 |
 
+<br>
+
 **Evidencia de Product Backlog en Jira:**
 
 A continuación, se muestra la gestión del backlog en la herramienta Jira Software, evidenciando la priorización y estimación de las historias.
@@ -1296,7 +1241,7 @@ A continuación, se muestra la gestión del backlog en la herramienta Jira Softw
 ![Evidence Product Backlog Jira](assets/img/chapter3/product-backlog-jira.png)
 *Figura: Captura del Product Backlog en Jira Software.*
 
-**Enlace al Product Backlog en Jira:** [https://doofplus.atlassian.net/jira/software/projects/UPC/boards/3/backlog](https://doofplus.atlassian.net/jira/software/projects/UPC/boards/3/backlog)
+**Enlace al Product Backlog en Jira:** [click aquí](https://doofplus.atlassian.net/jira/software/projects/UPC/boards/3/backlog?jql=parent+IN+%28UPC-2%2C+UPC-9%2C+UPC-20%29&atlOrigin=eyJpIjoiOWZkY2NhNGFkYzdlNGFmNGJlZTE4MTY1OGVjNjAyZDciLCJwIjoiaiJ9)
 
 
 ---
@@ -1311,10 +1256,10 @@ En esta sección se establecen las bases visuales y de comunicación para DoofPl
 
 ### 4.1.1. General Style Guidelines
 
-Para asegurar una interfaz coherente y alineada con los estándares que exige la industria farmacéutica, el sistema de diseño de DoofPlus toma como base **Material Design**, el lenguaje de diseño indicado para el proyecto. En la Web Application se implementa con **Angular Material**, la biblioteca oficial de componentes de Material Design para Angular, mediante un tema propio (`material-theme.scss`) con los tokens de color, tipografía y espaciado de DoofPlus; en la Landing Page se aplican los mismos tokens con ***HTML5*** y ***CSS3***.
+Para asegurar una interfaz coherente y alineada con los estándares que exige la industria farmacéutica, el sistema de diseño de DoofPlus toma como base **Material Design**, el lenguaje de diseño indicado para el proyecto. En la Web Application se implementa con **Angular CLI** usando un tema basado en **Material Design**, y en la Landing Page con ***HTML5*** y ***CSS3*** respetando los mismos tokens de color, tipografía y espaciado.
 
 #### Branding:
-El logotipo escogido para DoofPlus comunica de forma directa y sintética la propuesta de valor del sistema: la integración de la automatización industrial con la rigurosidad del control farmacéutico. Para la sección de Branding, el análisis de los componentes de dicho logotipo se desglosa de la siguiente manera:
+El logotico escogido para DoofPlus comunica de forma directa y sintética la propuesta de valor del sistema: la integración de la automatización industrial con la rigurosidad del control farmacéutico. Para la sección de Branding, el análisis de los componentes de dicho logotipo se desglosa de la siguiente manera:
 
 <p align="center">
   <img src="assets/img/chapter4/doofplus-logo.png" alt="DoofPlus Logo" width="350px" />
@@ -1353,7 +1298,7 @@ La paleta de colores de DoofPlus está diseñada para evocar pulcritud clínica,
 | --error-color | #F44336 | Funcional | Errores, rechazos y desviaciones críticas |
 | --warning-color | #FFC107 | Funcional | Advertencias y alertas |
 
-  ![paleta-colores](assets/img/chapter4/color-palette.png)
+![paleta-colores](assets/img/chapter4/color-palette.png)
 
 #### Spacing
 
@@ -1395,7 +1340,7 @@ Las directrices de estilo web de DoofPlus explican e ilustran las decisiones sob
 - Íconos: Se emplea la biblioteca Material Symbols para un estilo lineal y minimalista. Estos íconos ofrecen una guía visual rápida para representar servicios críticos: un microchip o antena para la telemetría, un escudo con un símbolo de check para el cumplimiento regulatorio y cápsulas o maquinaria para la gestión de producción.
 
 5. Repositorio Central
-- Organización: el proyecto de la Web Application (Angular CLI) se organiza por bounded context dentro de `src/app`: `iam`, `organizations`, `subscriptions`, `manufacturing`, `iot-monitoring` y `quality`, los mismos contextos del Design-Level EventStorming (sección 4.6.1). Cada contexto tiene las capas `domain/model` (entidades), `application` (store con signals), `infrastructure` (cliente del API y assemblers) y `presentation` (components y views). Los elementos comunes (layout, toolbar, footer, language switcher, vistas Home, About y Page Not Found, y el cliente HTTP base) están en `src/app/shared`. Los recursos estáticos se ubican en `public`, el tema de Angular Material en `src/material-theme.scss`, los estilos globales en `src/styles.css` y las traducciones de ngx-translate en `public/i18n` (`en.json` y `es.json`).
+- Organización: el proyecto de la Web Application (Vue 3 + Vite) se organiza por bounded context: src/iam, src/manufacturing, src/quality, src/iot, src/subscriptions y src/organizations, cada uno con sus carpetas model, services, components y pages. Los recursos estáticos se ubican en src/assets (images, icons), los estilos globales y design tokens en src/assets/styles, los componentes reutilizables en src/shared/components y las traducciones en src/locales (en.json y es.json).
 - Versionado: Se utiliza Git gestionado desde GitHub como sistema de control de versiones central. El equipo aplica GitFlow y Conventional Commits para gestionar los cambios en el código, lo que ayuda a garantizar que el entorno de desarrollo mantenga una integración continua y una versión estable del producto en todo momento. Además, se aplica Semantic Versioning para darle un orden a las versiones.
 
 
@@ -1431,7 +1376,7 @@ Valores para la Landing Page (sitio estático indexable):
 | --- | --- | --- | --- | --- |
 | Landing Page (index.html) | DoofPlus \| Pharmaceutical Quality & Batch Traceability Platform | SaaS platform that centralizes quality documentation, batch traceability, deviations and IoT data for pharmaceutical laboratories (GMP/DIGEMID). | pharmaceutical quality management, batch traceability, GMP, DIGEMID, CAPA, audit trail, IoT | IngesCompany |
 
-Valores para las vistas principales de la Web Application. Al ser una SPA, el título se define en la propiedad `title` de cada ruta (`app.routes.ts`) y la descripción se actualiza con el servicio `Meta` de `@angular/platform-browser` en cada cambio de ruta; keywords y author se definen una vez en `index.html` con los mismos valores de la Landing Page:
+Valores para las vistas principales de la Web Application. Al ser una SPA, el título y la descripción se actualizan en cada cambio de ruta (meta de Vue Router); keywords y author se definen una vez en index.html con los mismos valores de la Landing Page:
 
 | **Vista de la Web Application** | **Title** | **Meta description** |
 | --- | --- | --- |
@@ -1447,7 +1392,7 @@ Para que los usuarios no se pierdan en el volumen de información generado por l
 
 - **Búsqueda global:** barra en el encabezado para consultar por identificador exacto (número de lote, código de documento o de sensor).
 - **Filtros combinados:** por estado del lote (In Progress, Quarantine, Released, Rejected), rango de fechas de fabricación, severidad de la desviación (Minor, Major, Critical) y tipo de documento.
-- **Presentación de resultados:** tabla de datos de Angular Material (`mat-table` con `mat-paginator` y `matSort`) paginada y ordenable que resalta la coincidencia y muestra el estado actual de cada registro; si no hay resultados se muestra un mensaje con sugerencias.
+- **Presentación de resultados:** tabla de datos (PrimeVue DataTable) paginada y ordenable que resalta la coincidencia y muestra el estado actual de cada registro; si no hay resultados se muestra un mensaje con sugerencias.
 
 ### 4.2.5. Navigation Systems
 
@@ -1459,7 +1404,7 @@ Las acciones y técnicas que guían a los usuarios son:
 
 2. ***Web Application:***
 - **Navegación global:** barra lateral (sidebar) con los módulos del entorno (Dashboard, Batches, Documents, Deviations & CAPA, Monitoring, Reports).
-- **Navegación contextual:** breadcrumbs para ubicar al usuario dentro de un expediente y regresar a vistas generales.
+- **avegación contextual:** breadcrumbs para ubicar al usuario dentro de un expediente y regresar a vistas generales.
 
 3. **Navegación por teclado y accesibilidad:** orden de tabulación lógico, foco visible y atributos ARIA en menús y diálogos.
 
@@ -1691,8 +1636,6 @@ Para DoofPlus se desarrollaron distintos Wireflow Diagrams basados en los princi
 
 **User Goal QA-1:** Ingresar a DoofPlus y acceder al entorno de calidad.
 
-User Stories relacionadas: US48, US06.
-
 Como especialista QA/QC, quiero ingresar con mis credenciales y seleccionar el entorno de calidad para revisar mis pendientes.
 
 Flujo: Landing Page → Regulatory Identification → Environment Selection Portal → QA & Lab Console.
@@ -1700,8 +1643,6 @@ Flujo: Landing Page → Regulatory Identification → Environment Selection Port
 ![Wireflow QA-1: Ingresar a DoofPlus y acceder al entorno de calidad](assets/img/chapter4/prototype/wireflow-diagrams/segmento-1-user-goal-1.png)
 
 **User Goal QA-2:** Gestionar documentación y protocolos de validación.
-
-User Stories relacionadas: US09, US10, US12, US13.
 
 Como especialista QA/QC, quiero gestionar SOP y protocolos de validación para mantener documentos controlados y vigentes.
 
@@ -1711,8 +1652,6 @@ Flujo: QA & Lab Console → Document Management & Master SOPs → Quality Protoc
 
 **User Goal QA-3:** Registrar una desviación y gestionar su CAPA.
 
-User Stories relacionadas: US18, US19, US20, US21.
-
 Como especialista QA/QC, quiero registrar desviaciones y sus acciones CAPA para controlar los riesgos de calidad.
 
 Flujo: QA & Lab Console → Critical Deviations & CAPA → Incident Registration & Deviation → GxP Regulatory Reports & Metrics.
@@ -1720,8 +1659,6 @@ Flujo: QA & Lab Console → Critical Deviations & CAPA → Incident Registration
 ![Wireflow QA-3: Registrar una desviación y gestionar su CAPA](assets/img/chapter4/prototype/wireflow-diagrams/segmento-1-user-goal-3.png)
 
 **User Goal QA-4:** Planificar una auditoría y reunir sus evidencias.
-
-User Stories relacionadas: US59, US29, US28.
 
 Como especialista QA/QC, quiero programar auditorías y reunir la documentación de soporte para responder a los inspectores.
 
@@ -1731,8 +1668,6 @@ Flujo: QA & Lab Console → Process Audit Master Plan → Document Management & 
 
 **User Goal QA-5:** Registrar y validar resultados analíticos.
 
-User Stories relacionadas: US11, US54.
-
 Como especialista QA/QC, quiero registrar y validar resultados de ensayos para respaldar la liberación de los lotes.
 
 Flujo: QA & Lab Console → Analytical & Microbiology Testing → Analytical Results Entry & Validation → Batch History & Traceability.
@@ -1740,8 +1675,6 @@ Flujo: QA & Lab Console → Analytical & Microbiology Testing → Analytical Res
 ![Wireflow QA-5: Registrar y validar resultados analíticos](assets/img/chapter4/prototype/wireflow-diagrams/segmento-1-user-goal-5.png)
 
 **User Goal QA-6:** Consultar la trazabilidad completa de un lote.
-
-User Stories relacionadas: US15, US27.
 
 Como especialista QA/QC, quiero consultar la genealogía y el audit trail de un lote para verificar la integridad de sus registros.
 
@@ -1753,8 +1686,6 @@ Flujo: QA & Lab Console → Batch History & Traceability → Cross-Traceability 
 
 **User Goal PR-1:** Ingresar a DoofPlus y acceder al entorno de producción.
 
-User Stories relacionadas: US48, US06.
-
 Como jefe de producción, quiero ingresar con mis credenciales y seleccionar el entorno de producción para supervisar las órdenes activas.
 
 Flujo: Landing Page → Regulatory Identification → Environment Selection Portal → GxP Production Control Console.
@@ -1762,8 +1693,6 @@ Flujo: Landing Page → Regulatory Identification → Environment Selection Port
 ![Wireflow PR-1: Ingresar a DoofPlus y acceder al entorno de producción](assets/img/chapter4/prototype/wireflow-diagrams/segmento-2-user-goal-1.png)
 
 **User Goal PR-2:** Gestionar la ejecución de un lote y consultar su historial.
-
-User Stories relacionadas: US14, US16, US17, US42.
 
 Como jefe de producción, quiero actualizar las etapas de un lote y revisar su historial para mantener su trazabilidad.
 
@@ -1773,8 +1702,6 @@ Flujo: GxP Production Control Console → Batch Execution & Management → Batch
 
 **User Goal PR-3:** Monitorear equipos y condiciones ambientales.
 
-User Stories relacionadas: US24, US25, US38.
-
 Como jefe de producción, quiero supervisar las variables de los equipos y del ambiente para asegurar que la fabricación cumpla las BPM.
 
 Flujo: GxP Production Control Console → Environmental & Equipment Monitoring → Batch Execution & Management.
@@ -1782,8 +1709,6 @@ Flujo: GxP Production Control Console → Environmental & Equipment Monitoring �
 ![Wireflow PR-3: Monitorear equipos y condiciones ambientales](assets/img/chapter4/prototype/wireflow-diagrams/segmento-2-user-goal-3.png)
 
 **User Goal PR-4:** Registrar una incidencia de producción.
-
-User Stories relacionadas: US56, US18.
 
 Como jefe de producción, quiero registrar incidencias y escalarlas a Calidad para que se gestionen como desviaciones.
 
@@ -1793,8 +1718,6 @@ Flujo: GxP Production Control Console → Incident Registration & Deviation → 
 
 **User Goal PR-5:** Consultar la trazabilidad de un lote para investigar un evento.
 
-User Stories relacionadas: US15, US17.
-
 Como jefe de producción, quiero revisar los materiales y eventos de un lote para investigar una situación excepcional.
 
 Flujo: GxP Production Control Console → Batch History & Traceability → Cross-Traceability & Audit Center.
@@ -1802,8 +1725,6 @@ Flujo: GxP Production Control Console → Batch History & Traceability → Cross
 ![Wireflow PR-5: Consultar la trazabilidad de un lote para investigar un evento](assets/img/chapter4/prototype/wireflow-diagrams/segmento-2-user-goal-5.png)
 
 **User Goal PR-6:** Consultar reportes y métricas de producción.
-
-User Stories relacionadas: US32, US31.
 
 Como jefe de producción, quiero consultar reportes y métricas para evaluar el desempeño de las líneas.
 
@@ -2068,7 +1989,7 @@ Los prototipos de Desktop y Mobile Web Browser siguen los paths de los User Flow
 
 Prototipo navegable en Figma: <mark>pegar URL pública del prototipo</mark>
 
-Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0729-7742-IngesCompany-prototype-navigation-sprint-1: <mark>pegar URL, timing de inicio y duración</mark>
+Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0730-7742-IngesCompany-prototype-navigation-sprint-1: <mark>pegar URL, timing de inicio y duración</mark>
 
 ## 4.6. Domain-Driven Software Architecture
 
@@ -2089,7 +2010,7 @@ Los dashboards (EP08) y las notificaciones entre áreas (EP10) no forman un cont
 
 ### 4.6.1. Design-Level Event Storming
 
-El equipo realizó el Design-Level EventStorming en Miro siguiendo la agenda propuesta en "The best agenda for Design-Level Event Storming" (EventStorming Journal) y la guía del statement (https://bit.ly/dles-guide). Se trabajó un bounded context a la vez, tomando como punto de partida los eventos del Big Picture que pertenecen a ese contexto; Quality & Compliance se dividió en dos flujos (documentos, insumos y liberación; desviaciones, CAPA y auditoría) por su tamaño.
+El equipo realizó el Design-Level EventStorming en Miro siguiendo la agenda propuesta en "The best agenda for Design-Level Event Storming" (EventStorming Journal) y la guía del statement (https://bit.ly/dles-guide). Se trabajó un bounded context a la vez, tomando como punto de partida los eventos del Big Picture que pertenecen a ese contexto. Quality & Compliance, el contexto más grande, se modeló en un solo frame con dos swimlanes: liberación de lotes (documentos, insumos, resultados analíticos y liberación) y desviaciones y auditoría (desviaciones, CAPA, auditorías y reportes regulatorios).
 
 Tablero de Miro: https://miro.com/app/board/uXjVHkhKOXE=/
 
@@ -2143,13 +2064,9 @@ Se organizaron en una línea de tiempo vertical los eventos de cada contexto, co
 
 ![IoT Monitoring - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-1-timelines.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-1-timelines.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-1-timelines.png)
+![Quality & Compliance - paso 1](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-1-timelines.png)
 
 </details>
 
@@ -2180,13 +2097,9 @@ Cada evento se antecedió por el command que lo provoca, redactado en imperativo
 
 ![IoT Monitoring - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-2-commands.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-2-commands.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-2-commands.png)
+![Quality & Compliance - paso 2](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-2-commands.png)
 
 </details>
 
@@ -2232,13 +2145,9 @@ Se identificó quién ejecuta cada command: Administrador del laboratorio, Espec
 
 ![IoT Monitoring - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-3-actors-policies.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-3-actors-policies.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-3-actors-policies.png)
+![Quality & Compliance - paso 3](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-3-actors-policies.png)
 
 </details>
 
@@ -2269,13 +2178,9 @@ Se registró la información que cada actor consulta antes de decidir. Estos rea
 
 ![IoT Monitoring - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-4-read-models.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-4-read-models.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-4-read-models.png)
+![Quality & Compliance - paso 4](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-4-read-models.png)
 
 </details>
 
@@ -2306,13 +2211,9 @@ Se ubicaron los sistemas externos en el punto donde intervienen: Niubiz (pago y 
 
 ![IoT Monitoring - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-5-external-systems.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-5-external-systems.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-5-external-systems.png)
+![Quality & Compliance - paso 5](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-5-external-systems.png)
 
 </details>
 
@@ -2338,8 +2239,7 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 | Subscriptions & Payments | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766072 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853249317 |
 | Manufacturing & Batch Management | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766787 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853302296 |
 | IoT Monitoring | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754766073 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853335403 |
-| Quality & Compliance (1/2) | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754975946 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853386353 |
-| Quality & Compliance (2/2) | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685754975947 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764685853414376 |
+| Quality & Compliance | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764686149839907 | https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=3458764686150007814 |
 
 <details>
 <summary>Ver el paso 6 en cada bounded context</summary>
@@ -2364,13 +2264,9 @@ Frames en Miro por bounded context. Debajo de los frames finales, el tablero tie
 
 ![IoT Monitoring - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/iot-6-aggregates.png)
 
-**Quality & Compliance (1/2)**
+**Quality & Compliance** (swimlane 1: liberación de lotes; swimlane 2: desviaciones y auditoría)
 
-![Quality & Compliance (1/2) - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa1-6-aggregates.png)
-
-**Quality & Compliance (2/2)**
-
-![Quality & Compliance (2/2) - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa2-6-aggregates.png)
+![Quality & Compliance - paso 6](assets/img/chapter4/design-level-event-storming/dles-v2/steps/qa-6-aggregates.png)
 
 </details>
 #### Paso 7: Bounded contexts
@@ -2478,11 +2374,11 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - IoT Monitoring](assets/img/chapter4/diagram-class/java/class-05-iot.png)
 
-**Quality & Compliance (1/2).** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS.
+**Quality & Compliance: liberación de lotes.** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS.
 
 ![Class Diagram - Quality & Compliance 1](assets/img/chapter4/diagram-class/java/class-06a-quality.png)
 
-**Quality & Compliance (2/2).** `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
+**Quality & Compliance: desviaciones y auditoría.** `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
 
 ![Class Diagram - Quality & Compliance 2](assets/img/chapter4/diagram-class/java/class-06b-quality.png)
 
@@ -2527,11 +2423,11 @@ Los diagramas se elaboraron con Mermaid (Diagram-as-Code), uno por bounded conte
 
 ![Database Diagram - IoT](assets/img/chapter4/database/db-05-iot.png)
 
-**Quality & Compliance (1/2): documentos, insumos y liberación**
+**Quality & Compliance: liberación de lotes (documentos, insumos, resultados y liberación)**
 
 ![Database Diagram - Quality 1](assets/img/chapter4/database/db-06a-quality.png)
 
-**Quality & Compliance (2/2): desviaciones, CAPA y auditoría**
+**Quality & Compliance: desviaciones y auditoría (desviaciones, CAPA, auditorías y reportes)**
 
 ![Database Diagram - Quality 2](assets/img/chapter4/database/db-06b-quality.png)
 
@@ -2551,40 +2447,34 @@ En esta sección se describen las decisiones, convenciones y herramientas utiliz
 Se detallan las herramientas utilizadas en el ciclo de vida del producto:
 
 * **Project Management**
-  * **Jira / Trello:** Planificación de sprints, gestión del Product Backlog y seguimiento visual de tareas. (Referencia: https://www.atlassian.com/software/jira, https://trello.com)
+    * **Jira / Trello:** Planificación de sprints, gestión del Product Backlog y seguimiento visual de tareas. (Referencia: https://www.atlassian.com/software/jira, https://trello.com)
 * **Requirements Management**
-  * **Markdown:** Documentación del proyecto. (Referencia: https://www.markdownguide.org)
-  * **Gherkin:** Redacción de criterios de aceptación (Given-When-Then). (Referencia: https://cucumber.io/docs/gherkin)
+    * **Markdown:** Documentación del proyecto. (Referencia: https://www.markdownguide.org)
+    * **Gherkin:** Redacción de criterios de aceptación (Given-When-Then). (Referencia: https://cucumber.io/docs/gherkin)
 * **Product UX/UI Design**
-  * **Figma:** Elaboración de Wireframes, Mock-ups y Prototypes. (Referencia: https://www.figma.com)
-  * **UXPressia:** Elaboración de User Personas, Empathy Maps, Journey Maps e Impact Maps. (Referencia: https://uxpressia.com)
-  * **Lucidchart:** Diagramación técnica y diseño de base de datos. (Referencia: https://www.lucidchart.com)
+    * **Figma:** Elaboración de Wireframes, Mock-ups y Prototypes. (Referencia: https://www.figma.com)
+    * **UXPressia:** Elaboración de User Personas, Empathy Maps, Journey Maps e Impact Maps. (Referencia: https://uxpressia.com)
+    * **Lucidchart:** Diagramación técnica y diseño de base de datos. (Referencia: https://www.lucidchart.com)
 * **Software Development**
-  * **WebStorm / IntelliJ IDEA:** Entornos de desarrollo integrados para codificación. (Descarga: https://www.jetbrains.com)
-  * **HTML5, CSS3 y JavaScript:** Tecnologías core utilizadas para el desarrollo exclusivo del Landing Page.
-  * **Angular Framework:** Framework basado en TypeScript utilizado para el desarrollo de Frontend Web Applications, integrando **Angular Material** como biblioteca de componentes de interfaz basados en Material Design. (Referencia: https://angular.dev)
-  * **Spring Boot & Spring Data JPA:** Frameworks basados en Java para el desarrollo de los RESTful Web Services. (Referencia: https://spring.io)
-  * **JDK 21 y Maven:** Compilación y gestión de dependencias del RESTful API. (Descarga: https://adoptium.net, https://maven.apache.org)
-  * **Node.js y Angular CLI:** Creación, ejecución y construcción de la Web Application. (Descarga: https://nodejs.org, https://angular.dev/tools/cli)
-  * **MySQL 8 y MySQL Workbench:** Sistema gestor de base de datos relacional y herramienta de administración. (Descarga: https://dev.mysql.com/downloads)
+    * **WebStorm / IntelliJ IDEA:** Entornos de desarrollo integrados para codificación. (Descarga: https://www.jetbrains.com)
+    * **HTML5, CSS3 y JavaScript:** Tecnologías core utilizadas para el desarrollo exclusivo del Landing Page.
+    * **Angular Framework:** Framework basado en TypeScript utilizado para el desarrollo de Frontend Web Applications, integrando **Angular Material** como biblioteca de componentes de interfaz basados en Material Design. (Referencia: https://angular.dev)
+    * **Spring Boot & Spring Data JPA:** Frameworks basados en Java para el desarrollo de los RESTful Web Services. (Referencia: https://spring.io)
+    * **PostgreSQL:** Sistema gestor de base de datos relacional. (Referencia: https://www.postgresql.org)
 * **Software Testing**
-  * **JUnit 5 y Mockito:** Pruebas unitarias y de integración del RESTful API. (Referencia: https://junit.org, https://site.mockito.org)
-  * **Vitest:** Pruebas unitarias de la Web Application en Angular. (Referencia: https://vitest.dev)
-  * **Swagger UI / Chrome DevTools / MySQL Workbench:** Prueba manual de endpoints, inspección del frontend y revisión de la persistencia.
+    * **Swagger UI / Chrome DevTools / pgAdmin:** Ejecución de pruebas de APIs, inspección de rendimiento frontend y revisión directa de la persistencia en bases de datos.
 * **Software Documentation**
-  * **OpenAPI (Swagger):** Documentación técnica y contratos de los RESTful Web Services. (Referencia: https://swagger.io)
-  * **Structurizr (DSL):** Diagram-as-Code para los diagramas C4 de contexto, contenedores y componentes. (Referencia: https://structurizr.com)
-  * **Mermaid:** Diagram-as-Code para los diagramas de clases (UML) y de base de datos. (Referencia: https://mermaid.js.org)
-  * **Miro:** Big Picture y Design-Level EventStorming. (Referencia: https://miro.com)
+    * **OpenAPI (Swagger):** Documentación técnica y contratos de los RESTful Web Services. (Referencia: https://swagger.io)
+    * **PlantUML:** Aplicación de Diagram-as-Code para diagramas UML y diagramas de base de datos. (Referencia: https://plantuml.com)
 * **Software Deployment**
-  * **GitHub Pages / Firebase / Render / Railway:** Plataformas cloud para el despliegue de los distintos repositorios y servicios de la solución.
+    * **GitHub Pages / Firebase / Render / Railway:** Plataformas cloud para el despliegue de los distintos repositorios y servicios de la solución.
 
 ### 5.1.2. Source Code Management
 
 El código fuente de la solución es gestionado mediante **GitHub** como plataforma y sistema de control de versiones distribuido.
-* **Landing Page:** [https://github.com/IngesCompany-7742/IngesCompany-LandingPage](https://github.com/IngesCompany-7742/IngesCompany-LandingPage)
-* **Frontend Web Application (Angular):** [https://github.com/IngesCompany-7742/IngesCompany-Frontend](https://github.com/IngesCompany-7742/IngesCompany-Frontend)
-* **Backend Web Services (Spring Boot):** repositorio `IngesCompany-Backend` por crear en el Sprint 3; incluirá el proyecto y sus pruebas unitarias y de integración.
+* **Landing Page:** https://github.com/IngesCompany-7742/DoofPlus-LandingPage
+* **Frontend Web Application:** https://github.com/IngesCompany-7742/DoofPlus-Frontend
+* **Backend Web Services:** https://github.com/IngesCompany-7742/doofplus-platform
 
 **GitFlow Workflow**
 El proyecto adopta **GitFlow** para la organización de ramas:
@@ -2595,7 +2485,7 @@ El proyecto adopta **GitFlow** para la organización de ramas:
 * `hotfix/<nombre>`: Ramas que nacen de `main` para corregir errores críticos en producción.
 
 **Semantic Versioning y Conventional Commits**
-Se aplica **Semantic Versioning 2.0.0** (`MAJOR.MINOR.PATCH`) para nombrar las releases. 
+Se aplica **Semantic Versioning 2.0.0** (`MAJOR.MINOR.PATCH`) para nombrar las releases.
 Todos los mensajes siguen la convención **Conventional Commits** (`tipo[scope opcional]: descripción`) usando prefijos como `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore` (ej. `feat(landing): add benefits section`).
 
 ### 5.1.3. Source Code Style Guide & Coding Conventions
@@ -2612,14 +2502,12 @@ Toda la nomenclatura y lógica programática en el código fuente se desarrolla 
 Pasos y configuración necesarios para el despliegue de la solución en la nube a partir de los repositorios de código:
 
 1. **Landing Page (GitHub Pages):** Se navega a la configuración del repositorio, se habilita GitHub Pages apuntando a la raíz (`/root`) de la rama `main` y el código estático es servido públicamente de manera automática por GitHub.
-2. **Frontend Web Application (Firebase Hosting):** 
-   - Se configura la URL del RESTful API en `src/environments/environment.ts` (`serverBaseUrl`) y se ejecuta la construcción optimizada (`ng build --configuration production`).
-   - Se utiliza Firebase CLI y el comando `firebase deploy --only hosting` apuntando a la carpeta de distribución para sincronizar la SPA a la nube.
-3. **Backend Web Services (Render & Railway):** 
-   - Se aprovisiona la base de datos MySQL 8 en **Railway** y se obtiene la URL de conexión y las credenciales.
-   - El RESTful API se despliega como Web Service en **Render** a partir de un Dockerfile multietapa (`maven:3-eclipse-temurin-21` para compilar con `mvn clean package` y `eclipse-temurin:21-jre` para ejecutar el JAR), vinculado a la rama `main` de su repositorio.
-   - Se configuran las variables de entorno `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME`, `SPRING_DATASOURCE_PASSWORD`, `JWT_SECRET`, `NIUBIZ_*`, `SENDGRID_API_KEY` y `THINGSBOARD_API_KEY`. Hibernate actualiza el esquema al iniciar (`spring.jpa.hibernate.ddl-auto=update`) y la documentación OpenAPI queda publicada en `/swagger-ui/index.html`.
-   - En cada merge a `main`, Render vuelve a compilar y publicar el servicio.
+2. **Frontend Web Application (Firebase Hosting):**
+    - Se ejecuta la construcción optimizada localmente (`ng build --configuration production`).
+    - Se utiliza Firebase CLI y el comando `firebase deploy --only hosting` apuntando a la carpeta de distribución para sincronizar la SPA a la nube.
+3. **Backend Web Services (Render & Railway):**
+    - Se aprovisiona la base de datos PostgreSQL en **Railway**, obteniendo la URL y credenciales.
+    - El backend se despliega como Web Service en **Render** vinculado automáticamente a la rama `main` de su repositorio. Se inyectan las variables de entorno de producción (credenciales de BBDD, JWT keys, tokens de **Niubiz** para flujos de suscripción). En cada commit a `main`, Render compila el proyecto y lo expone públicamente.
 
 ## 5.2. Landing Page, Services & Applications Implementation
 
@@ -2645,20 +2533,20 @@ El Sprint Planning Meeting sirvió para definir los objetivos iniciales, asignar
 | **Sprint 1 – 1 Retrospective Summary** | (No aplica por ser el primer Sprint del proyecto). |
 | **Sprint Goal & User Stories** | |
 | **Sprint 1 Goal** | **Our focus is on** delivering a complete and responsive Landing Page.<br>**We believe it delivers** a clear understanding of DoofPlus' value proposition to our potential pharmaceutical clients.<br>**This will be confirmed when** visitors can navigate through the features, plans, and team information flawlessly on both desktop and mobile devices. |
-| **Sprint 1 Velocity** | 16 Story Points |
-| **Sum of Story Points** | 16 Story Points (US44, US03, US45, US04, US46, US47 y TS01) |
+| **Sprint 1 Velocity** | 12 Story Points |
+| **Sum of Story Points** | 12 Story Points |
 
 #### 5.2.1.2. Aspect Leaders and Collaborators
 
 A continuación se presenta el Leadership-and-Collaboration Matrix (LACX), que indica quién es el líder (L) y quiénes son los colaboradores (C) para cada aspecto dentro del alcance del Sprint 1 (enfocado principalmente en la Landing Page y setup inicial).
 
-| Team Member (Last Name, First Name) | GitHub Username | Landing Page (UI/UX) | Landing Page (Code) | Deployment & Setup | Documentation |
+| Team Member | GitHub Username | Landing Page (UI/UX) | Landing Page (Code) | Deployment & Setup | Documentation |
 |-------------|-----------------|----------------------|---------------------|--------------------|---------------|
-| Angulo Ramírez, Marcelo Martín | Zock2005 | L | C | C | C |
-| Cobades Zamora, Yhoshua Hebert | YhoshuaCZ | C | C | L | C |
-| Flores Martinez, Ricardo Andres | Nitoryu2801 | C | C | C | C |
-| Rojas Ambicho, Nestor Daniel | danRO-20 | C | C | C | C |
-| Zavaleta Gutierrez, Rodolfo Martin | gutierrezrodolfo360-bit | C | L | C | L |
+| Angulo, Marcelo | Zock2005| L | C |  | C |
+| Cobades, Yhoshua | YhoshuaCZ | C | C |  | C |
+| Flores, Ricardo | Nitoryu2801 | C | C |  | C |
+| Rojas, Nestor | danRO-20 | C | C |  |  |
+| Zavaleta, Rodolfo | gutierrezrodolfo360-bit | C | L |  | L |
 
 #### 5.2.1.3. Sprint Backlog 1
 
@@ -2667,20 +2555,20 @@ El objetivo principal de este Sprint fue implementar el sitio web estático (Lan
 ![jira](assets/img/chapter5/jira-pb.png)
 
 
-| Sprint # | Sprint 1 | | | | | | |
-|---|---|---|---|---|---|---|---|
-| **Story Id** | **Story Title** | **Task Id** | **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
-| US44 | Navegación por secciones | T001 | Implementar navbar responsivo | Estructurar el menú de navegación con los enlaces a Home, Features, Benefits, Plans y Contact. | 2 | Zavaleta Gutierrez, Rodolfo Martin | Done |
-| US44 | Navegación por secciones | T002 | Estilos y menú hamburguesa | Aplicar estilos CSS al menú y añadir comportamiento responsive con menú hamburguesa para móvil. | 2 | Angulo Ramírez, Marcelo Martín | Done |
-| US03 | Visualización de planes y precios | T003 | Diseñar tarjetas de planes | Crear las tarjetas de los planes Standard Lab (US$199/mes) y Enterprise (US$599/mes) con sus características. | 3 | Flores Martinez, Ricardo Andres | Done |
-| US03 | Visualización de planes y precios | T004 | Toggle mensual/anual | Implementar el cambio entre precios mensuales y anuales con el ahorro correspondiente. | 2 | Cobades Zamora, Yhoshua Hebert | Done |
-| US45 | Visualización del equipo y de la startup | T005 | Maquetar sección Our Team | Implementar las tarjetas de los 5 integrantes con foto, nombre y descripción. | 2 | Rojas Ambicho, Nestor Daniel | Done |
-| US45 | Visualización del equipo y de la startup | T006 | Correcciones sección Our Team | Corregir la estructura y el contenido de la sección del equipo tras la revisión de pares. | 1 | Angulo Ramírez, Marcelo Martín | Done |
-| US04 | Formulario de contacto | T007 | Implementar footer y formulario | Desarrollar el footer con el formulario de solicitud de información por correo, datos de contacto y enlaces legales. | 3 | Zavaleta Gutierrez, Rodolfo Martin | Done |
-| TS01 | Implementación de Landing Page responsive y accesible | T008 | Correcciones de estructura de index.html | Corregir la estructura general de index.html para asegurar consistencia semántica y accesibilidad. | 2 | Flores Martinez, Ricardo Andres | Done |
-| US46 | Cambio de idioma | T009 | Lógica i18n y selector de idioma | Implementar el selector EN/ES con archivos de traducción y la lógica JavaScript de i18n. | 3 | Cobades Zamora, Yhoshua Hebert | Done |
-| US47 | Consulta de términos y política de privacidad | T010 | Agregar Terms of Service | Redactar e implementar la página de Términos de Servicio de DoofPlus. | 2 | Rojas Ambicho, Nestor Daniel | Done |
-| US47 | Consulta de términos y política de privacidad | T011 | Agregar Privacy Policy | Redactar e implementar la Política de Privacidad conforme a la Ley N.° 29733. | 2 | Angulo Ramírez, Marcelo Martín | Done |
+| User Story | Work-Item / Task | Status |
+|------------|------------------|--------|
+| **Story Id** \| **Story Title** | **Task Id** \| **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **(To-do / In-Process / To-Review / Done)** |
+| US44 \| Navegación por secciones | T001 \| Implementar navbar responsivo | Estructurar el menú de navegación con los enlaces a Home, Features, Benefits, Plans y Contact. | 2 | Zavaleta, Rodolfo | Done |
+| US44 \| Navegación por secciones | T002 \| Estilos y menú hamburguesa | Aplicar estilos CSS al menú y añadir comportamiento responsive con menú hamburguesa para móvil. | 2 | Angulo, Marcelo | Done |
+| US03 \| Visualización de planes y precios | T003 \| Diseñar tarjetas de planes | Crear las tarjetas de los planes Standard Lab ($199/mes) y Enterprise ($599/mes) con sus características. | 3 | Flores, Ricardo | Done |
+| US03 \| Visualización de planes y precios | T004 \| Toggle mensual/anual | Implementar el toggle de cambio entre precios mensuales y anuales con descuento del 15%. | 2 | Cobades, Yhoshua | Done |
+| US45 \| Visualización del equipo y de la startup | T005 \| Maquetar sección Our Team | Implementar las tarjetas de los 5 integrantes del equipo Inges Company con foto, nombre y descripción. | 2 | Rojas, Nestor | Done |
+| US45 \| Visualización del equipo y de la startup | T006 \| Correcciones sección Our Team | Corregir la estructura y contenido de la sección del equipo tras revisión de pares. | 1 | Angulo, Marcelo | Done |
+| US04 \| Formulario de contacto | T007 \| Implementar footer y formulario | Desarrollar el footer con el formulario de suscripción por email, datos de contacto y links legales. | 3 | Zavaleta, Rodolfo | Done |
+| TS01 \| Implementación de Landing Page responsive y accesible | T008 \| Correcciones de estructura index | Corregir la estructura general del index.html para asegurar consistencia semántica y accesibilidad. | 2 | Flores, Ricardo | Done |
+| US46 \| Cambio de idioma | T009 \| Lógica i18n y toggle de idioma | Implementar el switcher de idioma ES/EN con archivos de traducción y lógica JavaScript de i18n. | 3 | Cobades, Yhoshua | Done |
+| US47 \| Consulta de términos y política de privacidad | T010 \| Agregar Terms of Service | Redactar e implementar la página de Términos de Servicio de DoofPlus. | 2 | Rojas, Nestor | Done |
+| US47 \| Consulta de términos y política de privacidad | T011 \| Agregar Privacy Policy | Redactar e implementar la Política de Privacidad conforme a la Ley N.° 29733. | 2 | Angulo, Marcelo | Done |
 
 #### 5.2.1.4. Development Evidence for Sprint Review
 
@@ -2688,21 +2576,21 @@ En esta sección se presentan los principales avances en la implementación del 
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 |------------|--------|-----------|----------------|---------------------|--------------------|
-| IngesCompany-7742/IngesCompany-LandingPage | main | `1f1a22f` | Merge branch 'release/v1.0.0-rc.1' into main | Se fusionó la rama de liberación a producción. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `e530153` | fix: change the defect language | Corrección del idioma predeterminado. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `7eded14` | build: add the option to change the language in main.js | Adición de lógica para alternar idiomas en el script principal. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `432fb64` | fix: update links of the images in index.html | Actualización de rutas y enlaces de las imágenes. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `46b51b6` | build: add styles | Incorporación de la hoja de estilos CSS. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `86d4578` | chore: add images | Inclusión de recursos gráficos al proyecto. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `06bd5ef` | build: Add footer | Creación de la sección del pie de página. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `be8e428` | build: add body | Estructuración y contenido del cuerpo principal. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `9b082a5` | feat: add language switching functionality in main.js | Implementación de funcionalidad de cambio de idioma. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `b9ff9e6` | ci: add translations | Adición de diccionarios y archivos de traducción. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `6a1377f` | docs: update README.md | Actualización de la documentación del proyecto. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `0de92b6` | fix: refactor README.md | Refactorización de formato en el README. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | main | `6e6efc0` | docs: add README.md | Creación inicial del archivo README. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | develop | `8dca66b` | Merge remote-tracking branch 'origin/develop' into develop | Sincronización de la rama develop. | 20/09/2026 |
-| IngesCompany-7742/IngesCompany-LandingPage | develop | `a8c7448` | chore: Create template | Creación de plantilla base del proyecto. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `1f1a22f` | Merge branch 'release/v1.0.0-rc.1' into main | Se fusionó la rama de liberación a producción. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `e530153` | fix: change the defect language | Corrección del idioma predeterminado. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `7eded14` | build: add the option to change the language in main.js | Adición de lógica para alternar idiomas en el script principal. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `432fb64` | fix: update links of the images in index.html | Actualización de rutas y enlaces de las imágenes. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `46b51b6` | build: add styles | Incorporación de la hoja de estilos CSS. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `86d4578` | chore: add images | Inclusión de recursos gráficos al proyecto. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `06bd5ef` | build: Add footer | Creación de la sección del pie de página. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `be8e428` | build: add body | Estructuración y contenido del cuerpo principal. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `9b082a5` | feat: add language switching functionality in main.js | Implementación de funcionalidad de cambio de idioma. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `b9ff9e6` | ci: add translations | Adición de diccionarios y archivos de traducción. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `6a1377f` | docs: update README.md | Actualización de la documentación del proyecto. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `0de92b6` | fix: refactor README.md | Refactorización de formato en el README. | 20/09/2026 |
+| DoofPlus-LandingPage | main | `6e6efc0` | docs: add README.md | Creación inicial del archivo README. | 20/09/2026 |
+| DoofPlus-LandingPage | develop | `8dca66b` | Merge remote-tracking branch 'origin/develop' into develop | Sincronización de la rama develop. | 20/09/2026 |
+| DoofPlus-LandingPage | develop | `a8c7448` | chore: Create template | Creación de plantilla base del proyecto. | 20/09/2026 |
 
 #### 5.2.1.5. Execution Evidence for Sprint Review
 
@@ -2737,7 +2625,7 @@ Dado que el enfoque del Sprint 1 fue la Landing Page, la documentación de servi
 #### 5.2.1.7. Software Deployment Evidence for Sprint Review
 
 Durante este Sprint, el equipo configuró los entornos en la nube para el alojamiento del Landing Page.
-Se configuró **GitHub Pages** apuntando a la rama `main` del repositorio `IngesCompany-LandingPage`, permitiendo que cualquier cambio en el código se publique automáticamente.
+Se configuró **GitHub Pages** apuntando a la rama `main` del repositorio `DoofPlus-LandingPage`, permitiendo que cualquier cambio en el código se publique automáticamente.
 
 ![github page](assets/img/chapter5/evidencia/github-pages.png)
 
@@ -2748,6 +2636,93 @@ Se configuró **GitHub Pages** apuntando a la rama `main` del repositorio `Inges
 Todos los miembros del equipo participaron activamente en la implementación de la Landing Page, organizándose a través de ramas y realizando Pull Requests que fueron revisados por sus pares antes de ser fusionados a `main`.
 
 ![evidencia](assets/img/chapter5/evidencia/evidencia.png)
+
+### 5.2.2. Sprint 2
+
+#### 5.2.2.1. Sprint Planning 2
+
+El Sprint Planning Meeting sirvió para definir los objetivos del desarrollo frontend, asignar las responsabilidades entre los miembros del equipo y seleccionar las User Stories prioritarias orientadas a la experiencia de usuario en la gestión de lotes farmacéuticos, eventos de calidad y
+monitoreo mediante dashboards. A continuación, se presenta el resumen de la reunión de planificación:
+
+| Sprint # | Sprint 2 |
+|----------|----------|
+| **Sprint Planning Background** | |
+| **Date** | 2026-10-02 |
+| **Time** | 09:00 AM |
+| **Location** | Reunión virtual vía Discord |
+| **Prepared By** | Cobades, Yhoshua |
+| **Attendees (to planning meeting)** | Angulo, Marcelo / Cobades, Yhoshua / Flores, Ricardo / Rojas, Nestor / Zavaleta, Rodolfo |
+| **Sprint 2 – 1 Review Summary** | Evaluación satisfactoria del progreso de la solución digital y alineación de la Web Application con la guía de estilos del producto. |
+| **Sprint 2 – 1 Retrospective Summary** | Se acordó reforzar la consistencia en el uso del data-binding bidireccional (ngModel) para búsquedas y filtros en tiempo real sobre las vistas tabulares. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 2 Goal** | **Our focus is on** delivering an interactive and fully functional SPA Frontend for the Web Application.<br>**We believe it delivers** an intuitive interface for lab specialists and production supervisors to manage batch traceability and quality events.<br>**This will be confirmed when** users can navigate through the dashboard, create and inspect batches and deviations, and perform real-time search/filtering smoothly. |
+| **Sprint 2 Velocity** | 18 Story Points |
+| **Sum of Story Points** | 18 Story Points |
+
+#### 5.2.2.2. Aspect Leaders and Collaborators
+
+A continuación se presenta el Leadership-and-Collaboration Matrix (LACX), que indica quién es el líder (L) y quiénes son los colaboradores (C) para cada aspecto dentro del alcance del Sprint 2.
+
+| Team Member | GitHub Username | Landing Page (UI/UX) | Landing Page (Code) | Deployment & Setup | Documentation |
+|-------------|-----------------|----------------------|---------------------|--------------------|---------------|
+| Angulo, Marcelo | Zock2005 | L | C |  | C |
+| Cobades, Yhoshua | YhoshuaCZ | C | C |  | C |
+| Flores, Ricardo | Nitoryu2801 | C | C |  | C |
+| Rojas, Nestor | danRO | C | C |  |  |
+| Zavaleta, Rodolfo | gutierrezrodolfo360 | C | L |  | L |
+
+#### 5.2.2.3. Sprint Backlog 2
+
+El objetivo principal de este Sprint fue implementar el frontend de la Web Application (SPA) para permitir la gestión operativa de calidad y producción en DoofPlus.
+
+![jira](assets/img/chapter5/evidencia/jira-pb2.png)
+
+| User Story | Work-Item / Task | Status |
+|------------|------------------|--------|
+| **Story Id** \| **Story Title** | **Task Id** \| **Task Title** | **Task Description** | **Estimation (Hours)** | **Assigned To** | **(To-do / In-Process / To-Review / Done)** |
+| US14 \| Registro de lotes | T012 \| Creación del componente de registro de lotes | Diseñar el formulario reactivo para captura de código de producto, nombre, cantidad planificada y fecha de expiración. | 4 | Flores, Ricardo | Done |
+| US14 \| Registro de lotes | T013 \| Persistencia e integración del servicio de lotes | Implementar el manejo de estado en memoria en el servicio TypeScript para almacenar dinámicamente los lotes. | 3 | Cobades, Yhoshua | Done |
+| US15 \| Consulta del historial de lotes | T014 \| Creación del componente de lista de lotes | Diseñar la tabla de inspección de lotes con badges dinámicos de color según el estado del lote. | 4 | Zavaleta, Rodolfo | Done |
+| US15 \| Consulta del historial de lotes | T015 \| Implementación de filtros y buscador en tiempo real | Incorporar el campo de búsqueda con icono de lupa y selector por estado mediante ngModel | 3 | Rojas, Nestor | Done |
+| US18 \| Registro de desviaciones | T016 \| Creación del componente de registro de desviaciones | Construir el formulario para el registro de hallazgos técnicos clasificados por nivel de severidad. | 4 | Flores, Ricardo | Done |
+| US18 \| Registro de desviaciones | T017 \| Creación del componente de lista de desviaciones | Desarrollar la vista tabular e integración para la consulta y filtrado de desviaciones. | 3 | Angulo, Marcelo | Done |
+| US31 \| Visualización de indicadores KPI de calidad | T018 \| Implementación de tarjetas de métricas KPI | Diseñar e integrar las tarjetas dinámicas de indicadores KPI para el control de lotes y desviaciones en el dashboard. | 3 | Cobades, Yhoshua | Done |
+| US32 \| Monitoreo de producción en tiempo real| T019 \| Implementación de tabla y widgets de monitoreo | Desarrollar la tabla de seguimiento centralizado de lotes en ejecución y widgets de alertas de calidad recientes. | 3 | Angulo, Marcelo | Done |
+
+#### 5.2.2.4. Development Evidence for Sprint Review
+
+En esta sección se presentan las evidencias de desarrollo registradas en el repositorio de la Web Application:
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|------------|--------|-----------|----------------|---------------------|--------------------|
+| DoofPlus-WebApplication | main | `382179b` | feat(models): add deviation model interface and severity types | Definición de la interfaz Deviation y recursos de creación con tipado estricto | 05/10/2026 |
+| DoofPlus-WebApplication | main | `0994c14` | feat(models): add lot model interface and product properties | Definición de la interfaz Lot y consistencia en propiedades temporales | 05/10/2026 |
+| DoofPlus-WebApplication | main | `69c570f` | feat(models): add user model interface and authentication roles | Creación de la estructura del modelo de usuario y gestión de permisos | 05/10/2026 |
+| DoofPlus-WebApplication | main | `4cf0caa` | feat(services): implement reactive signals state management in deviations service | Creación y configuración del servicio de desviaciones | 05/10/2026 |
+| DoofPlus-WebApplication | main | `14f48f6` | feat(services): implement reactive signals state management in lots service | Refactorización del servicio de lotes para admitir reactividad en tiempo real | 05/10/2026 |
+| DoofPlus-WebApplication | main | `efea45c` | feat(dashboard): integrate real-time reactive deviation alerts and metrics into dashboard overview | Conexión del componente de dashboard en features con el servicio reactivo para mostrar alertas recientes y métricas dinámicas | 05/10/2026 |
+| DoofPlus-WebApplication | main | `7264e6d` | feat(deviations): implement deviation creation component with reactive form bindings | Creación del componente de registro de nuevas desviaciones conectado al servicio con signals | 05/10/2026 |
+| DoofPlus-WebApplication | main | `f331ce9` | feat(deviations): implement deviation list component with reactive signals integration | Desarrollo de la vista de listado y filtrado de desviaciones en tiempo real dentro del módulo de features | 05/10/2026 |
+| DoofPlus-WebApplication | main | `6e08d7a` | feat(lots): implement lot list component with reactive signals integration | Desarrollo de la vista de listado y filtrado de lotes en tiempo real dentro del módulo de features | 05/10/2026 |
+| DoofPlus-WebApplication | main | `f995087` | feat(lots): implement lot creation component with reactive form bindings | Creación del componente de registro de nuevos lotes conectado al servicio con signals | 05/10/2026 |
+| DoofPlus-WebApplication | main | `9d163b0` | feat(lots): implement lot detail component with reactive state management | Desarrollo del componente de detalles e información específica de cada lote | 05/10/2026 |
+| DoofPlus-WebApplication | main | `97f6560` | feat(shared): implement responsive navbar component with routing and active states | Desarrollo e integración del componente de navegación principal ubicado en shared con soporte para enrutamiento y estados activos | 05/10/2026 |
+| DoofPlus-WebApplication | main | `cbca755` | feat(shared): implement responsive sidebar navigation component with active state routing | Desarrollo e integración del componente de barra lateral en shared para la navegación estructural de la aplicación | 05/10/2026 |
+
+#### 5.2.2.5. Execution Evidence for Sprint Review
+
+
+#### 5.2.1.6. Services Documentation Evidence for Sprint Review
+Dado que durante el Sprint 2 el enfoque principal se centró en la maquetación UI/UX de la Web Application y la gestión de estado local mediante servicios TypeScript, la documentación técnica formal de los RESTful Web Services a través de OpenAPI (Swagger) se profundizará en los Sprints siguientes con la integración directa de los endpoints de backend.
+
+#### 5.2.1.7. Software Deployment Evidence for Sprint Review
+
+Durante este Sprint, el equipo configuró los entornos en la nube para el alojamiento del Front Web Application.
+Se configuró **GitHub Pages** apuntando a la rama `main` del repositorio `DoofPlus-Frontend`, permitiendo que cualquier cambio en el código se publique automáticamente.
+
+#### 5.2.1.8. Team Collaboration Insights during Sprint
+
+Todos los integrantes del equipo colaboraron activamente en el desarrollo del frontend de la Web Application bajo el flujo GitFlow.
 
 ## 5.3. Validation Interviews
 
