@@ -1126,13 +1126,9 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - IoT Monitoring](../assets/img/chapter4/diagram-class/java/class-05-iot.png)
 
-**Quality & Compliance: liberación de lotes.** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS.
+**Quality & Compliance.** `QualityDocument` gestiona versiones y aprobación de SOP y protocolos; `MaterialApproval` registra el dictamen de cada lote de insumo; `BatchReview` controla la cuarentena, evaluación y liberación del lote y emite el `ReleaseCertificate`; `AnalyticalResult` calcula el resultado y detecta los OOS. `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
 
-![Class Diagram - Quality & Compliance 1](../assets/img/chapter4/diagram-class/java/class-06a-quality.png)
-
-**Quality & Compliance: desviaciones y auditoría.** `Deviation` controla la clasificación, investigación, causa raíz y acciones CAPA hasta su cierre; `Audit` registra hallazgos y observaciones; `AuditTrailEntry` es de solo inserción; `RegulatoryReport` guarda los reportes generados.
-
-![Class Diagram - Quality & Compliance 2](../assets/img/chapter4/diagram-class/java/class-06b-quality.png)
+![Class Diagram - Quality & Compliance](../assets/img/chapter4/diagram-class/java/class-06-quality.png)
 
 ## 4.8. Database Design
 
@@ -1175,12 +1171,8 @@ Los diagramas se elaboraron con Mermaid (Diagram-as-Code), uno por bounded conte
 
 ![Database Diagram - IoT](../assets/img/chapter4/database/db-05-iot.png)
 
-**Quality & Compliance: liberación de lotes (documentos, insumos, resultados y liberación)**
+**Quality & Compliance (documentos, insumos, resultados, liberación, desviaciones, CAPA, auditorías y reportes)**
 
-![Database Diagram - Quality 1](../assets/img/chapter4/database/db-06a-quality.png)
-
-**Quality & Compliance: desviaciones y auditoría (desviaciones, CAPA, auditorías y reportes)**
-
-![Database Diagram - Quality 2](../assets/img/chapter4/database/db-06b-quality.png)
+![Database Diagram - Quality & Compliance](../assets/img/chapter4/database/db-06-quality.png)
 
 La fuente Structurizr DSL de los diagramas C4 se encuentra en `assets/diagrams/structurizr/workspace.dsl`, y las fuentes Mermaid de los diagramas de clases y de base de datos, en `assets/diagrams/mermaid`.
