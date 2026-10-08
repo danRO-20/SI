@@ -1498,7 +1498,7 @@ Las secciones se presentan en el siguiente orden, que prioriza la información q
 | 9 | FAQ | Preguntas frecuentes en acordeón | US05 |
 | 10 | Contact | Banda de llamada a la acción "Contact us" | US04 |
 | 11 | About Us | Misión y visión de IngesCompany | US45 |
-| 12 | Our Team | Integrantes del equipo | US45 |
+| 12 | Our Team | Integrantes del equipo y Video About-the-Team embebido | US45 |
 | 13 | Footer | Logotipo blanco, enlaces, contacto, términos, privacidad y selector de idioma | US46, US47 |
 
 ### 4.3.1. Landing Page Wireframe
@@ -1551,7 +1551,7 @@ Los wireframes son de baja fidelidad: los textos se representan con barras, las 
 
 ![Landing Page Wireframe · About Us](assets/img/chapter4/landing-page/wireframes/desktop/11-about-us.png)
 
-**Our Team:** cuadrícula de tarjetas con foto, nombre y rol.
+**Our Team:** cuadrícula de tarjetas con foto, nombre y rol, y debajo el reproductor del Video About-the-Team con su descripción y capítulos.
 
 ![Landing Page Wireframe · Our Team](assets/img/chapter4/landing-page/wireframes/desktop/12-our-team.png)
 
@@ -1633,7 +1633,7 @@ Los mock-ups aplican sobre los wireframes el Design System de la sección 4.1 y 
 
 ![Landing Page Mock-up · About Us](assets/img/chapter4/landing-page/mockups/desktop/11-about-us.png)
 
-**Our Team:** presenta a los integrantes de IngesCompany: Marcelo Angulo, Yhoshua Cobades, Ricardo Flores, Nestor Rojas y Rodolfo Zavaleta, con su foto, nombre y rol.
+**Our Team:** presenta a los integrantes de IngesCompany: Marcelo Angulo, Yhoshua Cobades, Ricardo Flores, Nestor Rojas y Rodolfo Zavaleta, con su foto, nombre y rol. Debajo se incrusta el Video About-the-Team, que resume el proceso de trabajo del equipo, la retrospectiva y el testimonio de cada integrante, con un enlace alternativo a YouTube.
 
 ![Landing Page Mock-up · Our Team](assets/img/chapter4/landing-page/mockups/desktop/12-our-team.png)
 
@@ -2136,7 +2136,7 @@ El diseño del prototipo se guió por cuatro criterios:
 
 Prototipo navegable en Figma: <mark>pegar URL pública del prototipo</mark>
 
-Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0729-7742-IngesCompany-prototype-navigation: <mark>pegar URL, timing de inicio y duración</mark>
+Video de navegación del prototipo (Microsoft Stream), upc-pre-202620-1asi0729-7742-IngesCompany-prototypenavigation-sprint-1: <mark>pegar URL, timing de inicio y duración</mark>
 
 ## 4.6. Domain-Driven Software Architecture
 La arquitectura de DoofPlus se fundamenta en Domain-Driven Design (DDD). El punto de partida es el Big Picture EventStorming (sección 2.4), que dejó una línea de tiempo de eventos organizada en siete swimlanes, con sus actores, sistemas externos y problemas. En esta sección ese conocimiento se profundiza con un Design-Level EventStorming hasta identificar los bounded contexts y obtener aggregates, commands, policies, read models y sistemas externos por contexto; luego la solución se representa con el modelo C4 (contexto, contenedores y componentes). Cada bounded context se corresponde con un módulo de la Web Application en Angular y con un paquete del RESTful API en Spring Boot.
