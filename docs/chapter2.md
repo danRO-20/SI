@@ -48,7 +48,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
   </tr>
   <tr>
     <td>Estrategias de marketing</td>
-    <td>Contenido educativo sobre BPM e integridad de datos, demos desde la Landing Page y presencia en eventos del sector.</td>
+    <td>Contenido educativo sobre BPM e integridad de datos, precios públicos y registro de la organización desde la Landing Page, y presencia en eventos del sector.</td>
     <td>Marketing digital B2B (blog, casos de éxito) y demostraciones comerciales.</td>
     <td>Venta consultiva B2B con implementación y soporte locales.</td>
     <td>Venta B2B y B2G a actores de la cadena de suministro y reguladores.</td>
@@ -112,7 +112,7 @@ Para posicionar a DoofPlus frente a TuHub (MES con IoT), LOLFAR (gestión de far
 
 #### Estrategia de costos y accesibilidad (suscripción sin inversión inicial)
 
-Frente a soluciones cotizadas por proyecto con costos de implementación elevados (TuHub, LOLFAR), DoofPlus ofrece precios públicos por suscripción (Standard Lab y Enterprise) sin inversión en servidores ni hardware propio, ya que la captura IoT se integra con ThingsBoard. Táctica: prueba piloto de 30 días para laboratorios que soliciten una demo desde la Landing Page.
+Frente a soluciones cotizadas por proyecto con costos de implementación elevados (TuHub, LOLFAR), DoofPlus ofrece precios públicos por suscripción (Standard Lab y Enterprise) sin inversión en servidores ni hardware propio, ya que la captura IoT se integra con ThingsBoard. Táctica: el laboratorio registra su organización desde la Landing Page y elige su plan sin intermediarios; la modalidad anual equivale a dos meses gratis.
 
 #### Enfoque vertical en la calidad farmacéutica
 
@@ -124,7 +124,7 @@ Se ofrece una única cuenta por organización con varias plantas y líneas de pr
 
 #### Estrategia comercial B2B dirigida
 
-La prospección se dirige a jefes de aseguramiento de calidad y de producción, demostrando la reducción del tiempo de preparación de auditorías y del riesgo de observaciones de DIGEMID. Tácticas: webinars sobre integridad de datos, casos de uso con laboratorios piloto y alianzas con consultores de BPM.
+La prospección se dirige a jefes de aseguramiento de calidad y de producción, demostrando la reducción del tiempo de preparación de auditorías y del riesgo de observaciones de DIGEMID. Tácticas: webinars sobre integridad de datos, casos de uso con los primeros laboratorios suscritos y alianzas con consultores de BPM.
 
 ## 2.2. Entrevistas
 

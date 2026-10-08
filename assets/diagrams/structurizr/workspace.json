@@ -7,7 +7,7 @@
   "model": {
     "people": [
       {
-        "description": "Evalúa DoofPlus desde la Landing Page y solicita una demostración.",
+        "description": "Evalúa DoofPlus desde la Landing Page, consulta los planes, envía sus consultas y registra su laboratorio.",
         "id": "1",
         "name": "Visitante de un laboratorio",
         "properties": {
@@ -15,7 +15,7 @@
         },
         "relationships": [
           {
-            "description": "Conoce la propuesta de valor, los planes y solicita una demo",
+            "description": "Conoce la propuesta de valor y los planes, envía consultas y registra su laboratorio",
             "destinationId": "9",
             "id": "90",
             "sourceId": "1",
@@ -247,7 +247,7 @@
             },
             "relationships": [
               {
-                "description": "Solicita demo",
+                "description": "Envía consultas de contacto",
                 "destinationId": "23",
                 "id": "101",
                 "sourceId": "10",
@@ -263,7 +263,7 @@
                 "technology": "HTTPS"
               },
               {
-                "description": "Solicita demo",
+                "description": "Envía consultas de contacto",
                 "destinationId": "36",
                 "id": "151",
                 "sourceId": "10",
@@ -939,11 +939,11 @@
                 "technology": "Interfaces – ACL Facade"
               },
               {
-                "description": "Registro de organizaciones, plantas y solicitudes de demo.",
+                "description": "Registro de organizaciones, plantas y consultas de contacto.",
                 "documentation": {},
                 "group": "Organizations & Profiles",
                 "id": "36",
-                "name": "OrganizationsController · DemoRequestsController",
+                "name": "OrganizationsController · ContactInquiriesController",
                 "properties": {
                   "structurizr.dsl.identifier": "org_ctl"
                 },
@@ -1030,11 +1030,11 @@
                 "technology": "Spring @Service – Command Service"
               },
               {
-                "description": "Registra la solicitud y avisa al equipo comercial.",
+                "description": "Registra la consulta y avisa al equipo de DoofPlus.",
                 "documentation": {},
                 "group": "Organizations & Profiles",
                 "id": "39",
-                "name": "DemoRequestCommandServiceImpl",
+                "name": "ContactInquiryCommandServiceImpl",
                 "properties": {
                   "structurizr.dsl.identifier": "org_dcmd"
                 },
@@ -1118,7 +1118,7 @@
                 "documentation": {},
                 "group": "Organizations & Profiles",
                 "id": "42",
-                "name": "Organization · Plant · Profile · DemoRequest",
+                "name": "Organization · Plant · Profile · ContactInquiry",
                 "properties": {
                   "structurizr.dsl.identifier": "org_dom"
                 },
@@ -1151,7 +1151,7 @@
                 "documentation": {},
                 "group": "Organizations & Profiles",
                 "id": "44",
-                "name": "OrganizationRepository · ProfileRepository · DemoRequestRepository",
+                "name": "OrganizationRepository · ProfileRepository · ContactInquiryRepository",
                 "properties": {
                   "structurizr.dsl.identifier": "org_repo"
                 },

@@ -50,16 +50,16 @@ classDiagram
     +boolean emailEnabled
     +boolean inAppEnabled
   }
-  class DemoRequest {
+  class ContactInquiry {
     <<Aggregate Root>>
     -Long id
+    -String fullName
     -String email
-    -String laboratoryName
-    -Segment segment
-    -DemoRequestStatus status
-    -LocalDateTime requestedAt
-    +DemoRequest(String email, String laboratoryName, Segment segment)
-    +markAsContacted() void
+    -String message
+    -InquiryStatus status
+    -LocalDateTime receivedAt
+    +ContactInquiry(String fullName, String email, String message)
+    +markAsAnswered() void
   }
   class OrganizationStatus {
     <<enumeration>>
@@ -72,15 +72,10 @@ classDiagram
     PRODUCTION
     ADMINISTRATION
   }
-  class Segment {
-    <<enumeration>>
-    QA_QC
-    PRODUCTION
-  }
-  class DemoRequestStatus {
+  class InquiryStatus {
     <<enumeration>>
     RECEIVED
-    CONTACTED
+    ANSWERED
   }
   class OrganizationRepository {
     <<interface>>
@@ -95,9 +90,9 @@ classDiagram
     +handle(RegisterOrganizationCommand command) Optional~Organization~
     +handle(AddPlantCommand command) Optional~Plant~
   }
-  class DemoRequestCommandService {
+  class ContactInquiryCommandService {
     <<interface>>
-    +handle(RequestDemoCommand command) Optional~DemoRequest~
+    +handle(SendContactInquiryCommand command) Optional~ContactInquiry~
   }
   class ExternalIamService {
     +createAdministrator(Long organizationId, String email) Optional~Long~
@@ -109,8 +104,7 @@ classDiagram
   Profile *-- PersonName : name
   Profile *-- NotificationPreferences : preferences
   Profile --> Area : area
-  DemoRequest --> Segment : segment
-  DemoRequest --> DemoRequestStatus : status
+  ContactInquiry --> InquiryStatus : status
   OrganizationRepository ..> Organization : persists
   ProfileRepository ..> Profile : persists
   OrganizationCommandService ..> ExternalIamService : uses

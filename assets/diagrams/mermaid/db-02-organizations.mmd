@@ -26,13 +26,13 @@ erDiagram
     tinyint(1) email_notifications
     tinyint(1) in_app_notifications
   }
-  demo_requests {
+  contact_inquiries {
     bigint id PK
+    varchar(150) full_name
     varchar(255) email
-    varchar(150) laboratory_name "nullable"
-    varchar(20) segment "QA_QC, PRODUCTION"
-    varchar(20) status "RECEIVED, CONTACTED"
-    datetime requested_at
+    text message
+    varchar(20) status "RECEIVED, ANSWERED"
+    datetime received_at
   }
   organizations ||--|{ plants : "operates"
   organizations ||--o{ profiles : "employs"

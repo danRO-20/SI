@@ -767,7 +767,7 @@ La siguiente tabla resume la trazabilidad entre artefactos:
 | Quality & Compliance | Core | Gestión documental, Control de calidad y liberación, Desviaciones y CAPA, Auditoría y cumplimiento | EP03, EP05, EP07, EP08, EP10 | QualityDocument, MaterialApproval, BatchReview, AnalyticalResult, Deviation, Audit, RegulatoryReport | `quality` |
 | IoT Monitoring | Supporting | Monitoreo de equipos (IoT) | EP06, EP09 (equipos, calibraciones y mantenimiento) | Equipment, IoTDevice, TelemetryReading, Alert | `iot-monitoring` / `iotmonitoring` |
 | Identity & Access Management | Generic | Plataforma y administración, Gestión documental | EP02 | User, ElectronicSignature | `iam` |
-| Organizations & Profiles | Supporting | Plataforma y administración | EP01 (solicitud de demo), EP02 (registro de la organización) | Organization, Profile, DemoRequest | `organizations` |
+| Organizations & Profiles | Supporting | Plataforma y administración | EP01 (consultas del formulario de contacto), EP02 (registro de la organización) | Organization, Profile, ContactInquiry | `organizations` |
 | Subscriptions & Payments | Generic | Plataforma y administración | EP11 | Plan, Subscription | `subscriptions` |
 
 Los dashboards (EP08) y las notificaciones entre áreas (EP10) no forman un contexto propio: los dashboards son read models que cada contexto expone y las notificaciones son policies que reaccionan a domain events.
@@ -803,7 +803,7 @@ Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=34587646857
 
 #### Paso 1: Timelines
 
-Se organizaron en una línea de tiempo vertical los eventos de cada contexto, con los resultados alternativos en la columna "Alternativa" (por ejemplo, "Documento aprobado" o "Documento rechazado"). Al revisar qué dispara cada evento, en este nivel se agregaron eventos que faltaban en el Big Picture: "Demostración solicitada", "Plan de suscripción seleccionado", "Firma electrónica registrada", "Equipo registrado", "Sensor IoT registrado", "Aprobación de insumos solicitada a Calidad", "Mantenimiento preventivo realizado", "Lote puesto en espera" y "Acción CAPA vencida"; además, "Usuario registrado" se renombró como "Usuario dado de alta en la organización". También aparecen eventos de detalle que no eran relevantes en la vista general, como "Usuario autenticado", "Inicio de sesión fallido", "Cuenta bloqueada", "Planta agregada", "Perfil actualizado" y "Alerta reconocida".
+Se organizaron en una línea de tiempo vertical los eventos de cada contexto, con los resultados alternativos en la columna "Alternativa" (por ejemplo, "Documento aprobado" o "Documento rechazado"). Al revisar qué dispara cada evento, en este nivel se agregaron eventos que faltaban en el Big Picture: "Consulta recibida", "Plan de suscripción seleccionado", "Firma electrónica registrada", "Equipo registrado", "Sensor IoT registrado", "Aprobación de insumos solicitada a Calidad", "Mantenimiento preventivo realizado", "Lote puesto en espera" y "Acción CAPA vencida"; además, "Usuario registrado" se renombró como "Usuario dado de alta en la organización". También aparecen eventos de detalle que no eran relevantes en la vista general, como "Usuario autenticado", "Inicio de sesión fallido", "Cuenta bloqueada", "Planta agregada", "Perfil actualizado" y "Alerta reconocida".
 
 **Identity & Access Management**
 
@@ -963,7 +963,7 @@ Donde no interviene un sistema externo se escribió la business rule que el comm
 | Bounded context | Aggregates | Ejemplo de invariante |
 | --- | --- | --- |
 | IAM | User, ElectronicSignature | Una cuenta se bloquea tras 5 intentos fallidos; firmar exige reingresar la contraseña. |
-| Organizations & Profiles | DemoRequest, Organization, Profile | El RUC de la organización es válido y único. |
+| Organizations & Profiles | ContactInquiry, Organization, Profile | El RUC de la organización es válido y único. |
 | Subscriptions & Payments | Plan, Subscription | La suscripción se activa solo si Niubiz autoriza el cobro. |
 | Manufacturing & Batch Management | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch | Un lote solo consume materia prima aprobada y solo Calidad puede liberarlo. |
 | IoT Monitoring | Equipment, IoTDevice, TelemetryReading, Alert | Un equipo con calibración vencida no puede asignarse a un lote. |
@@ -1036,7 +1036,7 @@ El diagrama de contenedores (nivel 2) muestra las unidades de despliegue de la s
 
 | Container | Tecnología | Despliegue | Responsabilidad |
 | --- | --- | --- | --- |
-| Landing Page | HTML5, CSS3, JavaScript | GitHub Pages | Presentar la propuesta de valor, planes y equipo; registrar solicitudes de demo y dirigir a cada segmento a la Web Application. |
+| Landing Page | HTML5, CSS3, JavaScript | GitHub Pages | Presentar la propuesta de valor, planes y equipo; enviar las consultas del formulario de contacto y dirigir a cada segmento a la Web Application. |
 | Web Application | Angular, Angular Material, TypeScript, ngx-translate | Firebase Hosting | SPA responsive con un módulo por bounded context; consume el RESTful API con un token JWT. |
 | RESTful API | Spring Boot, Java 21, Spring Data JPA, Spring Security, springdoc-openapi | Render | Monolito modular con los seis bounded contexts; expone endpoints REST documentados con OpenAPI (Swagger), recibe la telemetría de ThingsBoard y publica notificaciones por WebSocket (STOMP). |
 | Database | MySQL 8 | Railway | Persistencia relacional; las tablas se agrupan por bounded context. |
@@ -1059,7 +1059,7 @@ En el RESTful API cada bounded context es un paquete de Spring Boot con cuatro c
 
 ![Component Diagram - IAM](../assets/img/chapter4/software-architecture/c4/c4-04-api-iam-components.png)
 
-**Organizations & Profiles.** Registra organizaciones, plantas, perfiles y solicitudes de demo desde la Landing Page; al registrar una organización pide a IAM crear su administrador mediante `ExternalIamService`.
+**Organizations & Profiles.** Registra organizaciones, plantas, perfiles y las consultas del formulario de contacto de la Landing Page; al registrar una organización pide a IAM crear su administrador mediante `ExternalIamService`.
 
 ![Component Diagram - Organizations](../assets/img/chapter4/software-architecture/c4/c4-05-api-organizations-components.png)
 
@@ -1095,7 +1095,7 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - IAM](../assets/img/chapter4/diagram-class/class-01-iam.png)
 
-**Organizations & Profiles.** `Organization` agrupa sus plantas y se identifica por el value object `Ruc`; `Profile` guarda los datos y preferencias de cada usuario; `DemoRequest` registra las solicitudes de demo de la Landing Page.
+**Organizations & Profiles.** `Organization` agrupa sus plantas y se identifica por el value object `Ruc`; `Profile` guarda los datos y preferencias de cada usuario; `ContactInquiry` registra las consultas enviadas desde el formulario de contacto de la Landing Page y, mediante una policy, avisa al equipo de DoofPlus.
 
 ![Class Diagram - Organizations & Profiles](../assets/img/chapter4/diagram-class/class-02-organizations.png)
 
@@ -1130,7 +1130,7 @@ Los diagramas se elaboraron con Mermaid (Diagram-as-Code), uno por bounded conte
 | Bounded context | Tablas | Aggregates que persiste |
 | --- | --- | --- |
 | IAM | users, roles, user_roles, electronic_signatures | User, ElectronicSignature |
-| Organizations & Profiles | organizations, plants, profiles, demo_requests | Organization, Profile, DemoRequest |
+| Organizations & Profiles | organizations, plants, profiles, contact_inquiries | Organization, Profile, ContactInquiry |
 | Subscriptions & Payments | plans, subscriptions, payments | Plan, Subscription |
 | Manufacturing & Batch Management | products, master_formulas, formula_components, raw_material_lots, production_orders, production_batches, material_consumptions, process_parameters, incidents, batch_events | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch |
 | IoT Monitoring | equipment, calibration_records, maintenance_records, iot_devices, telemetry_readings, alert_rules, alerts | Equipment, IoTDevice, TelemetryReading, Alert |

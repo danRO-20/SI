@@ -374,7 +374,7 @@ A continuación se muestran los Assumptions en su idioma original:
 **Business Outcome Assumptions:**
 
 - We believe that at least 10 laboratories will subscribe to a paid plan within the first six months after launch.
-- We believe that at least 20% of the laboratories that request a demo from the landing page will become paying customers.
+- We believe that at least 20% of the laboratories that register their organization from the landing page will subscribe to a paid plan.
 - We believe that monthly churn will remain below 5% once a laboratory registers its batch records in the platform.
 - We believe that subscribed laboratories will register at least 80% of their new batches in the platform after the third month of use.
 - We believe that at least 25% of Standard Lab customers will upgrade to the Enterprise plan when they connect sensors in more than one production line.
@@ -585,7 +585,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
   </tr>
   <tr>
     <td>Estrategias de marketing</td>
-    <td>Contenido educativo sobre BPM e integridad de datos, demos desde la Landing Page y presencia en eventos del sector.</td>
+    <td>Contenido educativo sobre BPM e integridad de datos, precios públicos y registro de la organización desde la Landing Page, y presencia en eventos del sector.</td>
     <td>Marketing digital B2B (blog, casos de éxito) y demostraciones comerciales.</td>
     <td>Venta consultiva B2B con implementación y soporte locales.</td>
     <td>Venta B2B y B2G a actores de la cadena de suministro y reguladores.</td>
@@ -649,7 +649,7 @@ Para posicionar a DoofPlus frente a TuHub (MES con IoT), LOLFAR (gestión de far
 
 #### Estrategia de costos y accesibilidad (suscripción sin inversión inicial)
 
-Frente a soluciones cotizadas por proyecto con costos de implementación elevados (TuHub, LOLFAR), DoofPlus ofrece precios públicos por suscripción (Standard Lab y Enterprise) sin inversión en servidores ni hardware propio, ya que la captura IoT se integra con ThingsBoard. Táctica: prueba piloto de 30 días para laboratorios que soliciten una demo desde la Landing Page.
+Frente a soluciones cotizadas por proyecto con costos de implementación elevados (TuHub, LOLFAR), DoofPlus ofrece precios públicos por suscripción (Standard Lab y Enterprise) sin inversión en servidores ni hardware propio, ya que la captura IoT se integra con ThingsBoard. Táctica: el laboratorio registra su organización desde la Landing Page y elige su plan sin intermediarios; la modalidad anual equivale a dos meses gratis.
 
 #### Enfoque vertical en la calidad farmacéutica
 
@@ -661,7 +661,7 @@ Se ofrece una única cuenta por organización con varias plantas y líneas de pr
 
 #### Estrategia comercial B2B dirigida
 
-La prospección se dirige a jefes de aseguramiento de calidad y de producción, demostrando la reducción del tiempo de preparación de auditorías y del riesgo de observaciones de DIGEMID. Tácticas: webinars sobre integridad de datos, casos de uso con laboratorios piloto y alianzas con consultores de BPM.
+La prospección se dirige a jefes de aseguramiento de calidad y de producción, demostrando la reducción del tiempo de preparación de auditorías y del riesgo de observaciones de DIGEMID. Tácticas: webinars sobre integridad de datos, casos de uso con los primeros laboratorios suscritos y alianzas con consultores de BPM.
 
 ## 2.2. Entrevistas
 
@@ -1107,7 +1107,7 @@ Los criterios de aceptación siguen la estructura de Gherkin (Dado que / Cuando 
 | US01 | Visualización de la propuesta de valor | Como visitante especialista QA/QC o jefe de producción, quiero conocer la propuesta de valor de DoofPlus para evaluar si responde a las necesidades de mi laboratorio. | **Escenario 1: Visualización de la propuesta de valor**<br>Dado que el visitante accede a la Landing Page<br>Cuando se carga la sección principal (Home)<br>Entonces visualiza el título, la descripción de la propuesta de valor y la opción para comenzar a usar DoofPlus.<br>**Escenario 2: Visualización en dispositivo móvil**<br>Dado que el visitante accede desde un smartphone<br>Cuando se carga la sección principal<br>Entonces la propuesta de valor y la opción para comenzar a usar DoofPlus se muestran completas y adaptadas al dispositivo. | EP01 |
 | US02 | Visualización de servicios y características | Como visitante, quiero conocer los servicios y características de DoofPlus para comprender cómo mejora la trazabilidad y la gestión de calidad. | **Escenario 1: Consulta de servicios**<br>Dado que el visitante navega a la sección de servicios<br>Cuando la sección se muestra<br>Entonces visualiza los servicios Real-Time IoT Monitoring, Automated BPM Compliance, Immutable Traceability y Digital Batch Management con su descripción.<br>**Escenario 2: Detalle de una característica**<br>Dado que el visitante se encuentra en la sección de características<br>Cuando elige una característica<br>Entonces se muestra su descripción completa. | EP01 |
 | US03 | Visualización de planes y precios | Como visitante responsable de compras de un laboratorio, quiero consultar los planes y precios disponibles para identificar la alternativa más adecuada para mi organización. | **Escenario 1: Consulta de precios mensuales**<br>Dado que el visitante accede a la sección de planes<br>Cuando la sección se muestra<br>Entonces visualiza los planes Standard Lab (US$199/mes) y Enterprise (US$599/mes) con sus características.<br>**Escenario 2: Consulta de precios anuales**<br>Dado que el visitante revisa los planes<br>Cuando elige la modalidad de pago anual<br>Entonces se muestran los precios anuales (US$1,990 y US$5,990) con el ahorro correspondiente. | EP01 |
-| US04 | Formulario de contacto | Como visitante interesado, quiero dejar mi correo electrónico para recibir información y solicitar una demostración de DoofPlus. | **Escenario 1: Envío exitoso**<br>Dado que el visitante ingresa un correo electrónico válido<br>Cuando envía la solicitud<br>Entonces el sistema registra la solicitud y confirma su recepción al visitante.<br>**Escenario 2: Correo inválido**<br>Dado que el visitante ingresa un correo con formato inválido o no ingresa ningún correo<br>Cuando intenta enviar la solicitud<br>Entonces la solicitud no se registra y se informa el motivo del error. | EP01 |
+| US04 | Formulario de contacto | Como visitante interesado, quiero enviar una consulta al equipo de DoofPlus para resolver mis dudas sobre la plataforma y sus planes. | **Escenario 1: Envío exitoso**<br>Dado que el visitante ingresa su nombre, un correo electrónico válido y su consulta<br>Cuando envía el formulario<br>Entonces el sistema registra la consulta y confirma su recepción al visitante.<br>**Escenario 2: Datos inválidos**<br>Dado que el visitante ingresa un correo con formato inválido o deja la consulta vacía<br>Cuando intenta enviar el formulario<br>Entonces la consulta no se registra y se informa el motivo del error. | EP01 |
 | US05 | Preguntas frecuentes | Como visitante, quiero consultar preguntas frecuentes para resolver dudas comunes sobre la plataforma. | **Escenario 1: Consulta de una respuesta**<br>Dado que el visitante accede a la sección de preguntas frecuentes<br>Cuando selecciona una pregunta<br>Entonces se muestra la respuesta correspondiente.<br>**Escenario 2: Duda no resuelta**<br>Dado que el visitante no encuentra respuesta a su duda<br>Cuando termina de revisar las preguntas<br>Entonces se le ofrece la opción de contactar al equipo de DoofPlus. | EP01 |
 | US44 | Navegación por secciones | Como visitante, quiero acceder rápidamente a cada sección de la Landing Page para encontrar la información que necesito. | **Escenario 1: Acceso a una sección específica**<br>Dado que el visitante se encuentra en cualquier parte de la Landing Page<br>Cuando accede a una sección específica<br>Entonces se presenta el contenido de esa sección.<br>**Escenario 2: Acceso desde un smartphone**<br>Dado que el visitante accede desde un smartphone<br>Cuando accede a una sección específica<br>Entonces se presenta el contenido de esa sección adaptado al dispositivo. | EP01 |
 | US45 | Visualización del equipo y de la startup | Como visitante, quiero conocer a IngesCompany y a su equipo para generar confianza en la solución. | **Escenario 1: Consulta del equipo**<br>Dado que el visitante accede a la sección About Us<br>Cuando se muestra el equipo<br>Entonces visualiza la foto, el nombre, el rol y la descripción de cada integrante.<br>**Escenario 2: Consulta de la startup**<br>Dado que el visitante revisa la sección About Us<br>Cuando la sección se muestra<br>Entonces visualiza la descripción de IngesCompany y los pilares del servicio. | EP01 |
@@ -1198,7 +1198,7 @@ El Product Backlog de DoofPlus consolida las 59 User Stories y las 11 Technical 
 1. **Landing Page primero:** sus historias se ubican al inicio porque el sitio estático es el primer punto de contacto con los laboratorios y, según el statement, se considera desde el primer sprint.
 2. **Valor de las historias de la Web Application:** se mide con el User Task Matrix de la sección 2.3.2. Cada tarea recibe un puntaje igual a la suma, para ambos User Personas, de su frecuencia (Often = 3, Occasionally = 2, Rarely = 1) multiplicada por su importancia (High = 3, Medium = 2, Low = 1), y las historias que apoyan cada tarea se ordenan de mayor a menor puntaje. Cada grupo termina con la Technical Story del API que lo soporta.
 3. **Dependencias:** cuando una historia exige otra en sus criterios de aceptación, la requerida se ubica antes. Por ejemplo, US14 requiere un producto con fórmula maestra aprobada, por lo que US35, US36 y la orden de producción (US57) la preceden.
-4. **Identidad y suscripciones al final:** las historias de autenticación y roles no se colocan al inicio, como indica el statement. Las de suscripción y pago cierran el backlog porque la estrategia comercial de la sección 2.1.2 ofrece una prueba piloto de 30 días, de modo que el cobro se activa cuando el laboratorio ya usa el flujo de calidad.
+4. **Identidad y suscripciones al final:** las historias de autenticación y roles no se colocan al inicio, como indica el statement. Las de suscripción y pago cierran el backlog porque el cobro solo aporta valor cuando ya existen los flujos de calidad y producción que el laboratorio contrata; antes de ellas se ubica el registro de la organización (US50), que es su requisito.
 
 | Tarea del User Task Matrix | Especialista QA/QC | Jefe de Producción | Puntaje | Historias |
 | --- | --- | --- | :---: | --- |
@@ -1219,7 +1219,7 @@ Entre las dos tareas con puntaje 10, la liberación del lote (US54) precede a la
 | 3 | US44 | Navegación por secciones | Como visitante, quiero acceder rápidamente a cada sección de la Landing Page para encontrar la información que necesito. | 3 |
 | 4 | US03 | Visualización de planes y precios | Como visitante responsable de compras de un laboratorio, quiero consultar los planes y precios disponibles para identificar la alternativa más adecuada para mi organización. | 2 |
 | 5 | US45 | Visualización del equipo y de la startup | Como visitante, quiero conocer a IngesCompany y a su equipo para generar confianza en la solución. | 1 |
-| 6 | US04 | Formulario de contacto | Como visitante interesado, quiero dejar mi correo electrónico para recibir información y solicitar una demostración de DoofPlus. | 1 |
+| 6 | US04 | Formulario de contacto | Como visitante interesado, quiero enviar una consulta al equipo de DoofPlus para resolver mis dudas sobre la plataforma y sus planes. | 1 |
 | 7 | US46 | Cambio de idioma | Como visitante, quiero cambiar el idioma de la Landing Page entre inglés y español para comprender el contenido en mi idioma de preferencia. | 5 |
 | 8 | TS01 | Implementación de Landing Page responsive y accesible | Como Developer, quiero implementar la Landing Page con HTML5, CSS3 y JavaScript aplicando responsive web design y a11y para garantizar una experiencia adecuada en distintos dispositivos. | 3 |
 | 9 | US48 | Acceso por segmento a la Web Application | Como visitante especialista QA/QC o jefe de producción, quiero acceder desde la Landing Page a la vista de la Web Application de mi segmento para comenzar a usar la plataforma. | 2 |
@@ -2068,7 +2068,7 @@ La siguiente tabla resume la trazabilidad entre artefactos:
 | Quality & Compliance | Core | Gestión documental, Control de calidad y liberación, Desviaciones y CAPA, Auditoría y cumplimiento | EP03, EP05, EP07, EP08, EP10 | QualityDocument, MaterialApproval, BatchReview, AnalyticalResult, Deviation, Audit, RegulatoryReport | `quality` |
 | IoT Monitoring | Supporting | Monitoreo de equipos (IoT) | EP06, EP09 (equipos, calibraciones y mantenimiento) | Equipment, IoTDevice, TelemetryReading, Alert | `iot-monitoring` / `iotmonitoring` |
 | Identity & Access Management | Generic | Plataforma y administración, Gestión documental | EP02 | User, ElectronicSignature | `iam` |
-| Organizations & Profiles | Supporting | Plataforma y administración | EP01 (solicitud de demo), EP02 (registro de la organización) | Organization, Profile, DemoRequest | `organizations` |
+| Organizations & Profiles | Supporting | Plataforma y administración | EP01 (consultas del formulario de contacto), EP02 (registro de la organización) | Organization, Profile, ContactInquiry | `organizations` |
 | Subscriptions & Payments | Generic | Plataforma y administración | EP11 | Plan, Subscription | `subscriptions` |
 
 Los dashboards (EP08) y las notificaciones entre áreas (EP10) no forman un contexto propio: los dashboards son read models que cada contexto expone y las notificaciones son policies que reaccionan a domain events.
@@ -2104,7 +2104,7 @@ Frame en Miro: https://miro.com/app/board/uXjVHkhKOXE=/?moveToWidget=34587646857
 
 #### Paso 1: Timelines
 
-Se organizaron en una línea de tiempo vertical los eventos de cada contexto, con los resultados alternativos en la columna "Alternativa" (por ejemplo, "Documento aprobado" o "Documento rechazado"). Al revisar qué dispara cada evento, en este nivel se agregaron eventos que faltaban en el Big Picture: "Demostración solicitada", "Plan de suscripción seleccionado", "Firma electrónica registrada", "Equipo registrado", "Sensor IoT registrado", "Aprobación de insumos solicitada a Calidad", "Mantenimiento preventivo realizado", "Lote puesto en espera" y "Acción CAPA vencida"; además, "Usuario registrado" se renombró como "Usuario dado de alta en la organización". También aparecen eventos de detalle que no eran relevantes en la vista general, como "Usuario autenticado", "Inicio de sesión fallido", "Cuenta bloqueada", "Planta agregada", "Perfil actualizado" y "Alerta reconocida".
+Se organizaron en una línea de tiempo vertical los eventos de cada contexto, con los resultados alternativos en la columna "Alternativa" (por ejemplo, "Documento aprobado" o "Documento rechazado"). Al revisar qué dispara cada evento, en este nivel se agregaron eventos que faltaban en el Big Picture: "Consulta recibida", "Plan de suscripción seleccionado", "Firma electrónica registrada", "Equipo registrado", "Sensor IoT registrado", "Aprobación de insumos solicitada a Calidad", "Mantenimiento preventivo realizado", "Lote puesto en espera" y "Acción CAPA vencida"; además, "Usuario registrado" se renombró como "Usuario dado de alta en la organización". También aparecen eventos de detalle que no eran relevantes en la vista general, como "Usuario autenticado", "Inicio de sesión fallido", "Cuenta bloqueada", "Planta agregada", "Perfil actualizado" y "Alerta reconocida".
 
 **Identity & Access Management**
 
@@ -2264,7 +2264,7 @@ Donde no interviene un sistema externo se escribió la business rule que el comm
 | Bounded context | Aggregates | Ejemplo de invariante |
 | --- | --- | --- |
 | IAM | User, ElectronicSignature | Una cuenta se bloquea tras 5 intentos fallidos; firmar exige reingresar la contraseña. |
-| Organizations & Profiles | DemoRequest, Organization, Profile | El RUC de la organización es válido y único. |
+| Organizations & Profiles | ContactInquiry, Organization, Profile | El RUC de la organización es válido y único. |
 | Subscriptions & Payments | Plan, Subscription | La suscripción se activa solo si Niubiz autoriza el cobro. |
 | Manufacturing & Batch Management | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch | Un lote solo consume materia prima aprobada y solo Calidad puede liberarlo. |
 | IoT Monitoring | Equipment, IoTDevice, TelemetryReading, Alert | Un equipo con calibración vencida no puede asignarse a un lote. |
@@ -2337,7 +2337,7 @@ El diagrama de contenedores (nivel 2) muestra las unidades de despliegue de la s
 
 | Container | Tecnología | Despliegue | Responsabilidad |
 | --- | --- | --- | --- |
-| Landing Page | HTML5, CSS3, JavaScript | GitHub Pages | Presentar la propuesta de valor, planes y equipo; registrar solicitudes de demo y dirigir a cada segmento a la Web Application. |
+| Landing Page | HTML5, CSS3, JavaScript | GitHub Pages | Presentar la propuesta de valor, planes y equipo; enviar las consultas del formulario de contacto y dirigir a cada segmento a la Web Application. |
 | Web Application | Angular, Angular Material, TypeScript, ngx-translate | Firebase Hosting | SPA responsive con un módulo por bounded context; consume el RESTful API con un token JWT. |
 | RESTful API | Spring Boot, Java 21, Spring Data JPA, Spring Security, springdoc-openapi | Render | Monolito modular con los seis bounded contexts; expone endpoints REST documentados con OpenAPI (Swagger), recibe la telemetría de ThingsBoard y publica notificaciones por WebSocket (STOMP). |
 | Database | MySQL 8 | Railway | Persistencia relacional; las tablas se agrupan por bounded context. |
@@ -2360,7 +2360,7 @@ En el RESTful API cada bounded context es un paquete de Spring Boot con cuatro c
 
 ![Component Diagram - IAM](assets/img/chapter4/software-architecture/c4/c4-04-api-iam-components.png)
 
-**Organizations & Profiles.** Registra organizaciones, plantas, perfiles y solicitudes de demo desde la Landing Page; al registrar una organización pide a IAM crear su administrador mediante `ExternalIamService`.
+**Organizations & Profiles.** Registra organizaciones, plantas, perfiles y las consultas del formulario de contacto de la Landing Page; al registrar una organización pide a IAM crear su administrador mediante `ExternalIamService`.
 
 ![Component Diagram - Organizations](assets/img/chapter4/software-architecture/c4/c4-05-api-organizations-components.png)
 
@@ -2396,7 +2396,7 @@ El diseño orientado a objetos traduce los aggregates del Design-Level EventStor
 
 ![Class Diagram - IAM](assets/img/chapter4/diagram-class/class-01-iam.png)
 
-**Organizations & Profiles.** `Organization` agrupa sus plantas y se identifica por el value object `Ruc`; `Profile` guarda los datos y preferencias de cada usuario; `DemoRequest` registra las solicitudes de demo de la Landing Page.
+**Organizations & Profiles.** `Organization` agrupa sus plantas y se identifica por el value object `Ruc`; `Profile` guarda los datos y preferencias de cada usuario; `ContactInquiry` registra las consultas enviadas desde el formulario de contacto de la Landing Page y, mediante una policy, avisa al equipo de DoofPlus.
 
 ![Class Diagram - Organizations & Profiles](assets/img/chapter4/diagram-class/class-02-organizations.png)
 
@@ -2431,7 +2431,7 @@ Los diagramas se elaboraron con Mermaid (Diagram-as-Code), uno por bounded conte
 | Bounded context | Tablas | Aggregates que persiste |
 | --- | --- | --- |
 | IAM | users, roles, user_roles, electronic_signatures | User, ElectronicSignature |
-| Organizations & Profiles | organizations, plants, profiles, demo_requests | Organization, Profile, DemoRequest |
+| Organizations & Profiles | organizations, plants, profiles, contact_inquiries | Organization, Profile, ContactInquiry |
 | Subscriptions & Payments | plans, subscriptions, payments | Plan, Subscription |
 | Manufacturing & Batch Management | products, master_formulas, formula_components, raw_material_lots, production_orders, production_batches, material_consumptions, process_parameters, incidents, batch_events | Product, MasterFormula, RawMaterialLot, ProductionOrder, ProductionBatch |
 | IoT Monitoring | equipment, calibration_records, maintenance_records, iot_devices, telemetry_readings, alert_rules, alerts | Equipment, IoTDevice, TelemetryReading, Alert |
