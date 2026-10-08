@@ -238,7 +238,7 @@
       {
         "containers": [
           {
-            "description": "Sitio estático (GitHub Pages) con la propuesta de valor, planes y equipo; i18n en-US/es-419. Sus CTA llevan a la Web Application.",
+            "description": "Sitio estático (GitHub Pages) con la propuesta de valor, planes, formulario de contacto y equipo; i18n en-US/es-419. Sus CTA llevan a la Web Application.",
             "documentation": {},
             "id": "10",
             "name": "Landing Page",
@@ -255,7 +255,7 @@
                 "technology": "JSON/HTTPS"
               },
               {
-                "description": "Redirige por segmento (CTA)",
+                "description": "Lleva al inicio de sesión por entorno y al registro",
                 "destinationId": "11",
                 "id": "102",
                 "sourceId": "10",
@@ -365,7 +365,7 @@
                 "technology": "shared/presentation – mat-toolbar, mat-sidenav"
               },
               {
-                "description": "Sign-in con 2FA, sesión (JWT), usuarios y firmas.",
+                "description": "Elección de entorno, sign-in con 2FA, sesión (JWT), usuarios y firmas.",
                 "documentation": {},
                 "id": "14",
                 "name": "iam",

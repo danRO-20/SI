@@ -30,7 +30,7 @@ Para su uso en las interfaces se definieron dos versiones horizontales del logot
 #### Typography
 La tipografía de DoofPlus es Inter, una fuente sans-serif moderna y legible con pesos de Thin a Black y sus versiones itálicas. Su diseño garantiza una lectura clara de datos numéricos críticos, tablas de lotes y gráficos de telemetría tanto en monitores como en dispositivos móviles. La jerarquía tipográfica es la siguiente:
 
-![Typography](../assets/img/chapter4/typography-guide.jpg)
+![Typography](../assets/img/chapter4/typography-guide.png)
 
 | **Elemento** | **Tamaño (desktop)** | **Peso** | **Uso** |
 | --- | --- | --- | --- |
@@ -1117,7 +1117,7 @@ El diagrama de contenedores (nivel 2) muestra las unidades de despliegue de la s
 
 | Container | Tecnología | Despliegue | Responsabilidad |
 | --- | --- | --- | --- |
-| Landing Page | HTML5, CSS3, JavaScript | GitHub Pages | Presentar la propuesta de valor, planes y equipo; enviar las consultas del formulario de contacto y dirigir a cada segmento a la Web Application. |
+| Landing Page | HTML5, CSS3, JavaScript | GitHub Pages | Presentar la propuesta de valor, los planes y el equipo; enviar las consultas del formulario de contacto y llevar a cada usuario al inicio de sesión de su entorno o al registro de la organización. |
 | Web Application | Angular, Angular Material, TypeScript, ngx-translate | Firebase Hosting | SPA responsive con un módulo por bounded context; consume el RESTful API con un token JWT. |
 | RESTful API | Spring Boot, Java 21, Spring Data JPA, Spring Security, springdoc-openapi | Render | Monolito modular con los seis bounded contexts; expone endpoints REST documentados con OpenAPI (Swagger), recibe la telemetría de ThingsBoard y publica notificaciones por WebSocket (STOMP). |
 | Database | MySQL 8 | Railway | Persistencia relacional; las tablas se agrupan por bounded context. |

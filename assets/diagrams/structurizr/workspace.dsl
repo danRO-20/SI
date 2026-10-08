@@ -13,11 +13,11 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         mail = softwareSystem "SendGrid" "Servicio de correo para invitaciones, alertas y notificaciones." "External"
         ga = softwareSystem "App autenticadora (TOTP)" "App móvil del usuario (p. ej., Google Authenticator) que genera códigos 2FA." "External"
         doofplus = softwareSystem "DoofPlus" "Plataforma SaaS de gestión de calidad y trazabilidad de lotes farmacéuticos (Landing Page, Web Application y RESTful API)." {
-            landing = container "Landing Page" "Sitio estático (GitHub Pages) con la propuesta de valor, planes y equipo; i18n en-US/es-419. Sus CTA llevan a la Web Application." "HTML5, CSS3, JavaScript"
+            landing = container "Landing Page" "Sitio estático (GitHub Pages) con la propuesta de valor, planes, formulario de contacto y equipo; i18n en-US/es-419. Sus CTA llevan a la Web Application." "HTML5, CSS3, JavaScript"
             webapp = container "Web Application" "SPA responsive (Material Design) con un módulo por bounded context; i18n con ngx-translate y ARIA. Desplegada en Firebase Hosting." "Angular, Angular Material, TypeScript" {
                 wa_router = component "app.routes & authGuard" "Rutas lazy por bounded context y protección de vistas por rol." "Angular Router, CanActivateFn"
                 wa_layout = component "Layout, Toolbar y Footer" "Shell responsive y navegación global." "shared/presentation – mat-toolbar, mat-sidenav"
-                wa_iam = component "iam" "Sign-in con 2FA, sesión (JWT), usuarios y firmas." "views + IamStore + IamApi"
+                wa_iam = component "iam" "Elección de entorno, sign-in con 2FA, sesión (JWT), usuarios y firmas." "views + IamStore + IamApi"
                 wa_org = component "organizations" "Organización, plantas y perfiles." "views + store + api"
                 wa_subs = component "subscriptions" "Planes, pago y estado de la suscripción." "views + store + api"
                 wa_mfg = component "manufacturing" "Órdenes, lotes, insumos e incidencias." "views + ManufacturingStore + api"
@@ -121,7 +121,7 @@ workspace "DoofPlus" "Modelo C4 de DoofPlus (IngesCompany). Fuente Structurizr D
         ga -> admin "Muestra el código TOTP (sin integración por API)" "" "Optional"
         visitor -> landing "Visita" "HTTPS"
         landing -> api "Envía consultas de contacto" "JSON/HTTPS"
-        landing -> webapp "Redirige por segmento (CTA)" "HTTPS"
+        landing -> webapp "Lleva al inicio de sesión por entorno y al registro" "HTTPS"
         qa -> webapp "Usa" "HTTPS"
         prod -> webapp "Usa" "HTTPS"
         admin -> webapp "Usa" "HTTPS"
