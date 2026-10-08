@@ -49,7 +49,7 @@ A continuación, se presenta una tabla comparativa sobre los principales competi
   <tr>
     <td>Estrategias de marketing</td>
     <td>Contenido educativo sobre BPM e integridad de datos, precios públicos y registro de la organización desde la Landing Page, y presencia en eventos del sector.</td>
-    <td>Marketing digital B2B (blog, casos de éxito) y demostraciones comerciales.</td>
+    <td>Marketing digital B2B (blog, casos de éxito) y webinars sobre gestión de calidad.</td>
     <td>Venta consultiva B2B con implementación y soporte locales.</td>
     <td>Venta B2B y B2G a actores de la cadena de suministro y reguladores.</td>
   </tr>
