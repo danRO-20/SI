@@ -1473,7 +1473,7 @@ Las acciones y técnicas que guían a los usuarios son:
 
 2. ***Web Application:***
 - **Ingreso por entorno:** la elección de entorno (QA/QC, Production o Administration) precede al inicio de sesión; cada entorno se reconoce por su color, ícono y módulos.
-- **Navegación global:** barra lateral (sidebar) con los módulos del entorno. QA/QC: Quality overview, Quality indicators, Quality documents, Deviations, CAPA plans, Batch release, Analytical results, Audits, Audit trail, Regulatory reports y Tasks & collaboration. Production: Production overview, Production orders, Products & formulas, Batches, Raw materials, Equipment & sensors, Incidents y Tasks & collaboration. Administration: Administration overview, Users & profiles, Organizations, Subscriptions & payments, Audit trail y Tasks & collaboration.
+- **Navegación global:** barra lateral (sidebar) con los módulos del entorno. QA/QC: Quality overview, Quality indicators, Quality documents, Deviations, CAPA plans, Batch release, Analytical results, Audits, Audit trail, Regulatory reports y Tasks & collaboration. Production: Production overview, Production orders, Products & formulas, Batches, Raw materials, Equipment & sensors, IoT overview, Incidents y Tasks & collaboration. Administration: Administration overview, Users & profiles, Organizations, Subscriptions & payments, Audit trail y Tasks & collaboration.
 - **Barra superior:** búsqueda global, selector de idioma y avatar del usuario, que abre "Profile & preferences".
 - **Navegación contextual:** breadcrumbs para ubicar al usuario dentro de un expediente y regresar a vistas generales.
 
@@ -1747,7 +1747,7 @@ Flujo: Home → Choose your environment → Sign in · QA/QC → Two-factor auth
 
 **User Goal QA-2:** Gestionar la documentación de calidad y sus protocolos (US09, US10, US12, US13, US42).
 
-Como especialista QA/QC, quiero enviar a aprobación la nueva revisión de un documento controlado para mantenerlo vigente. María abre el documento, envía la revisión y sigue la tarea de aprobación.
+Como especialista QA/QC, quiero enviar a aprobación la nueva revisión de un documento controlado para mantenerlo vigente. María redacta la revisión 2.4 del SOP-QA-014, la envía a aprobación y sigue la tarea, que resuelve la Quality Manager (Lucía Paredes).
 
 Flujo: Quality overview → Quality documents → Tasks & collaboration.
 
@@ -1845,7 +1845,7 @@ Los mock-ups aplican el Design System de la sección 4.1 sobre los wireframes y 
 
 ![Mock-up · Choose your environment](assets/img/chapter4/web-application/mockups/desktop-shared-environment-selection-onboarding-profile/sign-in-choose-your-environment.png)
 
-**Organization registration:** el administrador registra el laboratorio con su razón social, RUC, planta y datos de contacto, y continúa con la elección de su plan (US50, US51). Si el RUC ya pertenece a otra organización, el formulario muestra el estado "RUC already registered" y no crea un duplicado.
+**Organization registration:** el administrador registra el laboratorio con su razón social, RUC, planta y datos de contacto, y elige su plan, que aparece preseleccionado cuando llega desde la sección Plans de la Landing Page (US50, US51). Si el RUC ya pertenece a otra organización, el formulario muestra el estado "RUC already registered" y no crea un duplicado.
 
 | Organization registration | RUC already registered |
 | :---: | :---: |
@@ -1875,7 +1875,7 @@ Los mock-ups aplican el Design System de la sección 4.1 sobre los wireframes y 
 
 ![Mock-up · Quality indicators](assets/img/chapter4/web-application/mockups/desktop-segment-1-qa-qc-specialist/qa-qc-quality-indicators.png)
 
-**Quality documents:** repositorio de SOP y protocolos con su versión y estado (Draft, In review, Approved, Obsolete), y el flujo de aprobación (US09, US10, US12, US13). Si quien aprueba es el autor de la revisión, la aprobación se bloquea, porque las BPM exigen un revisor independiente.
+**Quality documents:** repositorio de SOP y protocolos con su versión y estado (Draft, In review, Approved, Obsolete), y el flujo de aprobación (US09, US10, US12, US13). La aprobación corresponde a la Quality Manager (Lucía Paredes); si la autora de la revisión, María México, intenta aprobarla, la aprobación se bloquea, porque las BPM exigen un revisor independiente.
 
 | Quality documents | Self-approval blocked |
 | :---: | :---: |
@@ -1999,7 +1999,7 @@ En mobile, la navegación del entorno se agrupa en una barra inferior y las pant
 
 ![Mock-up · Mobile · Shared](assets/img/chapter4/web-application/mockups/mobile-shared-environment-selection-montage-1.png)
 
-**Segmento 1 – QA/QC:** inicio de sesión con sus estados, Task inbox, Approval review (con el estado "Record changed", que impide firmar si el registro cambió durante la revisión), Electronic signature (con el estado "Invalid password"), Signature confirmed, Approval completed y Batch detail.
+**Segmento 1 – QA/QC:** inicio de sesión con sus estados, Task inbox, Approval review y Approval completed, donde la Quality Manager aprueba el documento (con el estado "Record changed", que impide firmar si el registro cambió durante la revisión), Electronic signature (con el estado "Invalid password") y Signature confirmed, donde María firma la liberación del lote B-26038, y Batch detail.
 
 ![Mock-up · Mobile · QA/QC (1)](assets/img/chapter4/web-application/mockups/mobile-segment-1-qa-qc-specialist-montage-1.png)
 
