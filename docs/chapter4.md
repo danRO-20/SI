@@ -432,7 +432,7 @@ En mobile se priorizan las tareas que se realizan fuera del escritorio: la elecc
 
 ### 4.4.2. Web Applications Wireflow Diagrams
 
-Los Wireflow Diagrams combinan los wireframes con las acciones del usuario para representar la secuencia de pantallas que lo llevan a cumplir un objetivo. Para cada segmento se definieron seis user goals, basados en sus user stories. Cada diagrama muestra el user goal, la persona, el camino principal y los puntos de decisión que desvían el flujo hacia una pantalla de error o de bloqueo.
+Los Wireflow Diagrams combinan los wireframes con las acciones del usuario para representar la secuencia de pantallas que lo llevan a cumplir un objetivo. Para cada segmento se definieron seis user goals, basados en sus user stories. Cada diagrama muestra el user goal, la persona, el camino principal y los puntos de decisión que desvían el flujo hacia una pantalla de error o de bloqueo. Los diagramas se elaboraron en FigJam y están disponibles en el [tablero de Wireflows y User Flows](https://www.figma.com/board/6SfHJP9IQFJtTxZKgOYyWp).
 
 #### Segmento 1 – Especialista de Aseguramiento y Control de Calidad (QA/QC)
 
@@ -520,7 +520,7 @@ Flujo (Mobile): Alert details → Incident reporting → Incident submitted.
 
 **User Goal PR-5:** Trazar un lote para investigar un evento (US15, US17, US58).
 
-Como jefe de producción, quiero revisar la genealogía de un lote y la recepción de sus insumos para verificar su disposición de calidad.
+Como jefe de producción, quiero revisar la genealogía de un lote y la recepción de sus insumos para verificar su disposición de calidad. Si el lote del insumo sigue en cuarentena, Alberto hace seguimiento a la solicitud de aprobación en Tasks & collaboration.
 
 Flujo: Batches → Batch detail & traceability → Raw-material receipt.
 
@@ -716,7 +716,7 @@ En mobile, la navegación del entorno se agrupa en una barra inferior y las pant
 
 ### 4.4.4. Web Applications User Flow Diagrams
 
-Los User Flow Diagrams representan, para los mismos user goals de la sección 4.4.2, la secuencia de pantallas y acciones del camino principal (happy path) y las decisiones que llevan a caminos alternativos (unhappy paths).
+Los User Flow Diagrams representan, para los mismos user goals de la sección 4.4.2, la secuencia de pantallas y acciones del camino principal (happy path) y las decisiones que llevan a caminos alternativos (unhappy paths). Se elaboraron en FigJam, en el mismo [tablero](https://www.figma.com/board/6SfHJP9IQFJtTxZKgOYyWp) que los Wireflow Diagrams.
 
 #### Segmento 1 – Especialista QA/QC
 
@@ -806,7 +806,7 @@ Unhappy path: ¿Los campos obligatorios están completos? No → "Validation err
 
 Happy path: Batches → Batch detail & traceability → Raw-material receipt del insumo.
 
-Unhappy path: ¿Calidad aprobó el lote del insumo? No → el insumo permanece en Quarantine o Rejected y no puede usarse.
+Unhappy path: ¿Calidad aprobó el lote del insumo? No → el insumo permanece en Quarantine y no puede usarse; la solicitud de aprobación se sigue en Tasks & collaboration.
 
 ![User Flow PR-5](../assets/img/chapter4/web-application/user-flows/user-flow-pr-5.png)
 

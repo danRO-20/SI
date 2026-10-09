@@ -17,8 +17,10 @@ A continuación se detallan los productos de software que los miembros del equip
     * **Miro:** Elaboración del Big Picture Event Storming y del Design-Level Event Storming. (Referencia: https://miro.com)
 * **Product UX/UI Design**
     * **Figma:** Elaboración de Wireframes, Mock-ups y Prototypes de la Landing Page y la Web Application. (Referencia: https://www.figma.com)
+    * **FigJam:** Elaboración de los Wireflows y User Flows de la Web Application. (Referencia: https://www.figma.com/figjam)
     * **UXPressia:** Elaboración de User Personas, Empathy Maps, Journey Maps e Impact Maps. (Referencia: https://uxpressia.com)
-    * **Lucidchart:** Elaboración de Wireflows, User Flows y diagramas técnicos. (Referencia: https://www.lucidchart.com)
+    * **Structurizr DSL:** Elaboración de los diagramas C4 de contexto, contenedores y componentes bajo el enfoque Diagram-as-Code. (Referencia: https://structurizr.com)
+    * **Mermaid:** Elaboración de los diagramas de clases y de base de datos bajo el enfoque Diagram-as-Code. (Referencia: https://mermaid.js.org)
 * **Software Development**
     * **Git:** Sistema de control de versiones distribuido utilizado en todos los repositorios. (Descarga: https://git-scm.com/downloads)
     * **GitHub:** Plataforma de alojamiento de los repositorios de la organización y de colaboración mediante ramas y Pull Requests. (Referencia: https://github.com/IngesCompany-7742)
@@ -27,7 +29,7 @@ A continuación se detallan los productos de software que los miembros del equip
     * **Node.js y npm:** Entorno de ejecución y gestor de paquetes requeridos por Angular CLI. (Descarga: https://nodejs.org/en/download)
     * **Angular CLI:** Herramienta para generar, ejecutar y compilar la Frontend Web Application, integrando **Angular Material** como biblioteca de componentes y **ngx-translate** para la internacionalización. (Referencia: https://angular.dev/tools/cli)
     * **Spring Boot y Spring Data JPA:** Frameworks de Java para el desarrollo de los RESTful Web Services. (Referencia: https://spring.io/projects/spring-boot)
-    * **PostgreSQL:** Sistema gestor de base de datos relacional. (Descarga: https://www.postgresql.org/download)
+    * **MySQL:** Sistema gestor de base de datos relacional (MySQL 8). (Descarga: https://dev.mysql.com/downloads)
 * **Software Testing**
     * **Chrome DevTools:** Inspección del diseño responsive y depuración de la Landing Page y la Web Application. (Referencia: https://developer.chrome.com/docs/devtools)
     * **json-server:** Fake API para simular los endpoints REST desde la Web Application mientras se implementan los Web Services. (Referencia: https://github.com/typicode/json-server)
@@ -39,7 +41,7 @@ A continuación se detallan los productos de software que los miembros del equip
     * **GitHub Pages:** Publicación de la Landing Page. (Referencia: https://pages.github.com)
     * **Firebase Hosting:** Publicación de la Frontend Web Application. (Referencia: https://firebase.google.com/docs/hosting)
     * **Render:** Publicación de los RESTful Web Services. (Referencia: https://render.com)
-    * **Railway:** Base de datos PostgreSQL gestionada en la nube. (Referencia: https://railway.com)
+    * **Railway:** Base de datos MySQL gestionada en la nube. (Referencia: https://railway.com)
 
 ### 5.1.2. Source Code Management
 
@@ -89,7 +91,7 @@ Los mensajes de commit siguen la especificación **Conventional Commits 1.0.0**:
 
 ### 5.1.3. Source Code Style Guide & Coding Conventions
 
-Toda la nomenclatura del código fuente (archivos, clases, variables, métodos y comentarios) se escribe en **inglés**, respetando el Ubiquitous Language del dominio de calidad farmacéutica (por ejemplo, `Batch`, `Deviation`, `QualityEvent`). Las convenciones adoptadas por lenguaje son las siguientes:
+Toda la nomenclatura del código fuente (archivos, clases, variables, métodos y comentarios) se escribe en **inglés**, respetando el Ubiquitous Language del dominio de calidad farmacéutica (por ejemplo, `ProductionBatch`, `Deviation`, `CapaAction`). Las convenciones adoptadas por lenguaje son las siguientes:
 
 * **HTML:** [HTML Style Guide and Coding Conventions (W3Schools)](https://www.w3schools.com/html/html5_syntax.asp) y [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). Etiquetas y atributos en minúsculas, valores de atributos entre comillas dobles, uso de etiquetas semánticas (`header`, `main`, `section`, `footer`) y atributo `alt` en todas las imágenes.
 * **CSS:** [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html). Indentación de 2 espacios, nombres de clases en kebab-case y selectores cortos; los ids no se usan para estilos.
@@ -97,7 +99,7 @@ Toda la nomenclatura del código fuente (archivos, clases, variables, métodos y
 * **TypeScript:** [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html). UpperCamelCase para clases e interfaces, lowerCamelCase para propiedades y métodos, tipado explícito y sin uso de `any`.
 * **Angular:** [Angular coding style guide](https://angular.dev/style-guide). Nombres de archivos en kebab-case, un componente por archivo, selectores con el prefijo `app-`, inyección de dependencias en servicios y organización del código por bounded context (`domain`, `infrastructure`, `application`, `presentation`).
 * **Java:** [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html). UpperCamelCase para clases, lowerCamelCase para métodos y variables, CONSTANT_CASE para constantes y llaves obligatorias en todas las estructuras de control.
-* **Spring Boot:** [Spring Boot Features](https://docs.spring.io/spring-boot/reference/features/index.html). Clase principal en el paquete raíz, configuración externalizada en `application.properties` y variables de entorno, y controladores RESTful con rutas en plural y kebab-case (por ejemplo, `/api/v1/batches`).
+* **Spring Boot:** [Spring Boot Features](https://docs.spring.io/spring-boot/reference/features/index.html). Clase principal en el paquete raíz, configuración externalizada en `application.properties` y variables de entorno, y controladores RESTful con rutas en plural y kebab-case (por ejemplo, `/api/v1/production-batches`).
 * **Gherkin:** [Gherkin Conventions for Readable Specifications](https://specflow.org/gherkin/gherkin-conventions-for-readable-specifications). Palabras clave `Feature`, `Scenario`, `Given`, `When`, `Then` en inglés, un comportamiento por escenario y uso de `Scenario Outline` con `Examples` para casos basados en datos.
 
 ### 5.1.4. Software Deployment Configuration
@@ -114,9 +116,9 @@ A continuación se describen los pasos para desplegar cada producto de la soluci
     3. Compilar la versión de producción con `ng build --configuration production`.
     4. Publicar con `firebase deploy`.
 3. **RESTful Web Services (Render y Railway)**
-    1. Crear la base de datos PostgreSQL en Railway y obtener la URL de conexión y las credenciales.
+    1. Crear la base de datos MySQL en Railway y obtener la URL de conexión y las credenciales.
     2. Crear un Web Service en Render vinculado a la rama `main` del repositorio de Web Services, con el Dockerfile del proyecto Spring Boot.
-    3. Registrar en Render las variables de entorno de producción (URL y credenciales de la base de datos, secreto JWT y credenciales de la pasarela de pagos Niubiz).
+    3. Registrar en Render las variables de entorno de producción (URL y credenciales de la base de datos, secreto JWT, credenciales de la pasarela de pagos Niubiz, API key de SendGrid y API key de los dispositivos de ThingsBoard).
     4. Render compila y publica el servicio con cada push a `main`; la documentación OpenAPI queda disponible en la ruta `/swagger-ui/index.html` del servicio.
 
 ## 5.2. Landing Page, Services & Applications Implementation
@@ -142,7 +144,7 @@ El Sprint Planning Meeting sirvió para definir los objetivos iniciales, asignar
 | **Sprint 0 Review Summary** | No aplica por ser el primer Sprint del proyecto. |
 | **Sprint 0 Retrospective Summary** | No aplica por ser el primer Sprint del proyecto. |
 | **Sprint Goal & User Stories** | |
-| **Sprint 1 Goal** | **Our focus is on** delivering a responsive and bilingual Landing Page for DoofPlus.<br>**We believe it delivers** a clear understanding of DoofPlus' value proposition, plans and team to quality managers and production supervisors of pharmaceutical laboratories.<br>**This will be confirmed when** visitors can navigate through the features, plans and team sections, switch between Spanish and English, and reach the contact form on both desktop and mobile devices. |
+| **Sprint 1 Goal** | **Our focus is on** delivering a responsive and bilingual Landing Page for DoofPlus.<br>**We believe it delivers** a clear understanding of DoofPlus' value proposition, plans and team to QA/QC specialists and production supervisors of pharmaceutical laboratories.<br>**This will be confirmed when** visitors can navigate through the features, plans and team sections, switch between Spanish and English, and reach the contact form on both desktop and mobile devices. |
 | **Sprint 1 Velocity** | 16 Story Points |
 | **Sum of Story Points** | 16 Story Points (US44: 3, US03: 2, US45: 1, US04: 1, TS01: 3, US46: 5, US47: 1) |
 
@@ -174,7 +176,7 @@ El objetivo principal de este Sprint fue implementar y publicar la Landing Page 
 | **Id** | **Title** | **Id** | **Title** | **Description** | **Estimation (Hours)** | **Assigned To** | **Status (To-do / In-Process / To-Review / Done)** |
 | US44 | Navegación por secciones | T001 | Implementar navbar responsivo | Estructurar el menú de navegación con los enlaces a Home, Features, Benefits, Plans y Contact. | 2 | Zavaleta Gutierrez, Rodolfo Martin | Done |
 | US44 | Navegación por secciones | T002 | Estilos y menú hamburguesa | Aplicar estilos CSS al menú y añadir el comportamiento responsive con menú hamburguesa para móvil. | 2 | Angulo Ramírez, Marcelo Martín | Done |
-| US03 | Visualización de planes y precios | T003 | Diseñar tarjetas de planes | Crear las tarjetas de los planes Standard Lab ($199/mes) y Enterprise ($599/mes) con sus características. | 3 | Flores Martinez, Ricardo Andres | Done |
+| US03 | Visualización de planes y precios | T003 | Diseñar tarjetas de planes | Crear las tarjetas de los planes Standard Lab (US$199/mes) y Enterprise (US$599/mes) con sus características. | 3 | Flores Martinez, Ricardo Andres | Done |
 | US03 | Visualización de planes y precios | T004 | Toggle mensual/anual | Implementar el cambio entre precios mensuales y anuales con un ahorro equivalente a dos meses (≈17%). | 2 | Cobades Zamora, Yhoshua Hebert | Done |
 | US45 | Visualización del equipo y de la startup | T005 | Maquetar sección Our Team | Implementar las tarjetas de los 5 integrantes del equipo Inges Company con foto, nombre y descripción. | 2 | Rojas Ambicho, Nestor Daniel | Done |
 | US45 | Visualización del equipo y de la startup | T006 | Correcciones sección Our Team | Corregir la estructura y el contenido de la sección del equipo tras la revisión de pares. | 1 | Angulo Ramírez, Marcelo Martín | Done |
@@ -368,7 +370,7 @@ En el Sprint 2, la Landing Page se mantuvo publicada en GitHub Pages. La Web App
 
 La implementación del Sprint 2 se realiza en el repositorio `IngesCompany-Frontend` siguiendo GitFlow. Hasta el momento, Rodolfo Zavaleta configuró el proyecto e implementó las vistas públicas y el footer; Marcelo Angulo implementó el toolbar, el layout, el selector de idioma y las vistas About y Page Not Found; y Yhoshua Cobades ajustó el layout, trabajando en feature branches integradas en `develop`.
 
-Las capturas necesarias y obligatorias se subirán al final del sprint 2.
+Las capturas de las vistas implementadas y los analíticos de colaboración del repositorio se incorporarán al cierre del Sprint 2.
 
 ## 5.3. Validation Interviews
 
