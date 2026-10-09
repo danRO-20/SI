@@ -279,7 +279,7 @@ El Sprint Planning Meeting sirvió para definir los objetivos del Sprint, asigna
 | **Location** | Reunión virtual vía Discord |
 | **Prepared By** | Cobades Zamora, Yhoshua Hebert |
 | **Attendees (to planning meeting)** | Angulo Ramírez, Marcelo Martín / Cobades Zamora, Yhoshua Hebert / Flores Martinez, Ricardo Andres / Rojas Ambicho, Nestor Daniel / Zavaleta Gutierrez, Rodolfo Martin |
-| **Sprint 1 Review Summary** | Se entregó la primera versión de la Landing Page de DoofPlus publicada en GitHub Pages, con navegación por secciones, planes y precios, sección del equipo, formulario de contacto, cambio de idioma ES/EN y páginas legales. Como feedback, se pidió quitar la solicitud de demos (la startup no las ofrece) y reemplazarla por un formulario de consultas, y alinear la Landing Page con los mock-ups del capítulo 4. |
+| **Sprint 1 Review Summary** | Se entregó la primera versión de la Landing Page de DoofPlus publicada en GitHub Pages, con navegación por secciones, planes y precios, sección del equipo, formulario de contacto, cambio de idioma ES/EN y páginas legales. Como feedback, se pidió que el formulario de contacto sirva para enviar consultas sobre la plataforma y sus planes, y alinear la Landing Page con los mock-ups del capítulo 4. |
 | **Sprint 1 Retrospective Summary** | Como acierto, el equipo integró la versión estable mediante una rama de release siguiendo GitFlow. Como oportunidades de mejora, se acordó trabajar en feature branches que nazcan de `develop`, una por sección o bounded context, distribuir los commits a lo largo del sprint y usar los types de Conventional Commits según su significado. |
 | **Sprint Goal & User Stories** | |
 | **Sprint 2 Goal** | **Our focus is on** delivering the complete DoofPlus Landing Page and the first version of the DoofPlus Web Application for the QA/QC, Production and Administration environments.<br>**We believe it delivers** a single place to register batches, follow deviations and CAPA, release batches with electronic signature and monitor IoT equipment to QA/QC specialists and production supervisors of pharmaceutical laboratories.<br>**This will be confirmed when** each segment signs in to its own environment with two-factor authentication and completes its user goals (QA-1 to QA-6 and PR-1 to PR-6) on the published Web Application. |
@@ -726,7 +726,7 @@ En este Sprint se completó la Landing Page, publicada en GitHub Pages, y se imp
 
 *Figura: Menú de navegación en mobile (US44).*
 
-**Web Application** (cuentas de prueba en el README del repositorio; contraseña `DoofPlus2026!` y código 2FA `482106`):
+**Web Application:** https://doofplus-webapp.web.app (cuentas de prueba en el README del repositorio; contraseña `DoofPlus2026!` y código 2FA `482106`).
 
 ![Elección de entorno (US06)](../assets/img/chapter5/sprint2/web-app/01-sign-in.png)
 
@@ -808,11 +808,14 @@ En este Sprint se completó la Landing Page, publicada en GitHub Pages, y se imp
 
 *Figura: Inicio de sesión en mobile.*
 
-Video de navegación del producto, upc-pre-202620-1asi0729-7742-IngesCompany-productnavigation-sprint-2: <mark>pegar URL de Microsoft Stream, inicio y duración</mark>
+Videos de navegación del producto (upc-pre-202620-1asi0729-7742-IngesCompany-productnavigation-sprint-2):
+
+- **Landing Page:** [ver en Microsoft Stream](https://shorturl.at/cI09z).
+- **Web Application:** [ver en Microsoft Stream](https://shorturl.at/rqzbT).
 
 #### 5.2.2.6. Services Documentation Evidence for Sprint Review
 
-En el Sprint 2 todavía no se implementaron los RESTful Web Services, por lo que no hay documentación OpenAPI. Mientras tanto, la Web Application consume una Fake API con json-server (`server/db.json`), cuyas rutas se exponen bajo el prefijo `/api/v1` mediante `server/routes.json`, el mismo que tendrán los Web Services. La siguiente tabla documenta los endpoints que usa la Web Application; la URL base local es `http://localhost:3000/api/v1`.
+En el Sprint 2 todavía no se implementaron los RESTful Web Services, por lo que no hay documentación OpenAPI. Mientras tanto, la Web Application consume una Fake API con json-server (`server/db.json`), cuyas rutas se exponen bajo el prefijo `/api/v1` mediante `server/routes.json`, el mismo que tendrán los Web Services. La siguiente tabla documenta los endpoints que usa la Web Application; la URL base local es `http://localhost:3000/api/v1` y la publicada en Render es `https://ingescompany-frontend.onrender.com/api/v1` (por ejemplo, [`/plans`](https://ingescompany-frontend.onrender.com/api/v1/plans)).
 
 | Endpoint | Verbo HTTP | Sintaxis | Parámetros | Response | URL documentación |
 |---|---|---|---|---|---|
@@ -909,7 +912,7 @@ En el Sprint 2 todavía no se implementaron los RESTful Web Services, por lo que
 En este Sprint se prepararon las versiones estables de ambos productos siguiendo GitFlow:
 
 - **Landing Page:** la rama `release/v1.0.0` se fusionó en `main` con el tag `v1.0.0`, y luego se publicó el hotfix `v1.0.1`, que agrega el archivo `.nojekyll` para que GitHub Pages publique los archivos estáticos sin procesarlos con Jekyll. La Landing Page se publica en GitHub Pages desde `main` en https://ingescompany-7742.github.io/IngesCompany-LandingPage/.
-- **Web Application:** la rama `release/v1.0.0` se fusionó en `main` con el tag `v1.0.0` y su CHANGELOG. El repositorio incluye `firebase.json`, que configura Firebase Hosting como Single Page Application, y el script `npm run server:prod`, que publica la Fake API en un Web Service de Render. URL de la Web Application publicada: <mark>pegar URL de Firebase Hosting</mark>. URL de la Fake API: <mark>pegar URL de Render</mark>.
+- **Web Application:** la rama `release/v1.0.0` se fusionó en `main` con el tag `v1.0.0` y su CHANGELOG. El repositorio incluye `firebase.json`, que configura Firebase Hosting como Single Page Application, y el script `npm run server:prod`, que publica la Fake API en un Web Service de Render. La Web Application está publicada en Firebase Hosting en https://doofplus-webapp.web.app y la Fake API en Render en https://ingescompany-frontend.onrender.com/api/v1.
 
 ![Tag v1.0.0 de la Landing Page](../assets/img/chapter5/sprint2/github/release-landing-v1.0.0.png)
 
