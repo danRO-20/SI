@@ -355,7 +355,7 @@ A continuación se muestra el problem statement en su idioma original:
 
 ***Our initial focus will be*** QA/QC specialists and pharmaceutical production supervisors of small and medium-sized laboratories in Lima Metropolitana that manufacture under DIGEMID GMP requirements.
 
-***We’ll know we are successful when we see***, within the first six months after launch, at least 80% of the quality documentation queries of pilot laboratories resolved through the platform, a 50% reduction in the time required to retrieve a complete batch history, an 80% reduction in audit-preparation time, and at least 10 laboratories subscribed to a paid plan.
+***We’ll know we are successful when we see***, within the first six months after launch, at least 80% of the quality documentation queries of subscribed laboratories resolved through the platform, a 50% reduction in the time required to retrieve a complete batch history, an 80% reduction in audit-preparation time, and at least 10 laboratories subscribed to a paid plan.
 
 #### 1.2.2.2. Lean UX Assumptions
 
